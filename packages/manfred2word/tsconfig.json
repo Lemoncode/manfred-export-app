@@ -1,0 +1,8 @@
+{
+  "extends": "@lemoncode/tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "include": ["./src"],
+  "exclude": ["dist", "build", "node_modules"]
+}
