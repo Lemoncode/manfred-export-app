@@ -20,6 +20,15 @@ npm start
 
 ```
 
+Si necesitas instalar cualquier libreria en alguno de los proyectos (dentro de `apps` o `packages`) debes hacerlo desde la ruta raiz y usando el flag [workspace](https://docs.npmjs.com/cli/v7/using-npm/workspaces) de npm. Por ejemplo:
+
+```bash
+npm install --workspace=@lemoncode/manfred2word typescript --save-dev
+
+```
+
+> npm install --workspace=<package.json name>
+
 # ¿Te animas a cursar nuestro Máster?
 
 Si tienes ganas de ponerte al día en Front End, te ofrecemos un máster online en dos modalidades:
