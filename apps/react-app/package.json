@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "vite --port 8080 --open"
+    "start": "vite --port 8080 --open",
+    "build": "vite build"
   },
   "dependencies": {
     "@lemoncode/manfred2word": "*",
