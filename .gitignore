@@ -33,4 +33,7 @@ yarn-error.log*
 # turbo
 .turbo
 
+# angular
+.angular
+
 stats.html

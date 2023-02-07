@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "vite --port 8081 --open"
+    "start": "vite --port 8081 --open",
+    "build": "vite build"
   },
   "dependencies": {
     "@lemoncode/manfred2word": "*"
