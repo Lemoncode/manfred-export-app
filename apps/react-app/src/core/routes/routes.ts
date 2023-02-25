@@ -1,11 +1,11 @@
 interface SwitchRoutes {
   root: string;
-  scene1: string;
-  scene2: string;
+  manfredJsonInputScene: string;
+  templateExportScene: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
   root: "/",
-  scene1: "/scene1",
-  scene2: "/scene2",
+  manfredJsonInputScene: "/manfred-json-input",
+  templateExportScene: "/template-export",
 };
