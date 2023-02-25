@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ManfredJsonInput: React.FC = () => {
+export const ManfredJsonInputScene: React.FC = () => {
   return (
     <h1>Hello world from ManfredJsonInput</h1>
   )

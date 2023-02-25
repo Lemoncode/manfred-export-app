@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { switchRoutes } from './routes';
-import { ManfredJsonInput } from '../../scenes/manfred-json-input/manfred-json-input.scene';
-import { TemplateExportScene } from '../../scenes/template-export.scene/template-export.scene';
+import { switchRoutes } from '@/core';
+import { ManfredJsonInputScene } from '@/scenes/manfred-json-input.scene';
+import { TemplateExportScene } from '@/scenes/template-export.scene';
 
 export const RouterComponent: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path={switchRoutes.root} element={<ManfredJsonInput />} />
+        <Route path={switchRoutes.root} element={<ManfredJsonInputScene />} />
         <Route path={switchRoutes.templateExportScene} element={<TemplateExportScene />} />
-        <Route path="*" element={<ManfredJsonInput />}></Route>
+        <Route path="*" element={<ManfredJsonInputScene />}></Route>
       </Routes>
     </Router>
   );
