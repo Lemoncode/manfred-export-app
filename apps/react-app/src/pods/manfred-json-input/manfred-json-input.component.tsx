@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const ManfredJsonInput: React.FC = () => {
+export const ManfredJsonInputComponent: React.FC = () => {
   return (
-    <h1>Hello from ManfredJsonInput</h1>
+    <h1>Hello from ManfredJsonInputComponent</h1>
   )
 }

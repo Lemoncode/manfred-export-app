@@ -1,5 +1,6 @@
 import React from 'react';
+import { TemplateExportContainer } from '@/pods';
 
 export const TemplateExportScene: React.FC = () => {
-  return <h1>Hello world from TemplateExportScene</h1>;
+  return <TemplateExportContainer/>;
 };
