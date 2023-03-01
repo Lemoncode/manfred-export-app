@@ -1,2 +1,2 @@
-export * from "./router.component";
+export * from './router.component';
 export { switchRoutes } from './routes';

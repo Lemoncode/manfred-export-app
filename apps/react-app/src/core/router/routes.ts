@@ -5,7 +5,7 @@ interface SwitchRoutes {
 }
 
 export const switchRoutes: SwitchRoutes = {
-  root: "/",
-  manfredJsonInputScene: "/manfred-json-input",
-  templateExportScene: "/template-export",
+  root: '/',
+  manfredJsonInputScene: '/manfred-json-input',
+  templateExportScene: '/template-export',
 };

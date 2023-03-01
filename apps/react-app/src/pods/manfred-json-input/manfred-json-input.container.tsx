@@ -1,8 +1,6 @@
-import React from 'react'
-import { ManfredJsonInputComponent } from './manfred-json-input.component'
+import React from 'react';
+import { ManfredJsonInput } from './manfred-json-input.component';
 
 export const ManfredJsonInputContainer: React.FC = () => {
-  return (
-    <ManfredJsonInputComponent/>
-  )
-}
+  return <ManfredJsonInput />;
+};
