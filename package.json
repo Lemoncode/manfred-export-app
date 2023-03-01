@@ -12,8 +12,7 @@
     "start": "turbo run start --continue",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
-    "publish-packages": "turbo run build --filter=./packages/* && changeset publish",
-    "prepare": "husky install"
+    "publish-packages": "turbo run build --filter=./packages/* && changeset publish"
   },
   "repository": {
     "type": "git",
