@@ -1,7 +1,13 @@
 import React from 'react';
 import {useState} from 'react';
 
-export const ManfredJsonInput: React.FC = () => {
+interface Props {
+  handleData: (text: string) => void;
+}
+
+export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
+
+  const {handleData} = props;
 
   const [text, setText] = useState('');
 
@@ -13,6 +19,7 @@ export const ManfredJsonInput: React.FC = () => {
 
     if (text.trim().length !== 0) {
       alert('here will go the export to word');
+      handleData(text);
     } else {
       alert('No content');
     }
