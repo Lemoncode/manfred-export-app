@@ -29,6 +29,12 @@ npm install --workspace=@lemoncode/manfred2word typescript --save-dev
 
 > npm install --workspace=<package.json name>
 
+# Arrancar la aplicación Individualmente
+
+```bash
+npm start -- --filter=react-app
+```
+
 # ¿Te animas a cursar nuestro Máster?
 
 Si tienes ganas de ponerte al día en Front End, te ofrecemos un máster online en dos modalidades:
