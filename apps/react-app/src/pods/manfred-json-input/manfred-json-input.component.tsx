@@ -2,7 +2,6 @@ import { ButtonComponent } from '@/common/forms/mf-button-component';
 import { TextAreaComponent } from '@/common/forms/mf-text-area.component';
 import React from 'react';
 import { useState } from 'react';
-import { css } from '@emotion/css';
 
 export const ManfredJsonInput: React.FC = () => {
   const [text, setText] = useState('');
@@ -24,16 +23,16 @@ export const ManfredJsonInput: React.FC = () => {
       <h1>Hello from ManfredJsonInputComponent</h1>
       <form>
         <label>Paste here your JSON in MAC Format</label>
-        <TextAreaComponent
+        <textarea
           id="textInput"
           name="textInput"
           rows={20}
           cols={50}
           onChange={event => handleChange(event)}
           autoComplete="off"
-        ></TextAreaComponent>
+        ></textarea>
       </form>
-      <ButtonComponent onClick={handleExport}>Export your CV</ButtonComponent>
+      <button onClick={handleExport}>Export your CV</button>
     </>
   );
 };
