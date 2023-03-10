@@ -35,8 +35,5 @@
   },
   "engines": {
     "node": ">=16.0.0"
-  },
-  "dependencies": {
-    "@emotion/css": "^11.10.6"
   }
 }
