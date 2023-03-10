@@ -1,18 +1,16 @@
 import React from 'react';
 
-export const TemplateExport: React.FC = () => {
+interface Props {
+  onExport: () => void;
+}
 
-  const handleExport = () => {
-    console.log("Me exporto");
-  }
-
+export const TemplateExport: React.FC<Props> = props => {
+  const { onExport } = props;
 
   return (
-  <>
-  <h1>Hello for TemplateExportComponent</h1>
-  <button onClick={handleExport}>Export</button>
-  </>
-
-
+    <>
+      <h1>Hello for TemplateExportComponent</h1>
+      <button onClick={onExport}>Export</button>
+    </>
   );
 };
