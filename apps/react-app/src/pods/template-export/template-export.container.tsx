@@ -10,8 +10,9 @@ export const TemplateExportContainer: React.FC = () => {
     setManfredJSON(mockedManfredJsonProfile);
   }, []);
 
-  const handleExport = () => {
-    exportManfredJSonToWord(manfredJSON);
+  const handleExport = async () => {
+    const buffer = await exportManfredJSonToWord(manfredJSON);
+    console.log(buffer);
   };
 
   return <TemplateExport onExport={handleExport} />;
