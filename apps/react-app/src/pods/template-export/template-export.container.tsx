@@ -11,8 +11,7 @@ export const TemplateExportContainer: React.FC = () => {
   }, []);
 
   const handleExport = async () => {
-    const buffer = await exportManfredJSonToWord(manfredJSON);
-    console.log(buffer);
+    const buffer = exportManfredJSonToWord();
   };
 
   return <TemplateExport onExport={handleExport} />;

@@ -1,9 +1,7 @@
 import * as fs from 'fs';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 
-// Documents contain sections, you can have multiple sections per document, go here to learn more about sections
-// This simple example will only contain one section
-export const mockDoc = new Document({
+export const doc = new Document({
   sections: [
     {
       properties: {},

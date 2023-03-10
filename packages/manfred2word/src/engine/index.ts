@@ -1,7 +1,18 @@
-import { mockDoc } from './mock-document';
-import * as docx from 'docx';
+import { Document, Packer } from 'docx';
+import { download } from './engine.helpers';
+import { doc } from './mock-document';
 
-export const exportManfredJSonToWord = (jsonContent: string): Promise<Buffer> => {
-  const promise = new Promise<Buffer>((resolve, reject) => docx.Packer.toBuffer(mockDoc));
-  return promise;
+const createDocument = (): Promise<Document> => {
+  return new Promise(resolve => {
+    resolve(doc);
+  });
+};
+
+export const exportManfredJSonToWord = () => {
+  createDocument().then(doc => {
+    Packer.toBlob(doc).then(blob => {
+      const filename = 'exportManfredJSonToWord.docx';
+      download(blob, filename);
+    });
+  });
 };
