@@ -1,5 +1,5 @@
+import { MacContext } from '@/providers/mac.context';
 import React from 'react';
-import {useState} from 'react';
 
 interface Props {
   onSetManfredJson: (text: string) => void;
@@ -8,18 +8,17 @@ interface Props {
 export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
 
   const {onSetManfredJson} = props;
+  const {macData, setMacData} = React.useContext(MacContext);
 
-  const [text, setText] = useState('');
-
-  const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setText(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMacData(event.target.value);
   };
 
   const handleExport = () => {
 
-    if (text.trim().length !== 0) {
+    if (macData.trim().length !== 0) {
       alert('here will go the export to word');
-      onSetManfredJson(text);
+      onSetManfredJson(macData);
     } else {
       alert('No content');
     }
