@@ -1,10 +1,10 @@
 import { RouterComponent } from '@/core';
-import { MacProvider } from './providers/mac.provider';
+import { UserChoiceProvider } from './providers/user-choice.provider';
 
 export const App = () => {
   return (
-    <MacProvider>
+    <UserChoiceProvider>
           <RouterComponent />
-    </MacProvider>
+    </UserChoiceProvider>
     );
 };

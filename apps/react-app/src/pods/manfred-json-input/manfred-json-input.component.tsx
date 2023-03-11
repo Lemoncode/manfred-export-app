@@ -1,4 +1,4 @@
-import { MacContext } from '@/providers/mac.context';
+import { UserChoiceContext } from '@/providers/user-choice.context';
 import React from 'react';
 
 interface Props {
@@ -8,17 +8,17 @@ interface Props {
 export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
 
   const {onSetManfredJson} = props;
-  const {macData, setMacData} = React.useContext(MacContext);
+  const {userChoice, setUserChoice} = React.useContext(UserChoiceContext);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMacData(event.target.value);
+    setUserChoice(event.target.value);
   };
 
   const handleExport = () => {
 
-    if (macData.trim().length !== 0) {
+    if (userChoice.trim().length !== 0) {
       alert('here will go the export to word');
-      onSetManfredJson(macData);
+      onSetManfredJson(userChoice);
     } else {
       alert('No content');
     }
