@@ -6,7 +6,7 @@ import { switchRoutes, UserChoiceContext } from '@/core';
 
 export const ManfredJsonInputContainer: React.FC = () => {
 
-  const {userChoice, setUserChoice} = React.useContext(UserChoiceContext);
+  const {setUserChoice} = React.useContext(UserChoiceContext);
 
   const navigate = useNavigate();
 
