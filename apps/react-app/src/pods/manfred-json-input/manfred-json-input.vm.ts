@@ -1,4 +1,4 @@
-import { UserChoiceModel } from '../../providers/user-choice.context';
+import { UserChoiceModel } from '@/core/user-choice';
 
 export const createDefaultUserChoiceModel = () : UserChoiceModel => ({manfredJsonContent: ''});
 
