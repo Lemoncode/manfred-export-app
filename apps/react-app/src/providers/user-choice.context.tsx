@@ -1,10 +1,14 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 
-
-export interface UserChoiceContextModel {
-  userChoice : string;
-  setUserChoice: (userChoice:string)=>void
+export interface UserChoiceModel {
+  manfredJsonContent: string;
 }
 
-export const UserChoiceContext = React.createContext<UserChoiceContextModel>({userChoice:"", setUserChoice: (userChoice:string)=>{}
+export interface UserChoiceContextModel {
+  // userChoice : UserChoiceModel; //ChatGPT me dice que aquí debería ser SetStateAction<<UserChoiceModel> y tiene razón, ¿por qué?
+  userChoice : SetStateAction<UserChoiceModel>;
+  setUserChoice : (userChoice: UserChoiceModel) => void;
+}
+
+export const UserChoiceContext = React.createContext<UserChoiceContextModel>({userChoice:{manfredJsonContent:""}, setUserChoice: (userChoice)=>{}
 });
