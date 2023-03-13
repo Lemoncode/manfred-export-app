@@ -1,5 +1,10 @@
 import { RouterComponent } from '@/core';
+import { UserChoiceProvider } from './core/user-choice/user-choice.provider';
 
 export const App = () => {
-  return <RouterComponent />;
+  return (
+    <UserChoiceProvider>
+          <RouterComponent />
+    </UserChoiceProvider>
+    );
 };

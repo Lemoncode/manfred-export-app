@@ -1,5 +1,7 @@
 import React from 'react';
-import {useState} from 'react';
+
+import { UserChoiceContext } from '@/core/user-choice';
+
 
 interface Props {
   onSetManfredJson: (text: string) => void;
@@ -7,18 +9,17 @@ interface Props {
 
 export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
 
+  const [text, setText] = React.useState<string>("");
+
   const {onSetManfredJson} = props;
 
-  const [text, setText] = useState('');
-
-  const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
   };
 
   const handleExport = () => {
 
     if (text.trim().length !== 0) {
-      alert('here will go the export to word');
       onSetManfredJson(text);
     } else {
       alert('No content');
