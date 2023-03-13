@@ -1,1 +1,1 @@
-export { exportManfredJSonToWordAndDownload } from './engine';
+export * from './engine';
