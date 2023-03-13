@@ -1,16 +1,21 @@
 import React from 'react';
-import { useState } from 'react';
 
-export const ManfredJsonInput: React.FC = () => {
-  const [text, setText] = useState('');
+interface Props {
+  onSetManfredJson: (text: string) => void;
+}
 
-  const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
+export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
+  const [text, setText] = React.useState<string>('');
+
+  const { onSetManfredJson } = props;
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
   };
 
   const handleExport = () => {
     if (text.trim().length !== 0) {
-      alert('here will go the export to word');
+      onSetManfredJson(text);
     } else {
       alert('No content');
     }

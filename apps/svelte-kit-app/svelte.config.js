@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { resolve } from "path";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,8 +9,15 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
-	}
+		alias: {
+			$pods: resolve('src/pods'),
+			$scenes: resolve('src/scenes'),
+		},
+		adapter: adapter(),
+		files: {
+			routes: 'src/scenes',
+		}
+	},
 };
 
 export default config;
