@@ -1,18 +1,24 @@
 import React from 'react';
 import { TemplateExport } from './template-export.component';
 import { mockedManfredJsonProfile } from './mock';
-import { exportManfredJSonToWord } from '@lemoncode/manfred2word';
+import { exportManfredJSonToWordAndDownload } from '@lemoncode/manfred2word';
 
 export const TemplateExportContainer: React.FC = () => {
   const [manfredJSON, setManfredJSON] = React.useState('');
+  const [filename, setFilename] = React.useState('');
 
   React.useEffect(() => {
     setManfredJSON(mockedManfredJsonProfile);
   }, []);
 
-  const handleExport = async () => {
-    const buffer = exportManfredJSonToWord();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    exportManfredJSonToWordAndDownload(filename);
   };
 
-  return <TemplateExport onExport={handleExport} />;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFilename(e.target.value);
+  };
+
+  return <TemplateExport onSubmit={handleSubmit} onChange={handleChange} />;
 };

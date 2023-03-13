@@ -2,7 +2,6 @@ import { Document, Packer } from 'docx';
 import { download } from './engine.helpers';
 import { doc } from './mock-document';
 
-
 // Mock
 const createMetaDocument = (): Document => doc;
 
