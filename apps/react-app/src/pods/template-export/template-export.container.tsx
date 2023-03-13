@@ -13,7 +13,9 @@ export const TemplateExportContainer: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    exportManfredJSonToWordAndDownload(filename);
+    if (filename !== '') {
+      exportManfredJSonToWordAndDownload(filename);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
