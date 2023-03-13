@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { createDefaultUserChoiceModel } from "@/pods/manfred-json-input/manfred-json-input.vm";
-import { UserChoiceContext} from "./user-choice.context";
+import { createDefaultUserChoiceModel } from '@/pods/manfred-json-input/manfred-json-input.vm';
+import { UserChoiceContext, UserChoiceContextModel } from './user-choice.context';
 
 interface Props {
   children: React.ReactNode;
@@ -14,10 +14,12 @@ export const UserChoiceProvider: React.FC<Props> = ({ children }) => {
     <UserChoiceContext.Provider
       value={{
         userChoice,
-        setUserChoice
+        setUserChoice,
       }}
     >
       {children}
     </UserChoiceContext.Provider>
   );
 };
+
+export const useUserChoiceContext = (): UserChoiceContextModel => React.useContext(UserChoiceContext);
