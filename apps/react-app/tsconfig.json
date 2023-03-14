@@ -1,6 +1,6 @@
 {
   "extends": "@lemoncode/tsconfig/react.json",
-  "include": ["src", "@/vite-env.d.ts"],
+  "include": ["src", "@/vite-env.d.ts", "../angular-app/core"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": "src",

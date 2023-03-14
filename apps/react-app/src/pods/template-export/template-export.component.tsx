@@ -1,18 +1,24 @@
+import { MfButton } from '@/common/forms';
 import React from 'react';
 
-export const TemplateExport: React.FC = () => {
+interface Props {
+  onExport: () => void;
+}
 
-  const handleExport = () => {
-    console.log("Me exporto");
-  }
+export const TemplateExport: React.FC<Props> = props => {
+  const { onExport } = props;
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onExport();
+  };
 
   return (
-  <>
-  <h1>Hello for TemplateExportComponent</h1>
-  <button onClick={handleExport}>Export</button>
-  </>
-
-
+    <>
+      <h1>Hello for TemplateExportComponent</h1>
+      <form onSubmit={handleSubmit}>
+        <MfButton type="submit">Export</MfButton>
+      </form>
+    </>
   );
 };
