@@ -1,4 +1,5 @@
-export const mockedManfredJsonProfile = `{
+export const mockedManfredJsonProfile = `
+{
   "settings": {
     "language": "ES",
     "lastUpdate": "2022-02-28",
@@ -9,7 +10,7 @@ export const mockedManfredJsonProfile = `{
       "name": "David",
       "surnames": "Bonilla Fuertes",
       "title": "Fundador en Manfred / C-Level Executive",
-      "description": "Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en la gestión de equipos y proyectos de construcción de activos digitales.\\n\\nMe apasiona contribuir en todo el ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a clientes, y también involucrarme en la comercialización del mismo.\\n\\nMe gusta trabajar con gente y para la gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos de usuarios y conferencias técnicas; y, a veces, organizándolos.\\n",
+      "description": "Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en la gestión de equipos y proyectos de construcción de activos digitales.\n\nMe apasiona contribuir en todo el ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a clientes, y también involucrarme en la comercialización del mismo.\n\nMe gusta trabajar con gente y para la gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos de usuarios y conferencias técnicas; y, a veces, organizándolos.\n",
       "avatar": {
         "alt": "foto de David Bonilla",
         "link": "https://pbs.twimg.com/profile_images/1387692137664458758/-Z8bTzmY_400x400.jpg"
@@ -67,7 +68,7 @@ export const mockedManfredJsonProfile = `{
         "name": "Diego",
         "surnames": "Mariño",
         "title": "Fundador de Ducksboard y antiguo Principal Product Manager en New Relic",
-        "description": "Amigo con el que siempre valido ideas y estrategias de Product Management.\\n",
+        "description": "Amigo con el que siempre valido ideas y estrategias de Product Management.\n",
         "contact": {
           "publicProfiles": [
             {
@@ -129,19 +130,19 @@ export const mockedManfredJsonProfile = `{
       },
       {
         "topic": "¿Cuáles son tus principales herramientas de trabajo (IDEs, editores de texto, clientes de correo, Excel...) y cómo las utilizas (plugins, configuraciones, trucos)?",
-        "fact": "Organizo mi tareas personales con **Passion Planner** (un sistema offline) y las profesionales con **Jira** y **Trello**.Tengo tableros compartidos con distintos equipos de trabajo. Uso labels y fechas de entrega para priorizar mi trabajo.\\n\\nProgramo HTML/CSS/JavaScript con **Visual Studio Code**. Uso algunas extensiones como ‘GitHistory’, ‘Paste JSON as Code’, o ‘Bookmarks’, pero tanto el trabajo con **Git** como la construcción y la construcción con **Gulp** me gusta hacerlo por línea de comandos.\\n\\nTambién uso bastante **Postman**, además de para hacer pruebas, directamente como interfaz para APIs REST que tengo en producción."
+        "fact": "Organizo mi tareas personales con **Passion Planner** (un sistema offline) y las profesionales con **Jira** y **Trello**.Tengo tableros compartidos con distintos equipos de trabajo. Uso labels y fechas de entrega para priorizar mi trabajo.\n\nProgramo HTML/CSS/JavaScript con **Visual Studio Code**. Uso algunas extensiones como ‘GitHistory’, ‘Paste JSON as Code’, o ‘Bookmarks’, pero tanto el trabajo con **Git** como la construcción y la construcción con **Gulp** me gusta hacerlo por línea de comandos.\n\nTambién uso bastante **Postman**, además de para hacer pruebas, directamente como interfaz para APIs REST que tengo en producción."
       },
       {
         "topic": "¿Qué recursos online (webs, blogs, apps, foros, etc) usas para ayudarte a desempeñar tu trabajo?",
-        "fact": "Para informarme de lo más relevante del sector, uso bastante **Twitter** y tengo varias listas específicas por temas. También leo regularmente [Hacker News](https://news.ycombinator.com/) y [Increment](https://increment.com/) y escucho podcasts como[Más que Startups](https://masquestartups.com/).\\n\\nSi me atasco con algo de código suelo googlear bastante, no tengo un sitio de referencia al que ir, pero muchas veces acabo -supongo que como todos- en [StackOverflow](https://stackoverflow.com/).\\n\\nPertenezco a un canal de Slack llamado **‘Camaradas del Metal’** donde unas pocas decenas de personas con bastante experiencia suelen comentar y dar contexto a las noticias relacionadas con el emprendimiento tecnológico."
+        "fact": "Para informarme de lo más relevante del sector, uso bastante **Twitter** y tengo varias listas específicas por temas. También leo regularmente [Hacker News](https://news.ycombinator.com/) y [Increment](https://increment.com/) y escucho podcasts como[Más que Startups](https://masquestartups.com/).\n\nSi me atasco con algo de código suelo googlear bastante, no tengo un sitio de referencia al que ir, pero muchas veces acabo -supongo que como todos- en [StackOverflow](https://stackoverflow.com/).\n\nPertenezco a un canal de Slack llamado **‘Camaradas del Metal’** donde unas pocas decenas de personas con bastante experiencia suelen comentar y dar contexto a las noticias relacionadas con el emprendimiento tecnológico."
       },
       {
         "topic": "¿Qué nuevas tecnologías y/o herramientas te llaman especialmente la atención y por qué?",
-        "fact": "Soy muy fan de **Git**, no sólo aplicado al código sino prácticamente a cualquier trabajo colaborativo como documentación o contratos.\\n\\nMe gusta mucho todo el Ecosistema JavaScript que va más allá del navegador (**React**, **Node**) porque me permite trabajar desde el interfaz a la base de datos (con MongoDB) con la misma sintaxis.\\n\\nTambién me interesa mucho las posibilidades que puede aportar **Blockchain** para cambiar por completo y democratizar el acceso a según qué sectores y nichos, antes vetados a unos pocos."
+        "fact": "Soy muy fan de **Git**, no sólo aplicado al código sino prácticamente a cualquier trabajo colaborativo como documentación o contratos.\n\nMe gusta mucho todo el Ecosistema JavaScript que va más allá del navegador (**React**, **Node**) porque me permite trabajar desde el interfaz a la base de datos (con MongoDB) con la misma sintaxis.\n\nTambién me interesa mucho las posibilidades que puede aportar **Blockchain** para cambiar por completo y democratizar el acceso a según qué sectores y nichos, antes vetados a unos pocos."
       },
       {
         "topic": "¿Hay alguna empresa tecnológica que te llame la atención por lo bien que lo está haciendo?",
-        "fact": "Creo que [Microsoft](https://www.microsoft.com/es-es/) está dando los pasos correctos para crear todo un sistema de tooling y despliegue que puede atraer a los programadores.\\n\\nTambién me gusta todo lo que está construyendo [GitLab](https://about.gitlab.com/) y como lo está vendiendo, con una gran documentación y muchísima transparencia."
+        "fact": "Creo que [Microsoft](https://www.microsoft.com/es-es/) está dando los pasos correctos para crear todo un sistema de tooling y despliegue que puede atraer a los programadores.\n\nTambién me gusta todo lo que está construyendo [GitLab](https://about.gitlab.com/) y como lo está vendiendo, con una gran documentación y muchísima transparencia."
       },
       {
         "topic": "¿Cómo intentas mantener actualizados tus conocimientos y habilidades profesionales?",
@@ -776,4 +777,5 @@ export const mockedManfredJsonProfile = `{
       }
     ]
   }
-}`;
+}
+`;

@@ -12,8 +12,10 @@ export const TemplateExportContainer: React.FC = () => {
   }, []);
 
   const handleExport = async () => {
-    const prueba = JSON.parse(text);
-    const manfredJsonContent = parseStringToManfredJSon(text);
+    // TODO: Issue here we need to properly escape \n
+    const escapedContent = text.replace(/\n/g, '');
+    const prueba = JSON.parse(escapedContent);
+    const manfredJsonContent = parseStringToManfredJSon(escapedContent);
     exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
   };
 
