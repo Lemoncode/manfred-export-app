@@ -2,10 +2,8 @@ import { Document, Packer } from 'docx';
 import { ManfredAwesomicCV } from '../model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
-import { doc } from './mock-document';
 import { generateProfileSection } from './doc-parts';
 
-// Mock
 const createMetaDocument = (cv: ManfredAwesomicCV): Document => {
   return new Document({
     sections: [
