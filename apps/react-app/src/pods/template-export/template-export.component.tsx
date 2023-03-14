@@ -1,3 +1,4 @@
+import { MfButton } from '@/common/forms';
 import React from 'react';
 
 interface Props {
@@ -16,7 +17,7 @@ export const TemplateExport: React.FC<Props> = props => {
     <>
       <h1>Hello for TemplateExportComponent</h1>
       <form onSubmit={handleSubmit}>
-        <button type="submit">Export</button>
+        <MfButton type="submit">Export</MfButton>
       </form>
     </>
   );

@@ -1,3 +1,4 @@
+import { MfButton, MfTextArea } from '@/common/forms';
 import React from 'react';
 
 interface Props {
@@ -26,16 +27,16 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
       <h1>Hello from ManfredJsonInputComponent</h1>
       <form>
         <label>Paste here your JSON in MAC Format</label>
-        <textarea
+        <MfTextArea
           id="textInput"
           name="textInput"
           rows={20}
           cols={50}
           onChange={event => handleChange(event)}
           autoComplete="off"
-        ></textarea>
+        ></MfTextArea>
       </form>
-      <button onClick={handleExport}>Export your CV</button>
+      <MfButton onClick={handleExport}>Export your CV</MfButton>
     </>
   );
 };
