@@ -3,9 +3,19 @@ import { ManfredAwesomicCV } from '../model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { doc } from './mock-document';
+import { generateProfileSection } from './doc-parts';
 
 // Mock
-const createMetaDocument = (): Document => doc;
+const createMetaDocument = (cv: ManfredAwesomicCV): Document => {
+  return new Document({
+    sections: [
+      {
+        properties: {},
+        children: [generateProfileSection(cv)],
+      },
+    ],
+  });
+};
 
 export const parseStringToManfredJSon = (manfredJsonContent: string): ManfredAwesomicCV => {
   const cleanedContent = removeInvalidChars(manfredJsonContent);
@@ -13,7 +23,7 @@ export const parseStringToManfredJSon = (manfredJsonContent: string): ManfredAwe
 };
 
 export const exportManfredJSonToWordAndDownload = async (filename: string, manfredJsonContent: ManfredAwesomicCV) => {
-  const doc = createMetaDocument();
+  const doc = createMetaDocument(manfredJsonContent);
   const blob = await Packer.toBlob(doc);
   download(blob, filename);
 };
