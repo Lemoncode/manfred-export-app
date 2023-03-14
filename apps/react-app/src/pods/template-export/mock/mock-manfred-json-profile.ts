@@ -1,3 +1,14 @@
+/*
+export const mockedManfredJsonProfile = `
+{
+  "settings": {
+    "language": "ES\n otra linea",
+    "lastUpdate": "2022-02-28",
+    "MACVersion": "0.3"
+  }
+}`;
+*/
+
 export const mockedManfredJsonProfile = `
 {
   "settings": {
