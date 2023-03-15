@@ -1,19 +1,35 @@
-import { Document, Packer } from 'docx';
+import { Document, Packer, IRunOptions } from 'docx';
 import { ManfredAwesomicCV } from '../model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
-import { generateProfileSection } from './doc-parts';
+import { generateParagraph } from './doc-parts';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document => {
   const name = cv?.aboutMe?.profile?.name ?? '';
   const surnames = cv?.aboutMe?.profile?.surnames ?? '';
+  const fullName = `${name} ${surnames}`;
+  const title = cv?.aboutMe?.profile?.title ?? '';
   const email = cv?.aboutMe?.profile?.contact?.contactMails ?? '';
+
+  type TextRunStyles = Omit<IRunOptions, 'text'>;
+  const styles = {
+    aboutme: {
+      name: {
+        bold: true,
+        size: '20pt',
+      } as TextRunStyles,
+      title: {
+        bold: true,
+        size: '10pt',
+      } as TextRunStyles,
+    },
+  };
 
   return new Document({
     sections: [
       {
         properties: {},
-        children: [generateProfileSection(name), generateProfileSection(surnames)],
+        children: [generateParagraph(name), generateParagraph(title)],
       },
     ],
   });
