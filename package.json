@@ -8,6 +8,7 @@
   ],
   "description": "Manfred export app - Lemoncode Máster Front End TFM",
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build",
     "start": "turbo run start --continue",
     "start:react": "npm start -- --filter=react-app",
