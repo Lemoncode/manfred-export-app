@@ -5,11 +5,15 @@ import { removeInvalidChars } from './json-parse.business';
 import { generateProfileSection } from './doc-parts';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document => {
+  const name = cv?.aboutMe?.profile?.name ?? '';
+  const surnames = cv?.aboutMe?.profile?.surnames ?? '';
+  const email = cv?.aboutMe?.profile?.contact?.contactMails ?? '';
+
   return new Document({
     sections: [
       {
         properties: {},
-        children: [generateProfileSection(cv)],
+        children: [generateProfileSection(name), generateProfileSection(surnames)],
       },
     ],
   });
