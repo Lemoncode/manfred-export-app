@@ -1,5 +1,5 @@
 // TODO: define alias
-import { ManfredAwesomicCV } from '../../model';
+import { ManfredAwesomicCV } from '@/model';
 import { Paragraph, TextRun } from 'docx';
 
 export const generateProfileSection = (cv: ManfredAwesomicCV): Paragraph => {

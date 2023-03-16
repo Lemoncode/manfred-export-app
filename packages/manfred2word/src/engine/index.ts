@@ -1,5 +1,5 @@
 import { Document, Packer } from 'docx';
-import { ManfredAwesomicCV } from '../model';
+import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { generateProfileSection } from './doc-parts';
