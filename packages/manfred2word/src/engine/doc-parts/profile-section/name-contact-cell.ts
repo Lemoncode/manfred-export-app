@@ -16,6 +16,32 @@ import emailImage from '@/assets/email.png';
 import { styles } from '../doc-parts.styles';
 import { ProfileSectionVm } from './profile-section.vm';
 
+const generateFullName = (fullname: string): Paragraph =>
+  new Paragraph({
+    children: [new TextRun({ text: fullname, ...styles.aboutme.fullname })],
+    ...styles.paragraphSpacing,
+  });
+
+const generateTitle = (title: string): Paragraph =>
+  new Paragraph({
+    children: [new TextRun({ text: title, ...styles.aboutme.title })],
+  });
+
+const generateContactLabel = (): Paragraph =>
+  new Paragraph({
+    children: [new TextRun({ text: 'CONTACTO', size: '10pt', bold: true })],
+    spacing: {
+      after: 100,
+    },
+  });
+
+const generateLineSpacer = (): Paragraph =>
+  new Paragraph({
+    text: '',
+    ...styles.lineStyles,
+    ...styles.paragraphSpacing,
+  });
+
 /*
   ** This part of the CV *
   =============================================
@@ -35,24 +61,10 @@ export const generateNameContactCell = (profileSectionVm: ProfileSectionVm): Tab
     ...styles.cell,
     ...styles.marginCell,
     children: [
-      new Paragraph({
-        children: [new TextRun({ text: fullname, ...styles.aboutme.fullname })],
-        ...styles.paragraphSpacing,
-      }),
-      new Paragraph({
-        children: [new TextRun({ text: title, ...styles.aboutme.title })],
-      }),
-      new Paragraph({
-        text: '',
-        ...styles.lineStyles,
-        ...styles.paragraphSpacing,
-      }),
-      new Paragraph({
-        children: [new TextRun({ text: 'CONTACTO', size: '10pt', bold: true })],
-        spacing: {
-          after: 100,
-        },
-      }),
+      generateFullName(fullname),
+      generateTitle(title),
+      generateLineSpacer(),
+      generateContactLabel(),
       ...emails.map((email: string) => {
         return new Paragraph({
           children: [
@@ -71,11 +83,7 @@ export const generateNameContactCell = (profileSectionVm: ProfileSectionVm): Tab
           ],
         });
       }),
-      new Paragraph({
-        text: '',
-        ...styles.lineStyles,
-        ...styles.paragraphSpacing,
-      }),
+      generateLineSpacer(),
       new Paragraph({
         children: [new TextRun({ text: 'MIS ENLACES', size: '10pt', bold: true })],
         spacing: {
