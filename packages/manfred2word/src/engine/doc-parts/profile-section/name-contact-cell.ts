@@ -120,12 +120,9 @@ const generateProfileChildrenCell = (profileSectionVm: ProfileSectionVm): ITable
   | ------------------------------------------|
 
 */
-export const generateNameContactCell = (profileSectionVm: ProfileSectionVm): TableCell => {
-  const { fullname, title, emails } = profileSectionVm;
-
-  return new TableCell({
+export const generateNameContactCell = (profileSectionVm: ProfileSectionVm): TableCell =>
+  new TableCell({
     ...styles.cell,
     ...styles.marginCell,
     children: generateProfileChildrenCell(profileSectionVm),
   });
-};
