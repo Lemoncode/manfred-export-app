@@ -6,10 +6,19 @@ import { generateProfileSection } from './doc-parts';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
+    styles: {
+      default: {
+        document: {
+          run: {
+            font: 'Inter',
+          },
+        },
+      },
+    },
     sections: [
       {
         properties: {},
-        children: generateProfileSection(cv),
+        children: [generateProfileSection(cv)],
       },
     ],
   });
