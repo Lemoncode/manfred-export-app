@@ -1,4 +1,3 @@
-// TODO: define alias
 import {
   Paragraph,
   Table,
@@ -12,11 +11,12 @@ import {
   ExternalHyperlink,
   AlignmentType,
 } from 'docx';
-import { ManfredAwesomicCV } from '../../../model';
-import emailImage from '../../assets/email.png';
+import { ManfredAwesomicCV } from '@/model';
+import emailImage from '@/assets/email.png';
 import { styles } from '../doc-parts.styles';
 import { ProfileSectionVm } from './profile-section.vm';
 import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
+import { generateNameContactCell } from './name-contact-cell';
 
 const generateProfileSectionInner = (profileSectionVm: ProfileSectionVm): Table => {
   const { fullname, title, emails, description } = profileSectionVm;
@@ -26,59 +26,9 @@ const generateProfileSectionInner = (profileSectionVm: ProfileSectionVm): Table 
     rows: [
       new TableRow({
         children: [
-          new TableCell({
-            ...styles.cell,
-            ...styles.marginCell,
-            children: [
-              new Paragraph({
-                children: [new TextRun({ text: fullname, ...styles.aboutme.fullname })],
-                ...styles.paragraphSpacing,
-              }),
-              new Paragraph({
-                children: [new TextRun({ text: title, ...styles.aboutme.title })],
-              }),
-              new Paragraph({
-                text: '',
-                ...styles.lineStyles,
-                ...styles.paragraphSpacing,
-              }),
-              new Paragraph({
-                children: [new TextRun({ text: 'CONTACTO', size: '10pt', bold: true })],
-                spacing: {
-                  after: 100,
-                },
-              }),
-              ...emails.map((email: string) => {
-                return new Paragraph({
-                  children: [
-                    new ImageRun({
-                      data: emailImage,
-                      transformation: {
-                        width: 20,
-                        height: 20,
-                      },
-                    }),
-                    new TextRun({ text: '  ' }),
-                    new ExternalHyperlink({
-                      children: [new TextRun({ text: email })],
-                      link: `mailto:${email}`,
-                    }),
-                  ],
-                });
-              }),
-              new Paragraph({
-                text: '',
-                ...styles.lineStyles,
-                ...styles.paragraphSpacing,
-              }),
-              new Paragraph({
-                children: [new TextRun({ text: 'MIS ENLACES', size: '10pt', bold: true })],
-                spacing: {
-                  after: 100,
-                },
-              }),
-            ],
-          }),
+          generateNameContactCell(profileSectionVm),
+          // TODO: refactor this
+          // generateDescriptionCell(profileSectionVm),
           new TableCell({
             ...styles.marginCell,
             children: [
@@ -98,14 +48,6 @@ const generateProfileSectionInner = (profileSectionVm: ProfileSectionVm): Table 
 };
 
 export const generateProfileSection = (cv: ManfredAwesomicCV): Table => {
-  /*
-  const name = cv?.aboutMe?.profile?.name ?? '';
-  const surnames = cv?.aboutMe?.profile?.surnames ?? '';
-  const title = cv?.aboutMe?.profile?.title ?? '';
-  const description = cv?.aboutMe?.profile?.description ?? '';
-  const fullname = `${name ?? ''} ${surnames ?? ''}`;
-  const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
-*/
   const profileSectionVm = mapFromMacCvToProfileSectionVm(cv);
 
   return generateProfileSectionInner(profileSectionVm);
