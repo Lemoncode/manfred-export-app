@@ -1,19 +1,19 @@
 import { Paragraph, TextRun, TableCell, ITableCellOptions, ImageRun, ExternalHyperlink } from 'docx';
 import emailImage from '@/assets/email.png';
-import { styles } from '../doc-parts.styles';
 import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
 import { revelantLinksImages } from './profile-section.helpers';
 import { capitalizeWords } from '../../engine.helpers';
+import { styles } from './name-contact-cell.styles';
 
 const generateFullName = (fullname: string): Paragraph =>
   new Paragraph({
-    children: [new TextRun({ text: fullname, ...styles.aboutme.fullname })],
+    children: [new TextRun({ text: fullname, ...styles.fullname })],
     ...styles.paragraphSpacing,
   });
 
 const generateTitle = (title: string): Paragraph =>
   new Paragraph({
-    children: [new TextRun({ text: title, ...styles.aboutme.title })],
+    children: [new TextRun({ text: title, ...styles.title })],
   });
 
 const generateContactLabel = (): Paragraph =>
