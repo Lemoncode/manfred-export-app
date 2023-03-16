@@ -1,5 +1,5 @@
-import { ManfredAwesomicCV } from '../../../model';
-import { ProfileSectionVm } from './profile-section.vm';
+import { ManfredAwesomicCV } from '@/model';
+import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
 
 // TODO Add Unit tests to this mapper
 export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSectionVm => {
@@ -9,6 +9,7 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
   const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
+  const revelantLinks = (cv?.aboutMe?.relevantLinks as RelevantLink[]) ?? [];
 
   return {
     name,
@@ -17,5 +18,6 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
     description,
     fullname,
     emails,
+    revelantLinks,
   };
 };

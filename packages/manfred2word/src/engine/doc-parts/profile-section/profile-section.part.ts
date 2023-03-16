@@ -7,12 +7,8 @@ import {
   ITableRowOptions,
   TableCell,
   ITableCellOptions,
-  ImageRun,
-  ExternalHyperlink,
-  AlignmentType,
 } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
-import emailImage from '@/assets/email.png';
 import { styles } from '../doc-parts.styles';
 import { ProfileSectionVm } from './profile-section.vm';
 import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
