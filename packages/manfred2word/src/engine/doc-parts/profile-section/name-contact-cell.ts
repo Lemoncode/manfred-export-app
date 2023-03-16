@@ -42,6 +42,26 @@ const generateLineSpacer = (): Paragraph =>
     ...styles.paragraphSpacing,
   });
 
+const generateEMailsParagraphs = (emails: string[]): Paragraph[] =>
+  emails.map((email: string) => {
+    return new Paragraph({
+      children: [
+        new ImageRun({
+          data: emailImage,
+          transformation: {
+            width: 20,
+            height: 20,
+          },
+        }),
+        new TextRun({ text: '  ' }),
+        new ExternalHyperlink({
+          children: [new TextRun({ text: email })],
+          link: `mailto:${email}`,
+        }),
+      ],
+    });
+  });
+
 /*
   ** This part of the CV *
   =============================================
@@ -65,24 +85,7 @@ export const generateNameContactCell = (profileSectionVm: ProfileSectionVm): Tab
       generateTitle(title),
       generateLineSpacer(),
       generateContactLabel(),
-      ...emails.map((email: string) => {
-        return new Paragraph({
-          children: [
-            new ImageRun({
-              data: emailImage,
-              transformation: {
-                width: 20,
-                height: 20,
-              },
-            }),
-            new TextRun({ text: '  ' }),
-            new ExternalHyperlink({
-              children: [new TextRun({ text: email })],
-              link: `mailto:${email}`,
-            }),
-          ],
-        });
-      }),
+      ...generateEMailsParagraphs(emails),
       generateLineSpacer(),
       new Paragraph({
         children: [new TextRun({ text: 'MIS ENLACES', size: '10pt', bold: true })],
