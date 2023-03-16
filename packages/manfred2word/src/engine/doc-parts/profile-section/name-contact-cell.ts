@@ -35,6 +35,14 @@ const generateContactLabel = (): Paragraph =>
     },
   });
 
+const generateMyLinksLabel = (): Paragraph =>
+  new Paragraph({
+    children: [new TextRun({ text: 'MIS ENLACES', size: '10pt', bold: true })],
+    spacing: {
+      after: 100,
+    },
+  });
+
 const generateLineSpacer = (): Paragraph =>
   new Paragraph({
     text: '',
@@ -62,6 +70,23 @@ const generateEMailsParagraphs = (emails: string[]): Paragraph[] =>
     });
   });
 
+const generateProfileChildrenCell = (profileSectionVm: ProfileSectionVm): ITableCellOptions['children'] => {
+  const { fullname, title, emails } = profileSectionVm;
+  let children: ITableCellOptions['children'] = [];
+
+  children = [...children, generateFullName(fullname)];
+  children = [...children, generateTitle(title)];
+  children = [...children, generateLineSpacer()];
+
+  emails &&
+    (children = [...children, generateContactLabel(), ...generateEMailsParagraphs(emails), generateLineSpacer()]);
+
+  // TODO: add links && approach like in emails
+  children = [...children, generateMyLinksLabel()];
+
+  return children;
+};
+
 /*
   ** This part of the CV *
   =============================================
@@ -80,19 +105,6 @@ export const generateNameContactCell = (profileSectionVm: ProfileSectionVm): Tab
   return new TableCell({
     ...styles.cell,
     ...styles.marginCell,
-    children: [
-      generateFullName(fullname),
-      generateTitle(title),
-      generateLineSpacer(),
-      generateContactLabel(),
-      ...generateEMailsParagraphs(emails),
-      generateLineSpacer(),
-      new Paragraph({
-        children: [new TextRun({ text: 'MIS ENLACES', size: '10pt', bold: true })],
-        spacing: {
-          after: 100,
-        },
-      }),
-    ],
+    children: generateProfileChildrenCell(profileSectionVm),
   });
 };
