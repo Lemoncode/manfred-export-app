@@ -1,19 +1,10 @@
-import {
-  Paragraph,
-  Table,
-  TextRun,
-  ITableOptions,
-  TableRow,
-  ITableRowOptions,
-  TableCell,
-  ITableCellOptions,
-} from 'docx';
+import { Table, ITableOptions, TableRow, ITableRowOptions } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
-import { styles } from '../doc-parts.styles';
 import { ProfileSectionVm } from './profile-section.vm';
 import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
 import { generateNameContactCell } from './name-contact-cell';
 import { generateDescriptionCell } from './description-cell';
+import { styles } from './profile-section.styles';
 
 const generateProfileSectionInner = (profileSectionVm: ProfileSectionVm): Table =>
   new Table({

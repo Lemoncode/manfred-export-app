@@ -1,7 +1,5 @@
-import { IRunOptions, WidthType, ITableCellOptions, IBorderOptions } from 'docx';
-
-type TextRunStyles = Omit<IRunOptions, 'text'>;
-type TableCellStyles = Omit<ITableCellOptions, 'children'>;
+import { WidthType, IBorderOptions } from 'docx';
+import { TableCellStyles, TextRunStyles } from '../doc-parts.vm';
 
 export const styles = {
   cell: {

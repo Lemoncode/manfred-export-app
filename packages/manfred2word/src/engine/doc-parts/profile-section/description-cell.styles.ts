@@ -1,7 +1,4 @@
-import { IRunOptions, ITableCellOptions } from 'docx';
-
-type TextRunStyles = Omit<IRunOptions, 'text'>;
-type TableCellStyles = Omit<ITableCellOptions, 'children'>;
+import { TableCellStyles, TextRunStyles } from '../doc-parts.vm';
 
 export const styles = {
   marginCell: {
