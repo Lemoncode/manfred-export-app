@@ -15,14 +15,11 @@ import {
 import { ManfredAwesomicCV } from '../../model';
 import emailImage from '../../assets/email.png';
 import { styles } from './doc-parts.styles';
+import { ProfileSectionVm } from './profile-section.vm';
+import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
 
-export const generateProfileSection = (cv: ManfredAwesomicCV): Table => {
-  const name = cv?.aboutMe?.profile?.name ?? '';
-  const surnames = cv?.aboutMe?.profile?.surnames ?? '';
-  const title = cv?.aboutMe?.profile?.title ?? '';
-  const description = cv?.aboutMe?.profile?.description ?? '';
-  const fullname = `${name ?? ''} ${surnames ?? ''}`;
-  const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
+const generateProfileSectionInner = (profileSectionVm: ProfileSectionVm): Table => {
+  const { fullname, title, emails, description } = profileSectionVm;
 
   return new Table({
     ...styles.table,
@@ -98,4 +95,18 @@ export const generateProfileSection = (cv: ManfredAwesomicCV): Table => {
       } as ITableRowOptions),
     ],
   } as ITableOptions);
+};
+
+export const generateProfileSection = (cv: ManfredAwesomicCV): Table => {
+  /*
+  const name = cv?.aboutMe?.profile?.name ?? '';
+  const surnames = cv?.aboutMe?.profile?.surnames ?? '';
+  const title = cv?.aboutMe?.profile?.title ?? '';
+  const description = cv?.aboutMe?.profile?.description ?? '';
+  const fullname = `${name ?? ''} ${surnames ?? ''}`;
+  const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
+*/
+  const profileSectionVm = mapFromMacCvToProfileSectionVm(cv);
+
+  return generateProfileSectionInner(profileSectionVm);
 };
