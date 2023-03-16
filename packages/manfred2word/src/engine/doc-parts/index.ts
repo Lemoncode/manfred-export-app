@@ -1,1 +1,1 @@
-export * from './profile-section.part';
+export * from './profile-section/profile-section.part';

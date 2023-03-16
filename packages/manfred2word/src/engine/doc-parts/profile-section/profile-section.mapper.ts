@@ -1,4 +1,4 @@
-import { ManfredAwesomicCV } from '../../model';
+import { ManfredAwesomicCV } from '../../../model';
 import { ProfileSectionVm } from './profile-section.vm';
 
 // TODO Add Unit tests to this mapper
