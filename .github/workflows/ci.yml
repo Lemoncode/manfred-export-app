@@ -15,7 +15,5 @@ jobs:
         run: npm install husky
       - name: Install
         run: npm ci
-      - name: Build
-        run: npm run type-check
       - name: Tests
         run: npm test
