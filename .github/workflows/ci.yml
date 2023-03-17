@@ -2,16 +2,16 @@ name: Continuos Integration workflow
 
 on: pull_request
 
+env:
+  HUSKY: 0
+
 jobs:
-  ci-menu-public-portal:
+  ci:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/manfred2word
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install
-        run: HUSKY=0 npm ci
+        run: npm ci
       - name: Tests
         run: npm test

@@ -11,6 +11,7 @@
     "build": "turbo run build",
     "start": "turbo run start --continue",
     "start:react": "npm start -- --filter=react-app",
+    "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "publish-packages": "turbo run build --filter=./packages/* && changeset publish",
