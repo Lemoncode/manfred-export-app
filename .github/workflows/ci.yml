@@ -12,8 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install
-        run: |
-          npm pkg delete scripts.prepare
-          npm ci
+        run: HUSKY=0 npm ci
       - name: Tests
         run: npm test
