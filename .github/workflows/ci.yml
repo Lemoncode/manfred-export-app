@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install Husky
+        run: npm install husky
       - name: Install
         run: npm ci
       - name: Build
