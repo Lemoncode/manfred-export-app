@@ -1,0 +1,19 @@
+name: Continuos Integration workflow
+
+on: pull_request
+
+jobs:
+  ci-menu-public-portal:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/manfred2word
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run type-check
+      - name: Tests
+        run: npm test
