@@ -1,4 +1,4 @@
-import { TableCellStyles, TextRunStyles } from '../doc-parts.vm';
+import { TableCellStyles, TextRunStyles } from '../../doc-parts.vm';
 
 export const styles = {
   marginCell: {

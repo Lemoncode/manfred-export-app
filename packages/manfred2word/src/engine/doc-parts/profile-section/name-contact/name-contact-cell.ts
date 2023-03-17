@@ -1,8 +1,8 @@
 import { Paragraph, TextRun, TableCell, ITableCellOptions, ImageRun, ExternalHyperlink } from 'docx';
 import emailImage from '@/assets/email.png';
-import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
-import { revelantLinksImages } from './profile-section.helpers';
-import { capitalizeWords } from '../../engine.helpers';
+import { ProfileSectionVm, RelevantLink } from '../profile-section.vm';
+import { revelantLinksImages } from '../profile-section.helpers';
+import { capitalizeWords } from '../../../engine.helpers';
 import { styles } from './name-contact-cell.styles';
 
 const generateFullName = (fullname: string): Paragraph =>

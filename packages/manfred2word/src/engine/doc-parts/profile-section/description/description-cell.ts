@@ -1,6 +1,6 @@
 import { ITableCellOptions, Paragraph, TableCell, TextRun } from 'docx';
 import { styles } from './description-cell.styles';
-import { ProfileSectionVm } from './profile-section.vm';
+import { ProfileSectionVm } from '../profile-section.vm';
 
 /*
   ** This part of the CV *
