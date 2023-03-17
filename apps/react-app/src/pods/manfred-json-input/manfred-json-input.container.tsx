@@ -10,7 +10,6 @@ export const ManfredJsonInputContainer: React.FC = () => {
   const navigate = useNavigate();
 
   const handleData = (text: string) => {
-    console.log('text', text);
     setUserChoice({ ...userChoice, manfredJsonContent: text });
     navigate(switchRoutes.templateExportScene);
   };

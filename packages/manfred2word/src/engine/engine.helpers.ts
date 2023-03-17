@@ -9,3 +9,10 @@ export const download = (blob: Blob, filename: string) => {
   window.URL.revokeObjectURL(url);
   a.remove();
 };
+
+export const capitalizeWords = (text: string): string => {
+  return text
+    .split(' ')
+    .map(c => c.charAt(0).toUpperCase() + c.slice(1))
+    .join(' ');
+};

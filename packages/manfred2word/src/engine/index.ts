@@ -1,11 +1,20 @@
-import { Document, Packer } from 'docx';
+import { Document, Packer, IRunOptions } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { generateProfileSection } from './doc-parts';
 
-const createMetaDocument = (cv: ManfredAwesomicCV): Document => {
-  return new Document({
+const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
+  new Document({
+    styles: {
+      default: {
+        document: {
+          run: {
+            font: 'Inter',
+          },
+        },
+      },
+    },
     sections: [
       {
         properties: {},
@@ -13,7 +22,6 @@ const createMetaDocument = (cv: ManfredAwesomicCV): Document => {
       },
     ],
   });
-};
 
 export const parseStringToManfredJSon = (manfredJsonContent: string): ManfredAwesomicCV => {
   const cleanedContent = removeInvalidChars(manfredJsonContent);
