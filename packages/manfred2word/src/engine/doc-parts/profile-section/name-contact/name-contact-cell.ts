@@ -1,7 +1,7 @@
 import { Paragraph, TextRun, TableCell, ITableCellOptions, ImageRun, ExternalHyperlink } from 'docx';
 import emailImage from '@/assets/email.png';
 import { ProfileSectionVm, RelevantLink } from '../profile-section.vm';
-import { revelantLinksImages } from '../profile-section.helpers';
+import { revelantLinksImages } from '../profile-section.business';
 import { capitalizeWords } from '../../../engine.helpers';
 import { styles } from './name-contact-cell.styles';
 
