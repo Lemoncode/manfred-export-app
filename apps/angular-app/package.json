@@ -6,7 +6,7 @@
     "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --browsers=ChromeHeadlessNoSandbox --code-coverage"
+    "test": "ng test --browsers=ChromeHeadlessNoSandbox --code-coverage --no-watch"
   },
   "private": true,
   "dependencies": {
