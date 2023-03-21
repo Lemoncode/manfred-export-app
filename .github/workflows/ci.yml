@@ -1,0 +1,17 @@
+name: Continuos Integration workflow
+
+on: pull_request
+
+env:
+  HUSKY: 0
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install
+        run: npm ci
+      - name: Tests
+        run: npm test
