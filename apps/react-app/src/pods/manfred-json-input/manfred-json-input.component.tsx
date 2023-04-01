@@ -35,8 +35,8 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
           onChange={event => handleChange(event)}
           autoComplete="off"
         ></MfTextArea>
+        <MfButton onClick={handleExport}>Exportar CV</MfButton>
       </form>
-      <MfButton onClick={handleExport}>Export your CV</MfButton>
     </>
   );
 };
