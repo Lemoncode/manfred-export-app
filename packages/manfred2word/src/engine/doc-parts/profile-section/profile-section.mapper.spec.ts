@@ -8,5 +8,3 @@ describe('dummy specs', () => {
     expect(true).toBeTruthy();
   });
 });
-
-export {};
