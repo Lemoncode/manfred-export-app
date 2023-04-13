@@ -104,7 +104,15 @@ export const theme = {
     },
   },
   typography: {
-    h6: {}, //? <- esperar que hacer con 'h6'
+    h6: {
+      fontFamily: 'Inter',
+      fontStyle: 'normal',
+      fontWeight: 600,
+      fontSize: '14px',
+      lineHeight: '18px',
+      letterSpacing: '0.5px',
+      textTransform: 'uppercase',
+    },
     desktop: {
       h1: {
         fontStyle: 'normal',
