@@ -1,5 +1,6 @@
 import { MfButton, MfTextArea } from '@/common/forms';
 import React from 'react';
+import * as classes from './manfred-json-input.styles';
 
 interface Props {
   onSetManfredJson: (text: string) => void;
@@ -24,7 +25,7 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
 
   return (
     <>
-      <h1>Hello from ManfredJsonInputComponent</h1>
+      <h1 className={classes.header}>Hello from ManfredJsonInputComponent</h1>
       <form>
         <label>Paste here your JSON in MAC Format</label>
         <MfTextArea
