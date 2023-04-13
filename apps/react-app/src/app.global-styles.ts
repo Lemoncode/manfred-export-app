@@ -1,7 +1,7 @@
 import { injectGlobal } from '@emotion/css';
 
 injectGlobal`
-body {
+  body {
     margin: 0;
     padding: 0;
     height: 100vh;

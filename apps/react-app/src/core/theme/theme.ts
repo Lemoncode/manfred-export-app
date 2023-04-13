@@ -1,0 +1,53 @@
+export const theme = {
+  palette: {
+    primary: {
+      50: '#EAF3F3',
+      100: '#BCD9DB',
+      200: '#9CC7CA',
+      300: '#6FAEB1',
+      400: '#539EA2',
+      500: '#28868B',
+      600: '#247A7E',
+      700: '#1C5F63',
+      800: '#164A4C',
+      900: '#11383A',
+    },
+    commons: {
+      black: '#000',
+      white: '#fff',
+    },
+  },
+  typography: {
+    desktop: {
+      h1: {
+        fontStyle: 'normal',
+        fontWeight: 400,
+        fontSize: '72px',
+        lineHeight: '96px',
+        fontFamily: 'Sanchez',
+      },
+    },
+  },
+  spacing: {
+    1: '4px',
+    2: '8px',
+    3: '12px',
+    4: '16px',
+    5: '20px',
+    6: '24px',
+    7: '28px',
+    8: '32px',
+    9: '36px',
+    10: '40px',
+    11: '44px',
+    12: '48px',
+    13: '52px',
+    14: '56px',
+    15: '60px',
+    16: '64px',
+    17: '68px',
+    18: '72px',
+    19: '76px',
+    20: '80px',
+  },
+};
