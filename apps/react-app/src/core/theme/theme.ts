@@ -117,6 +117,10 @@ export const theme = {
       fontWeight: 500,
       fontSize: '14px',
       lineHeight: '17px',
+<<<<<<< HEAD
+=======
+      letterSpacing: '0.1px',
+>>>>>>> 303b8ae (added more fonts styles)
     },
     body1: {
       fontFamily: 'Inter',
@@ -131,6 +135,10 @@ export const theme = {
       fontWeight: 400,
       fontSize: '14px',
       lineHeight: '22px',
+<<<<<<< HEAD
+=======
+      letterSpacing: '-0.25px',
+>>>>>>> 303b8ae (added more fonts styles)
     },
     button: {
       fontFamily: 'Inter',
@@ -138,6 +146,11 @@ export const theme = {
       fontWeight: 600,
       fontSize: '14px',
       lineHeight: '16px',
+<<<<<<< HEAD
+=======
+      textTransform: 'capitalize',
+      fontVariationSettings: 'slnt 0',
+>>>>>>> 303b8ae (added more fonts styles)
     },
     overline: {
       fontFamily: 'Inter',
@@ -145,6 +158,11 @@ export const theme = {
       fontWeight: 500,
       fontSize: '10px',
       lineHeight: '16px',
+<<<<<<< HEAD
+=======
+      letterSpacing: '1.5px',
+      textTransform: 'uppercase',
+>>>>>>> 303b8ae (added more fonts styles)
     },
     caption: {
       fontFamily: 'Inter',
@@ -152,6 +170,10 @@ export const theme = {
       fontWeight: 400,
       fontSize: '12px',
       lineHeight: '16px',
+<<<<<<< HEAD
+=======
+      letterSpacing: '0.4px',
+>>>>>>> 303b8ae (added more fonts styles)
     },
     h6: {
       fontFamily: 'Inter',
