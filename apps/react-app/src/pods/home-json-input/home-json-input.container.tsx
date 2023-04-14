@@ -14,5 +14,6 @@ export const HomeContainer: React.FC = () => {
     navigate(switchRoutes.templateExportScene);
   };
 
+  
   return <Home onSetManfredJson={handleData} />;
 };
