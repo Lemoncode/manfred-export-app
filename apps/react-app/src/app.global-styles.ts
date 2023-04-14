@@ -54,5 +54,8 @@ body {
     line-height: 1;
   }
 
+    line-height: 1;
+  }
+
 
 `;
