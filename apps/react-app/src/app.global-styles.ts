@@ -51,5 +51,8 @@ body {
     margin: 0;
     padding: 0;
   }
+    line-height: 1;
+  }
+
 
 `;
