@@ -38,7 +38,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
-        background-image: url("../public/assets/background_1.png");
+    background-image: url("./assets/background_1.png");
 
   }
 
