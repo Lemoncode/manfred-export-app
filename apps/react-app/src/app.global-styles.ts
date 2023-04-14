@@ -57,5 +57,8 @@ body {
 
   }
 
+    line-height: 1;
+  }
+
 
 `;
