@@ -39,8 +39,14 @@ body {
     overflow: hidden;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
     background-image: url("./assets/background_1.png");
-
+    overflow: auto;
   }
+
+  body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
 
   ul {
     list-style: none;

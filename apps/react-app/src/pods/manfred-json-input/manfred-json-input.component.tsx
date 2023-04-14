@@ -7,9 +7,9 @@ interface Props {
 }
 
 export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
-  const [text, setText] = React.useState<string>('');
-
   const { onSetManfredJson } = props;
+
+  const [text, setText] = React.useState<string>('');
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
@@ -25,9 +25,16 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
 
   return (
     <>
-      <h1 className={classes.header}>Hello from ManfredJsonInputComponent</h1>
+      <nav className={classes.nav}>Nav</nav>
+      <h1 className={classes.header}>
+        Exporta tu perfil <span className="span1">JSON</span> de <span className="span2">Manfred a Word</span>
+      </h1>
       <form>
-        <label>Paste here your JSON in MAC Format</label>
+        <label>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
+          officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
+          aliquid consectetur.
+        </label>
         <MfTextArea
           id="textInput"
           name="textInput"
@@ -38,6 +45,7 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
         ></MfTextArea>
       </form>
       <MfButton onClick={handleExport}>Export your CV</MfButton>
+      <footer className={classes.footer}></footer>
     </>
   );
 };
