@@ -36,6 +36,21 @@ export const header = css`
     color: ${theme.palette.secondary[500]};
   }
 
+  @media (min-width: 390px) and (max-width: 843px) {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font: ${theme.typography.desktop.h3};
+    padding: 0;
+  }
+
+  @media (min-width: 834px) and (max-width: 1280px) {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font: ${theme.typography.desktop.h2};
+  }
+
   @media (min-width: 1280px) {
     text-align: center;
     display: block;
@@ -44,6 +59,22 @@ export const header = css`
 `;
 
 export const divForm = css`
+  @media (min-width: 390px) and (max-width: 843px) {
+    display: grid;
+    grid-template-rows: 10% 70% 10%;
+    gap: 1em;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 834px) and (max-width: 1280px) {
+    display: grid;
+    grid-template-rows: 10% 70% 10%;
+    gap: 1em;
+    width: 80%;
+    margin: 0 auto;
+  }
+
   @media (min-width: 1280px) {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -53,6 +84,10 @@ export const divForm = css`
 `;
 
 export const divText = css`
+  @media (min-width: 834px) and (max-width: 1280px) {
+    width: 706;
+  }
+
   @media (min-width: 1280px) {
     width: 496px;
   }
