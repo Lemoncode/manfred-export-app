@@ -17,14 +17,15 @@ export const nav = css`
 `;
 
 export const divh1 = css`
-  margin: 0 auto;
-  width: 70%;
+  @media (min-width: 1280px) {
+    margin: 0 auto;
+    width: 75%;
+  }
 `;
 
 export const header = css`
   color: ${theme.palette.primary[50]};
   font: ${theme.typography.desktop.h1};
-
   padding: ${theme.spacing(4)};
 
   & .span1 {
@@ -33,10 +34,33 @@ export const header = css`
 
   & .span2 {
     color: ${theme.palette.secondary[500]};
+  }
+
+  @media (min-width: 1280px) {
     text-align: center;
     display: block;
     margin: 0 auto;
   }
+`;
+
+export const divForm = css`
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 80%;
+    margin: 0 auto;
+  }
+`;
+
+export const divText = css`
+  @media (min-width: 1280px) {
+    width: 496px;
+  }
+`;
+
+export const form = css`
+  display: flex;
+  justify-content: center;
 `;
 
 export const footer = css`
