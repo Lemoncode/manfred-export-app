@@ -26,10 +26,12 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
   return (
     <>
       <nav className={classes.nav}>Nav</nav>
-      <h1 className={classes.header}>
-        Exporta tu perfil <span className="span1">JSON</span> de <span className="span2">Manfred a Word</span>
-      </h1>
-      <form>
+      <div className={classes.divh1}>
+        <h1 className={classes.header}>
+          Exporta tu perfil <span className="span1">JSON</span> de <br /> <span className="span2">Manfred a Word</span>
+        </h1>
+      </div>
+      <form className={classes.form}>
         <label>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
           officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum

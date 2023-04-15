@@ -13,13 +13,18 @@ export const nav = css`
   align-items: center;
   padding: 8px 16px;
   gap: 10px;
-
   background: ${theme.palette.dark[900]};
+`;
+
+export const divh1 = css`
+  margin: 0 auto;
+  width: 70%;
 `;
 
 export const header = css`
   color: ${theme.palette.primary[50]};
   font: ${theme.typography.desktop.h1};
+
   padding: ${theme.spacing(4)};
 
   & .span1 {
@@ -28,6 +33,9 @@ export const header = css`
 
   & .span2 {
     color: ${theme.palette.secondary[500]};
+    text-align: center;
+    display: block;
+    margin: 0 auto;
   }
 `;
 
