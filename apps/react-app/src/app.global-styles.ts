@@ -36,11 +36,8 @@ body {
     flex-direction: column;
     overflow: hidden;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
+    line-height: 1;
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+
 `;
