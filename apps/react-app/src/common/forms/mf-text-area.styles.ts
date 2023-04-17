@@ -15,4 +15,12 @@ export const textAreaStyle = css`
     border: 2px solid ${ColorPrincipal};
     outline: none;
   }
+
+  @media (min-width: 390px) and (max-width: 843px) {
+    width: 100%;
+  }
+
+  @media (min-width: 834px) and (max-width: 1024px) {
+    width: 100%;
+  }
 `;

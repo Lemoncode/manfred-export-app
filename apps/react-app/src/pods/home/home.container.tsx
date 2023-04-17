@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { ManfredJsonInput } from './manfred-json-input.component';
+import { Home } from './home.component';
 import { switchRoutes, UserChoiceContext, useUserChoiceContext } from '@/core';
 
-export const ManfredJsonInputContainer: React.FC = () => {
+export const HomeContainer: React.FC = () => {
   const { userChoice, setUserChoice } = useUserChoiceContext();
 
   const navigate = useNavigate();
@@ -14,5 +14,5 @@ export const ManfredJsonInputContainer: React.FC = () => {
     navigate(switchRoutes.templateExportScene);
   };
 
-  return <ManfredJsonInput onSetManfredJson={handleData} />;
+  return <Home onSetManfredJson={handleData} />;
 };
