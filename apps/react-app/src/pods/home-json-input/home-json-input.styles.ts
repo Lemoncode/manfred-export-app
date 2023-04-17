@@ -1,19 +1,22 @@
 import { css } from '@emotion/css';
 import { theme } from '@/core/theme';
 
+export const root = css`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const nav = css`
   display: flex;
-  position: fixed;
-  top: 0;
   flex-direction: row;
   justify-content: space-between;
+  padding: ${theme.spacing(2)} ${theme.spacing(4)};
+  align-items: center;
+  position: fixed;
+  top: 0;
   height: 50px;
   width: 100%;
   left: 0px;
-  top: 0px;
-  align-items: center;
-  padding: ${theme.spacing(2)} ${theme.spacing(4)};
-  gap: 10px;
   background: ${theme.palette.dark[900]};
 `;
 
@@ -22,7 +25,7 @@ export const container = css`
 `;
 
 export const headerContainer = css`
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     margin: 0 auto;
     width: 75%;
   }
@@ -36,17 +39,17 @@ export const header = css`
   display: block;
   margin: 0 auto;
 
-  & .span1 {
-    color: ${theme.palette.primary[500]};
-  }
-
-  & .span2 {
-    color: ${theme.palette.secondary[500]};
-  }
-
   @media (min-width: 834px) {
     font: ${theme.typography.desktop.h2};
   }
+`;
+
+export const span1 = css`
+  color: ${theme.palette.primary[500]};
+`;
+
+export const span2 = css`
+  color: ${theme.palette.secondary[500]};
 `;
 
 export const divForm = css`
@@ -58,7 +61,7 @@ export const divForm = css`
     margin: 0 auto;
   }
 
-  @media (min-width: 834px) and (max-width: 1280px) {
+  @media (min-width: 834px) and (max-width: 1024px) {
     display: grid;
     grid-template-rows: 10% 70% 10%;
     gap: 1em;
@@ -66,7 +69,7 @@ export const divForm = css`
     margin: 0 auto;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 50% 50%;
     width: 80%;
@@ -75,11 +78,11 @@ export const divForm = css`
 `;
 
 export const divText = css`
-  @media (min-width: 834px) and (max-width: 1280px) {
+  @media (min-width: 834px) and (max-width: 1024px) {
     width: 706;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     width: 496px;
   }
 `;
@@ -92,9 +95,5 @@ export const form = css`
 export const footer = css`
   height: 100px;
   width: 100%;
-  left: 100px;
-  top: 100px;
-  border-radius: 0px;
   margin: 1em;
-  border: solid;
 `;

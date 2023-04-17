@@ -1,6 +1,6 @@
 import { MfButton, MfTextArea } from '@/common/forms';
 import React from 'react';
-import * as classes from './manfred-json-input.styles';
+import * as classes from './home-json-input.styles';
 
 interface Props {
   onSetManfredJson: (text: string) => void;
@@ -24,13 +24,13 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
   };
 
   return (
-    <>
+    <div className={classes.root}>
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
         <div className={classes.headerContainer}>
           <h1 className={classes.header}>
-            Exporta tu perfil <span className="span1">JSON</span> de <br />{' '}
-            <span className="span2">Manfred a Word</span>
+            Exporta tu perfil <span className={classes.span1}>JSON</span> de <br />{' '}
+            <span className={classes.span2}>Manfred a Word</span>
           </h1>
         </div>
         <div className={classes.divForm}>
@@ -54,6 +54,6 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
         </div>
       </div>
       <footer className={classes.footer}></footer>
-    </>
+    </div>
   );
 };

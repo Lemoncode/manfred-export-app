@@ -15,12 +15,12 @@ export const buttonStyle = css`
     background-color: ${ColorSecondary};
   }
 
-  @media (min-width: 834px) and (max-width: 1280px) {
+  @media (min-width: 834px) and (max-width: 1024px) {
     width: 40%;
     margin: 0 auto;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     width: 80%;
     position: relative;
     left: 2em;

@@ -20,7 +20,7 @@ export const textAreaStyle = css`
     width: 100%;
   }
 
-  @media (min-width: 834px) and (max-width: 1280px) {
+  @media (min-width: 834px) and (max-width: 1024px) {
     width: 100%;
   }
 `;
