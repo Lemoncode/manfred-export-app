@@ -159,8 +159,6 @@ export const theme = {
       fontWeight: 600,
       fontSize: '14px',
       lineHeight: '18px',
-      letterSpacing: '0.5px',
-      textTransform: 'uppercase',
     },
     desktop: {
       h1: {
@@ -220,7 +218,6 @@ export const theme = {
         fontWeight: 400,
         fontSize: '40px',
         lineHeight: '51px',
-        letterSpacing: '-0.5px',
       },
       h4: {
         fontFamily: 'Sanchez',
@@ -251,7 +248,6 @@ export const theme = {
         fontWeight: 400,
         fontSize: '36px',
         lineHeight: '48px',
-        letterSpacing: '-0.5px',
       },
       h3: {
         fontFamily: 'Sanchez',
@@ -259,7 +255,6 @@ export const theme = {
         fontWeight: 400,
         fontSize: '32px',
         lineHeight: '40px',
-        letterSpacing: '-0.5px',
       },
       h4: {
         fontFamily: 'Sanchez',
