@@ -42,20 +42,6 @@ body {
     overflow: auto;
   }
 
-  body::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background: transparent;
-}
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-
-
-  }
 
     line-height: 1;
   }
