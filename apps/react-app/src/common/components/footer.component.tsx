@@ -11,7 +11,7 @@ export const Footer: React.FC<Props> = props => {
 
   return (
     <footer className={cx(classes.footerContainer, className)}>
-      <h1>Footer</h1>
+      <img src="./assets/Footer_text.png" alt="footer" />
     </footer>
   );
 };

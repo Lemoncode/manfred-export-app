@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { Home } from './home.component';
 import { switchRoutes, UserChoiceContext, useUserChoiceContext } from '@/core';
 
