@@ -19,7 +19,7 @@ export const nav = css`
 `;
 
 export const container = css`
-  width: 1280px;
+  width: 1024px;
 `;
 
 export const divh1 = css`
