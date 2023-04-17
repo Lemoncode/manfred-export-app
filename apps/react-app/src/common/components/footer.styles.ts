@@ -6,8 +6,8 @@ export const footerContainer = css`
     float: right;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1050px) {
     position: relative;
-    top: 2.5em;
+    top: 3em;
   }
 `;
