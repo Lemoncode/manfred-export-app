@@ -9,8 +9,21 @@ export const buttonStyle = css`
   font-family: Avenir, sans-serif;
   color: rgb(255, 255, 255);
   font-weight: 900;
+
   &:hover {
     transition: background 0.25s ease-in-out;
     background-color: ${ColorSecondary};
+  }
+
+  @media (min-width: 834px) and (max-width: 1024px) {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    width: 80%;
+    position: relative;
+    left: 2em;
+    bottom: 10em;
   }
 `;
