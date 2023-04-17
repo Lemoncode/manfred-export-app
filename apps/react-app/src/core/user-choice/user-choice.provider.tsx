@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createDefaultUserChoiceModel } from '@/pods/home-json-input/home-json-input.vm';
+import { createDefaultUserChoiceModel } from '@/pods/home/home.vm';
 import { UserChoiceContext, UserChoiceContextModel } from './user-choice.context';
 
 interface Props {

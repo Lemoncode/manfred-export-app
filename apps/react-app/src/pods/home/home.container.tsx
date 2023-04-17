@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Home } from './home-json-input.component';
+import { Home } from './home.component';
 import { switchRoutes, UserChoiceContext, useUserChoiceContext } from '@/core';
 
 export const HomeContainer: React.FC = () => {
@@ -14,6 +14,5 @@ export const HomeContainer: React.FC = () => {
     navigate(switchRoutes.templateExportScene);
   };
 
-  
   return <Home onSetManfredJson={handleData} />;
 };

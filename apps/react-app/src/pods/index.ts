@@ -1,2 +1,2 @@
-export * from './home-json-input';
+export * from './home';
 export * from './template-export';

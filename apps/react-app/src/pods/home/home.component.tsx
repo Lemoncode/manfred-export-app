@@ -1,6 +1,6 @@
 import { MfButton, MfTextArea } from '@/common/forms';
 import React from 'react';
-import * as classes from './home-json-input.styles';
+import * as classes from './home.styles';
 
 interface Props {
   onSetManfredJson: (text: string) => void;
