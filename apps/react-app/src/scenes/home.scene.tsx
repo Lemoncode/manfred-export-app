@@ -1,6 +1,6 @@
 import React from 'react';
 import { ManfredJsonInputContainer } from '@/pods';
 
-export const Home: React.FC = () => {
+export const HomeScene: React.FC = () => {
   return <ManfredJsonInputContainer />;
 };

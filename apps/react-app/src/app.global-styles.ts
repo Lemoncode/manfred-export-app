@@ -37,6 +37,8 @@ body {
     overflow: hidden;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
     background-image: url("./assets/background_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     overflow: auto;
   }
 

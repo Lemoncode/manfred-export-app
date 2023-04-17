@@ -6,14 +6,13 @@ export const nav = css`
   position: fixed;
   top: 0;
   flex-direction: row;
-  justify: space-between;
+  justify-content: space-between;
   height: 50px;
   width: 100%;
   left: 0px;
   top: 0px;
-  border-radius: 0px;
   align-items: center;
-  padding: 8px 16px;
+  padding: ${theme.spacing(2)} ${theme.spacing(4)};
   gap: 10px;
   background: ${theme.palette.dark[900]};
 `;
@@ -22,7 +21,7 @@ export const container = css`
   width: 1024px;
 `;
 
-export const divh1 = css`
+export const headerContainer = css`
   @media (min-width: 1280px) {
     margin: 0 auto;
     width: 75%;
@@ -33,6 +32,9 @@ export const header = css`
   color: ${theme.palette.primary[50]};
   font: ${theme.typography.desktop.h1};
   padding: ${theme.spacing(4)};
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 
   & .span1 {
     color: ${theme.palette.primary[500]};
@@ -42,25 +44,8 @@ export const header = css`
     color: ${theme.palette.secondary[500]};
   }
 
-  @media (min-width: 390px) and (max-width: 843px) {
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    font: ${theme.typography.desktop.h3};
-    padding: 0;
-  }
-
-  @media (min-width: 834px) and (max-width: 1280px) {
-    text-align: center;
-    display: block;
-    margin: 0 auto;
+  @media (min-width: 834px) {
     font: ${theme.typography.desktop.h2};
-  }
-
-  @media (min-width: 1280px) {
-    text-align: center;
-    display: block;
-    margin: 0 auto;
   }
 `;
 

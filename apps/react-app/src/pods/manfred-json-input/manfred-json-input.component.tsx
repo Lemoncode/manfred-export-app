@@ -6,7 +6,7 @@ interface Props {
   onSetManfredJson: (text: string) => void;
 }
 
-export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) => {
+export const Home: React.FunctionComponent<Props> = (props: Props) => {
   const { onSetManfredJson } = props;
 
   const [text, setText] = React.useState<string>('');
@@ -27,7 +27,7 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
     <>
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
-        <div className={classes.divh1}>
+        <div className={classes.headerContainer}>
           <h1 className={classes.header}>
             Exporta tu perfil <span className="span1">JSON</span> de <br />{' '}
             <span className="span2">Manfred a Word</span>
