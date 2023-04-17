@@ -3,6 +3,8 @@ import { theme } from '@/core/theme';
 
 export const nav = css`
   display: flex;
+  position: fixed;
+  top: 0;
   flex-direction: row;
   justify: space-between;
   height: 50px;
@@ -14,6 +16,10 @@ export const nav = css`
   padding: 8px 16px;
   gap: 10px;
   background: ${theme.palette.dark[900]};
+`;
+
+export const container = css`
+  width: 1280px;
 `;
 
 export const divh1 = css`

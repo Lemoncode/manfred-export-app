@@ -26,29 +26,32 @@ export const ManfredJsonInput: React.FunctionComponent<Props> = (props: Props) =
   return (
     <>
       <nav className={classes.nav}>Nav</nav>
-      <div className={classes.divh1}>
-        <h1 className={classes.header}>
-          Exporta tu perfil <span className="span1">JSON</span> de <br /> <span className="span2">Manfred a Word</span>
-        </h1>
-      </div>
-      <div className={classes.divForm}>
-        <div className={classes.divText}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-          officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
-          aliquid consectetur.
+      <div className={classes.container}>
+        <div className={classes.divh1}>
+          <h1 className={classes.header}>
+            Exporta tu perfil <span className="span1">JSON</span> de <br />{' '}
+            <span className="span2">Manfred a Word</span>
+          </h1>
         </div>
+        <div className={classes.divForm}>
+          <div className={classes.divText}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
+            officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
+            aliquid consectetur.
+          </div>
 
-        <form className={classes.form}>
-          <MfTextArea
-            id="textInput"
-            name="textInput"
-            rows={20}
-            cols={50}
-            onChange={event => handleChange(event)}
-            autoComplete="off"
-          ></MfTextArea>
-        </form>
-        <MfButton onClick={handleExport}>Export your CV</MfButton>
+          <form className={classes.form}>
+            <MfTextArea
+              id="textInput"
+              name="textInput"
+              rows={20}
+              cols={50}
+              onChange={event => handleChange(event)}
+              autoComplete="off"
+            ></MfTextArea>
+          </form>
+          <MfButton onClick={handleExport}>Export your CV</MfButton>
+        </div>
       </div>
       <footer className={classes.footer}></footer>
     </>
