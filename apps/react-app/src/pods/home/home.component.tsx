@@ -1,5 +1,5 @@
-import { MfButton, MfTextArea } from '@/common/forms';
 import React from 'react';
+import { MfButton, MfTextArea } from '@/common/forms';
 import * as classes from './home.styles';
 import { Footer } from '@/common/components';
 

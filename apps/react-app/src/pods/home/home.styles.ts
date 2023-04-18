@@ -22,7 +22,10 @@ export const nav = css`
 
 export const container = css`
   width: 1024px;
-  margin: ${theme.spacing(12)} 0px ${theme.spacing(5)};
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: ${theme.spacing(12)};
+  margin-bottom: ${theme.spacing(5)};
 `;
 
 export const headerContainer = css`
@@ -35,7 +38,7 @@ export const headerContainer = css`
 export const header = css`
   color: ${theme.palette.primary[50]};
   font: ${theme.typography.desktop.h1};
-  padding: ${theme.spacing(4)};
+  padding: ${theme.spacing(6)};
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -66,14 +69,14 @@ export const divForm = css`
     display: grid;
     grid-template-rows: 10% 70% 10%;
     gap: 1em;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 50% 50%;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 `;
@@ -91,10 +94,4 @@ export const divText = css`
 export const form = css`
   display: flex;
   justify-content: center;
-`;
-
-export const footer = css`
-  height: 100px;
-  width: 100%;
-  margin: 1em;
 `;
