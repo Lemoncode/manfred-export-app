@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Home } from './home.component';
 import { switchRoutes, UserChoiceContext, useUserChoiceContext } from '@/core';
+import { Home } from './home.component';
 
 export const HomeContainer: React.FC = () => {
   const { userChoice, setUserChoice } = useUserChoiceContext();

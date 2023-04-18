@@ -1,7 +1,7 @@
 import React from 'react';
 import { MfButton, MfTextArea } from '@/common/forms';
-import * as classes from './home.styles';
 import { Footer } from '@/common-app/components';
+import * as classes from './home.styles';
 
 interface Props {
   onSetManfredJson: (text: string) => void;
@@ -54,7 +54,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
           <MfButton onClick={handleExport}>Export your CV</MfButton>
         </div>
       </div>
-      <Footer className={''} />
+      <Footer />
     </div>
   );
 };
