@@ -12,11 +12,13 @@ export const Footer: React.FC<Props> = props => {
 
   return (
     <footer className={cx(classes.footerContainer, className)}>
-      {/* <img src="./assets/Footer_text.png" alt="footer" /> */}
-      <div className={classes.divText}>
-        Copyright © 2023
+      <div className={classes.footerContent}>
+        <span> Copyright © 2023</span>
         <br />
-        Creado por los alumnos del <span>Máster FrontEnd Lemoncode</span>
+        Creado por los alumnos del &nbsp;
+        <Link to={'https://lemoncode.net/master-frontend#inicio-banner'}>
+          <span className={classes.spanLink}>Máster FrontEnd Lemoncode</span>
+        </Link>
       </div>
     </footer>
   );

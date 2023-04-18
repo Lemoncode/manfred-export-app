@@ -2,24 +2,18 @@ import { css } from '@emotion/css';
 import { theme } from '@/core/theme';
 
 export const footerContainer = css`
-  /* img {
+  span {
     float: right;
-    width: 120%;
-    margin-bottom: 2em;
-  } */
-
-  h2 {
-    float: right;
-    font-size: larger;
-    color: ${theme.palette.primary[500]};
-
-    span {
-      color: ${theme.palette.warning[500]};
-    }
   }
 `;
 
-export const divText = css`
+export const footerContent = css`
   float: right;
-  margin-right: 2em;
+  margin: 2em 1em;
+  font-style: ${theme.typography.caption};
+  color: ${theme.palette.primary[500]};
+`;
+
+export const spanLink = css`
+  color: ${theme.palette.warning[500]};
 `;
