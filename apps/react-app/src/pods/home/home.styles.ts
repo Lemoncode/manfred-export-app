@@ -22,10 +22,15 @@ export const nav = css`
 
 export const container = css`
   width: 1024px;
+
   justify-content: center;
   margin: 0 auto;
   margin-top: ${theme.spacing(12)};
   margin-bottom: ${theme.spacing(5)};
+
+  @media (max-width: 834px) {
+    width: 95%;
+  }
 `;
 
 export const headerContainer = css`
@@ -37,7 +42,7 @@ export const headerContainer = css`
 
 export const header = css`
   color: ${theme.palette.primary[50]};
-  font: ${theme.typography.desktop.h1};
+  font: ${theme.typography.desktop.h4};
   padding: ${theme.spacing(6)};
   text-align: center;
   display: block;
@@ -59,9 +64,9 @@ export const span2 = css`
 export const divForm = css`
   @media (min-width: 390px) and (max-width: 843px) {
     display: grid;
-    grid-template-rows: 10% 70% 10%;
+    grid-template-rows: auto auto auto;
     gap: 1em;
-    width: 90%;
+    width: auto;
     margin: 0 auto;
   }
 
