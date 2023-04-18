@@ -22,6 +22,7 @@ export const nav = css`
 
 export const container = css`
   width: 1024px;
+  margin: ${theme.spacing(12)} 0px ${theme.spacing(5)};
 `;
 
 export const headerContainer = css`
