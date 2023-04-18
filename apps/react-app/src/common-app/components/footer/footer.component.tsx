@@ -11,15 +11,14 @@ export const Footer: React.FC<Props> = props => {
   const { className } = props;
 
   return (
-    <footer className={cx(classes.footerContainer, className)}>
-      <div className={classes.footerContent}>
-        <span> Copyright © 2023</span>
-        <br />
+    <footer className={cx(classes.root, className)}>
+      <span>Copyright © 2023</span>
+      <span>
         Creado por los alumnos del &nbsp;
-        <Link to={'https://lemoncode.net/master-frontend#inicio-banner'}>
-          <span className={classes.spanLink}>Máster FrontEnd Lemoncode</span>
+        <Link to={'https://lemoncode.net/master-frontend#inicio-banner'} className={classes.link}>
+          Máster FrontEnd Lemoncode
         </Link>
-      </div>
+      </span>
     </footer>
   );
 };

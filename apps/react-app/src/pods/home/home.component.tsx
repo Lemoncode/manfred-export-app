@@ -1,7 +1,7 @@
 import React from 'react';
 import { MfButton, MfTextArea } from '@/common/forms';
 import * as classes from './home.styles';
-import { Footer } from '@/common/components';
+import { Footer } from '@/common-app/components';
 
 interface Props {
   onSetManfredJson: (text: string) => void;

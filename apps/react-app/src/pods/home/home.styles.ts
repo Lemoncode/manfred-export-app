@@ -4,6 +4,7 @@ import { theme } from '@/core/theme';
 export const root = css`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 export const nav = css`
@@ -22,11 +23,11 @@ export const nav = css`
 
 export const container = css`
   width: 1024px;
-
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  align-items: center;
   margin-top: ${theme.spacing(12)};
-  margin-bottom: ${theme.spacing(5)};
 
   @media (max-width: 834px) {
     width: 95%;
