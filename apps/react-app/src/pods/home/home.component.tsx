@@ -41,16 +41,9 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
             aliquid consectetur.
           </div>
 
-          <form className={classes.form}>
-            <MfTextArea
-              id="textInput"
-              name="textInput"
-              rows={20}
-              cols={50}
-              onChange={event => handleChange(event)}
-              autoComplete="off"
-            ></MfTextArea>
-          </form>
+          <video id="myVideo" width="640" height="360" controls loop>
+            <source src="./assets/big_buck_bunny_mp4.mp4" type="video/mp4" />
+          </video>
           <MfButton onClick={handleExport}>Export your CV</MfButton>
         </div>
       </div>
