@@ -10,7 +10,8 @@ export const root = css`
   align-items: center;
   overflow: auto;
 
-  @media (max-width: 500px) {
+  @media (max-width: 834px) {
+    /* background-color: blue; */
   }
 `;
 
@@ -49,7 +50,7 @@ export const message = css`
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-  margin-top: ${theme.spacing(20)};
+  margin: ${theme.spacing(20)} 0px ${theme.spacing(2)};
   padding: ${theme.spacing(5)};
   background-color: ${theme.palette.primary[900]};
   color: ${theme.palette.info[500]};
@@ -90,17 +91,20 @@ export const divContent = css`
 
 export const divText = css`
   color: ${theme.palette.info[600]};
+  margin-bottom: 1em;
 
   @media (max-width: 500px) {
-    width: 400px;
+    width: 380px;
+  }
+
+  @media (max-width: 834px) and (min-width: 500px) {
+    width: ${theme.spacing(160)};
   }
 
   @media (min-width: 834px) and (max-width: 1024px) {
-    width: 706px;
-  }
-
-  @media (min-width: 1024px) {
-    width: 496px;
+    width: 65%;
+    max-width: 1024px;
+    background-color: blue;
   }
 `;
 
@@ -109,7 +113,7 @@ export const videoContainer = css`
   flex-direction: column;
 
   @media (max-width: 500px) {
-    width: 400px;
+    width: 380px;
   }
 
   @media (max-width: 834px) {
@@ -120,6 +124,7 @@ export const videoContainer = css`
 
   @media (min-width: 1024px) {
     height: 80%;
+    display: grid;
   }
 `;
 
@@ -141,6 +146,7 @@ export const video = css`
   width: 100%;
   @media (max-width: 834px) {
     width: 90%;
+    background-color: red;
   }
 `;
 
