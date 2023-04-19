@@ -1,5 +1,6 @@
-import { MfButton, MfTextArea } from '@/common/forms';
 import React from 'react';
+import { MfButton, MfTextArea } from '@/common/forms';
+import { Footer } from '@/common-app/components';
 import * as classes from './home.styles';
 
 interface Props {
@@ -53,7 +54,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
           <MfButton onClick={handleExport}>Export your CV</MfButton>
         </div>
       </div>
-      <footer className={classes.footer}></footer>
+      <Footer />
     </div>
   );
 };

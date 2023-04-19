@@ -30,18 +30,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 body {
-    height: 100vh;
+		height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
     line-height: 1;
     background-image: url('./assets/background_1.png');
     background-repeat: no-repeat;
     background-size: cover;
-    
   }
-
-
 `;

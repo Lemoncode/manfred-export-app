@@ -4,6 +4,7 @@ import { theme } from '@/core/theme';
 export const root = css`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 export const nav = css`
@@ -22,6 +23,15 @@ export const nav = css`
 
 export const container = css`
   width: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: ${theme.spacing(12)};
+
+  @media (max-width: 834px) {
+    width: 95%;
+  }
 `;
 
 export const headerContainer = css`
@@ -33,8 +43,8 @@ export const headerContainer = css`
 
 export const header = css`
   color: ${theme.palette.primary[50]};
-  font: ${theme.typography.desktop.h1};
-  padding: ${theme.spacing(4)};
+  font: ${theme.typography.desktop.h4};
+  padding: ${theme.spacing(6)};
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -55,9 +65,9 @@ export const span2 = css`
 export const divForm = css`
   @media (min-width: 390px) and (max-width: 843px) {
     display: grid;
-    grid-template-rows: 10% 70% 10%;
+    grid-template-rows: auto auto auto;
     gap: 1em;
-    width: 90%;
+    width: auto;
     margin: 0 auto;
   }
 
@@ -65,14 +75,14 @@ export const divForm = css`
     display: grid;
     grid-template-rows: 10% 70% 10%;
     gap: 1em;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 50% 50%;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 `;
@@ -90,10 +100,4 @@ export const divText = css`
 export const form = css`
   display: flex;
   justify-content: center;
-`;
-
-export const footer = css`
-  height: 100px;
-  width: 100%;
-  margin: 1em;
 `;
