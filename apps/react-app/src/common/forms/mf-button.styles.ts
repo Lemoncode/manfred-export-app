@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { theme } from '@/core/theme';
 import { ColorPrincipal, ColorSecondary } from './mf-color.constants';
 
 export const buttonStyle = css`
@@ -20,10 +21,14 @@ export const buttonStyle = css`
     margin: 0 auto;
   }
 
+  /* @media (max-width: 1024px) {
+    margin-bottom: ${theme.spacing(4)}
+  } */
+
   @media (min-width: 1024px) {
-    width: 80%;
+    /* width: 80%;
     position: relative;
-    left: 2em;
-    bottom: 10em;
+    right: 30em;
+    bottom: 10em; */
   }
 `;

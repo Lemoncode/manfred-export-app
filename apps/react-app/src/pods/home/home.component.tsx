@@ -28,15 +28,19 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
     <div className={classes.root}>
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
-        <Header />
+        <div className={classes.message}>
+          <p>Este es un proyecto Open Source(en Beta) realizado por los alumnos del</p>
 
-        <div className={classes.divContent}>
-          <div className={classes.divText}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-            officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
-            aliquid consectetur.
-          </div>
-          <div className={classes.videoContainer}>
+          <span>Máster Front End Lemoncode</span>
+        </div>
+        <Header />
+        <div className={classes.divText}>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
+          officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
+          aliquid consectetur.
+        </div>
+        <div className={classes.videoContainer}>
+          <div className={classes.videoContent}>
             <video id="myVideo" controls loop>
               <source src="./assets/big_buck_bunny_mp4.mp4" type="video/mp4" />
             </video>
@@ -44,10 +48,8 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
           </div>
           <MfButton onClick={handleExport}>Export your CV</MfButton>
         </div>
-        <div className={classes.divFooter}>
-          <Footer />
-        </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -10,10 +10,9 @@ export const header = css`
 
   color: ${theme.palette.primary[50]};
   font: ${theme.typography.desktop.h2};
-  padding: ${theme.spacing(6)};
 
   @media (max-width: 834px) {
-    font: ${theme.typography.desktop.h3};
+    font: ${theme.typography.desktop.h4};
     width: 90%;
   }
 
