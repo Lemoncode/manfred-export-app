@@ -34,19 +34,21 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
           <span>Máster Front End Lemoncode</span>
         </div>
         <Header />
-        <div className={classes.divText}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-          officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
-          aliquid consectetur.
-        </div>
-        <div className={classes.videoContainer}>
-          <div className={classes.videoContent}>
-            <video id="myVideo" controls loop>
-              <source src="./assets/big_buck_bunny_mp4.mp4" type="video/mp4" />
-            </video>
-            <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
+        <div className={classes.grid}>
+          <div className={classes.divText}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
+            officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
+            aliquid consectetur.
           </div>
-          <MfButton onClick={handleExport}>Export your CV</MfButton>
+          <div className={classes.videoContainer}>
+            <div className={classes.videoContent}>
+              <video id="myVideo" controls loop>
+                <source src="./assets/big_buck_bunny_mp4.mp4" type="video/mp4" />
+              </video>
+              <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
+            </div>
+            <MfButton onClick={handleExport}>Export your CV</MfButton>
+          </div>
         </div>
       </div>
       <Footer />

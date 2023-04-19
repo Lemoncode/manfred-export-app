@@ -9,10 +9,6 @@ export const root = css`
   justify-content: center;
   align-items: center;
   overflow: auto;
-
-  @media (max-width: 834px) {
-    /* background-color: blue; */
-  }
 `;
 
 export const nav = css`
@@ -39,10 +35,6 @@ export const container = css`
     /* font: ${theme.typography.caption}; <--  */
     margin: ${theme.spacing(2)};
   }
-
-  /* @media (min-width: 1024px) {
-    width: 1024px;
-  } */
 `;
 
 export const message = css`
@@ -64,28 +56,11 @@ export const message = css`
   }
 `;
 
-export const divContent = css`
-  @media (min-width: 390px) and (max-width: 843px) {
+export const grid = css`
+  @media (min-width: 1025px) {
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 48% 50%;
     gap: 1em;
-    width: auto;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 834px) and (max-width: 1024px) {
-    display: grid;
-    grid-template-rows: 10% 80% 10%;
-    gap: 1em;
-    width: 60%;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 100%;
-    margin: 0 auto;
   }
 `;
 
@@ -95,16 +70,20 @@ export const divText = css`
 
   @media (max-width: 500px) {
     width: 380px;
+    margin: 0 auto;
   }
 
   @media (max-width: 834px) and (min-width: 500px) {
     width: ${theme.spacing(160)};
+    margin: 0 auto;
+    margin-bottom: 1em;
   }
 
   @media (min-width: 834px) and (max-width: 1024px) {
-    width: 65%;
+    width: 75%;
     max-width: 1024px;
-    background-color: blue;
+    margin: 0 auto;
+    margin-bottom: 1em;
   }
 `;
 
@@ -114,6 +93,8 @@ export const videoContainer = css`
 
   @media (max-width: 500px) {
     width: 380px;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (max-width: 834px) {
@@ -134,35 +115,14 @@ export const videoContent = css`
   background-color: ${theme.palette.dark[700]};
   padding: 1em;
   margin-bottom: 1em;
+
+  @media (max-width: 834px) {
+    width: 90%;
+  }
 `;
 
 export const span1 = css`
   text-align: center;
   font: ${theme.typography.caption};
   color: ${theme.palette.info[600]};
-`;
-
-export const video = css`
-  width: 100%;
-  @media (max-width: 834px) {
-    width: 90%;
-    background-color: red;
-  }
-`;
-
-export const divFooter = css`
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  height: 10vh;
-
-  /* @media (min-width: 1280px) {
-    position: relative;
-    left: 10em;
-  }
-
-  @media (min-width: 1400px) {
-    position: relative;
-    left: 20em;
-  } */
 `;

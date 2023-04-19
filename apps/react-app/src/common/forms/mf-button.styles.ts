@@ -21,14 +21,10 @@ export const buttonStyle = css`
     margin: 0 auto;
   }
 
-  /* @media (max-width: 1024px) {
-    margin-bottom: ${theme.spacing(4)}
-  } */
-
-  @media (min-width: 1024px) {
-    /* width: 80%;
+  @media (min-width: 1025px) {
+    width: 60%;
     position: relative;
-    right: 30em;
-    bottom: 10em; */
+    right: 29em;
+    bottom: 10em;
   }
 `;
