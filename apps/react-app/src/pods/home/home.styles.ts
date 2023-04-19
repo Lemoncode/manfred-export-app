@@ -116,6 +116,10 @@ export const videoContent = css`
   padding: 1em;
   margin-bottom: 1em;
 
+  video {
+    border-radius: ${theme.spacing(5)};
+  }
+
   @media (max-width: 834px) {
     width: 90%;
   }
