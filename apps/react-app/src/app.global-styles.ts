@@ -32,7 +32,8 @@ table {
 }
 
 body {
-		height: 100vh;
+    height: auto;
+		max-height: 150vh;
     display: flex;
     flex-direction: column;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;

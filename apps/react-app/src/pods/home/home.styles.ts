@@ -27,18 +27,13 @@ export const container = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+
   margin-top: ${theme.spacing(12)};
 
-  @media (max-width: 834px) {
+  /* @media (max-width: 834px) {
     width: 95%;
-  }
-`;
-
-export const headerContainer = css`
-  @media (min-width: 1024px) {
-    margin: 0 auto;
-    width: 75%;
-  }
+  } */
 `;
 
 export const divContent = css`
@@ -67,8 +62,10 @@ export const divContent = css`
 `;
 
 export const divText = css`
+  color: ${theme.palette.info[600]};
+
   @media (min-width: 834px) and (max-width: 1024px) {
-    width: 706;
+    width: 706px;
   }
 
   @media (min-width: 1024px) {
@@ -76,7 +73,28 @@ export const divText = css`
   }
 `;
 
-export const form = css`
+export const videoContainer = css`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  background-color: ${theme.palette.dark[700]};
+  padding: 1em 0em;
+`;
+
+export const span1 = css`
+  text-align: center;
+  font: ${theme.typography.caption};
+  color: ${theme.palette.info[600]};
+`;
+
+export const video = css`
+  width: 100%;
+  @media (max-width: 834px) {
+    width: 90%;
+  }
+`;
+
+export const divFooter = css`
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
 `;

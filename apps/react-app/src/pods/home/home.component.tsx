@@ -28,23 +28,26 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
     <div className={classes.root}>
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
-        <div className={classes.headerContainer}>
-          <Header />
-        </div>
+        <Header />
+
         <div className={classes.divContent}>
           <div className={classes.divText}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
             officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
             aliquid consectetur.
           </div>
-
-          <video id="myVideo" width="640" height="360" controls loop>
-            <source src="./assets/big_buck_bunny_mp4.mp4" type="video/mp4" />
-          </video>
+          <div className={classes.videoContainer}>
+            <video id="myVideo" controls loop>
+              <source src="./assets/big_buck_bunny_mp4.mp4" type="video/mp4" />
+            </video>
+            <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
+          </div>
           <MfButton onClick={handleExport}>Export your CV</MfButton>
         </div>
+        <div className={classes.divFooter}>
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };
