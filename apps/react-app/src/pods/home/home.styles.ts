@@ -46,7 +46,7 @@ export const container = css`
   padding: ${theme.spacing(2)};
   text-align: center;
   width: 100%;
-  max-width: ${theme.spacing(257)};
+  max-width: 1024px;
   box-sizing: border-box;
 `;
 

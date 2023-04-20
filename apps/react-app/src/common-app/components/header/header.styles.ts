@@ -6,7 +6,7 @@ export const header = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: ${theme.palette.primary[50]};
+  color: ${theme.palette.info[50]};
   font-family: Sanchez;
   font-style: Regular;
   font-size: 24px;
@@ -14,13 +14,11 @@ export const header = css`
   width: 100%;
 
   @media (min-width: 725px) {
-    width: 100%;
     font-size: 40px;
     line-height: 56px;
   }
 
   @media (min-width: 1024px) {
-    width: 100%;
     font-size: 40px;
     line-height: 56px;
   }

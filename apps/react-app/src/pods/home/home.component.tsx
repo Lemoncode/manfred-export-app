@@ -37,11 +37,8 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
         <div className={classes.grid}>
           <div className={classes.description}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-            officiis,{' '}
-            <span>
-              <Link to={'#'}> sunt esse modi similique nesciunt</Link>
-            </span>
-            , ut doloremque architecto! Minima quisquam consequuntur rerum aliquid consectetur.
+            officiis, <Link to={'#'}> sunt esse modi similique nesciunt</Link>, ut doloremque architecto! Minima
+            quisquam consequuntur rerum aliquid consectetur.
           </div>
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>
