@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MfButton, MfTextArea } from '@/common/forms';
 import { Footer, Header } from '@/common-app/components';
 import * as classes from './home.styles';
@@ -29,16 +30,18 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
         <div className={classes.message}>
-          <p>Este es un proyecto Open Source(en Beta) realizado por los alumnos del</p>
-
+          Este es un proyecto Open Source(en Beta) realizado por los alumnos del
           <span>Máster Front End Lemoncode</span>
         </div>
         <Header />
         <div className={classes.grid}>
-          <div className={classes.divText}>
+          <div className={classes.description}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-            officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
-            aliquid consectetur.
+            officiis,{' '}
+            <span>
+              <Link to={'#'}> sunt esse modi similique nesciunt</Link>
+            </span>
+            , ut doloremque architecto! Minima quisquam consequuntur rerum aliquid consectetur.
           </div>
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>

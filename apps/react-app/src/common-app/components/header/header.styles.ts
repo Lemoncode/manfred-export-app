@@ -6,18 +6,23 @@ export const header = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: ${theme.palette.primary[50]};
+  font-family: Sanchez;
+  font-style: Regular;
+  font-size: 24px;
+  line-height: 32px;
   width: 100%;
 
-  color: ${theme.palette.primary[50]};
-  font: ${theme.typography.desktop.h2};
-
-  @media (max-width: 834px) {
-    font: ${theme.typography.desktop.h4};
-    width: 90%;
+  @media (min-width: 725px) {
+    width: 100%;
+    font-size: 40px;
+    line-height: 56px;
   }
 
-  @media (max-width: 1024px) {
-    margin: 0 auto;
+  @media (min-width: 1024px) {
+    width: 100%;
+    font-size: 40px;
+    line-height: 56px;
   }
 `;
 

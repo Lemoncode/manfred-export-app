@@ -7,9 +7,7 @@ export const Header: React.FC = () => {
       <span>
         Exporta tu perfil <span className={classes.span1}>JSON</span> de{' '}
       </span>
-      <span>
-        <span className={classes.span2}>Manfred a Word</span>
-      </span>
+      <span className={classes.span2}>Manfred a Word</span>
     </h1>
   );
 };

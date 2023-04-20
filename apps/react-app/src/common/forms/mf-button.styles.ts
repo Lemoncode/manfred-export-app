@@ -16,15 +16,10 @@ export const buttonStyle = css`
     background-color: ${ColorSecondary};
   }
 
-  @media (min-width: 834px) and (max-width: 1024px) {
-    width: 40%;
-    margin: 0 auto;
-  }
-
   @media (min-width: 1025px) {
     width: 60%;
     position: relative;
-    right: 29em;
-    bottom: 10em;
+    right: 85%;
+    bottom: ${theme.spacing(30)};
   }
 `;

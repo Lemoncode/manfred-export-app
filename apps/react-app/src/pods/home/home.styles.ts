@@ -3,108 +3,124 @@ import { theme } from '@/core/theme';
 
 export const root = css`
   width: 100%;
-  max-height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  overflow: auto;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: ${theme.spacing(4)};
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* for IE y Edge */
+  scrollbar-width: none; /* for Firefox */
+
+  & > :last-child {
+    align-self: flex-end;
+  }
 `;
 
 export const nav = css`
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  height: 50px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: ${theme.spacing(2)} ${theme.spacing(4)};
   align-items: center;
-  position: fixed;
-  top: 0;
-  height: ${theme.spacing(12)};
-  width: 100%;
+  padding: ${theme.spacing(2)} ${theme.spacing(4)};
   background: ${theme.palette.dark[900]};
 `;
 
 export const container = css`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  flex-grow: 1;
+  gap: ${theme.spacing(3)};
+  margin-top: 50px;
+  padding: ${theme.spacing(2)};
   text-align: center;
-  max-width: 1024px;
-
-  @media (max-width: 500px) {
-    /* font: ${theme.typography.caption}; <--  */
-    margin: ${theme.spacing(2)};
-  }
+  width: 100%;
+  max-width: ${theme.spacing(257)};
+  box-sizing: border-box;
 `;
 
 export const message = css`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-  margin: ${theme.spacing(20)} 0px ${theme.spacing(2)};
-  padding: ${theme.spacing(5)};
+  gap: ${theme.spacing(2)};
+  width: 100%;
+  padding: ${theme.spacing(2)};
+  box-sizing: border-box;
   background-color: ${theme.palette.primary[900]};
   color: ${theme.palette.info[500]};
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 13px;
 
   span {
     color: ${theme.palette.warning[400]};
   }
-
-  @media (max-width: 500px) {
-    font: ${theme.typography.caption};
-  }
 `;
 
 export const grid = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${theme.spacing(3)};
+
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: 48% 50%;
-    gap: 1em;
+    grid-template-columns: 50% 50%;
   }
 `;
 
-export const divText = css`
+export const description = css`
+  width: 100%;
   color: ${theme.palette.info[600]};
-  margin-bottom: 1em;
+  font: ${theme.typography.body1};
+  text-align: left;
 
-  @media (max-width: 500px) {
-    width: 380px;
-    margin: 0 auto;
+  a {
+    color: ${theme.palette.primary[500]};
+    text-decoration: none;
   }
 
-  @media (max-width: 834px) and (min-width: 500px) {
+  @media (min-width: 725px) {
     width: ${theme.spacing(160)};
-    margin: 0 auto;
-    margin-bottom: 1em;
   }
 
-  @media (min-width: 834px) and (max-width: 1024px) {
-    width: 75%;
-    max-width: 1024px;
-    margin: 0 auto;
-    margin-bottom: 1em;
+  @media (min-width: 1024px) {
+    max-width: ${theme.spacing(128)};
+    margin-top: ${theme.spacing(10)};
+    align-self: flex-start;
   }
 `;
 
 export const videoContainer = css`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: ${theme.spacing(5)};
 
-  @media (max-width: 500px) {
-    width: 380px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (max-width: 834px) {
-    justify-content: center;
-    text-align: center;
-    margin: 1em;
+  @media (min-width: 725px) {
+    width: 706px;
   }
 
   @media (min-width: 1024px) {
     height: 80%;
+    width: 100%;
     display: grid;
   }
 `;
@@ -112,16 +128,14 @@ export const videoContainer = css`
 export const videoContent = css`
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  width: 100%;
   background-color: ${theme.palette.dark[700]};
-  padding: 1em;
-  margin-bottom: 1em;
+  padding: ${theme.spacing(2)};
 
   video {
     border-radius: ${theme.spacing(5)};
-  }
-
-  @media (max-width: 834px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
