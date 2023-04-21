@@ -43,7 +43,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>
               <video id="myVideo" controls loop>
-                <source src="./assets/big_buck_bunny_webm.webm" type="video/mp4" />
+                <source src="./assets/big_buck_bunny_webm.webm" type="video/webm" />
               </video>
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
