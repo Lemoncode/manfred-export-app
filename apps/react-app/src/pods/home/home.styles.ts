@@ -41,12 +41,13 @@ export const container = css`
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  gap: ${theme.spacing(3)};
+  gap: ${theme.spacing(4)};
   margin-top: 50px;
   text-align: center;
   width: 100%;
   max-width: 1024px;
   box-sizing: border-box;
+  border: solid blue;
 `;
 
 export const message = css`
@@ -111,10 +112,6 @@ export const videoContainer = css`
   width: 100%;
   box-sizing: border-box;
   gap: ${theme.spacing(5)};
-
-  @media (min-width: 725px) {
-    width: 706px;
-  }
 
   @media (min-width: 1024px) {
     height: 80%;
