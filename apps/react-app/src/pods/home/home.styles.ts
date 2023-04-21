@@ -84,7 +84,7 @@ export const grid = css`
     display: grid;
     grid-template-areas:
       'description video'
-      'button video';
+      'div video';
   }
 `;
 
@@ -104,6 +104,13 @@ export const description = css`
     width: 100%;
     align-self: flex-start;
   }
+`;
+
+export const divButton = css`
+  grid-area: div;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const videoContainer = css`

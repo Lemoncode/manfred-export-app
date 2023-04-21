@@ -55,8 +55,10 @@ export const buttonStyle = css`
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
-  box-sizing: border-box;
+  gap: 10px;
+  width: 278px;
   height: 32px;
+
   border: none;
   border-radius: 8px;
   font: ${theme.typography.button};
@@ -67,11 +69,11 @@ export const buttonStyle = css`
   }
 
   @media (min-width: 1025px) {
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    grid-area: button;
     margin: auto;
   }
 `;
