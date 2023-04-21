@@ -40,12 +40,12 @@ export const container = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1;
-  gap: ${theme.spacing(4)};
-  margin-top: 50px;
   text-align: center;
+  flex-grow: 1;
   width: 100%;
+  margin-top: 50px;
   max-width: 1024px;
+  gap: ${theme.spacing(8)};
   box-sizing: border-box;
 `;
 
@@ -74,7 +74,7 @@ export const grid = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${theme.spacing(3)};
+  gap: ${theme.spacing(8)};
 
   @media (min-width: 1025px) {
     display: grid;
@@ -93,10 +93,6 @@ export const description = css`
     text-decoration: none;
   }
 
-  /* @media (min-width: 725px) {
-    width: ${theme.spacing(160)};
-  } */
-
   @media (min-width: 1024px) {
     max-width: ${theme.spacing(128)};
     align-self: flex-start;
@@ -114,7 +110,7 @@ export const videoContainer = css`
 
   @media (min-width: 1024px) {
     height: 80%;
-    width: calc(100% - ${theme.spacing(3)});
+    width: calc(100% - ${theme.spacing(8)});
   }
 `;
 
