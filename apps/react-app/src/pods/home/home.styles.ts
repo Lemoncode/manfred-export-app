@@ -47,7 +47,6 @@ export const container = css`
   width: 100%;
   max-width: 1024px;
   box-sizing: border-box;
-  border: solid blue;
 `;
 
 export const message = css`
@@ -119,7 +118,7 @@ export const videoContainer = css`
 
   @media (min-width: 1024px) {
     height: 80%;
-    width: 100%;
+    width: calc(100% - ${theme.spacing(3)});
   }
 `;
 
