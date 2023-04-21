@@ -142,7 +142,3 @@ export const span1 = css`
   font: ${theme.typography.caption};
   color: ${theme.palette.info[600]};
 `;
-
-export const button = css`
-  grid-area: button;
-`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MfButton, MfTextArea } from '@/common/forms';
+import { Button, MfTextArea } from '@/common/forms';
 import { Footer, Header } from '@/common-app/components';
 import * as classes from './home.styles';
 
@@ -48,9 +48,9 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
           </div>
-          <MfButton className={classes.button} onClick={handleExport}>
-            Export your CV
-          </MfButton>
+          <Button toggle={true} onClick={handleExport}>
+            EXPORTAR CV
+          </Button>
         </div>
       </div>
       <Footer />
