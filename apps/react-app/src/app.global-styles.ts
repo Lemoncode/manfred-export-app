@@ -33,12 +33,12 @@ table {
 
 body {
 		height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
     line-height: 1;
     background-image: url('./assets/background_1.png');
     background-repeat: no-repeat;
     background-size: cover;
+		overflow: hidden;
+		box-sizing: border-box;
   }
 `;

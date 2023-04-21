@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { theme } from '@/core/theme';
 import { ColorPrincipal, ColorSecondary } from './mf-color.constants';
 
 export const buttonStyle = css`
@@ -15,15 +16,10 @@ export const buttonStyle = css`
     background-color: ${ColorSecondary};
   }
 
-  @media (min-width: 834px) and (max-width: 1024px) {
-    width: 40%;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 1024px) {
-    width: 80%;
+  @media (min-width: 1025px) {
+    width: 65%;
     position: relative;
-    left: 2em;
-    bottom: 10em;
+    right: 105%;
+    bottom: ${theme.spacing(30)};
   }
 `;

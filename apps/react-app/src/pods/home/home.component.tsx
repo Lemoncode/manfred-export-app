@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MfButton, MfTextArea } from '@/common/forms';
-import { Footer } from '@/common-app/components';
+import { Footer, Header } from '@/common-app/components';
 import * as classes from './home.styles';
 
 interface Props {
@@ -12,9 +13,9 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
 
   const [text, setText] = React.useState<string>('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  //   setText(event.target.value);
+  // };
 
   const handleExport = () => {
     if (text.trim().length !== 0) {
@@ -28,30 +29,28 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
     <div className={classes.root}>
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
-        <div className={classes.headerContainer}>
-          <h1 className={classes.header}>
-            Exporta tu perfil <span className={classes.span1}>JSON</span> de <br />{' '}
-            <span className={classes.span2}>Manfred a Word</span>
-          </h1>
+        <div className={classes.message}>
+          Este es un proyecto Open Source realizado por los alumnos del
+          <span>Máster Front End Lemoncode</span>
         </div>
-        <div className={classes.divForm}>
-          <div className={classes.divText}>
+        <Header />
+        <div className={classes.grid}>
+          <div className={classes.description}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-            officiis, sunt esse modi similique nesciunt, ut doloremque architecto! Minima quisquam consequuntur rerum
-            aliquid consectetur.
+            officiis, <Link to={'#'}> sunt esse modi similique nesciunt</Link>, ut doloremque architecto! Minima
+            quisquam consequuntur rerum aliquid consectetur.
           </div>
-
-          <form className={classes.form}>
-            <MfTextArea
-              id="textInput"
-              name="textInput"
-              rows={20}
-              cols={50}
-              onChange={event => handleChange(event)}
-              autoComplete="off"
-            ></MfTextArea>
-          </form>
-          <MfButton onClick={handleExport}>Export your CV</MfButton>
+          <div className={classes.videoContainer}>
+            <div className={classes.videoContent}>
+              <video id="myVideo" controls loop>
+                <source src="./assets/big_buck_bunny_webm.webm" type="video/webm" />
+              </video>
+              <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
+            </div>
+          </div>
+          <MfButton className={classes.button} onClick={handleExport}>
+            Export your CV
+          </MfButton>
         </div>
       </div>
       <Footer />
