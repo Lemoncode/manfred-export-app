@@ -47,7 +47,6 @@ export const container = css`
   width: 100%;
   max-width: 1024px;
   box-sizing: border-box;
-  border: solid blue;
 `;
 
 export const message = css`
@@ -94,9 +93,9 @@ export const description = css`
     text-decoration: none;
   }
 
-  @media (min-width: 725px) {
+  /* @media (min-width: 725px) {
     width: ${theme.spacing(160)};
-  }
+  } */
 
   @media (min-width: 1024px) {
     max-width: ${theme.spacing(128)};
