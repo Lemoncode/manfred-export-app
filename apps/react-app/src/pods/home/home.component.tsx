@@ -30,7 +30,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
       <nav className={classes.nav}>Nav</nav>
       <div className={classes.container}>
         <div className={classes.message}>
-          Este es un proyecto Open Source(en Beta) realizado por los alumnos del
+          Este es un proyecto Open Source realizado por los alumnos del
           <span>Máster Front End Lemoncode</span>
         </div>
         <Header />
@@ -47,8 +47,10 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
               </video>
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
-            <MfButton onClick={handleExport}>Export your CV</MfButton>
           </div>
+          <MfButton className={classes.button} onClick={handleExport}>
+            Export your CV
+          </MfButton>
         </div>
       </div>
       <Footer />

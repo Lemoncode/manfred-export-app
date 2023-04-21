@@ -55,7 +55,7 @@ export const message = css`
   justify-content: center;
   gap: ${theme.spacing(2)};
   width: 100%;
-  padding: ${theme.spacing(2)};
+  padding: ${theme.spacing(3)};
   box-sizing: border-box;
   background-color: ${theme.palette.primary[900]};
   color: ${theme.palette.info[500]};
@@ -68,6 +68,10 @@ export const message = css`
   span {
     color: ${theme.palette.warning[400]};
   }
+
+  @media (min-width: 725px) {
+    flex-direction: row;
+  }
 `;
 
 export const grid = css`
@@ -78,7 +82,9 @@ export const grid = css`
 
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      'description video'
+      'button video';
   }
 `;
 
@@ -94,7 +100,8 @@ export const description = css`
   }
 
   @media (min-width: 1024px) {
-    max-width: ${theme.spacing(128)};
+    grid-area: description;
+    width: 100%;
     align-self: flex-start;
   }
 `;
@@ -109,8 +116,8 @@ export const videoContainer = css`
   gap: ${theme.spacing(5)};
 
   @media (min-width: 1024px) {
-    height: 80%;
-    width: calc(100% - ${theme.spacing(8)});
+    grid-area: video;
+    width: 100%;
   }
 `;
 
@@ -134,4 +141,8 @@ export const span1 = css`
   text-align: center;
   font: ${theme.typography.caption};
   color: ${theme.palette.info[600]};
+`;
+
+export const button = css`
+  grid-area: button;
 `;
