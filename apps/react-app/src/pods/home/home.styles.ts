@@ -9,7 +9,7 @@ export const root = css`
   align-items: center;
   box-sizing: border-box;
   overflow-y: auto;
-  padding: ${theme.spacing(4)};
+  padding: ${theme.spacing(8)};
 
   &::-webkit-scrollbar {
     display: none;
@@ -43,11 +43,11 @@ export const container = css`
   flex-grow: 1;
   gap: ${theme.spacing(3)};
   margin-top: 50px;
-  padding: ${theme.spacing(2)};
   text-align: center;
   width: 100%;
   max-width: 1024px;
   box-sizing: border-box;
+  border: solid blue;
 `;
 
 export const message = css`
@@ -100,7 +100,6 @@ export const description = css`
 
   @media (min-width: 1024px) {
     max-width: ${theme.spacing(128)};
-    margin-top: ${theme.spacing(10)};
     align-self: flex-start;
   }
 `;
@@ -121,7 +120,6 @@ export const videoContainer = css`
   @media (min-width: 1024px) {
     height: 80%;
     width: 100%;
-    display: grid;
   }
 `;
 
@@ -129,9 +127,11 @@ export const videoContent = css`
   display: flex;
   flex-direction: column;
   justify-items: center;
+  gap: ${theme.spacing(2)};
   width: 100%;
   background-color: ${theme.palette.dark[700]};
-  padding: ${theme.spacing(2)};
+  padding: ${theme.spacing(4)};
+  box-sizing: border-box;
 
   video {
     border-radius: ${theme.spacing(5)};

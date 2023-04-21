@@ -17,9 +17,9 @@ export const buttonStyle = css`
   }
 
   @media (min-width: 1025px) {
-    width: 60%;
+    width: 65%;
     position: relative;
-    right: 85%;
+    right: 100%;
     bottom: ${theme.spacing(30)};
   }
 `;
