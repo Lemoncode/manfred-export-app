@@ -8,7 +8,7 @@ export const buttonStyle = css`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 16px; //replace to theme.spacing
+  padding: ${theme.spacing(2)} ${theme.spacing(4)};
   gap: 10px;
   width: max-content;
   height: 32px;
@@ -23,6 +23,6 @@ export const buttonStyle = css`
 `;
 
 export const icon = css`
-  width: 20px;
+  width: ${theme.spacing(5)};
   height: 100%;
 `;

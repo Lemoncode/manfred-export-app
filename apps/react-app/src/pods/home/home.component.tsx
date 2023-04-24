@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Footer, Header } from '@/common-app/components';
+import { Button, Footer, Header } from '@/common-app/components';
 import * as classes from './home.styles';
-import { Button } from '@/common-app/components/button';
 
 interface Props {
   onSetManfredJson: (text: string) => void;
