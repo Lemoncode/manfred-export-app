@@ -12,10 +12,11 @@ export const Navbar: React.FC = () => {
       <div className={classes.items_2}>
         <img className={classes.img_4} src="/assets/Version-Beta-2.svg" alt="icono" />
 
-        <img className={classes.img_4_2} src="/assets/Version-Beta-1.svg" alt="icono" />
+        <img className={classes.img_5} src="/assets/Version-Beta-1.svg" alt="icono" />
       </div>
+
       <div className={classes.items_3}>
-        <img className={classes.img_5} src="/assets/lines-vector.svg" width={'24'} height={'24'} alt="export" />
+        <img className={classes.img_6} src="/assets/lines-vector.svg" width={'24'} height={'24'} alt="export" />
       </div>
     </nav>
   );

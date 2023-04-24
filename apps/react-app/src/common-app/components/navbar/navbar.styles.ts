@@ -66,9 +66,15 @@ export const img_4 = css`
   height: 65px;
 `;
 
-export const img_4_2 = css`
-  position: absolute;
+export const img_5 = css`
+  position: relative;
+  /* z-index: 2; */
+  left: 5px;
   height: 35px;
 `;
 
-export const img_5 = css``;
+export const img_6 = css`
+  &:hover {
+    cursor: pointer;
+  }
+`;
