@@ -5,23 +5,40 @@ export const nav = css`
   position: fixed;
   z-index: 999;
   top: 0;
-  height: 50px;
   width: 100%;
-  display: flex;
+  /* box-sizing: border-box; */
+  display: grid;
+  grid-template-columns: auto auto auto;
   justify-content: space-between;
   align-items: center;
   padding: ${theme.spacing(2)} ${theme.spacing(4)};
   background: ${theme.palette.dark[900]};
+  /* border: solid red; */
 `;
 
 export const items_1 = css`
   display: flex;
+
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: solid 1px blue;
   width: auto;
-  height: 2em;
+  margin-left: ${theme.spacing(4)};
+`;
+
+export const items_2 = css`
+  /* background-image: url('/assets/Version-Beta-2.svg');
+  background-repeat: no-repeat; */
+
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 104px;
+
+  @media (max-width: 725px) {
+    margin-right: 0px;
+  }
 `;
 
 export const items_3 = css`
@@ -43,5 +60,15 @@ export const img_2 = css`
 `;
 
 export const img_3 = css``;
+
+export const img_4 = css`
+  position: absolute;
+  height: 65px;
+`;
+
+export const img_4_2 = css`
+  position: absolute;
+  height: 35px;
+`;
 
 export const img_5 = css``;
