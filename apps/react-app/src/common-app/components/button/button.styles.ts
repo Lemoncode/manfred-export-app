@@ -1,6 +1,5 @@
 import { css } from '@emotion/css';
 import { theme } from '@/core/theme';
-import { ColorPrincipal, ColorSecondary } from './mf-color.constants';
 
 export const buttonStyle = css`
   background-color: ${theme.palette.info[500]};
@@ -9,9 +8,9 @@ export const buttonStyle = css`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 16px; //replace to theme.spacing
   gap: 10px;
-  width: 278px;
+  width: max-content;
   height: 32px;
 
   border: none;
@@ -20,19 +19,10 @@ export const buttonStyle = css`
 
   &:hover {
     transition: background 0.25s ease-in-out;
-    background-color: ${ColorSecondary};
-  }
-
-  @media (min-width: 1025px) {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
 export const icon = css`
   width: 20px;
-  height: 14px;
+  height: 100%;
 `;

@@ -17,7 +17,7 @@ export const TemplateExport: React.FC<Props> = props => {
     <>
       <h1>Hello for TemplateExportComponent</h1>
       <form onSubmit={handleSubmit}>
-        <Button type="submit" toggle={false}>
+        <Button type="submit" showIcon={false}>
           Export
         </Button>
       </form>

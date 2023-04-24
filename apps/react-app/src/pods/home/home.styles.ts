@@ -106,11 +106,10 @@ export const description = css`
   }
 `;
 
-export const divButton = css`
+export const buttonClass = css`
   grid-area: div;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 50%;
+  justify-self: center;
 `;
 
 export const videoContainer = css`
