@@ -48,7 +48,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
           </div>
-          <Button className={classes.buttonClass} showIcon={true} onClick={handleExport}>
+          <Button className={classes.buttonClass} onClick={handleExport}>
             EXPORTAR CV
           </Button>
         </div>

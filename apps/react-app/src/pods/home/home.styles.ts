@@ -84,7 +84,7 @@ export const grid = css`
     display: grid;
     grid-template-areas:
       'description video'
-      'div video';
+      'button video';
   }
 `;
 
@@ -107,7 +107,7 @@ export const description = css`
 `;
 
 export const buttonClass = css`
-  grid-area: div;
+  grid-area: button;
   width: 50%;
   justify-self: center;
 `;
