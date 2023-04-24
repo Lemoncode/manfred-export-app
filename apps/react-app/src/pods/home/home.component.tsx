@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MfButton, MfTextArea } from '@/common/forms';
-import { Footer, Header } from '@/common-app/components';
+import { Button, Footer, Header } from '@/common-app/components';
 import * as classes from './home.styles';
 
 interface Props {
@@ -18,6 +17,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
   // };
 
   const handleExport = () => {
+    console.log('hola boton');
     if (text.trim().length !== 0) {
       onSetManfredJson(text);
     } else {
@@ -48,9 +48,9 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
           </div>
-          <MfButton className={classes.button} onClick={handleExport}>
-            Export your CV
-          </MfButton>
+          <Button className={classes.buttonClass} onClick={handleExport}>
+            EXPORTAR CV
+          </Button>
         </div>
       </div>
       <Footer />

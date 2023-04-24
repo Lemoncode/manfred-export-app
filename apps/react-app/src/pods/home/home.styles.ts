@@ -106,6 +106,12 @@ export const description = css`
   }
 `;
 
+export const buttonClass = css`
+  grid-area: button;
+  width: 50%;
+  justify-self: center;
+`;
+
 export const videoContainer = css`
   display: flex;
   flex-direction: column;
@@ -141,8 +147,4 @@ export const span1 = css`
   text-align: center;
   font: ${theme.typography.caption};
   color: ${theme.palette.info[600]};
-`;
-
-export const button = css`
-  grid-area: button;
 `;
