@@ -1,7 +1,10 @@
 import React from 'react';
 import * as classes from './navbar.styles';
+import { Menu } from '../menu';
 
 export const Navbar: React.FC = () => {
+  const [first, setFirst] = React.useState(false);
+
   return (
     <nav className={classes.nav}>
       <div className={classes.items_1}>
@@ -15,8 +18,11 @@ export const Navbar: React.FC = () => {
         <img className={classes.img_5} src="/assets/Version-Beta-1.svg" alt="icono" />
       </div>
 
-      <div className={classes.items_3}>
-        <img className={classes.img_6} src="/assets/lines-vector.svg" width={'24'} height={'24'} alt="export" />
+      <div>
+        <div onClick={() => setFirst(!first)} className={classes.items_3}>
+          <img className={classes.img_6} src="/assets/lines-vector.svg" width={'24'} height={'24'} alt="export" />
+        </div>
+        {first && <Menu />}
       </div>
     </nav>
   );
