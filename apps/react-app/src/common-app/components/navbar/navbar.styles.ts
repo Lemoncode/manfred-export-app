@@ -8,27 +8,23 @@ export const nav = css`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0px 16px;
   align-items: center;
   background: ${theme.palette.dark[900]};
   height: 50px;
+  box-sizing: border-box;
 `;
 
 export const logo = css`
-  margin-left: ${theme.spacing(4)};
-  height: ${theme.spacing(8)};
+  height: 16px;
+  background-image: url('/assets/logo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
 
   @media (min-width: 725px) {
     background-image: url('/assets/logo-with-name.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 135px;
-  }
-
-  @media (max-width: 450px) {
-    background-image: url('/assets/logo.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: ${theme.spacing(8)};
   }
 `;
 
@@ -38,7 +34,6 @@ export const labelIcon = css`
 
 export const iconMenu = css`
   cursor: pointer;
-  margin-right: ${theme.spacing(4)};
 `;
 
 export const hidde = css`

@@ -17,12 +17,13 @@ export const container = css`
   top: 50px;
   border-radius: 0px 0px 0px 12px;
   background-color: ${theme.palette.dark[50]};
-  @media (min-width: 834px) {
+
+  @media (min-width: 725px) {
     width: ${theme.spacing(85)};
   }
 
   @media (min-width: 1024px) {
-    width: ${theme.spacing(70)};
+    width: 278px;
   }
 `;
 
