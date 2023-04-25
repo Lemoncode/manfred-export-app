@@ -8,7 +8,7 @@ export const nav = css`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0px 16px;
+  padding: 0px ${theme.spacing(4)};
   align-items: center;
   background: ${theme.palette.dark[900]};
   height: 50px;
@@ -16,7 +16,7 @@ export const nav = css`
 `;
 
 export const logo = css`
-  height: 16px;
+  height: 32px;
   background-image: url('/assets/logo.svg');
   background-repeat: no-repeat;
   background-size: cover;
