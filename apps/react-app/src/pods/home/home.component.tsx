@@ -1,14 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './home.styles';
+import { switchRoutes, useUserChoiceContext } from '@/core';
 
 interface Props {
-  onSetManfredJson: (text: string) => void;
+  onSetManfredJson?: (text: string) => void;
 }
 
 export const Home: React.FunctionComponent<Props> = (props: Props) => {
   const { onSetManfredJson } = props;
+
+  const { userChoice, setUserChoice } = useUserChoiceContext();
+
+  const navigate = useNavigate();
 
   const [text, setText] = React.useState<string>('');
 
@@ -17,12 +22,13 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
   // };
 
   const handleExport = () => {
-    console.log('hola boton');
-    if (text.trim().length !== 0) {
-      onSetManfredJson(text);
-    } else {
-      alert('No content');
-    }
+    setUserChoice({ ...userChoice, manfredJsonContent: text });
+    navigate(switchRoutes.templateExportScene);
+    // if (text.trim().length !== 0) {
+    //   onSetManfredJson(text);
+    // } else {
+    //   alert('No content');
+    // }
   };
 
   return (
