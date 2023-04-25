@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Footer, Header } from '@/common-app/components';
+import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './home.styles';
 
 interface Props {
@@ -27,7 +27,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <nav className={classes.nav}>Nav</nav>
+      <Navbar />
       <div className={classes.container}>
         <div className={classes.message}>
           Este es un proyecto Open Source realizado por los alumnos del
