@@ -15,13 +15,13 @@ export const nav = css`
 
 export const logo = css`
   margin-left: ${theme.spacing(4)};
+  height: ${theme.spacing(8)};
 
-  @media (min-width: 450px) {
+  @media (min-width: 725px) {
     background-image: url('/assets/logo-with-name.svg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 135px;
-    height: ${theme.spacing(8)};
   }
 
   @media (max-width: 450px) {
@@ -29,7 +29,6 @@ export const logo = css`
     background-repeat: no-repeat;
     background-size: cover;
     width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
   }
 `;
 

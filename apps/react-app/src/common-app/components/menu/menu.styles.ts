@@ -9,30 +9,41 @@ export const container = css`
   justify-content: center;
   width: 227px;
   height: auto;
-  /* padding: 32px; */
-  right: 2%;
+
+  right: -1px;
   padding: 32px;
-  gap: 26px;
+  gap: 16px;
 
-  top: 67px;
+  top: 50px;
   border-radius: 0px 0px 0px 12px;
-
   background-color: ${theme.palette.dark[50]};
-`;
+  @media (min-width: 834px) {
+    width: ${theme.spacing(85)};
+  }
 
-export const span = css`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  height: 44px;
-  cursor: pointer;
-  padding: 10px;
+  @media (min-width: 1024px) {
+    width: ${theme.spacing(70)};
+  }
 `;
 
 export const item = css`
   display: flex;
+  width: 100%;
   align-items: center;
-  gap: 16px;
+  padding: ${theme.spacing(2.5)};
+  gap: ${theme.spacing(2.5)};
+  font: ${theme.typography.body1};
+  text-decoration: none;
+
+  #icon {
+    fill: ${theme.palette.dark[900]};
+  }
+
+  &:hover {
+    color: ${theme.palette.secondary[500]};
+    #icon {
+      stroke: ${theme.palette.secondary[500]};
+      fill: ${theme.palette.secondary[500]};
+    }
+  }
 `;
