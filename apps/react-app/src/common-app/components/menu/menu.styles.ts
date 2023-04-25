@@ -20,10 +20,6 @@ export const container = css`
   background-color: ${theme.palette.dark[50]};
 `;
 
-export const content = css`
-  width: 163px;
-`;
-
 export const span = css`
   display: grid;
   grid-template-columns: auto 1fr;
@@ -33,4 +29,10 @@ export const span = css`
   height: 44px;
   cursor: pointer;
   padding: 10px;
+`;
+
+export const item = css`
+  display: flex;
+  align-items: center;
+  gap: 16px;
 `;

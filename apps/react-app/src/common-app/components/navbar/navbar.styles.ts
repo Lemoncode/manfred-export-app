@@ -6,75 +6,42 @@ export const nav = css`
   z-index: 999;
   top: 0;
   width: 100%;
-  /* box-sizing: border-box; */
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${theme.spacing(2)} ${theme.spacing(4)};
   background: ${theme.palette.dark[900]};
-  /* border: solid red; */
-`;
-
-export const items_1 = css`
-  display: flex;
-
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  margin-left: ${theme.spacing(4)};
-`;
-
-export const items_2 = css`
-  /* background-image: url('/assets/Version-Beta-2.svg');
-  background-repeat: no-repeat; */
-
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 104px;
+`;
 
-  @media (max-width: 725px) {
-    margin-right: 0px;
+export const logo = css`
+  margin-left: ${theme.spacing(4)};
+
+  @media (min-width: 450px) {
+    background-image: url('/assets/logo-with-name.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 135px;
+    height: ${theme.spacing(8)};
+  }
+
+  @media (max-width: 450px) {
+    background-image: url('/assets/logo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: ${theme.spacing(8)};
+    height: ${theme.spacing(8)};
   }
 `;
 
-export const items_3 = css`
+export const labelIcon = css`
+  height: 100%;
+`;
+
+export const iconMenu = css`
+  cursor: pointer;
   margin-right: ${theme.spacing(4)};
 `;
 
-export const img_1 = css`
-  @media (max-width: 725px) {
-    display: none;
-  }
-`;
-
-export const img_2 = css`
-  margin-top: ${theme.spacing(1.5)};
-
-  @media (max-width: 725px) {
-    display: none;
-  }
-`;
-
-export const img_3 = css``;
-
-export const img_4 = css`
-  position: absolute;
-  height: 65px;
-`;
-
-export const img_5 = css`
-  position: relative;
-  /* z-index: 2; */
-  left: 5px;
-  height: 35px;
-`;
-
-export const img_6 = css`
-  &:hover {
-    cursor: pointer;
-  }
+export const hidde = css`
+  display: none;
 `;
