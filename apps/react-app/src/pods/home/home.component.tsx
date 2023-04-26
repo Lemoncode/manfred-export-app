@@ -1,29 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { switchRoutes } from '@/core';
 import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './home.styles';
 
-interface Props {
-  onSetManfredJson: (text: string) => void;
-}
+export const Home: React.FunctionComponent = () => {
+  const navigate = useNavigate();
 
-export const Home: React.FunctionComponent<Props> = (props: Props) => {
-  const { onSetManfredJson } = props;
-
-  const [text, setText] = React.useState<string>('');
-
-  // const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-  //   setText(event.target.value);
-  // };
-
-  const handleExport = () => {
-    console.log('hola boton');
-    if (text.trim().length !== 0) {
-      onSetManfredJson(text);
-    } else {
-      alert('No content');
-    }
-  };
+  const navigateToExport = () => navigate(switchRoutes.templateExportScene);
 
   return (
     <div className={classes.root}>
@@ -48,7 +32,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
           </div>
-          <Button className={classes.buttonClass} onClick={handleExport}>
+          <Button className={classes.buttonClass} onClick={navigateToExport}>
             EXPORTAR CV
           </Button>
         </div>

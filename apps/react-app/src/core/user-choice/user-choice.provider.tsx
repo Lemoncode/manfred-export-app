@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { createDefaultUserChoiceModel } from '@/pods/home/home.vm';
 import { UserChoiceContext, UserChoiceContextModel } from './user-choice.context';
 

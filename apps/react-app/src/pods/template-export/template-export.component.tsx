@@ -1,26 +1,47 @@
-import { Button } from '@/common-app/components';
 import React from 'react';
+import { useUserChoiceContext } from '@/core';
+import { Button, Footer, Header, Navbar } from '@/common-app/components';
+import * as classes from './template-export.styles';
 
 interface Props {
-  onExport: () => void;
+  onExport: (text: string) => void;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
   const { onExport } = props;
+  const { userChoice, setUserChoice } = useUserChoiceContext();
+  const [text, setText] = React.useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onExport();
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(event.target.value);
+  };
+
+  const handleOnExport = () => {
+    setUserChoice({ ...userChoice, manfredJsonContent: text });
+    onExport(text);
   };
 
   return (
-    <>
-      <h1>Hello for TemplateExportComponent</h1>
-      <form onSubmit={handleSubmit}>
-        {/* <Button type="submit" showIcon={false}>
+    <div className={classes.root}>
+      <Navbar />
+      <div className={classes.container}>
+        <Header />
+        <textarea
+          onChange={handleChange}
+          value={text}
+          placeholder="Pega aquí tu JSON en formato MAC"
+          className={classes.textarea}
+        ></textarea>
+        <Button
+          disabled={text ? false : true}
+          onClick={handleOnExport}
+          className={classes.buttonClass}
+          showIcon={false}
+        >
           Export
-        </Button> */}
-      </form>
-    </>
+        </Button>
+      </div>
+      <Footer />
+    </div>
   );
 };
