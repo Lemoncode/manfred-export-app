@@ -18,8 +18,8 @@ export const TemplateExport: React.FC<Props> = props => {
 
   const handleOnExport = () => {
     if (text.trim().length !== 0) {
-      // setUserChoice({ ...userChoice, manfredJsonContent: text });
-      onExport(userChoice.manfredJsonContent);
+      setUserChoice({ ...userChoice, manfredJsonContent: text });
+      onExport(text);
     } else {
       alert('No content');
     }

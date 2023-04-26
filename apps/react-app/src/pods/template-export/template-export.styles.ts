@@ -56,5 +56,4 @@ export const textarea = css`
 
 export const buttonClass = css`
   width: 50%;
-  /* margin:  auto; */
 `;
