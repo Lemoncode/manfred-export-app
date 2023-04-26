@@ -1,2 +1,2 @@
-export * from './manfred-json-input';
+export * from './home';
 export * from './template-export';

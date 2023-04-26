@@ -3,4 +3,5 @@ export default {
   verbose: true,
   restoreMocks: true,
   moduleDirectories: ['<rootDir>/src', 'node_modules'],
+  preset: 'ts-jest',
 };
