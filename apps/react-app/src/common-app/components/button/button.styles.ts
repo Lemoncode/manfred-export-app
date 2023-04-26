@@ -26,3 +26,8 @@ export const icon = css`
   width: ${theme.spacing(5)};
   height: 100%;
 `;
+
+export const disabledStyles = css`
+  background-color: ${theme.palette.info[400]};
+  color: ${theme.palette.info[700]};
+`;

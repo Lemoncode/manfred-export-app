@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { switchRoutes, useUserChoiceContext } from '@/core';
+import { switchRoutes } from '@/core';
 import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './home.styles';
 
 export const Home: React.FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const navigateToExport = () => {
-    navigate(switchRoutes.templateExportScene);
-  };
+  const navigateToExport = () => navigate(switchRoutes.templateExportScene);
 
   return (
     <div className={classes.root}>

@@ -17,12 +17,8 @@ export const TemplateExport: React.FC<Props> = props => {
   };
 
   const handleOnExport = () => {
-    if (text.trim().length !== 0) {
-      setUserChoice({ ...userChoice, manfredJsonContent: text });
-      onExport(text);
-    } else {
-      alert('No content');
-    }
+    setUserChoice({ ...userChoice, manfredJsonContent: text });
+    onExport(text);
   };
 
   return (
@@ -36,7 +32,12 @@ export const TemplateExport: React.FC<Props> = props => {
           placeholder="Pega aquí tu JSON en formato MAC"
           className={classes.textarea}
         ></textarea>
-        <Button onClick={handleOnExport} className={classes.buttonClass} showIcon={false}>
+        <Button
+          disabled={text ? false : true}
+          onClick={handleOnExport}
+          className={classes.buttonClass}
+          showIcon={false}
+        >
           Export
         </Button>
       </div>

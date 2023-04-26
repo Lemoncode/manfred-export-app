@@ -5,8 +5,6 @@ import { TemplateExport } from './template-export.component';
 
 export const TemplateExportContainer: React.FC = () => {
   const onSetManfredJson = async (text: string) => {
-    console.log('text1 container', text);
-
     try {
       JSON.parse(text);
       const manfredJsonContent = parseStringToManfredJSon(text);

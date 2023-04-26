@@ -5,14 +5,19 @@ import * as classes from './button.styles';
 interface Props {
   children?: React.ReactNode;
   showIcon?: boolean;
+  disabled?: boolean;
   className?: string;
   onClick?: () => void;
 }
 
 export const Button: React.FC<Props> = props => {
-  const { showIcon = true, className, children, onClick } = props;
+  const { showIcon = true, disabled, className, children, onClick } = props;
   return (
-    <button onClick={onClick} className={cx(classes.buttonStyle, className)}>
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={cx(classes.buttonStyle, { [classes.disabledStyles]: disabled }, className)}
+    >
       {children}
       {showIcon && <img src="./assets/arrow_button_1.svg" alt="arrow" />}
     </button>

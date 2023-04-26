@@ -38,8 +38,8 @@ export const container = css`
 
 export const textarea = css`
   width: 100%;
-  height: 538px;
-  padding: 16px;
+  height: ${theme.spacing(134)};
+  padding: ${theme.spacing(4)};
   box-sizing: border-box;
   border-radius: 8px;
   background-color: ${theme.palette.dark[700]};
