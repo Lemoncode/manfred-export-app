@@ -1,8 +1,8 @@
-import { Document, Packer, IRunOptions } from 'docx';
+import { Document, Packer, IRunOptions, SectionType } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
-import { generateProfileSection } from './doc-parts';
+import { generateExperienceSection, generateProfileSection } from './doc-parts';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
@@ -17,8 +17,12 @@ const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
     },
     sections: [
       {
-        properties: {},
+        properties: { type: SectionType.CONTINUOUS },
         children: [generateProfileSection(cv)],
+      },
+      {
+        properties: { type: SectionType.CONTINUOUS },
+        children: [generateExperienceSection(cv)],
       },
     ],
   });
