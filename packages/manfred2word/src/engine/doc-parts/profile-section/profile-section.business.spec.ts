@@ -1,4 +1,5 @@
 import { revelantLinksImages } from './profile-section.business';
+import githubImage from '@/assets/github.png';
 
 describe('profile-section business specs', () => {
   it('return "" when passed type is null', () => {
@@ -21,5 +22,16 @@ describe('profile-section business specs', () => {
 
     // Assert
     expect(result).toEqual('');
+  });
+
+  it('return proper image for passed valid values', () => {
+    // Arrange
+    const arg: any = 'github';
+
+    // Act
+    const result = revelantLinksImages(arg);
+
+    // Assert
+    expect(result).toEqual(githubImage);
   });
 });
