@@ -1,34 +1,14 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { switchRoutes, useUserChoiceContext } from '@/core';
 import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './home.styles';
-import { switchRoutes, useUserChoiceContext } from '@/core';
 
-interface Props {
-  onSetManfredJson?: (text: string) => void;
-}
-
-export const Home: React.FunctionComponent<Props> = (props: Props) => {
-  const { onSetManfredJson } = props;
-
-  const { userChoice, setUserChoice } = useUserChoiceContext();
-
+export const Home: React.FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const [text, setText] = React.useState<string>('');
-
-  // const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-  //   setText(event.target.value);
-  // };
-
-  const handleExport = () => {
-    setUserChoice({ ...userChoice, manfredJsonContent: text });
+  const navigateToExport = () => {
     navigate(switchRoutes.templateExportScene);
-    // if (text.trim().length !== 0) {
-    //   onSetManfredJson(text);
-    // } else {
-    //   alert('No content');
-    // }
   };
 
   return (
@@ -54,7 +34,7 @@ export const Home: React.FunctionComponent<Props> = (props: Props) => {
               <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
           </div>
-          <Button className={classes.buttonClass} onClick={handleExport}>
+          <Button className={classes.buttonClass} onClick={navigateToExport}>
             EXPORTAR CV
           </Button>
         </div>

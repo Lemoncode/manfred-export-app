@@ -36,8 +36,25 @@ export const container = css`
   box-sizing: border-box;
 `;
 
+export const textarea = css`
+  width: 100%;
+  height: 538px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: ${theme.palette.dark[700]};
+  color: ${theme.palette.light[700]};
+
+  @media (min-width: 725px) {
+    height: 661px;
+  }
+
+  @media (min-width: 1024px) {
+    height: 442px;
+  }
+`;
+
 export const buttonClass = css`
-  grid-area: button;
   width: 50%;
-  margin: 32px auto;
+  /* margin:  auto; */
 `;

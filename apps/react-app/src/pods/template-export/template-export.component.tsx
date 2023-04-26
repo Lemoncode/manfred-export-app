@@ -1,19 +1,28 @@
+import React from 'react';
+import { useUserChoiceContext } from '@/core';
 import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
-import React from 'react';
-import { Textarea } from '@/common-app/components/textarea';
-
 interface Props {
-  onExport: () => void;
+  onExport: (text: string) => void;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
   const { onExport } = props;
+  const { userChoice, setUserChoice } = useUserChoiceContext();
+  const [text, setText] = React.useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onExport();
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(event.target.value);
+  };
+
+  const handleOnExport = () => {
+    if (text.trim().length !== 0) {
+      // setUserChoice({ ...userChoice, manfredJsonContent: text });
+      onExport(userChoice.manfredJsonContent);
+    } else {
+      alert('No content');
+    }
   };
 
   return (
@@ -21,12 +30,15 @@ export const TemplateExport: React.FC<Props> = props => {
       <Navbar />
       <div className={classes.container}>
         <Header />
-        <form onSubmit={handleSubmit}>
-          <Textarea />
-          <Button className={classes.buttonClass} showIcon={false}>
-            Export
-          </Button>
-        </form>
+        <textarea
+          onChange={handleChange}
+          value={text}
+          placeholder="Pega aquí tu JSON en formato MAC"
+          className={classes.textarea}
+        ></textarea>
+        <Button onClick={handleOnExport} className={classes.buttonClass} showIcon={false}>
+          Export
+        </Button>
       </div>
       <Footer />
     </div>
