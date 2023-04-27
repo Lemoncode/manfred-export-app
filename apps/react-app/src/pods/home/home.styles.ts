@@ -9,7 +9,7 @@ export const root = css`
   align-items: center;
   box-sizing: border-box;
   overflow-y: auto;
-  padding: ${theme.spacing(8)};
+  padding: ${theme.spacing(4)};
 
   &::-webkit-scrollbar {
     display: none;
@@ -113,13 +113,17 @@ export const buttonClass = css`
 `;
 
 export const videoContainer = css`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  gap: ${theme.spacing(5)};
+  display: none;
+
+  @media (min-width: 725px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: ${theme.spacing(5)};
+  }
 
   @media (min-width: 1024px) {
     grid-area: video;
@@ -143,7 +147,7 @@ export const videoContent = css`
   }
 `;
 
-export const span1 = css`
+export const videoDescription = css`
   text-align: center;
   font: ${theme.typography.caption};
   color: ${theme.palette.info[600]};

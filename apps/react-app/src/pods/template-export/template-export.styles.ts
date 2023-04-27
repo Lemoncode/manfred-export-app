@@ -7,9 +7,10 @@ export const root = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
+  gap: ${theme.spacing(16)};
   overflow-y: auto;
-  padding: ${theme.spacing(8)};
+  padding: ${theme.spacing(4)};
+  box-sizing: border-box;
 
   &::-webkit-scrollbar {
     display: none;
@@ -37,21 +38,14 @@ export const container = css`
 `;
 
 export const textarea = css`
+  display: flex;
+  flex-grow: 1;
   width: 100%;
-  height: ${theme.spacing(134)};
   padding: ${theme.spacing(4)};
   box-sizing: border-box;
   border-radius: 8px;
   background-color: ${theme.palette.dark[700]};
   color: ${theme.palette.light[700]};
-
-  @media (min-width: 725px) {
-    height: 661px;
-  }
-
-  @media (min-width: 1024px) {
-    height: 442px;
-  }
 `;
 
 export const buttonClass = css`

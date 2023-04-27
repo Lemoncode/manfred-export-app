@@ -20,16 +20,18 @@ export const Home: React.FunctionComponent = () => {
         <Header />
         <div className={classes.grid}>
           <div className={classes.description}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum iste ipsam fugiat delectus rerum vero
-            officiis, <Link to={'#'}> sunt esse modi similique nesciunt</Link>, ut doloremque architecto! Minima
-            quisquam consequuntur rerum aliquid consectetur.
+            <Link to={'https://www.getmanfred.com/'} target="_blank">
+              GetManfred
+            </Link>{' '}
+            te ofrece un formato abierto y open source que puedes descargar a tu local, con está herramienta, con sólo
+            pegar el JSON de tu perfil, podrás generar tu Curriculum en formato Word
           </div>
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>
               <video id="myVideo" controls loop>
                 <source src="./assets/big_buck_bunny_webm.webm" type="video/webm" />
               </video>
-              <span className={classes.span1}>Cómo extraer tu perfil de manfred a formato JSON</span>
+              <span className={classes.videoDescription}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
           </div>
           <Button className={classes.buttonClass} onClick={navigateToExport}>

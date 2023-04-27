@@ -9,11 +9,9 @@ export const container = css`
   justify-content: center;
   width: 227px;
   height: auto;
-
   right: -1px;
   padding: 32px;
   gap: 16px;
-
   top: 50px;
   border-radius: 0px 0px 0px 12px;
   background-color: ${theme.palette.dark[50]};
@@ -40,11 +38,26 @@ export const item = css`
     fill: ${theme.palette.dark[900]};
   }
 
+  &:visited {
+    color: inherit;
+    #icon {
+      fill: inherit;
+    }
+  }
   &:hover {
     color: ${theme.palette.secondary[500]};
     #icon {
-      stroke: ${theme.palette.secondary[500]};
       fill: ${theme.palette.secondary[500]};
+    }
+  }
+`;
+
+export const noLink = css`
+  cursor: default;
+  &:hover {
+    color: inherit;
+    #icon {
+      fill: inherit;
     }
   }
 `;
