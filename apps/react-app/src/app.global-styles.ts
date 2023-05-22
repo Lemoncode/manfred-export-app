@@ -1,19 +1,44 @@
 import { injectGlobal } from '@emotion/css';
 
 injectGlobal`
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
-  }
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+		height: 100vh;
+    font-family: 'Inter', Roboto, 'Arial', 'Helvetica', sans-serif;
+    line-height: 1;
+    background-image: url('./assets/background_1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+		overflow: hidden;
+		box-sizing: border-box;
   }
 `;
