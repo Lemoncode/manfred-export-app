@@ -1,4 +1,4 @@
-import { IBorderOptions, Paragraph, TextRun } from 'docx';
+import { Paragraph, TextRun } from 'docx';
 import { ExperienceVm } from './experience-section.vm';
 
 export const titleExperienceSection = () =>
