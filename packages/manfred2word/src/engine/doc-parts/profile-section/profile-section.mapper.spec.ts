@@ -4,15 +4,6 @@ import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
 import { ContactMean } from '../../../model/manfred-schema.model';
 
 describe('Testing profile-section.mapper.ts', () => {
-  it('should pass spec', () => {
-    // Arrange
-
-    // Act
-
-    // Assert
-    expect(true).toBeTruthy();
-  });
-
   it('It should returns empty cv when passed cv is null', () => {
     // Arrange
     const cv: any = null;
