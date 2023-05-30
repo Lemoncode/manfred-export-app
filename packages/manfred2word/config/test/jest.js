@@ -6,6 +6,6 @@ export default {
   preset: 'ts-jest',
 
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(jpg|jpeg|png|svg)$': '<rootDir>/config/mocks/fileMock.js',
   },
 };
