@@ -44,28 +44,4 @@ describe('profile-section business specs', () => {
     // Assert
     expect(result).toEqual(b);
   });
-
-  /*
-  it('return proper image for github value', () => {
-    // Arrange
-    const arg: any = 'github';
-
-    // Act
-    const result = revelantLinksImages(arg);
-
-    // Assert
-    expect(result).toEqual(githubImage);
-  });
-
-  it('return proper image for linkedin value', () => {
-    // Arrange
-    const arg: any = 'linkedin';
-
-    // Act
-    const result = revelantLinksImages(arg);
-
-    // Assert
-    expect(result).toEqual(linkedinImage);
-  });
-  */
 });
