@@ -3,6 +3,7 @@ import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { generateExperienceSection, generateProfileSection } from './doc-parts';
+import { LanguageSectionVM } from './doc-parts/language-section/language-section.vm';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
@@ -35,6 +36,20 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
 
   return sections;
 };
+
+//!
+// const mapLanguageCV = (cv: ManfredAwesomicCV): LanguageSectionVM[] => {
+//   // Implementación de la función mapLanguageCV
+//   const section: LanguageSectionVM[] = [];
+
+//    section.push({
+//      properties: { type: SectionType.CONTINUOUS },
+//      children: [generateProfileSection(cv)],
+//    });
+
+//     return section;
+
+// };
 
 export const parseStringToManfredJSon = (manfredJsonContent: string): ManfredAwesomicCV => {
   const cleanedContent = removeInvalidChars(manfredJsonContent);
