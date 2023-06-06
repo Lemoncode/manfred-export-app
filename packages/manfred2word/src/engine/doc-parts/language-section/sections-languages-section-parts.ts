@@ -1,5 +1,5 @@
 import { Paragraph, TextRun } from 'docx';
-import { LanguageVM } from './language-section.vm';
+import { LanguageVm } from './language-section.vm';
 
 export const titleLanguageSection = () => {
   return new Paragraph({
@@ -16,7 +16,7 @@ export const titleLanguageSection = () => {
   });
 };
 
-export const sectionLanguageSection = (languageVm: LanguageVM) =>
+export const sectionLanguageSection = (languageVm: LanguageVm) =>
   new Paragraph({
     spacing: { line: 400 },
     children: [

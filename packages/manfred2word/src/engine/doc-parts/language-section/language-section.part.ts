@@ -1,46 +1,53 @@
 import { ManfredAwesomicCV } from '@/model';
-import { LanguageSectionVm, LanguageVM } from './language-section.vm';
-import { TableCell, TableRow } from 'docx';
-import { titleLanguageSection } from './sections-languages-section-parts';
+import { LanguageVm } from './language-section.vm';
+import { TableCell, TableRow, Table } from 'docx';
+import { titleLanguageSection, sectionLanguageSection } from './sections-languages-section-parts';
 import { styles } from './language-section.styles';
+import { mapFromCvToLanguageVm } from './language-section.mapper';
 
-export const mapLanguageCV = (cv: ManfredAwesomicCV): LanguageSectionVm[] => {
-  return mapLanguageListCV(cv);
+export const generateLanguageCV = (cv: ManfredAwesomicCV): Table => {
+  const profileSectionVm = mapFromCvToLanguageVm(cv);
+
+  return generateLanguageSectionInner(profileSectionVm);
 };
 
-export const mapLanguageListCV = (cv: ManfredAwesomicCV): any => {
-  cv.knowledge?.languages?.map(item => {
-    return {
-      name: item.name,
-      level: item.level,
-    };
-  }) || [];
+const generateLanguageSectionInner = (experienceSectionVm: LanguageVm[]): Table => {
+  if (Array.isArray(experienceSectionVm) && experienceSectionVm.length >= 1) {
+    return new Table({
+      ...styles.table,
+      rows: generateSectionLanguageFromVmToRows(experienceSectionVm),
+    });
+  } else {
+    return new Table({
+      rows: [],
+    });
+  }
 };
 
-// export const generateSectionLanguageFromVmToRows = (sectionLanguageSection: Array<LanguageVM>) => {
-//   let result = [];
+export const generateSectionLanguageFromVmToRows = (sectionLanguageVm: Array<LanguageVm>) => {
+  let result = [];
 
-//   result = sectionLanguageSection.map(
-//     (language: LanguageVM) =>
-//       new TableRow({
-//         children: [
-//           new TableCell({
-//             ...styles.table,
-//             children: [sectionLanguageSection(language)],
-//           }),
-//         ],
-//       })
-//   );
+  result = sectionLanguageVm.map(
+    (language: LanguageVm) =>
+      new TableRow({
+        children: [
+          new TableCell({
+            ...styles.table,
+            children: [sectionLanguageSection(language)],
+          }),
+        ],
+      })
+  );
 
-//   result.unshift(
-//     new TableRow({
-//       children: [
-//         new TableCell({
-//           children: [titleLanguageSection()],
-//         }),
-//       ],
-//     })
-//   );
+  result.unshift(
+    new TableRow({
+      children: [
+        new TableCell({
+          children: [titleLanguageSection()],
+        }),
+      ],
+    })
+  );
 
-//   return result;
-// };
+  return result;
+};

@@ -1,17 +1,32 @@
 import { ManfredAwesomicCV } from '@/model';
-import { LanguageVM, LanguageSectionVm } from './language-section.vm';
-import { languageList } from './language-section.constants';
+import { LanguageVm, LanguageType, LevelLanguageType } from './language-section.vm';
+import { languageList, levelLanguageList } from './language-section.constants';
 
-export const mapFromCvToLanguageVm = (cv: ManfredAwesomicCV): LanguageSectionVm => {
-  const languages: LanguageSectionVm = [];
+export const mapFromCvToLanguageVm = (cv: ManfredAwesomicCV): LanguageVm[] => {
+  let languages: LanguageVm[] = [];
 
-  cv?.knowledge?.languages?.forEach((language: LanguageVM) => {
-    const languageItem = languageList.find(item => item.iso.toLowerCase() === language?.name.toLowerCase());
-    const name = languageItem ? languageItem?.name : '';
-    const level = language?.level ?? '';
+  cv?.knowledge?.languages?.map((language: LanguageVm) => {
+    const name = mapNameFromJsonData(language?.name, languageList);
 
-    languages.push({ name, level });
+    let level: string = '';
+    if (language?.level) {
+      level = mapLevelFromJsonData(language?.level, levelLanguageList);
+    }
+
+    if (name) {
+      languages = [...languages, { name, level }];
+    }
   });
 
   return languages;
+};
+
+const mapNameFromJsonData = (name: string, languageList: LanguageType[]): string => {
+  const languageItem = languageList.find(language => language.iso === name.toLowerCase());
+  return languageItem ? languageItem.name : '';
+};
+
+const mapLevelFromJsonData = (level: string, languageList: LevelLanguageType[]): string => {
+  const languageItem = languageList.find(language => language.level === level.toLowerCase());
+  return languageItem ? languageItem.spanish : '';
 };
