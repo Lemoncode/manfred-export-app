@@ -1,6 +1,6 @@
-export interface LanguageSectionVM {
+export interface LanguageVM {
   name: string;
   level?: string;
 }
 
-export interface LanguageSectionVm extends Array<LanguageSectionVM> {}
+export interface LanguageSectionVm extends Array<LanguageVM> {}

@@ -3,7 +3,6 @@ import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { generateExperienceSection, generateProfileSection } from './doc-parts';
-import { LanguageSectionVM } from './doc-parts/language-section/language-section.vm';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
