@@ -27,6 +27,6 @@ export const mapNameFromJsonData = (name: string, languageList: LanguageType[]):
 };
 
 export const mapLevelFromJsonData = (level: string, languageList: LevelLanguageType[]): string => {
-  const languageItem = languageList.find(language => language.level === level.toLowerCase());
+  const languageItem = languageList.find(language => language.level === level);
   return languageItem ? languageItem.spanish : '';
 };
