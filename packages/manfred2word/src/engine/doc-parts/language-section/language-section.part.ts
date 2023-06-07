@@ -5,7 +5,7 @@ import { titleLanguageSection, sectionLanguageSection } from './sections-languag
 import { styles } from './language-section.styles';
 import { mapFromCvToLanguageVm } from './language-section.mapper';
 
-export const generateLanguageCV = (cv: ManfredAwesomicCV): Table => {
+export const generateLanguageSection = (cv: ManfredAwesomicCV): Table => {
   const profileSectionVm = mapFromCvToLanguageVm(cv);
 
   return generateLanguageSectionInner(profileSectionVm);

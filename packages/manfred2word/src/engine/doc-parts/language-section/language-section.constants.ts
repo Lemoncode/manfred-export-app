@@ -4,6 +4,7 @@ export const languageList: LanguageType[] = [
   { iso: 'es', name: 'Español' },
   { iso: 'it', name: 'Italiano' },
   { iso: 'en', name: 'Inglés' },
+  { iso: 'gl', name: 'Gallego' },
 ];
 
 export const levelLanguageList: LevelLanguageType[] = [
