@@ -34,12 +34,12 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
   }
 
   //!
-  if (cv?.knowledge?.languages) {
-    sections.push({
-      properties: { type: SectionType.CONTINUOUS },
-      children: [generateLanguageCV(cv)],
-    });
-  }
+  // if (cv?.knowledge?.languages) {
+  //   sections.push({
+  //     properties: { type: SectionType.CONTINUOUS },
+  //     children: [generateLanguageCV(cv)],
+  //   });
+  // }
 
   //!
 

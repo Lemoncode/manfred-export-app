@@ -27,6 +27,15 @@ describe('mapLevelFromJsonData', () => {
 
     expect(translatedLevel).toEqual('');
   });
+
+  it('should return an empty string if the level is undefined', () => {
+    let level = undefined;
+    level = level || '';
+
+    const translatedLevel = mapLevelFromJsonData(level, levelLanguageList);
+
+    expect(translatedLevel).toEqual('');
+  });
 });
 
 //
@@ -48,8 +57,17 @@ describe('mapNameFromJsonData', () => {
     expect(language).toEqual('');
   });
 
-  it('should return an empty string if the level is empty', () => {
+  it('should return an empty string if the name is empty', () => {
     const name = '';
+
+    const language = mapNameFromJsonData(name, languageList);
+
+    expect(language).toEqual('');
+  });
+
+  it('should return an empty string if the name is undefined', () => {
+    let name = undefined;
+    name = name || '';
 
     const language = mapNameFromJsonData(name, languageList);
 
@@ -60,6 +78,14 @@ describe('mapNameFromJsonData', () => {
 //
 describe('mapFromCvToLanguageVm', () => {
   it('should return an empty array when cv is null', () => {
+    const cv = null;
+
+    const result = mapFromCvToLanguageVm(cv);
+
+    expect(result).toEqual([]);
+  });
+
+  it('should return an empty array when cv is undefined', () => {
     const cv = null;
 
     const result = mapFromCvToLanguageVm(cv);

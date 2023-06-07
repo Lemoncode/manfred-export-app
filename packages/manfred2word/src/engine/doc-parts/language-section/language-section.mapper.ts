@@ -22,11 +22,15 @@ export const mapFromCvToLanguageVm = (cv: ManfredAwesomicCV | null): LanguageVm[
 };
 
 export const mapNameFromJsonData = (name: string, languageList: LanguageType[]): string => {
+  name = name || '';
+
   const languageItem = languageList.find(language => language.iso === name);
   return languageItem ? languageItem.name : '';
 };
 
 export const mapLevelFromJsonData = (level: string, languageList: LevelLanguageType[]): string => {
+  level = level || '';
+
   const languageItem = languageList.find(language => language.level === level);
   return languageItem ? languageItem.spanish : '';
 };
