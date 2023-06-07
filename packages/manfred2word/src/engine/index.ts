@@ -35,14 +35,11 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
 
   // todo: add generateLanguageSection()
   if (cv?.knowledge?.languages && cv?.knowledge?.languages.length > 0) {
-    console.log('languages', cv?.knowledge?.languages);
     sections.push({
       properties: { type: SectionType.CONTINUOUS },
       children: [generateLanguageSection(cv)],
     });
-    console.log('console 2.2');
   }
-  console.log('3', cv?.knowledge?.languages);
 
   return sections;
 };
