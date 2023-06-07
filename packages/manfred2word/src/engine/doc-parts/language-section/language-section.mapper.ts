@@ -24,7 +24,7 @@ export const mapFromCvToLanguageVm = (cv: ManfredAwesomicCV | null): LanguageVm[
 export const mapNameFromJsonData = (name: string, languageList: LanguageType[]): string => {
   name = name || '';
 
-  const languageItem = languageList.find(language => language.iso === name);
+  const languageItem = languageList.find(language => language.iso === name.toLowerCase());
   return languageItem ? languageItem.name : '';
 };
 
