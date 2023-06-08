@@ -33,7 +33,6 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
     });
   }
 
-  // todo: add generateLanguageSection()
   if (cv?.knowledge?.languages && cv?.knowledge?.languages.length > 0) {
     sections.push({
       properties: { type: SectionType.CONTINUOUS },
