@@ -6,31 +6,24 @@ export const mapFromCvToLanguageVm = (cv: ManfredAwesomicCV | null): LanguageVm[
   let languages: LanguageVm[] = [];
 
   cv?.knowledge?.languages?.map((language: LanguageVm) => {
-    const name = mapNameFromJsonData(language?.name, languageList);
+    const name: string = language?.name ?? '';
+    const mapName: string = mapNameFromJsonData(name, languageList);
 
-    let level: string = '';
-    if (language?.level) {
-      level = mapLevelFromJsonData(language?.level, levelLanguageList);
-    }
+    const level: string = language?.level ?? '';
+    const mapLevel: string = mapLevelFromJsonData(level, levelLanguageList);
 
-    if (name) {
-      languages = [...languages, { name, level }];
-    }
+    languages = [...languages, { name: mapName, level: mapLevel }];
   });
 
   return languages;
 };
 
 export const mapNameFromJsonData = (name: string, languageList: LanguageType[]): string => {
-  name = name || '';
-
   const languageItem = languageList.find(language => language.iso === name.toLowerCase());
   return languageItem ? languageItem.name : '';
 };
 
 export const mapLevelFromJsonData = (level: string, languageList: LevelLanguageType[]): string => {
-  level = level || '';
-
   const languageItem = languageList.find(language => language.level === level);
   return languageItem ? languageItem.spanish : '';
 };
