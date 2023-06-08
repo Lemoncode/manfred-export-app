@@ -24,10 +24,8 @@ const generateLanguageSectionInner = (languageSectionVm: LanguageVm[]): Table =>
   }
 };
 
-export const generateSectionLanguageFromVmToRows = (sectionLanguageVm: Array<LanguageVm>) => {
-  let result = [];
-
-  result = sectionLanguageVm.map(
+export const generateSectionLanguageFromVmToRows = (sectionLanguageVm: LanguageVm[]) => {
+  const language = sectionLanguageVm.map(
     (language: LanguageVm) =>
       new TableRow({
         children: [
@@ -39,15 +37,13 @@ export const generateSectionLanguageFromVmToRows = (sectionLanguageVm: Array<Lan
       })
   );
 
-  result.unshift(
-    new TableRow({
-      children: [
-        new TableCell({
-          children: [titleLanguageSection()],
-        }),
-      ],
-    })
-  );
+  const title = new TableRow({
+    children: [
+      new TableCell({
+        children: [titleLanguageSection()],
+      }),
+    ],
+  });
 
-  return result;
+  return [title, ...language];
 };
