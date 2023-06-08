@@ -8,7 +8,7 @@ export const languageList: LanguageType[] = [
   { iso: 'zh', name: 'Chino' },
   { iso: 'ca', name: 'Catalán' },
   { iso: 'el', name: 'Griego' },
-  { iso: 'fr', name: 'Frencés' },
+  { iso: 'fr', name: 'Francés' },
   { iso: 'gn', name: 'Guaraní' },
   { iso: 'hi', name: 'Hindi' },
   { iso: 'ja', name: 'japonés' },
