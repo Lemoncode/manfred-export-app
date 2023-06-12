@@ -21,7 +21,7 @@ export const mapFromCvToSoftSkillVm = (cv: ManfredAwesomicCV | null): SoftSkillV
   return softSkills;
 };
 
-const extractSkillData = (softSkill: SoftSkillVM): CompetenceVM => {
+export const extractSkillData = (softSkill: SoftSkillVM): CompetenceVM => {
   return {
     name: softSkill.skill?.name ?? '',
     description: softSkill.skill?.description ?? '',
