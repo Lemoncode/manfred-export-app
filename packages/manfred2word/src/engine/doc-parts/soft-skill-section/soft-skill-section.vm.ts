@@ -1,11 +1,11 @@
 export interface SoftSkillVM {
-  skill?: Competence;
+  skill?: CompetenceVM;
   level?: string;
 }
 
-export interface Competence {
+export interface CompetenceVM {
   name: string;
-  // type: 'tool' | 'technology' | 'practice' | 'hardware' | 'domain';
+  type?: 'tool' | 'technology' | 'practice' | 'hardware' | 'domain' | '';
   description?: string;
 }
 
