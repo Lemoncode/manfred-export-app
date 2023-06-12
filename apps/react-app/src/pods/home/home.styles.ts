@@ -110,6 +110,7 @@ export const buttonClass = css`
   grid-area: button;
   width: 50%;
   justify-self: center;
+  cursor: pointer;
 `;
 
 export const videoContainer = css`
