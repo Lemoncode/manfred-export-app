@@ -22,7 +22,18 @@ export const sectionSoftSkillSection = (skillVM: SoftSkillVM) =>
     spacing: { line: 400 },
     children: [
       new TextRun({ text: skillVM?.skill?.name, size: '12pt', font: 'Arial', bold: true, break: 1 }),
-      new TextRun({ text: skillVM?.skill?.description, size: '12pt', font: 'Arial', bold: true, break: 1 }),
-      new TextRun({ text: skillVM?.level, size: '10pt', font: 'Arial', break: 1 }),
+      new TextRun({
+        text: skillVM?.skill?.description ? ': ' + skillVM?.skill?.description : '',
+        size: '12pt',
+        font: 'Arial',
+      }),
+      new TextRun({
+        text: 'Nivel: ',
+        size: '14pt',
+        bold: false,
+        font: 'Arial',
+        break: 1,
+      }),
+      new TextRun({ text: skillVM?.level, size: '10pt', font: 'Arial' }),
     ],
   });
