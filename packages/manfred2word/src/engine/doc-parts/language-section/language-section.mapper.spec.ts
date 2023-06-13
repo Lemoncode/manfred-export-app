@@ -86,14 +86,15 @@ describe('mapFromCvToLanguageVm', () => {
   });
 
   it('should return an empty array when cv is undefined', () => {
-    const cv = null;
+    let cv: ManfredAwesomicCV | null | undefined = undefined;
+    cv = cv || null;
 
     const result = mapFromCvToLanguageVm(cv);
 
     expect(result).toEqual([]);
   });
 
-  it('should return an empty array when cv knowledge.languages is null', () => {
+  it('should return an empty array when cv.knowledge.languages is null', () => {
     const cv: ManfredAwesomicCV = {
       settings: {
         language: '',
