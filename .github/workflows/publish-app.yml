@@ -21,3 +21,5 @@ jobs:
           api_location: ''
           output_location: 'apps/react-app/dist'
           app_build_command: 'npm run build -- --filter=react-app'
+        env:
+          NODE_VERSION: 18.16.0
