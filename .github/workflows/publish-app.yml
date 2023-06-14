@@ -17,7 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: HUSKY=0 npm install
+      - run: npm ci
+        env:
+          HUSKY: 0
     # name: Build and Deploy Job
     # steps:
     #   - uses: actions/checkout@v3
