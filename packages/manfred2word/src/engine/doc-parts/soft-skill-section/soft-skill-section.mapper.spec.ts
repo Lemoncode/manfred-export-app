@@ -10,7 +10,7 @@ describe('mapLevelFromJsonData', () => {
     const level = 'basic';
     const expectedTranslation = 'Básico';
 
-    const translatedLevel = mapLevelFromJsonData(level, levelSkillList);
+    const translatedLevel: string = mapLevelFromJsonData(level, levelSkillList);
     expect(translatedLevel).equal(expectedTranslation);
   });
 
