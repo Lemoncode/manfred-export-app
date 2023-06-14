@@ -24,13 +24,13 @@ export const sectionSoftSkillSection = (skillVM: SoftSkillVM) =>
       new TextRun({ text: skillVM?.skill?.name, size: '12pt', font: 'Arial', bold: true, break: 1 }),
       new TextRun({
         text: skillVM?.skill?.description ? ': ' + skillVM?.skill?.description : '',
-        size: '12pt',
+        size: '10pt',
         font: 'Arial',
       }),
       new TextRun({
         text: 'Nivel: ',
-        size: '14pt',
-        bold: false,
+        size: '12pt',
+        bold: true,
         font: 'Arial',
         break: 1,
       }),
