@@ -15,7 +15,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "publish-packages": "turbo run build --filter=./packages/* && changeset publish",
-    "prepare": "husky install"
+    "prepare": "node ./prepare.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,6 @@
     "turbo": "^1.7.0"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^18.0.0"
   }
 }
