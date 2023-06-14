@@ -15,7 +15,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "publish-packages": "turbo run build --filter=./packages/* && changeset publish",
-    "prepare": "HUSKY === 0 || husky install"
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\""
   },
   "repository": {
     "type": "git",
