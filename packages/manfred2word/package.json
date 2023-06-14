@@ -7,7 +7,6 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/manfred2word.es.js",
   "main": "./dist/manfred2word.cjs.js",
   "exports": {
     ".": {
