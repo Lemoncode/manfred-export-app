@@ -29,9 +29,8 @@ export const container = css`
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  gap: ${theme.spacing(4)};
+  gap: ${theme.spacing(8)};
   width: 100%;
-  max-width: 1024px;
   padding: ${theme.spacing(4)};
   box-sizing: border-box;
 `;
@@ -51,5 +50,18 @@ export const title = css`
 
   @media (min-width: 1024px) {
     ${theme.typography.desktop.h2};
+  }
+`;
+
+export const cardContainer = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: ${theme.spacing(8)};
+
+  & > :nth-child(n) {
+    align-self: stretch;
   }
 `;
