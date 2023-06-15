@@ -3,6 +3,7 @@ import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { generateProfileSection } from './doc-parts';
+import { generateStudiesSection } from './doc-parts/studies-section/studies-section.part';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
@@ -18,7 +19,7 @@ const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
     sections: [
       {
         properties: {},
-        children: [generateProfileSection(cv)],
+        children: [generateProfileSection(cv), generateStudiesSection(cv)],
       },
     ],
   });

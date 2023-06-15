@@ -1,5 +1,5 @@
 <script>
-  import { TemplateExportContainer } from '$pods'
+	import { TemplateExportContainer } from '$pods';
 </script>
 
 <TemplateExportContainer />

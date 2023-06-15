@@ -1,5 +1,5 @@
 <script>
-  import TemplateExportComponent from './template-export.component.svelte'
+	import TemplateExportComponent from './template-export.component.svelte';
 </script>
 
 <TemplateExportComponent />

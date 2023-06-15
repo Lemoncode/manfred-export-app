@@ -1,5 +1,5 @@
 <script>
-  import { ManfredJsonInputContainer } from '$pods';
+	import { ManfredJsonInputContainer } from '$pods';
 </script>
 
 <ManfredJsonInputContainer />

@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-    "start": "vite --port 8082 --open",
+		"start": "vite --port 8082 --open",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -14,8 +14,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
-    "@lemoncode/manfred2word": "*"
-  },
+		"@lemoncode/manfred2word": "*"
+	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.9.3",
