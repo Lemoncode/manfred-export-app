@@ -1,9 +1,13 @@
-import { Document, Packer, IRunOptions } from 'docx';
+import { Document, Packer, IRunOptions, SectionType, ISectionOptions } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
-import { generateProfileSection } from './doc-parts';
-import { generateStudiesSection } from './doc-parts/studies-section/studies-section.part';
+import {
+  generateExperienceSection,
+  generateLanguageSection,
+  generateProfileSection,
+  generateStudiesSection,
+} from './doc-parts';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
@@ -16,14 +20,39 @@ const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
         },
       },
     },
-    sections: [
-      {
-        properties: {},
-        children: [generateProfileSection(cv), generateStudiesSection(cv)],
-      },
-    ],
+    sections: generateSections(cv),
   });
 
+const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
+  const sections: ISectionOptions[] = [];
+
+  sections.push({
+    properties: { type: SectionType.CONTINUOUS },
+    children: [generateProfileSection(cv)],
+  });
+
+  if (cv.experience?.jobs && cv.experience.jobs.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateExperienceSection(cv)],
+    });
+  }
+
+  if (cv?.knowledge?.studies && cv?.knowledge?.studies.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateStudiesSection(cv)],
+    });
+  }
+  if (cv?.knowledge?.languages && cv?.knowledge?.languages.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateLanguageSection(cv)],
+    });
+  }
+
+  return sections;
+};
 export const parseStringToManfredJSon = (manfredJsonContent: string): ManfredAwesomicCV => {
   const cleanedContent = removeInvalidChars(manfredJsonContent);
   return JSON.parse(cleanedContent);
