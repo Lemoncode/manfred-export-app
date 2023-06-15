@@ -31,7 +31,7 @@ export const item = css`
   align-items: center;
   padding: ${theme.spacing(2.5)};
   gap: ${theme.spacing(2.5)};
-  font: ${theme.typography.body1};
+  ${theme.typography.body1};
   text-decoration: none;
 
   #icon {

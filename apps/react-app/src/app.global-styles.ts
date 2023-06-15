@@ -1,4 +1,6 @@
 import { injectGlobal } from '@emotion/css';
+import '@fontsource/inter';
+import '@fontsource/sanchez';
 
 injectGlobal`
 * {

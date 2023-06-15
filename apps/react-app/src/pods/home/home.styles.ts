@@ -150,6 +150,6 @@ export const videoContent = css`
 
 export const videoDescription = css`
   text-align: center;
-  font: ${theme.typography.caption};
+  ${theme.typography.caption};
   color: ${theme.palette.info[600]};
 `;
