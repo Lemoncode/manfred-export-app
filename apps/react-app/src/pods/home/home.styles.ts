@@ -74,6 +74,25 @@ export const message = css`
   }
 `;
 
+export const communityPreviewMessage = css`
+  padding: ${theme.spacing(2)};
+  border-radius: ${theme.spacing(2)};
+  background-color: ${theme.palette.warning[500]};
+  color: ${theme.palette.dark[900]};
+  font: ${theme.typography.body1};
+
+  span {
+    font-weight: bold;
+    color: ${theme.palette.secondary[900]};
+  }
+
+  a {
+    font-weight: bold;
+    color: ${theme.palette.primary[800]};
+    text-decoration: none;
+  }
+`;
+
 export const grid = css`
   display: flex;
   flex-direction: column;

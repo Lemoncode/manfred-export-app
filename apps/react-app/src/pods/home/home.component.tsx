@@ -17,6 +17,14 @@ export const Home: React.FunctionComponent = () => {
           Este es un proyecto Open Source realizado por los alumnos del
           <span>Máster Front End Lemoncode</span>
         </div>
+        <div className={classes.communityPreviewMessage}>
+          <span>Community preview</span> Esta aplicación web está en desarrollo, puedes indicarnos feedback o
+          reportarnos problemas en el{' '}
+          <Link to={'https://github.com/Lemoncode/manfred-export-app/issues'} target="_blank">
+            {' '}
+            portal de GitHub
+          </Link>
+        </div>
         <Header />
         <div className={classes.grid}>
           <div className={classes.description}>
@@ -29,7 +37,7 @@ export const Home: React.FunctionComponent = () => {
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>
               <video id="myVideo" controls loop>
-                <source src="./assets/big_buck_bunny_webm.webm" type="video/webm" />
+                <source src="./assets/video-demo-manfred-export.mp4" type="video/mp4" />
               </video>
               <span className={classes.videoDescription}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>
