@@ -17,6 +17,14 @@ export const Home: React.FunctionComponent = () => {
           Este es un proyecto Open Source realizado por los alumnos del
           <span>Máster Front End Lemoncode</span>
         </div>
+        <div className={classes.communityPreviewMessage}>
+          <span>Community preview</span> Esta aplicación web está en desarrollo, puedes indicarnos feedback o
+          reportarnos problemas en el{' '}
+          <Link to={'https://github.com/Lemoncode/manfred-export-app/issues'} target="_blank">
+            {' '}
+            portal de GitHub
+          </Link>
+        </div>
         <Header />
         <div className={classes.grid}>
           <div className={classes.description}>
