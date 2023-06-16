@@ -5,15 +5,13 @@ import * as classes from './menu.styles';
 
 interface Props {
   className?: string;
-  divCardRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement>;
 }
 
-export const Menu: React.FC<Props> = props => {
-  const { className, divCardRef } = props;
-
+export const Menu: React.FC<Props> = ({ className, containerRef }) => {
   return (
     <div className={cx(classes.root, className)}>
-      <div ref={divCardRef} className={classes.container}>
+      <div ref={containerRef} className={classes.container}>
         <Link to={'/'} className={classes.item}>
           <svg id="icon" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 17V11H12V17H17V9H20L10 0L0 9H3V17H8Z" />
