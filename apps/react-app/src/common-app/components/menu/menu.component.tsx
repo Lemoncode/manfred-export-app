@@ -6,11 +6,14 @@ import * as classes from './menu.styles';
 interface Props {
   className?: string;
   containerRef: React.RefObject<HTMLDivElement>;
+  handleCloseMenu: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export const Menu: React.FC<Props> = ({ className, containerRef }) => {
+export const Menu: React.FC<Props> = props => {
+  const { className, handleCloseMenu, containerRef } = props;
+
   return (
-    <div className={cx(classes.root, className)}>
+    <div onClick={handleCloseMenu} className={cx(classes.root, className)}>
       <div ref={containerRef} className={classes.container}>
         <Link to={'/'} className={classes.item}>
           <svg id="icon" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">

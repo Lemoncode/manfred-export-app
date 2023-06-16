@@ -2,12 +2,12 @@ import { css } from '@emotion/css';
 import { theme } from '@/core/theme';
 
 export const root = css`
-  position: absolute;
-  top: 50px;
-  right: 0px;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  top: 0px;
+  left: 0px;
 `;
 
 export const container = css`
@@ -16,6 +16,7 @@ export const container = css`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 50px;
   width: 227px;
   height: auto;
   right: 0px;
