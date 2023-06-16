@@ -4,13 +4,13 @@ import { theme } from '@/core/theme';
 export const root = css`
   position: absolute;
   top: 50px;
+  right: 0px;
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100vh;
 `;
 
 export const container = css`
-  /* position: absolute; */
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -18,10 +18,9 @@ export const container = css`
   justify-content: center;
   width: 227px;
   height: auto;
-  right: -1px;
+  right: 0px;
   padding: 32px;
   gap: 16px;
-  /* top: 50px; */
   border-radius: 0px 0px 0px 12px;
   background-color: ${theme.palette.dark[50]};
 
