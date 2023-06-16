@@ -6,10 +6,9 @@ export const root = css`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font: ${theme.typography.caption};
+  gap: ${theme.spacing(2)};
+  ${theme.typography.caption};
   color: ${theme.palette.primary[500]};
-  /* border: 1px solid red; */
-  /* box-sizing: border-box; */
   text-align: right;
 `;
 

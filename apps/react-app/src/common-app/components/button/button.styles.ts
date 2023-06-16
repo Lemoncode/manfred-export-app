@@ -15,7 +15,7 @@ export const buttonStyle = css`
 
   border: none;
   border-radius: 8px;
-  font: ${theme.typography.button};
+  ${theme.typography.button};
 
   &:hover {
     transition: background 0.25s ease-in-out;

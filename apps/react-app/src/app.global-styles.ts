@@ -1,4 +1,6 @@
 import { injectGlobal } from '@emotion/css';
+import '@fontsource/inter';
+import '@fontsource/sanchez';
 
 injectGlobal`
 * {
@@ -8,6 +10,7 @@ injectGlobal`
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

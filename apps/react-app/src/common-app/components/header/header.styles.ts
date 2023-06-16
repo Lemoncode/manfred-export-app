@@ -7,7 +7,7 @@ export const header = css`
   justify-content: center;
   align-items: center;
   color: ${theme.palette.info[50]};
-  font-family: Sanchez;
+  font-family: 'Sanchez';
   font-style: Regular;
   font-size: 24px;
   line-height: 32px;

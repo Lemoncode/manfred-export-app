@@ -36,8 +36,8 @@ export const Home: React.FunctionComponent = () => {
           </div>
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>
-              <video id="myVideo" controls loop>
-                <source src="./assets/video-demo-manfred-export.mp4" type="video/mp4" />
+              <video id="myVideo" controls>
+                <source src="./assets/manfred-export.mp4" type="video/mp4" />
               </video>
               <span className={classes.videoDescription}>Cómo extraer tu perfil de manfred a formato JSON</span>
             </div>

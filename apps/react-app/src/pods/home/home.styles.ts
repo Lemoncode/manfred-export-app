@@ -59,7 +59,7 @@ export const message = css`
   box-sizing: border-box;
   background-color: ${theme.palette.primary[900]};
   color: ${theme.palette.info[500]};
-  font-family: 'Merriweather';
+  font-family: 'Sanchez';
   font-style: normal;
   font-weight: 700;
   font-size: 10px;
@@ -110,7 +110,7 @@ export const grid = css`
 export const description = css`
   width: 100%;
   color: ${theme.palette.info[600]};
-  font: ${theme.typography.body1};
+  ${theme.typography.body1};
   text-align: left;
 
   a {
@@ -169,6 +169,6 @@ export const videoContent = css`
 
 export const videoDescription = css`
   text-align: center;
-  font: ${theme.typography.caption};
+  ${theme.typography.caption};
   color: ${theme.palette.info[600]};
 `;
