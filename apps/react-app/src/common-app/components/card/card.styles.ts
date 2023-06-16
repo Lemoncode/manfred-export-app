@@ -56,4 +56,5 @@ export const description = css`
   width: 100%;
   ${theme.typography.body1};
   color: ${theme.palette.dark[700]};
+  text-align: center;
 `;

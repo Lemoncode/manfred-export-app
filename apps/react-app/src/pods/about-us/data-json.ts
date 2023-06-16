@@ -7,45 +7,17 @@ interface User {
 
 export const userList: User[] = [
   {
-    avatar: './assets/borrar.jpg',
-    name: 'Teresa',
+    avatar: './assets/teresa.jpg',
+    name: 'Teresa Milanés',
     job: 'Frontend Developer',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+      'Soy  MªTeresa,  desarrolladora  de  aplicaciones  web  enfocada  en el  Frontend  y diseño UI- UX.Combino habilidades en diseño y comprensión de la experiencia de usuario para crear interfaces atractivas y funcionales',
   },
   {
-    avatar: './assets/borrar.jpg',
+    avatar: './assets/flavio.png',
     name: 'Flavio Forte',
     job: 'Frontend Developer',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-  },
-  {
-    avatar: './assets/borrar.jpg',
-    name: 'Juan Brunder',
-    job: 'Frontend Developer',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-  },
-  {
-    avatar: './assets/borrar.jpg',
-    name: 'Daniel Sanchez',
-    job: 'Frontend Developer',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-  },
-  {
-    avatar: './assets/borrar.jpg',
-    name: 'Juan Pablo Martínez',
-    job: 'Frontend Developer',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-  },
-  {
-    avatar: './assets/borrar.jpg',
-    name: 'Manuel Dorado',
-    job: 'Frontend Developer',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+      'Soy un desarrollador Front End, hace dos años arranque mi carrera cursando un Bootcamp de fundamentos, y me especialice cursando el Máster Front End Lemoncode, en la actualidad me encuentro colaborando en proyectos tales como ManfredExport y complementado mis capacidades cursando el Bootcamp Backend Lemoncode.',
   },
 ];
