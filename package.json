@@ -12,7 +12,7 @@
     "start": "turbo run start --continue",
     "start:react": "npm start -- --filter=react-app",
     "test": "turbo run test",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,yml,html}\"",
     "changeset": "changeset",
     "publish-packages": "turbo run build --filter=./packages/* && changeset publish",
     "prepare": "node ./prepare.js"
