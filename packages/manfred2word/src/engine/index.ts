@@ -3,6 +3,7 @@ import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
 import { generateExperienceSection, generateLanguageSection, generateProfileSection } from './doc-parts';
+import { generateStudiesSection } from './doc-parts/studies-section';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
@@ -32,7 +33,13 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
       children: [generateExperienceSection(cv)],
     });
   }
-
+  if (cv?.knowledge?.studies && cv?.knowledge?.studies.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateStudiesSection(cv)],
+    });
+  }
+  
   if (cv?.knowledge?.languages && cv?.knowledge?.languages.length > 0) {
     sections.push({
       properties: { type: SectionType.CONTINUOUS },
