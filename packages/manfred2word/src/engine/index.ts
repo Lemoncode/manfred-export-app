@@ -8,6 +8,8 @@ import {
   generateProfileSection,
   generateSoftSkillSection,
 } from './doc-parts';
+import { generateStudiesSection } from './doc-parts/studies-section';
+
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
     styles: {
@@ -34,6 +36,12 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
     sections.push({
       properties: { type: SectionType.CONTINUOUS },
       children: [generateExperienceSection(cv)],
+    });
+  }
+  if (cv?.knowledge?.studies && cv?.knowledge?.studies.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateStudiesSection(cv)],
     });
   }
 
