@@ -2,8 +2,12 @@ import { Document, Packer, IRunOptions, SectionType, ISectionOptions } from 'doc
 import { ManfredAwesomicCV } from '@/model';
 import { download } from './engine.helpers';
 import { removeInvalidChars } from './json-parse.business';
-import { generateExperienceSection, generateLanguageSection, generateProfileSection } from './doc-parts';
-
+import {
+  generateExperienceSection,
+  generateLanguageSection,
+  generateProfileSection,
+  generateSoftSkillSection,
+} from './doc-parts';
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
     styles: {
@@ -37,6 +41,13 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
     sections.push({
       properties: { type: SectionType.CONTINUOUS },
       children: [generateLanguageSection(cv)],
+    });
+  }
+
+  if (cv?.knowledge?.softSkills && cv?.knowledge?.softSkills.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateSoftSkillSection(cv)],
     });
   }
 
