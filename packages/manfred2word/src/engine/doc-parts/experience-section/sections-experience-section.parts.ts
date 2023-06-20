@@ -3,7 +3,7 @@ import { ExperienceVm } from './experience-section.vm';
 import { styles } from './experience-section.styles';
 import { Role } from '@/model';
 
-export const titleExperienceSection = () =>
+export const generateTitleExperienceSection = () =>
   new Paragraph({
     spacing: { before: 400 },
     children: [
@@ -16,7 +16,7 @@ export const titleExperienceSection = () =>
     ],
   });
 
-const nameExperienceSection = (experienceVm: ExperienceVm): Paragraph =>
+const generateNameExperienceSection = (experienceVm: ExperienceVm): Paragraph =>
   new Paragraph({
     spacing: { before: 400 },
     children: [new TextRun({ text: experienceVm.name, size: '14pt', bold: true })],
@@ -37,10 +37,21 @@ const typeExperienceSection = (experienceVm: ExperienceVm): Paragraph =>
     ],
   });
 
-const titleRolesExperienceSection = (): Paragraph =>
+const generateTitleRolesExperienceSection = (): Paragraph =>
   new Paragraph({
     spacing: { before: 200 },
     children: [new TextRun({ text: 'Roles dentro de la empresa: ', size: '12pt', bold: true })],
+  });
+
+const generateRoleDateExperienceSection = (role: Role): Paragraph =>
+  new Paragraph({
+    spacing: { before: 200 },
+    children: [
+      new TextRun({
+        text: `${role.startDate} - ${role.finishDate ?? 'Actualidad'}`,
+        size: '10pt',
+      }),
+    ],
   });
 
 const generateRoleNameExperienceSection = (role: Role): Paragraph =>
@@ -58,7 +69,7 @@ const generateRoleDescriptionExperienceSection = (role: Role): Paragraph[] =>
       })
   ) ?? [];
 
-const challengeTitle = (): Paragraph =>
+const generateChallengeTitle = (): Paragraph =>
   new Paragraph({
     spacing: { before: 200 },
     children: [new TextRun({ text: 'Retos: ', size: '12pt', bold: true })],
@@ -70,7 +81,12 @@ const generateRoleExperienceSection = (role: Role): Paragraph[] => {
   children = [...children, generateRoleNameExperienceSection(role)];
 
   if (role.challenges) {
-    children = [...children, challengeTitle(), ...generateRoleDescriptionExperienceSection(role)];
+    children = [
+      ...children,
+      generateRoleDateExperienceSection(role),
+      generateChallengeTitle(),
+      ...generateRoleDescriptionExperienceSection(role),
+    ];
   }
 
   return children;
@@ -106,7 +122,7 @@ const generateLineSpacer = (): Paragraph =>
 export const sectionExperienceSection = (experienceVm: ExperienceVm): Paragraph[] => {
   let children: Paragraph[] = [];
 
-  children = [...children, nameExperienceSection(experienceVm)];
+  children = [...children, generateNameExperienceSection(experienceVm)];
 
   if (experienceVm.type) {
     children = [...children, typeExperienceSection(experienceVm)];
@@ -116,7 +132,7 @@ export const sectionExperienceSection = (experienceVm: ExperienceVm): Paragraph[
     children = [...children, descriptionExperienceSection(experienceVm)];
   }
 
-  children = [...children, titleRolesExperienceSection()];
+  children = [...children, generateTitleRolesExperienceSection()];
 
   children = [...children, ...generateRolesExperienceSection(experienceVm)];
 

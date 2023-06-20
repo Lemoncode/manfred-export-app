@@ -3,7 +3,7 @@ import { ManfredAwesomicCV } from '@/model';
 import { ExperienceVm } from './experience-section.vm';
 import { mapFromMacCvToExperienceSectionVm } from './experience-section.mapper';
 import { styles } from './experience-section.styles';
-import { sectionExperienceSection, titleExperienceSection } from './sections-experience-section.parts';
+import { sectionExperienceSection, generateTitleExperienceSection } from './sections-experience-section.parts';
 
 export const generateExperienceSection = (cv: ManfredAwesomicCV): Table => {
   const profileSectionVm = mapFromMacCvToExperienceSectionVm(cv);
@@ -21,7 +21,7 @@ const generateTitleExperience = (): TableRow =>
   new TableRow({
     children: [
       new TableCell({
-        children: [titleExperienceSection()],
+        children: [generateTitleExperienceSection()],
       }),
     ],
   });
