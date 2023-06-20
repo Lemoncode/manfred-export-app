@@ -127,9 +127,9 @@ describe('mapOrganizationType', () => {
     // Assert
     expect(result).toEqual('');
   });
-  it('should return an empty string if type is not found', () => {
+  it('should return an empty string if type is null', () => {
     // Arrange
-    const type: any = 'not found';
+    const type: any = null;
     // Act
     const result = mapOrganizationType(type);
     // Assert
@@ -137,10 +137,26 @@ describe('mapOrganizationType', () => {
   });
   it('should return an empty string if type is not found', () => {
     // Arrange
-    const type: any = 'not found';
+    const type: string = 'not found';
     // Act
     const result = mapOrganizationType(type);
     // Assert
     expect(result).toEqual('');
+  });
+  it('should return an empty string if type is not found', () => {
+    // Arrange
+    const type: string = 'not found';
+    // Act
+    const result = mapOrganizationType(type);
+    // Assert
+    expect(result).toEqual('');
+  });
+  it('should return an empty string if type is found', () => {
+    // Arrange
+    const type: string = 'freelance';
+    // Act
+    const result = mapOrganizationType(type);
+    // Assert
+    expect(result).toEqual('Autónomo');
   });
 });
