@@ -11,43 +11,30 @@ export const generateExperienceSection = (cv: ManfredAwesomicCV): Table => {
   return generateExperienceSectionInner(profileSectionVm);
 };
 
-const generateExperienceSectionInner = (experienceSectionVm: ExperienceVm[]): Table => {
-  if (Array.isArray(experienceSectionVm) && experienceSectionVm.length >= 1) {
-    return new Table({
-      ...styles.table,
-      rows: generateSectionFromVmToRows(experienceSectionVm),
-    });
-  } else {
-    return new Table({
-      rows: [],
-    });
-  }
-};
+const generateExperienceSectionInner = (experienceSectionVm: ExperienceVm[]): Table =>
+  new Table({
+    ...styles.table,
+    rows: [generateTitleExperience(), ...experienceSectionList(experienceSectionVm)],
+  });
 
-const generateSectionFromVmToRows = (experienceSectionVm: Array<ExperienceVm>) => {
-  let result = [];
+const generateTitleExperience = (): TableRow =>
+  new TableRow({
+    children: [
+      new TableCell({
+        children: [titleExperienceSection()],
+      }),
+    ],
+  });
 
-  result = experienceSectionVm.map(
-    (experience: ExperienceVm) =>
-      new TableRow({
-        children: [
-          new TableCell({
-            ...styles.table,
-            children: [sectionExperienceSection(experience)],
-          }),
-        ],
-      })
-  );
+const experienceSectionList = (experienceSectionVm: ExperienceVm[]): TableRow[] =>
+  experienceSectionVm.map(experienceVm => experienceSection(experienceVm));
 
-  result.unshift(
-    new TableRow({
-      children: [
-        new TableCell({
-          children: [titleExperienceSection()],
-        }),
-      ],
-    })
-  );
-
-  return result;
-};
+const experienceSection = (experienceVm: ExperienceVm): TableRow =>
+  new TableRow({
+    children: [
+      new TableCell({
+        ...styles.table,
+        children: sectionExperienceSection(experienceVm),
+      }),
+    ],
+  });
