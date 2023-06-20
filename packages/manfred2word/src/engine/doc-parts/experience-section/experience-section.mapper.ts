@@ -1,31 +1,25 @@
 import { ManfredAwesomicCV } from '@/model';
-import { ExperienceSectionVm } from './experience-section.vm';
+import { ExperienceVm } from './experience-section.vm';
+import { types } from './experience-section.contants';
 
-export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceSectionVm => {
-  let jobes: ExperienceSectionVm = [];
+export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
+  let jobs: ExperienceVm[] = [];
 
   cv?.experience?.jobs?.map(job => {
-    const name = job.organization.name ?? '';
-    const role = job.roles?.reduce((result, role) => result + role.name + '. ', '') ?? '';
-    const startDate = job.roles?.[job.roles.length - 1]?.startDate ?? '';
-    const finishDate = job.roles?.[0]?.finishDate ?? 'Actualidad';
-    const description =
-      job.roles?.[0]?.challenges?.reduce(
-        (result, challenge) => result + punctualizer(challenge.description) + ' ',
-        ''
-      ) ?? '';
+    const organizationName: string = job.organization?.name ?? '';
+    const organizationDescription: string = job.organization?.description ?? '';
+    const organizationType: string = job.type ?? '';
+    const roles = job.roles?.map(role => role) ?? [];
 
-    jobes = [...jobes, { name, role, startDate, finishDate, description }];
+    const mapType = mapOrganizationType(organizationType);
+
+    jobs = [...jobs, { name: organizationName, description: organizationDescription, type: mapType, roles }];
   });
 
-  return jobes;
+  return jobs;
 };
 
-//Quizás la siguiente función podria ponerse a parte en algun archivo common por si hiciera falta más adelante.
-const punctualizer = (x: string) => {
-  if (x[x.length - 1] === '.') {
-    return x;
-  } else {
-    return x + '.';
-  }
+export const mapOrganizationType = (type: string): string => {
+  const result = types.find(t => t.key === type);
+  return result?.value ?? '';
 };
