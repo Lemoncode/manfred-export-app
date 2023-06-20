@@ -3,7 +3,7 @@ import { ExperienceVm } from './experience-section.vm';
 import { types } from './experience-section.contants';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
-  let jobes: ExperienceVm[] = [];
+  let jobs: ExperienceVm[] = [];
 
   cv?.experience?.jobs?.map(job => {
     const organizationName: string = job.organization?.name ?? '';
@@ -13,10 +13,10 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
 
     const mapType = mapOrganizationType(organizationType);
 
-    jobes = [...jobes, { name: organizationName, description: organizationDescription, type: mapType, roles }];
+    jobs = [...jobs, { name: organizationName, description: organizationDescription, type: mapType, roles }];
   });
 
-  return jobes;
+  return jobs;
 };
 
 export const mapOrganizationType = (type: string): string => {
