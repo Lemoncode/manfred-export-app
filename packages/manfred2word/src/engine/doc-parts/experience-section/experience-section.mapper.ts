@@ -1,10 +1,6 @@
-import { ManfredAwesomicCV, OrganizationType, PublicEntityDetails } from '@/model';
+import { ManfredAwesomicCV } from '@/model';
 import { ExperienceVm } from './experience-section.vm';
-
-interface Type {
-  key: OrganizationType;
-  value: string;
-}
+import { types } from './experience-section.contants';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
   let jobes: ExperienceVm[] = [];
@@ -23,18 +19,7 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
   return jobes;
 };
 
-const types: Type[] = [
-  { key: 'freelance', value: 'Autónomo' },
-  { key: 'publicAdministration', value: 'Administración pública' },
-  { key: 'NGO', value: 'ONG' },
-  { key: 'startup', value: 'Startup' },
-  { key: 'SME', value: 'PYME' },
-  { key: 'bigCorp', value: 'Gran empresa' },
-  { key: 'academicalInstitution', value: 'Institución académica' },
-  { key: 'other', value: 'Otro' },
-];
-
-const mapOrganizationType = (type: string): string => {
+export const mapOrganizationType = (type: string): string => {
   const result = types.find(t => t.key === type);
   return result?.value ?? '';
 };

@@ -1,4 +1,4 @@
-import { mapFromMacCvToExperienceSectionVm } from './experience-section.mapper';
+import { mapFromMacCvToExperienceSectionVm, mapOrganizationType } from './experience-section.mapper';
 import { ExperienceVm } from './experience-section.vm';
 import { ManfredAwesomicCV } from '@/model';
 
@@ -115,5 +115,32 @@ describe('mapFromMacCvToExperienceSectionVm', () => {
       },
     ];
     expect(result).toEqual(expectResult);
+  });
+});
+
+describe('mapOrganizationType', () => {
+  it('should return an empty string if type is undefined', () => {
+    // Arrange
+    const type: any = undefined;
+    // Act
+    const result = mapOrganizationType(type);
+    // Assert
+    expect(result).toEqual('');
+  });
+  it('should return an empty string if type is not found', () => {
+    // Arrange
+    const type: any = 'not found';
+    // Act
+    const result = mapOrganizationType(type);
+    // Assert
+    expect(result).toEqual('');
+  });
+  it('should return an empty string if type is not found', () => {
+    // Arrange
+    const type: any = 'not found';
+    // Act
+    const result = mapOrganizationType(type);
+    // Assert
+    expect(result).toEqual('');
   });
 });
