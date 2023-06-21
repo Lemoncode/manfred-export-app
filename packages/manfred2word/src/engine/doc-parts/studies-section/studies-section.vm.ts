@@ -18,3 +18,13 @@ export interface Location {
   region: string;
   notes: string;
 }
+
+export interface CountryType {
+  iso: string;
+  name: string;
+}
+
+export interface StudyTypeWithTranslation {
+  key: string;
+  value: string;
+}
