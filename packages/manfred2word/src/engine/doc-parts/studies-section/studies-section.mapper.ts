@@ -13,11 +13,10 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
       const description = study?.description ?? '';
       let institution: Institution = {
         name: study?.institution?.name ?? '',
-        description: study?.institution?.description ?? '',
         location: {
           country: study?.institution?.location?.country ?? '',
           region: study?.institution?.location?.region ?? '',
-          notes: study?.institution?.location?.notes ?? '',
+          address: study?.institution?.location?.address ?? '',
         },
       };
 

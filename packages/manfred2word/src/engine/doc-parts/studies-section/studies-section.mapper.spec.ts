@@ -69,7 +69,7 @@ describe('studies-section.mapper specs', () => {
                 location: {
                   country: 'es',
                   region: 'region',
-                  notes: 'notes',
+                  address: 'address',
                 },
               },
             },
@@ -91,11 +91,10 @@ describe('studies-section.mapper specs', () => {
           description: 'description',
           institution: {
             name: 'name',
-            description: 'description',
             location: {
               country: 'España',
               region: 'region',
-              notes: 'notes',
+              address: 'address',
             },
           },
         },
@@ -132,7 +131,7 @@ describe('studies-section.mapper specs', () => {
                 location: {
                   country: 'es',
                   region: 'region',
-                  notes: 'notes',
+                  address: 'address',
                 },
               },
             },
@@ -149,7 +148,7 @@ describe('studies-section.mapper specs', () => {
                 location: {
                   country: 'it',
                   region: 'region2',
-                  notes: 'notes2',
+                  address: 'address2',
                 },
               },
             },
@@ -171,11 +170,10 @@ describe('studies-section.mapper specs', () => {
           description: 'description',
           institution: {
             name: 'name',
-            description: 'description',
             location: {
               country: 'España',
               region: 'region',
-              notes: 'notes',
+              address: 'address',
             },
           },
         },
@@ -188,11 +186,10 @@ describe('studies-section.mapper specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
-            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
-              notes: 'notes2',
+              address: 'address2',
             },
           },
         },

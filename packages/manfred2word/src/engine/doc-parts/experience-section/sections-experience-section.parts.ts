@@ -1,7 +1,7 @@
 import { Paragraph, TextRun } from 'docx';
 import { ExperienceVm } from './experience-section.vm';
-import { styles } from './experience-section.styles';
 import { Role } from '@/model';
+import { generateLineSpacer } from '@/common-app';
 
 export const generateTitleExperienceSection = () =>
   new Paragraph({
@@ -94,13 +94,6 @@ const generateRoleExperienceSection = (role: Role): Paragraph[] => {
 
 export const generateRolesExperienceSection = (experienceVm: ExperienceVm): Paragraph[] =>
   experienceVm.roles?.map(role => generateRoleExperienceSection(role)).flat() ?? [];
-
-const generateLineSpacer = (): Paragraph =>
-  new Paragraph({
-    spacing: { line: 400 },
-    text: '',
-    ...styles.lineStyles,
-  });
 
 export const sectionExperienceSection = (experienceVm: ExperienceVm): Paragraph[] => {
   let children: Paragraph[] = [];
