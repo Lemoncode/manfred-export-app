@@ -47,6 +47,7 @@ const generateRoleDateExperienceSection = (role: Role): Paragraph =>
   new Paragraph({
     spacing: { before: 200 },
     children: [
+      new TextRun({ text: 'Duración: ', size: '12pt', bold: true }),
       new TextRun({
         text: `${role.startDate} - ${role.finishDate ?? 'Actualidad'}`,
         size: '10pt',
