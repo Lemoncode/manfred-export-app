@@ -1,15 +1,17 @@
 import { ManfredAwesomicCV } from '@/model';
-import { Institution, StudiesSectionVm } from './studies-section.vm';
+import { CountryType, Institution, StudiesSectionVm, StudyTypeWithTranslation } from './studies-section.vm';
+import { studiesTypes, countryList } from './studies-section.constants';
 
 export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSectionVm[] => {
   const studiesMap: StudiesSectionVm[] =
     cv?.knowledge?.studies?.map(study => {
       const name = study?.name ?? '';
       const studyType = study?.studyType ?? '';
+      const degreeAchieved = study?.degreeAchieved ?? false;
       const startDate = study?.startDate ?? '';
       const finishDate = study?.finishDate ?? '';
       const description = study?.description ?? '';
-      const institution: Institution = {
+      let institution: Institution = {
         name: study?.institution?.name ?? '',
         description: study?.institution?.description ?? '',
         location: {
@@ -18,9 +20,15 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
           notes: study?.institution?.location?.notes ?? '',
         },
       };
+
+      const mapStudyType = mapStudiesTypes(studyType, studiesTypes);
+      const mapCountry = mapCountries(institution.location.country, countryList);
+      institution = { ...institution, location: { ...institution.location, country: mapCountry } };
+
       return {
         name,
-        studyType,
+        studyType: mapStudyType,
+        degreeAchieved,
         startDate,
         finishDate,
         description,
@@ -29,4 +37,14 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
     }) ?? [];
 
   return studiesMap;
+};
+
+export const mapStudiesTypes = (studiesType: string, studiesTypes: StudyTypeWithTranslation[]): string => {
+  const result = studiesTypes?.find(t => t.key === studiesType);
+  return result?.value ?? '';
+};
+
+export const mapCountries = (country: string, countries: CountryType[]): string => {
+  const result = countries?.find(c => c.iso === country?.toLowerCase());
+  return result?.name ?? '';
 };

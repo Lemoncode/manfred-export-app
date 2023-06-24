@@ -1,5 +1,8 @@
+import { StudyType } from '@/model';
+
 export interface StudiesSectionVm {
   studyType: string;
+  degreeAchieved: boolean;
   name: string;
   startDate: string;
   finishDate: string;
@@ -25,6 +28,6 @@ export interface CountryType {
 }
 
 export interface StudyTypeWithTranslation {
-  key: string;
+  key: StudyType;
   value: string;
 }

@@ -1,5 +1,5 @@
 import { mapFromMacCvToExperienceSectionVm, mapOrganizationType } from './experience-section.mapper';
-import { ExperienceVm } from './experience-section.vm';
+import { ExperienceVm, Type } from './experience-section.vm';
 import { ManfredAwesomicCV } from '@/model';
 
 describe('mapFromMacCvToExperienceSectionVm', () => {
@@ -122,40 +122,79 @@ describe('mapOrganizationType', () => {
   it('should return an empty string if type is undefined', () => {
     // Arrange
     const type: any = undefined;
+    const types: Type[] = [];
     // Act
-    const result = mapOrganizationType(type);
+    const result = mapOrganizationType(type, types);
     // Assert
     expect(result).toEqual('');
   });
+
   it('should return an empty string if type is null', () => {
     // Arrange
     const type: any = null;
+    const types: Type[] = [];
     // Act
-    const result = mapOrganizationType(type);
+    const result = mapOrganizationType(type, types);
     // Assert
     expect(result).toEqual('');
   });
-  it('should return an empty string if type is not found', () => {
+
+  it('should return an empty string if types is undefined', () => {
     // Arrange
-    const type: string = 'not found';
+    const type: any = 'freelance';
+    const types: any = undefined;
     // Act
-    const result = mapOrganizationType(type);
+    const result = mapOrganizationType(type, types);
     // Assert
     expect(result).toEqual('');
   });
-  it('should return an empty string if type is not found', () => {
+
+  it('should return an empty string if types is null', () => {
     // Arrange
-    const type: string = 'not found';
+    const type: any = 'freelance';
+    const types: any = null;
     // Act
-    const result = mapOrganizationType(type);
+    const result = mapOrganizationType(type, types);
     // Assert
     expect(result).toEqual('');
   });
-  it('should return an empty string if type is found', () => {
+
+  it('should return an empty string if types is empty', () => {
     // Arrange
-    const type: string = 'freelance';
+    const type: any = 'freelance';
+    const types: any = [];
     // Act
-    const result = mapOrganizationType(type);
+    const result = mapOrganizationType(type, types);
+    // Assert
+    expect(result).toEqual('');
+  });
+
+  it('should return an empty string if type is not in types', () => {
+    // Arrange
+    const type: any = 'anotherType';
+    const types: Type[] = [
+      {
+        key: 'freelance',
+        value: 'Autónomo',
+      },
+    ];
+    // Act
+    const result = mapOrganizationType(type, types);
+    // Assert
+    expect(result).toEqual('');
+  });
+
+  it('should return the value of the type if type is in types', () => {
+    // Arrange
+    const type: any = 'freelance';
+    const types: Type[] = [
+      {
+        key: 'freelance',
+        value: 'Autónomo',
+      },
+    ];
+    // Act
+    const result = mapOrganizationType(type, types);
     // Assert
     expect(result).toEqual('Autónomo');
   });
