@@ -10,7 +10,7 @@
   "scripts": {
     "build": "turbo run build",
     "start": "turbo run start --continue",
-    "start:react": "npm start -- --filter=react-app",
+    "start:react": "npm start -- --filter=react-app --filter=\"./packages/*\"",
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,yml,html}\"",
     "changeset": "changeset",
