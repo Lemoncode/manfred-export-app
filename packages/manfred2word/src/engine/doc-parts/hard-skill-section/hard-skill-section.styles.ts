@@ -7,7 +7,12 @@ export const styles = {
       top: { style: BorderStyle.NONE },
       left: { style: BorderStyle.NONE },
       right: { style: BorderStyle.NONE },
-      bottom: { style: BorderStyle.NONE },
+      bottom: {
+        color: 'DEDCE4',
+        space: 100,
+        style: 'single',
+        size: 20,
+      },
       insideHorizontal: { style: BorderStyle.NONE },
       insideVertical: { style: BorderStyle.NONE },
     },

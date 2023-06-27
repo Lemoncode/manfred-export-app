@@ -1,5 +1,5 @@
 import { ManfredAwesomicCV } from '@/model';
-import { ExperienceVm } from './experience-section.vm';
+import { ExperienceVm, Type } from './experience-section.vm';
 import { types } from './experience-section.contants';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
@@ -11,7 +11,7 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
     const organizationType: string = job.type ?? '';
     const roles = job.roles?.map(role => role) ?? [];
 
-    const mapType = mapOrganizationType(organizationType);
+    const mapType = mapOrganizationType(organizationType, types);
 
     jobs = [...jobs, { name: organizationName, description: organizationDescription, type: mapType, roles }];
   });
@@ -19,7 +19,7 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
   return jobs;
 };
 
-export const mapOrganizationType = (type: string): string => {
-  const result = types.find(t => t.key === type);
+export const mapOrganizationType = (type: string, types: Type[]): string => {
+  const result = types?.find(t => t.key === type);
   return result?.value ?? '';
 };

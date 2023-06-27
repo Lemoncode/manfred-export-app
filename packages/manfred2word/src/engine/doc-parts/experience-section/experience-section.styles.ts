@@ -16,14 +16,4 @@ export const styles = {
       type: WidthType.PERCENTAGE,
     },
   } as TableStyles,
-  lineStyles: {
-    border: {
-      bottom: {
-        color: 'DEDCE4',
-        space: 100,
-        style: 'single',
-        size: 20,
-      } as IBorderOptions,
-    },
-  },
 };
