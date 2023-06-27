@@ -11,33 +11,14 @@ export const generateSoftSkillSection = (cv: ManfredAwesomicCV): Table => {
   return generateSoftSkillSectionInner(profileSectionVm);
 };
 
-export const generateSoftSkillSectionInner = (softSkillSctionVm: SoftSkillVM[]): Table => {
-  if (Array.isArray(softSkillSctionVm) && softSkillSctionVm.length >= 1) {
-    return new Table({
-      ...styles.table,
-      rows: generateSectionSoftSkillFromVmToRows(softSkillSctionVm),
-    });
-  } else {
-    return new Table({
-      rows: [],
-    });
-  }
-};
+export const generateSoftSkillSectionInner = (softSkillSctionVm: SoftSkillVM[]): Table =>
+  new Table({
+    ...styles.table,
+    rows: [generateTitleSoftSkill(), ...generateSectionSoftSkillFromVmToRows(softSkillSctionVm)],
+  });
 
-export const generateSectionSoftSkillFromVmToRows = (sectionSoftSkillVm: SoftSkillVM[]): TableRow[] => {
-  const softSkill = sectionSoftSkillVm.map(
-    (softSkill: SoftSkillVM) =>
-      new TableRow({
-        children: [
-          new TableCell({
-            ...styles.table,
-            children: [sectionSoftSkillSection(softSkill)],
-          }),
-        ],
-      })
-  );
-
-  const title = new TableRow({
+const generateTitleSoftSkill = (): TableRow =>
+  new TableRow({
     children: [
       new TableCell({
         children: [titleSoftSkillSection()],
@@ -45,5 +26,15 @@ export const generateSectionSoftSkillFromVmToRows = (sectionSoftSkillVm: SoftSki
     ],
   });
 
-  return [title, ...softSkill];
-};
+const generateSectionSoftSkillFromVmToRows = (softSkillSectionVm: SoftSkillVM[]): TableRow[] =>
+  Boolean(softSkillSectionVm) ? softSkillSectionVm.map(softSkillVm => softSkillsSection(softSkillVm)) : [];
+
+const softSkillsSection = (sectionSoftSkillVm: SoftSkillVM): TableRow =>
+  new TableRow({
+    children: [
+      new TableCell({
+        ...styles.table,
+        children: sectionSoftSkillSection(sectionSoftSkillVm),
+      }),
+    ],
+  });

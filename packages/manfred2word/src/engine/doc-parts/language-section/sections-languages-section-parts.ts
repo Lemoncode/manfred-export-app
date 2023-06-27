@@ -1,6 +1,6 @@
 import { Paragraph, TextRun } from 'docx';
-import { LanguageVm } from './language-section.vm';
 import { generateLineSpacer } from '@/common-app';
+import { LanguageVm } from './language-section.vm';
 
 export const titleLanguageSection = () =>
   new Paragraph({
