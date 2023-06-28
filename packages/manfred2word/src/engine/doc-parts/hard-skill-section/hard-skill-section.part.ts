@@ -11,43 +11,30 @@ export const generateHardSkillSection = (cv: ManfredAwesomicCV): Table => {
   return generateHardSkillSectionInner(hardSkillVmArray);
 };
 
-const generateHardSkillSectionInner = (hardSkillVmArray: HardSkillVM[]): Table => {
-  if (Array.isArray(hardSkillVmArray) && hardSkillVmArray.length >= 1) {
-    return new Table({
-      ...styles.table,
-      rows: generateSectionFromVmToRows(hardSkillVmArray),
-    });
-  } else {
-    return new Table({
-      rows: [],
-    });
-  }
-};
+const generateHardSkillSectionInner = (hardSkillVmArray: HardSkillVM[]): Table =>
+  new Table({
+    ...styles.table,
+    rows: [generateTitleHardSkill(), ...generateSectionFromVmToRows(hardSkillVmArray)],
+  });
 
-const generateSectionFromVmToRows = (hardSkillVmArray: Array<HardSkillVM>) => {
-  let result = [];
+const generateTitleHardSkill = (): TableRow =>
+  new TableRow({
+    children: [
+      new TableCell({
+        children: [renderTitleHardSkillSection()],
+      }),
+    ],
+  });
 
-  result = hardSkillVmArray.map(
-    (hardSkill: HardSkillVM) =>
-      new TableRow({
-        children: [
-          new TableCell({
-            ...styles.table,
-            children: [renderSectionHardSkillSection(hardSkill)],
-          }),
-        ],
-      })
-  );
+const generateSectionFromVmToRows = (hardSkillSectionVm: HardSkillVM[]): TableRow[] =>
+  Boolean(hardSkillSectionVm) ? hardSkillSectionVm.map(softSkillVm => hardSkillsSection(softSkillVm)) : [];
 
-  result.unshift(
-    new TableRow({
-      children: [
-        new TableCell({
-          children: [renderTitleHardSkillSection()],
-        }),
-      ],
-    })
-  );
-
-  return result;
-};
+const hardSkillsSection = (sectionSoftSkillVm: HardSkillVM): TableRow =>
+  new TableRow({
+    children: [
+      new TableCell({
+        ...styles.table,
+        children: renderSectionHardSkillSection(sectionSoftSkillVm),
+      }),
+    ],
+  });

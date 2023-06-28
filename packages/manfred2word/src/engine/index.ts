@@ -9,6 +9,7 @@ import {
   generateSoftSkillSection,
 } from './doc-parts';
 import { generateStudiesSection } from './doc-parts/studies-section';
+import { generateHardSkillSection } from './doc-parts/hard-skill-section';
 
 const createMetaDocument = (cv: ManfredAwesomicCV): Document =>
   new Document({
@@ -49,6 +50,13 @@ const generateSections = (cv: ManfredAwesomicCV): ISectionOptions[] => {
     sections.push({
       properties: { type: SectionType.CONTINUOUS },
       children: [generateLanguageSection(cv)],
+    });
+  }
+
+  if (cv?.knowledge?.hardSkills && cv?.knowledge?.hardSkills.length > 0) {
+    sections.push({
+      properties: { type: SectionType.CONTINUOUS },
+      children: [generateHardSkillSection(cv)],
     });
   }
 
