@@ -27,7 +27,7 @@ const generateTitleExperience = (): TableRow =>
   });
 
 const experienceSectionList = (experienceSectionVm: ExperienceVm[]): TableRow[] =>
-  experienceSectionVm.map(experienceVm => experienceSection(experienceVm));
+  Boolean(experienceSectionVm) ? experienceSectionVm.map(experienceVm => experienceSection(experienceVm)) : [];
 
 const experienceSection = (experienceVm: ExperienceVm): TableRow =>
   new TableRow({

@@ -11,33 +11,14 @@ export const generateLanguageSection = (cv: ManfredAwesomicCV): Table => {
   return generateLanguageSectionInner(profileSectionVm);
 };
 
-const generateLanguageSectionInner = (languageSectionVm: LanguageVm[]): Table => {
-  if (Array.isArray(languageSectionVm) && languageSectionVm.length >= 1) {
-    return new Table({
-      ...styles.table,
-      rows: generateSectionLanguageFromVmToRows(languageSectionVm),
-    });
-  } else {
-    return new Table({
-      rows: [],
-    });
-  }
-};
+const generateLanguageSectionInner = (languageSectionVm: LanguageVm[]): Table =>
+  new Table({
+    ...styles.table,
+    rows: [generateTitleStudies(), ...languageSectionList(languageSectionVm)],
+  });
 
-export const generateSectionLanguageFromVmToRows = (sectionLanguageVm: LanguageVm[]) => {
-  const language = sectionLanguageVm.map(
-    (language: LanguageVm) =>
-      new TableRow({
-        children: [
-          new TableCell({
-            ...styles.table,
-            children: [sectionLanguageSection(language)],
-          }),
-        ],
-      })
-  );
-
-  const title = new TableRow({
+const generateTitleStudies = (): TableRow =>
+  new TableRow({
     children: [
       new TableCell({
         children: [titleLanguageSection()],
@@ -45,5 +26,15 @@ export const generateSectionLanguageFromVmToRows = (sectionLanguageVm: LanguageV
     ],
   });
 
-  return [title, ...language];
-};
+const languageSectionList = (languageSectionVm: LanguageVm[]): TableRow[] =>
+  Boolean(languageSectionVm) ? languageSectionVm.map(languageVm => languageSection(languageVm)) : [];
+
+const languageSection = (languageVm: LanguageVm) =>
+  new TableRow({
+    children: [
+      new TableCell({
+        ...styles.table,
+        children: sectionLanguageSection(languageVm),
+      }),
+    ],
+  });
