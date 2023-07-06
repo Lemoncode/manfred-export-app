@@ -1,23 +1,26 @@
-import { TableCell, TableRow, Table } from 'docx';
+import {
+  TableCell,
+  TableRow,
+  Table,
+  ITableCellOptions,
+  XmlComponent,
+  ITableRowOptions,
+  TextRun,
+  Paragraph,
+} from 'docx';
 import { ManfredAwesomicCV } from '@/model';
 import { HardSkillVM } from './hard-skill-section.vm';
 import { mapFromCvToHardSkillVm } from './hard-skill-section.mapper';
 import { styles } from './hard-skill-section.styles';
-import { renderSectionHardSkillSection, renderTitleHardSkillSection } from './sections-hard-skill-section.parts';
+import { renderTitleHardSkillSection } from './sections-hard-skill-section.parts';
 
-export const generateHardSkillSection = (cv: ManfredAwesomicCV): Table => {
-  const hardSkillVmArray = mapFromCvToHardSkillVm(cv);
-
-  return generateHardSkillSectionInner(hardSkillVmArray);
-};
-
-const generateHardSkillSectionInner = (hardSkillVmArray: HardSkillVM[]): Table =>
+const createTable = (hardSkillList: HardSkillVM[]): Table =>
   new Table({
     ...styles.table,
-    rows: [generateTitleHardSkill(), ...generateSectionFromVmToRows(hardSkillVmArray)],
+    rows: [createTableTitle(), createHardSkillListRow(hardSkillList)],
   });
 
-const generateTitleHardSkill = (): TableRow =>
+const createTableTitle = (): TableRow =>
   new TableRow({
     children: [
       new TableCell({
@@ -26,15 +29,41 @@ const generateTitleHardSkill = (): TableRow =>
     ],
   });
 
-const generateSectionFromVmToRows = (hardSkillSectionVm: HardSkillVM[]): TableRow[] =>
-  Boolean(hardSkillSectionVm) ? hardSkillSectionVm.map(softSkillVm => hardSkillsSection(softSkillVm)) : [];
-
-const hardSkillsSection = (sectionSoftSkillVm: HardSkillVM): TableRow =>
+const createHardSkillListRow = (sectionSoftSkillVm: HardSkillVM[]): TableRow =>
   new TableRow({
     children: [
       new TableCell({
         ...styles.table,
-        children: renderSectionHardSkillSection(sectionSoftSkillVm),
+        children: [createParagraph(sectionSoftSkillVm)],
       }),
     ],
   });
+
+const getSkillNameList = (skillList: HardSkillVM[]): string[] =>
+  skillList.map(item => (item.skill?.name ? item.skill?.name : ''));
+
+const createSkillListWithSeparator = (skillList: string[]): XmlComponent[] =>
+  skillList.map((item, index) => {
+    if (index === skillList.length - 1) {
+      return createSoftSkillItem(item);
+    }
+    return createSoftSkillItem(`${item} | `);
+  });
+
+const createParagraph = (skillList: HardSkillVM[]): XmlComponent => {
+  const list = getSkillNameList(skillList);
+  const skillListWithSeparator = createSkillListWithSeparator(list);
+
+  return new Paragraph({
+    spacing: { before: 200 },
+    children: [...skillListWithSeparator],
+  });
+};
+const createSoftSkillItem = (skill: string): XmlComponent =>
+  skill ? new TextRun({ text: skill, size: '12pt' }) : new TextRun({ text: '', size: '12pt' });
+
+export const generateHardSkillSection = (cv: ManfredAwesomicCV): Table => {
+  const hardSkillList = mapFromCvToHardSkillVm(cv);
+
+  return createTable(hardSkillList);
+};

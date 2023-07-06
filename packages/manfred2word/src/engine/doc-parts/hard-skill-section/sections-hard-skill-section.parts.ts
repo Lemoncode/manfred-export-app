@@ -1,56 +1,37 @@
-import { Paragraph, TextRun } from 'docx';
+import { IParagraphOptions, IRunOptions, Paragraph, Table, TableCell, TableRow, TextRun, XmlComponent } from 'docx';
 import { HardSkillVM } from './hard-skill-section.vm';
 import { generateLineSpacer } from '@/common-app';
+import { TableStyles } from '../doc-parts.vm';
 
 export const renderTitleHardSkillSection = () => {
   return new Paragraph({
     spacing: { before: 200 },
-    children: [
-      new TextRun({ text: 'Hard Skills/', size: '18pt' }),
-      new TextRun({
-        text: 'Nivel',
-        size: '18pt',
-        bold: true,
-      }),
-    ],
+    children: [new TextRun({ text: 'Hard Skills', size: '18pt', bold: true })],
   });
 };
 
-const hardSoftSkillSection = (skillVM: HardSkillVM) =>
-  new Paragraph({
-    spacing: { before: 200 },
-    children: [
-      new TextRun({ text: skillVM?.skill?.name + (skillVM?.skill?.description ? ': ' : ''), size: '12pt', bold: true }),
-      new TextRun({
-        text: skillVM?.skill?.description ? skillVM?.skill?.description : '',
-        size: '12pt',
-      }),
-    ],
+export const renderTable = (rows: TableRow[], styles?: TableStyles): XmlComponent =>
+  new Table({
+    ...styles,
+    rows: [...rows],
   });
 
-const levelHardSkillSection = (skillVM: HardSkillVM) =>
-  new Paragraph({
-    spacing: { before: 200 },
-    children: [
-      new TextRun({
-        text: 'Nivel: ',
-        size: '12pt',
-        bold: true,
-      }),
-      new TextRun({ text: skillVM?.level, size: '12pt' }),
-    ],
+export const renderTableRow = (cells: TableCell[], styles?: TableStyles): XmlComponent =>
+  new TableRow({
+    ...styles,
+    children: [...cells],
   });
 
-export const renderSectionHardSkillSection = (skillVM: HardSkillVM) => {
-  let hardSkillSection: Paragraph[] = [];
+export const renderTableCell = (children: XmlComponent[], styles?: TableStyles): XmlComponent =>
+  new TableCell({
+    ...styles,
+    children: [...children],
+  });
 
-  if (skillVM?.skill?.name) {
-    hardSkillSection = [...hardSkillSection, hardSoftSkillSection(skillVM)];
-  }
+export const renderParagraph = (children: XmlComponent[], opcions?: IParagraphOptions): XmlComponent =>
+  new Paragraph({
+    ...opcions,
+    children: [...children],
+  });
 
-  if (skillVM?.level) {
-    hardSkillSection = [...hardSkillSection, levelHardSkillSection(skillVM)];
-  }
-
-  return [...hardSkillSection, generateLineSpacer()];
-};
+export const renderTextRun = (text: string, options?: IRunOptions): XmlComponent => new TextRun({ ...options, text });
