@@ -1,0 +1,191 @@
+<div style="display:flex; gap:24px;">
+  <div style="flex:1;">
+    <p style="font-weight:bold; font-size:32px; line-height: 34px">David Bonilla Fuertes</p>
+    <p style="font-size:12px; font-weight:600;">FUNDADOR EN MANFRED / C-LEVEL EXECUTIVE</p>
+    <hr />
+    <p style="font-weight:bold;">Mis enlaces</p>
+    <div style="display:flex; flex-direction:column; gap:8px; font-size:12px">
+      <div style="display:flex; align-items:center; gap:8px;"><img src="linkedin.png" alt="linkedin" /><a style="color:black;" href="https://www.linkedin.com" target="_blank">Linkedin</a></div>
+      <div style="display:flex; align-items:center; gap:8px;"><img src="gorjeo.png" alt="twitter" /><a style="color:black;" href="https://www.twitter.com" target="_blank">Twitter</a></div>
+      <div style="display:flex; align-items:center; gap:8px;"><img src="github.png" alt="github" /><a style="color:black;" href="https://www.github.com" target="_blank">Github</a></div>
+      <div style="display:flex; align-items:center; gap:8px;"><img src="navegador.png" alt="website" /><a style="color:black;" href="https://www.website.com" target="_blank">Website</a></div>
+      <div style="display:flex; align-items:center; gap:8px;"><img src="sitio-web.png" alt="other" /><a style="color:black;" href="https://www.other.com" target="_blank">Other</a></div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; flex:2; gap:8px; padding-top:12px">
+    <p style="font-size: 18px; font-weight: bold; padding-bottom: 4px; border-bottom: 2px solid #e2e2e2;">Presentación</p>
+    <p>Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en la gestión de equipos y proyectos de construcción de activos digitales.  Me apasiona contribuir en todo el ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a clientes, y también involucrarme en la comercialización del mismo.  Me gusta trabajar con gente y para la gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos de usuarios y conferencias técnicas; y, a veces, organizándolos.</p>
+  </div>
+</div>
+
+---
+
+## EXPERIENCIA/**CARRERA**
+
+### **Manfred**
+
+### **Tipo de Organización**: Startup
+
+### Plataforma de Talento y agencia de recruiting técnico
+
+### **Roles dentro de la empresa:**
+
+**-Fundador**
+
+**Duración:** 2018-06-20 - Actualidad
+
+**Retos:**
+
+- Adapatción de la organización y procesos de la empresa para escalar las operacionesde la misma.
+
+- Desarrollo de producto propio para escalar las operaciones de la compañía, especialmente la aportación de valor a candidatos.
+
+- Culminación del proceso de compraventa de la compañía por parte de Angular, manteniendo el núcleo de empleados de la compañía y sin que la productividad o las ventas se resintieran antes, durante y después del mismo.
+
+- Creación y publicación de contratos open source (candidatos y empresas) para construir un marco legal para una empresa de recruiting.
+
+- Definición del modelo de datos y los procesos necesarios para identificar, clasificar y gestionar perfiles de profesionales técnicos.
+
+- Definición de formato CV extendido.
+
+- Definición e implementación de la web de la compañía.
+
+- Apertura de nueva filial en Bilbao.
+
+---
+
+### **Comalatech**
+
+### **Tipo de Organización**: Startup
+
+### Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.
+
+### **Roles dentro de la empresa:**
+
+**-CEO**
+
+**Duración:** 2017-02-01 - 2018-06-30
+
+**Retos:**
+
+- Adapatción de todos los procesos de la compañía al nuevo RGPD.
+
+- Apertura de nueva filial en Bilbao.
+
+- Coordinación de actividades en Europa.
+
+- Estandarización de contratos.
+
+- Soporte.
+
+---
+
+### **Instituto de Empresa**
+
+### **Tipo de Organización**: Institución académica
+
+### **Roles dentro de la empresa:**
+
+**-Profesor asociado de productividad y metodologías ágiles**
+
+---
+
+## EDUCACIÓN
+
+### **Ingeniería técnica Infomática**
+
+Computer Science Grade
+
+**Tipo de Estudio:** Grado oficial
+
+**Grado obtenido:** No obtenido
+
+**Fecha de inicio y finalización:** 2002-09-15 - 2006-06-30
+
+**Nombre de Institución:** UOC
+
+**Ubicación de la Institución:** Cataluña, España
+
+---
+
+### **Máster en Desarrollo de Aplicaciones Web**
+
+Computer Science Grade
+
+**Tipo de Estudio:** Certificación
+
+**Grado obtenido:** Obtenido
+
+**Fecha de inicio y finalización:** 2000-09-15 - 2001-06-30
+
+**Nombre de Institución:** CFDTI IBM/La Caixa
+
+**Ubicación de la Institución:** Madrid, España
+
+---
+
+### **Certified Scrum Master**
+
+Scrum Master certificado por la Scrum Alliance
+
+**Tipo de Estudio:** Certificación
+
+**Grado obtenido:** Obtenido
+
+**Fecha de inicio y finalización:** 2007-05-14 - 2007-05-21
+
+**Nombre de Institución:** Scrum Alliance
+
+**Ubicación de la Institución:** Madrid, España
+
+---
+
+## LENGUAJE/NIVEL
+
+### **Español**
+
+Habilidad nativo o bilingüe
+
+---
+
+### **Inglés**
+
+Habilidad profesional completo
+
+---
+
+### **Gallego**
+
+Habilidad básica
+
+---
+
+## Soft Skills/**Nivel**
+
+**Liderazgo:** Liderar equipos/organizaciones para que alcancen los objetivos marcados, en tiempo y presupuesto, sin incrementar la rotación del personal.
+
+**Nivel:** Experto.
+
+---
+
+**Atraer talento y retenerlo**
+
+**Nivel:** Experto.
+
+---
+
+**Orientado a resultados:** Acabar proyectos, además de empezarlos.
+
+**Nivel:** Experto.
+
+---
+
+**Comunicación:** Comunicar lo que hago, cómo lo hago y -sobre todo- por qué lo hago, tanto de forma oral como escrita, con cierta efectividad.
+
+**Nivel:** Experto.
+
+---
+
+**Logística:** Conocimientos avanzados de aprovisionamiento, almacenamiento, gestión y distribución de bienes.
+
+**Nivel:** Alto.
