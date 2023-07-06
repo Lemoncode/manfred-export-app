@@ -9,19 +9,19 @@
   ],
   "module": "./dist/manfred2md.es.js",
   "main": "./dist/manfred2md.cjs.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/manfred2md.es.js",
-      "require": "./dist/manfred2md.cjs.js"
+      "require": "./dist/manfred2md.cjs.js",
+      "types": "./dist/index.d.ts"
     }
   },
-  "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "start": "run-p \"build:js -- --watch\" \"types -- --watch\"",
-    "build": "npm run clean && npm run build:js  && npm run types",
+    "start": "run-p \"build:js -- --watch\"",
+    "build": "npm run clean && npm run build:js",
     "build:js": "vite build",
-    "types": "tsc --emitDeclarationOnly",
     "clean": "rimraf dist",
     "test": "jest -c ./config/test/jest.js",
     "test:watch": "npm test -- --watchAll -i"
@@ -48,7 +48,7 @@
     "rimraf": "^4.1.1",
     "ts-jest": "^29.1.0",
     "typescript": "^4.9.4",
-    "vite": "^4.0.4"
-  },
-  "dependencies": {}
+    "vite": "^4.0.4",
+    "vite-plugin-dts": "^3.1.0"
+  }
 }
