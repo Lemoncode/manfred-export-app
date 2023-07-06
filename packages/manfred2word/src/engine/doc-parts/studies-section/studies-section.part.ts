@@ -26,7 +26,7 @@ const generateTitleStudies = new TableRow({
 });
 
 const studiesSectionList = (studiesSectionVm: StudiesSectionVm[]): TableRow[] =>
-  studiesSectionVm.map(studiesVm => studiesSection(studiesVm));
+  Boolean(studiesSectionVm) ? studiesSectionVm.map(studiesVm => studiesSection(studiesVm)) : [];
 
 const studiesSection = (studiesVm: StudiesSectionVm): TableRow =>
   new TableRow({

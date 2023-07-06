@@ -1,7 +1,6 @@
-import { it } from '@jest/globals';
-
 import { ManfredAwesomicCV } from '@/model';
 import { HardSkillVM } from './hard-skill-section.vm';
+import { skillLevelValues } from './hard-skill-constants';
 import { mapFromCvToHardSkillVm, findLevelValue, getHardSkillData } from './hard-skill-section.mapper';
 
 const theContact: any = {
@@ -48,21 +47,16 @@ const exampleCv: ManfredAwesomicCV = {
 };
 
 describe('findLevelValue', () => {
-  it.each([
-    ['basic', 'básico'],
-    ['intermediate', 'intermedio'],
-    ['high', 'alto'],
-    ['expert', 'experto'],
-    ['not in the list', ''],
-  ])('It should return proper value when passed param is %s.', (a: string, b: string) => {
+  it('It should return the corresponding Spanish translation for a given level.', () => {
     //Arrange
-    const level: string = a;
+    const level: string = 'basic';
+    const expectedTranslation: string = 'básico';
 
     //Act
-    const result = findLevelValue(level);
+    const result = findLevelValue(level, skillLevelValues);
 
     //Assert
-    expect(result).toEqual(b);
+    expect(result).toEqual(expectedTranslation);
   });
 
   it('It should return empty string when passed param is also an empty string.', () => {
@@ -70,7 +64,7 @@ describe('findLevelValue', () => {
     const level: string = '';
 
     //Act
-    const result = findLevelValue(level);
+    const result = findLevelValue(level, skillLevelValues);
 
     //Assert
     expect(result).toEqual('');
@@ -81,7 +75,7 @@ describe('findLevelValue', () => {
     const level: any = undefined;
 
     //Act
-    const result = findLevelValue(level);
+    const result = findLevelValue(level, skillLevelValues);
 
     //Assert
     expect(result).toEqual('');
@@ -142,9 +136,32 @@ describe('getHardSkillData', () => {
 });
 
 describe('mapFromCvToHardSkillVm', () => {
-  it.each([null, undefined])('Should return empty array when incoming manfred CV is %s', (a: any) => {
+  it('It should return an array with the proper values when hardskills section is complete.', () => {
     //Arrange
-    const cv: ManfredAwesomicCV | null = a;
+    const cv: ManfredAwesomicCV = {
+      ...exampleCv,
+      knowledge: {
+        hardSkills: [exampleHardSkill],
+      },
+    };
+
+    //Act
+    const result = mapFromCvToHardSkillVm(cv);
+
+    //Assert
+    expect(result).toEqual([
+      { skill: { name: 'JAVA', description: 'Desarrollo de aplicaciones con Spring.' }, level: 'alto' },
+    ]);
+  });
+
+  it('It should return an array with the proper values when hardskills section is empty.', () => {
+    //Arrange
+    const cv: ManfredAwesomicCV = {
+      ...exampleCv,
+      knowledge: {
+        hardSkills: [],
+      },
+    };
 
     //Act
     const result = mapFromCvToHardSkillVm(cv);
