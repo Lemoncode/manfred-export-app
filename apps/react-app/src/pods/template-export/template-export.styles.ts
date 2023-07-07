@@ -48,7 +48,38 @@ export const textarea = css`
   color: ${theme.palette.light[700]};
 `;
 
+export const buttonContainer = css `
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: ${theme.spacing(4)};
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: ${theme.spacing(4)};
+  }
+
+  @media (max-width: 725px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: ${theme.spacing(4)};
+  }
+`;
+
 export const buttonClass = css`
   width: 50%;
   cursor: pointer;
+
+  @media (max-width: 725px) {
+    width: 100%;
+  }
 `;
+

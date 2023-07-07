@@ -32,14 +32,32 @@ export const TemplateExport: React.FC<Props> = props => {
           placeholder="Pega aquí tu JSON en formato MAC"
           className={classes.textarea}
         ></textarea>
-        <Button
-          disabled={text ? false : true}
-          onClick={handleOnExport}
-          className={classes.buttonClass}
-          showIcon={false}
-        >
-          Export
-        </Button>
+        <div className={classes.buttonContainer}>
+          <Button
+            disabled={text ? false : true}
+            onClick={handleOnExport}
+            className={classes.buttonClass}
+            showIcon={false}
+          >
+            Export To Word
+          </Button>
+          <Button
+            disabled={text ? false : true}
+            onClick={handleOnExport} /* TODO functionality for Markdown export */
+            className={classes.buttonClass}
+            showIcon={false}
+          >
+            Export To Markdwon
+          </Button>
+          <Button
+            disabled={text ? false : true}
+            onClick={handleOnExport} /* TODO functionality for HTML export */
+            className={classes.buttonClass}
+            showIcon={false}
+          >
+            Export To HTML
+          </Button>
+        </div>
       </div>
       <Footer />
     </div>
