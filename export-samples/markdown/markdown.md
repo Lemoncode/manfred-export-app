@@ -1,22 +1,22 @@
-<div style="display:flex; gap:24px;">
-  <div style="flex:1;">
-    <p style="font-weight:bold; font-size:32px; line-height: 34px">David Bonilla Fuertes</p>
-    <p style="font-size:12px; font-weight:600;">FUNDADOR EN MANFRED / C-LEVEL EXECUTIVE</p>
-    <hr />
-    <p style="font-weight:bold;">Mis enlaces</p>
-    <div style="display:flex; flex-direction:column; gap:8px; font-size:12px">
-      <div style="display:flex; align-items:center; gap:8px;"><img src="linkedin.png" alt="linkedin" /><a style="color:black;" href="https://www.linkedin.com" target="_blank">Linkedin</a></div>
-      <div style="display:flex; align-items:center; gap:8px;"><img src="gorjeo.png" alt="twitter" /><a style="color:black;" href="https://www.twitter.com" target="_blank">Twitter</a></div>
-      <div style="display:flex; align-items:center; gap:8px;"><img src="github.png" alt="github" /><a style="color:black;" href="https://www.github.com" target="_blank">Github</a></div>
-      <div style="display:flex; align-items:center; gap:8px;"><img src="navegador.png" alt="website" /><a style="color:black;" href="https://www.website.com" target="_blank">Website</a></div>
-      <div style="display:flex; align-items:center; gap:8px;"><img src="sitio-web.png" alt="other" /><a style="color:black;" href="https://www.other.com" target="_blank">Other</a></div>
-    </div>
-  </div>
-  <div style="display: flex; flex-direction: column; flex:2; gap:8px; padding-top:12px">
-    <p style="font-size: 18px; font-weight: bold; padding-bottom: 4px; border-bottom: 2px solid #e2e2e2;">Presentación</p>
-    <p>Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en la gestión de equipos y proyectos de construcción de activos digitales.  Me apasiona contribuir en todo el ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a clientes, y también involucrarme en la comercialización del mismo.  Me gusta trabajar con gente y para la gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos de usuarios y conferencias técnicas; y, a veces, organizándolos.</p>
-  </div>
-</div>
+# David Bonilla Fuertes
+
+##### FUNDADOR EN MANFRED / C-LEVEL EXECUTIVE
+
+---
+
+### Presentación
+
+Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor: programación, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas. Creo que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en la gestión de equipos y proyectos de construcción de activos digitales. Me apasiona contribuir en todo el ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a clientes, y también involucrarme en la comercialización del mismo. Me gusta trabajar con gente y para la gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les impida alcanzar todo su potencial. También procuro devolver a la comunidad informática parte del valor y el conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos de usuarios y conferencias técnicas, y a veces, organizándolos.
+
+---
+
+**Mis enlaces**
+
+- ![linkedin](linkedin.png) [Linkedin](https://www.linkedin.com)
+- ![twitter](gorjeo.png) [Twitter](https://www.twitter.com)
+- ![github](github.png) [Github](https://www.github.com)
+- ![website](navegador.png) [Website](https://www.website.com)
+- ![other](sitio-web.png) [Other](https://www.other.com)
 
 ---
 
