@@ -16,7 +16,7 @@ const getSkillNameList = (skillList: HardSkillVM[]): string[] =>
   skillList.map(item => (item.skill?.name ? item.skill?.name : ''));
 
 const createSkillListWithSeparator = (skillList: string[]): XmlComponent[] =>
-  skillList.map((item, index) => (index === skillList.length - 1 ? renderTextRun(item) : renderTextRun(`${item} | `)));
+  skillList.map((item, index) => (index === skillList.length - 1 ? renderTextRun(item) : renderTextRun(`${item} / `)));
 
 const createSkillsTableRow = (skillList: HardSkillVM[]): TableRow => {
   const list = getSkillNameList(skillList);
