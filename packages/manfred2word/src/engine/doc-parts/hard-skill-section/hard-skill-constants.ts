@@ -6,3 +6,5 @@ export const skillLevelValues: SkillLevel[] = [
   { english: 'high', spanish: 'alto' },
   { english: 'expert', spanish: 'experto' },
 ];
+
+export const sectionTitle = 'Hard Skills';
