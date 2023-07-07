@@ -3,12 +3,12 @@ import { ManfredAwesomicCV } from '@/model';
 import { HardSkillVM } from './hard-skill-section.vm';
 import { mapFromCvToHardSkillVm } from './hard-skill-section.mapper';
 import {
-  renderTable,
-  renderTableRow,
-  renderTableCell,
   renderParagraph,
+  renderTable,
+  renderTableCell,
+  renderTableRow,
   renderTextRun,
-} from './hard-skill-section.helpers';
+} from '@/common-app/helpers/render-elements.helpers';
 import { sectionTitle } from './hard-skill-constants';
 import { styles } from './hard-skill-section.styles';
 

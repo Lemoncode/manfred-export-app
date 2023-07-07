@@ -1,5 +1,5 @@
 import { IParagraphOptions, IRunOptions, Paragraph, Table, TableCell, TableRow, TextRun, XmlComponent } from 'docx';
-import { TableStyles } from '../doc-parts.vm';
+import { TableStyles } from '../model/doc-parts.vm';
 
 export const renderTable = (rows: TableRow[], styles?: TableStyles): XmlComponent =>
   new Table({

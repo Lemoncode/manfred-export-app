@@ -1,40 +1,47 @@
 import { ManfredAwesomicCV } from '@/model';
-import { TableCell, TableRow, Table } from 'docx';
-import { titleSoftSkillSection, sectionSoftSkillSection } from './sections-soft-skill-section.parts';
+import {
+  renderParagraph,
+  renderTable,
+  renderTableCell,
+  renderTableRow,
+  renderTextRun,
+} from '@/common-app/helpers/render-elements.helpers';
+import { TableRow, Table, XmlComponent } from 'docx';
 import { SoftSkillVM } from './soft-skill-section.vm';
 import { styles } from './soft-skill-section.styles';
 import { mapFromCvToSoftSkillVm } from './soft-skill-section.mapper';
+import { sectionTitle } from './soft-skill.constants';
 
-export const generateSoftSkillSection = (cv: ManfredAwesomicCV): Table => {
-  const profileSectionVm = mapFromCvToSoftSkillVm(cv);
+const getSkillNameList = (skillList: SoftSkillVM[]): string[] =>
+  skillList.map(item => (item.skill?.name ? item.skill?.name : ''));
 
-  return generateSoftSkillSectionInner(profileSectionVm);
+const createSkillListWithSeparator = (skillList: string[]): XmlComponent[] =>
+  skillList.map((item, index) => (index === skillList.length - 1 ? renderTextRun(item) : renderTextRun(`${item} / `)));
+
+const createSkillsTableRow = (skillList: SoftSkillVM[]): TableRow => {
+  const list = getSkillNameList(skillList);
+  const skillListWithSeparator = createSkillListWithSeparator(list);
+  const paragraph = renderParagraph(skillListWithSeparator, { spacing: { before: 200 } });
+  const cell = renderTableCell([paragraph]);
+  const row = renderTableRow([cell]);
+
+  return row;
 };
 
-export const generateSoftSkillSectionInner = (softSkillSctionVm: SoftSkillVM[]): Table =>
-  new Table({
-    ...styles.table,
-    rows: [generateTitleSoftSkill(), ...generateSectionSoftSkillFromVmToRows(softSkillSctionVm)],
-  });
+const createTitleTableRow = (text: string): TableRow => {
+  const title = renderTextRun(text, { size: '18pt', bold: true });
+  const paragraph = renderParagraph([title], { spacing: { before: 200 } });
+  const cell = renderTableCell([paragraph]);
+  const row = renderTableRow([cell]);
 
-const generateTitleSoftSkill = (): TableRow =>
-  new TableRow({
-    children: [
-      new TableCell({
-        children: [titleSoftSkillSection()],
-      }),
-    ],
-  });
+  return row;
+};
 
-const generateSectionSoftSkillFromVmToRows = (softSkillSectionVm: SoftSkillVM[]): TableRow[] =>
-  Boolean(softSkillSectionVm) ? softSkillSectionVm.map(softSkillVm => softSkillsSection(softSkillVm)) : [];
+export const generateSoftSkillSection = (cv: ManfredAwesomicCV): Table => {
+  const hardSkillList = mapFromCvToSoftSkillVm(cv);
+  const title = createTitleTableRow(sectionTitle);
+  const hardSkillItems = createSkillsTableRow(hardSkillList);
+  const table = renderTable([title, hardSkillItems], styles.table);
 
-const softSkillsSection = (sectionSoftSkillVm: SoftSkillVM): TableRow =>
-  new TableRow({
-    children: [
-      new TableCell({
-        ...styles.table,
-        children: sectionSoftSkillSection(sectionSoftSkillVm),
-      }),
-    ],
-  });
+  return table;
+};
