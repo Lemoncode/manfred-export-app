@@ -1,6 +1,6 @@
 import { ManfredAwesomicCV } from '@/model';
 import { ExperienceVm, Type } from './experience-section.vm';
-import { types } from './experience-section.constants';
+import { types } from './experience-section.contants';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
   let jobs: ExperienceVm[] = [];

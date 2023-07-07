@@ -10,6 +10,7 @@
       "types": "./src/index.ts"
     }
   },
+  "type": "module",
   "scripts": {
     "test": "jest -c ./config/test/jest.js",
     "test:watch": "npm test -- --watchAll -i"
