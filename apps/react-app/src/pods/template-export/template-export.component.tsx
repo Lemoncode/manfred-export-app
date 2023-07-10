@@ -49,14 +49,6 @@ export const TemplateExport: React.FC<Props> = props => {
           >
             Export To Markdwon
           </Button>
-          <Button
-            disabled={text ? false : true}
-            onClick={handleOnExport} /* TODO functionality for HTML export */
-            className={classes.buttonClass}
-            showIcon={false}
-          >
-            Export To HTML
-          </Button>
         </div>
       </div>
       <Footer />
