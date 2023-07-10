@@ -15,6 +15,11 @@
       "import": "./dist/manfred2word.es.js",
       "require": "./dist/manfred2word.cjs.js",
       "types": "./dist/index.d.ts"
+    },
+    "./dev": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "types": "./src/index.ts"
     }
   },
   "type": "module",
