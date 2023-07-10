@@ -1,6 +1,9 @@
 import { ManfredAwesomicCV } from '@/model';
 
-import { mapFromMacCvToExperienceSectionVm, ExperienceVm } from '@lemoncode/manfred-common';
+import {
+  mapFromMacCvToExperienceSectionVm,
+  ExperienceVm,
+} from '@lemoncode/manfred-common/src/engine/md-parts/experience-section';
 // @lemoncode/manfred-common/src/engine/md-parts/experience-section
 
 import { experienceTemplate } from './experience-section.template';
