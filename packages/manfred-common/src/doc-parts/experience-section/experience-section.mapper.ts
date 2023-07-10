@@ -1,4 +1,4 @@
-import { ManfredAwesomicCV } from '@/model';
+import { ManfredAwesomicCV } from '../../model';
 import { ExperienceVm, Type } from './experience-section.vm';
 import { types } from './experience-section.contants';
 
