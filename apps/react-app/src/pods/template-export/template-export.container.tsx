@@ -1,5 +1,5 @@
 import React from 'react';
-import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@lemoncode/manfred2word/dev';
+import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@lemoncode/manfred2word';
 import { DEFAULT_EXPORT_FILENAME } from '@/core';
 import { TemplateExport } from './template-export.component';
 import { exportManfredJSonToMarkdown } from '@lemoncode/manfred2md';

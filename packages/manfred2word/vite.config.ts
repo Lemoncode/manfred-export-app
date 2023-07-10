@@ -12,6 +12,7 @@ export default defineConfig({
       fileName: format => `manfred2word.${format}.js`,
       formats: ['es', 'cjs'],
     },
+    sourcemap: true,
   },
   resolve: {
     alias: {
