@@ -1,7 +1,6 @@
 {
   "extends": "@lemoncode/tsconfig/base.json",
   "compilerOptions": {
-    "outDir": "./dist",
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]

@@ -3,17 +3,19 @@
   "version": "0.0.0",
   "description": "",
   "private": true,
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./src/index.ts",
       "require": "./src/index.ts",
       "types": "./src/index.ts"
+    },
+    "./experience-section": {
+      "import": "./src/doc-parts/experience-section/index.ts",
+      "require": "./src/doc-parts/experience-section/index.ts",
+      "types": "./src/doc-parts/experience-section/index.ts"
     }
   },
-  "type": "module",
   "scripts": {
     "test": "jest -c ./config/test/jest.js",
     "test:watch": "npm test -- --watchAll -i"
