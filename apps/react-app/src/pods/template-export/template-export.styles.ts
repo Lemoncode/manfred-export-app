@@ -55,15 +55,10 @@ export const buttonContainer = css `
   gap: ${theme.spacing(4)};
   width: 100%;
 
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   @media (max-width: 725px) {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 `;
 
