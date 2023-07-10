@@ -1,4 +1,7 @@
+import { TableRow, Table, XmlComponent, HeadingLevel } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
+import { HardSkillVM } from './hard-skill-section.vm';
+import { mapFromCvToHardSkillVm } from './hard-skill-section.mapper';
 import {
   renderParagraph,
   renderTable,
@@ -6,19 +9,16 @@ import {
   renderTableRow,
   renderTextRun,
 } from '@/common-app/helpers/render-elements.helpers';
-import { TableRow, Table, XmlComponent } from 'docx';
-import { SoftSkillVM } from './soft-skill-section.vm';
-import { styles } from './soft-skill-section.styles';
-import { mapFromCvToSoftSkillVm } from './soft-skill-section.mapper';
-import { sectionTitle } from './soft-skill.constants';
+import { sectionTitle } from './hard-skill-constants';
+import { styles } from './hard-skill-section.styles';
 
-const getSkillNameList = (skillList: SoftSkillVM[]): string[] =>
+const getSkillNameList = (skillList: HardSkillVM[]): string[] =>
   skillList.map(item => (item.skill?.name ? item.skill?.name : ''));
 
 const createSkillListWithSeparator = (skillList: string[]): XmlComponent[] =>
   skillList.map((item, index) => (index === skillList.length - 1 ? renderTextRun(item) : renderTextRun(`${item} / `)));
 
-const createSkillsTableRow = (skillList: SoftSkillVM[]): TableRow => {
+const createSkillsTableRow = (skillList: HardSkillVM[]): TableRow => {
   const list = getSkillNameList(skillList);
   const skillListWithSeparator = createSkillListWithSeparator(list);
   const paragraph = renderParagraph(skillListWithSeparator, { spacing: { before: 200 } });
@@ -37,8 +37,8 @@ const createTitleTableRow = (text: string): TableRow => {
   return row;
 };
 
-export const generateSoftSkillSection = (cv: ManfredAwesomicCV): Table => {
-  const hardSkillList = mapFromCvToSoftSkillVm(cv);
+export const generateHardSkillSection = (cv: ManfredAwesomicCV): Table => {
+  const hardSkillList = mapFromCvToHardSkillVm(cv);
   const title = createTitleTableRow(sectionTitle);
   const hardSkillItems = createSkillsTableRow(hardSkillList);
   const table = renderTable([title, hardSkillItems], styles.table);

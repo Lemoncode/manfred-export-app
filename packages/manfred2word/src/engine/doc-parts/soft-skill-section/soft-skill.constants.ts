@@ -6,3 +6,5 @@ export const levelSkillList: SkillType[] = [
   { level: 'high', spanish: 'Alto' },
   { level: 'expert', spanish: 'Experto' },
 ];
+
+export const sectionTitle = 'Soft Skills';
