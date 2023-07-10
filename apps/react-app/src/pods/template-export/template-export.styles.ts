@@ -56,21 +56,14 @@ export const buttonContainer = css `
   width: 100%;
 
   @media (max-width: 1024px) {
-    display: flex;
     flex-direction: column;
-    width: 100%;
     justify-content: center;
     align-items: center;
-    gap: ${theme.spacing(4)};
   }
 
   @media (max-width: 725px) {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: ${theme.spacing(4)};
   }
 `;
 
