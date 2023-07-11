@@ -19,6 +19,11 @@
       "import": "./src/doc-parts/hard-skill-section/index.ts",
       "require": "./src/doc-parts/hard-skill-section/index.ts",
       "types": "./src/doc-parts/hard-skill-section/index.ts"
+    },
+    "./language-section": {
+      "import": "./src/doc-parts/language-section/index.ts",
+      "require": "./src/doc-parts/language-section/index.ts",
+      "types": "./src/doc-parts/language-section/index.ts"
     }
   },
   "scripts": {
