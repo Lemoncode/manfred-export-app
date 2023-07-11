@@ -48,7 +48,26 @@ export const textarea = css`
   color: ${theme.palette.light[700]};
 `;
 
+export const buttonContainer = css `
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: ${theme.spacing(4)};
+  width: 100%;
+
+  @media (max-width: 725px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 export const buttonClass = css`
   width: 50%;
   cursor: pointer;
+
+  @media (max-width: 725px) {
+    width: 100%;
+  }
 `;
+
