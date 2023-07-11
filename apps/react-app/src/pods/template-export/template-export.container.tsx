@@ -25,7 +25,7 @@ export const TemplateExportContainer: React.FC = () => {
     const manfredJsonContent = parseManfredJson(text);
 
     // TODO Flavio: Integrate Download
-    console.log(exportManfredJSonToMarkdown(text));
+    console.log(exportManfredJSonToMarkdown(manfredJsonContent));
   };
 
   return <TemplateExport onExportToWord={onExportJsonToWord} onExportToMarkdown={onExportJsonToMarkdown} />;

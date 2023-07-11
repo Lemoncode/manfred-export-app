@@ -4,9 +4,9 @@ import { removeIndent } from '@/common';
 // how to build and name fields
 const experienceTemplatePretty = `
 <%if (typeof experienceCollection !== 'undefined') {%>
-  # Experiencia / Carrera
+  ### Experiencia / Carrera
   <% for(var i=0; i < experienceCollection.length; i++) { %>
-    ## <%= experienceCollection[i].name %>
+    #### <%= experienceCollection[i].name %>
     <%= experienceCollection[i].description %>
   <% } %>
 <% } %>
