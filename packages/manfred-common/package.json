@@ -34,6 +34,11 @@
       "import": "./src/doc-parts/soft-skill-section/index.ts",
       "require": "./src/doc-parts/soft-skill-section/index.ts",
       "types": "./src/doc-parts/soft-skill-section/index.ts"
+    },
+    "./studies-section": {
+      "import": "./src/doc-parts/studies-section/index.ts",
+      "require": "./src/doc-parts/studies-section/index.ts",
+      "types": "./src/doc-parts/studies-section/index.ts"
     }
   },
   "scripts": {
