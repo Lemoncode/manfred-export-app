@@ -1,7 +1,6 @@
-import { StudiesSectionVm } from './studies-section.vm';
 import { Table, TableCell, TableRow } from 'docx';
+import { StudiesSectionVm, mapFromMacCvToStudiesSectionVm } from '@lemoncode/manfred-common/studies-section';
 import { ManfredAwesomicCV } from '@/model';
-import { mapFromMacCvToStudiesSectionVm } from './studies-section.mapper';
 import { sectionStudiesSection, generateTitleStudiesSection } from './sections-studies-section.part';
 import { styles } from './studies-section.styles';
 
