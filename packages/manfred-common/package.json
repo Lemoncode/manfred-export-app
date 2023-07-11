@@ -24,6 +24,11 @@
       "import": "./src/doc-parts/language-section/index.ts",
       "require": "./src/doc-parts/language-section/index.ts",
       "types": "./src/doc-parts/language-section/index.ts"
+    },
+    "./profile-section": {
+      "import": "./src/doc-parts/profile-section/index.ts",
+      "require": "./src/doc-parts/profile-section/index.ts",
+      "types": "./src/doc-parts/profile-section/index.ts"
     }
   },
   "scripts": {
