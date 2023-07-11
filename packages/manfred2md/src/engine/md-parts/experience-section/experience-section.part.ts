@@ -8,8 +8,6 @@ import ejs from 'ejs';
 export const generateExperiencieSection = (cv: ManfredAwesomicCV): string => {
   const experienceSectionVm = mapFromMacCvToExperienceSectionVm(cv);
 
-  console.log('*** experienceSectionVm ***', experienceSectionVm);
-
   return generateExperienceSectionInner(experienceSectionVm);
 };
 
