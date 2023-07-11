@@ -1,9 +1,8 @@
 import { ManfredAwesomicCV } from '@/model';
-import { LanguageVm } from './language-section.vm';
+import { LanguageVm, mapFromCvToLanguageVm } from '@lemoncode/manfred-common/language-section';
 import { TableCell, TableRow, Table } from 'docx';
 import { titleLanguageSection, sectionLanguageSection } from './sections-languages-section-parts';
 import { styles } from './language-section.styles';
-import { mapFromCvToLanguageVm } from './language-section.mapper';
 
 export const generateLanguageSection = (cv: ManfredAwesomicCV): Table => {
   const profileSectionVm = mapFromCvToLanguageVm(cv);

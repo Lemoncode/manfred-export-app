@@ -1,6 +1,6 @@
 import { Paragraph, TextRun } from 'docx';
+import { StudiesSectionVm } from '@lemoncode/manfred-common/studies-section';
 import { generateLineSpacer } from '@/common-app';
-import { StudiesSectionVm } from './studies-section.vm';
 
 export const generateTitleStudiesSection = () => {
   return new Paragraph({
