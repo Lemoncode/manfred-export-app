@@ -5,11 +5,14 @@ import { TemplateExport } from './template-export.component';
 import { exportManfredJSonToMarkdown } from '@lemoncode/manfred2md';
 
 export const TemplateExportContainer: React.FC = () => {
-  const onSetManfredJson = async (text: string) => {
+  const parseManfredJson = (text: string) => {
+    JSON.parse(text);
+    return parseStringToManfredJSon(text);
+  };
+
+  const onExportJsonToWord = async (text: string) => {
     try {
-      JSON.parse(text);
-      const manfredJsonContent = parseStringToManfredJSon(text);
-      console.log(exportManfredJSonToMarkdown(manfredJsonContent));
+      const manfredJsonContent = parseManfredJson(text);
 
       await exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
     } catch (error) {
@@ -18,5 +21,12 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  return <TemplateExport onExport={onSetManfredJson} />;
+  const onExportJsonToMarkdown = (text: string) => {
+    const manfredJsonContent = parseManfredJson(text);
+
+    // TODO Flavio: Integrate Download
+    console.log(exportManfredJSonToMarkdown(text));
+  };
+
+  return <TemplateExport onExport={onExportJsonToWord} />;
 };
