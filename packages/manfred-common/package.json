@@ -14,6 +14,11 @@
       "import": "./src/doc-parts/experience-section/index.ts",
       "require": "./src/doc-parts/experience-section/index.ts",
       "types": "./src/doc-parts/experience-section/index.ts"
+    },
+    "./hard-skill-section": {
+      "import": "./src/doc-parts/hard-skill-section/index.ts",
+      "require": "./src/doc-parts/hard-skill-section/index.ts",
+      "types": "./src/doc-parts/hard-skill-section/index.ts"
     }
   },
   "scripts": {

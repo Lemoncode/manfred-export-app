@@ -1,7 +1,10 @@
 import { TableRow, Table, XmlComponent, HeadingLevel } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
-import { HardSkillVM } from './hard-skill-section.vm';
-import { mapFromCvToHardSkillVm } from './hard-skill-section.mapper';
+
+import { HardSkillVM, mapFromCvToHardSkillVm, sectionTitle } from '@lemoncode/manfred-common/hard-skill-section';
+
+//import { HardSkillVM } from './hard-skill-section.vm';
+//import { mapFromCvToHardSkillVm } from './hard-skill-section.mapper';
 import {
   renderParagraph,
   renderTable,
@@ -9,7 +12,7 @@ import {
   renderTableRow,
   renderTextRun,
 } from '@/common-app/helpers/render-elements.helpers';
-import { sectionTitle } from './hard-skill-constants';
+//import { sectionTitle } from './hard-skill-constants';
 import { styles } from './hard-skill-section.styles';
 
 const getSkillNameList = (skillList: HardSkillVM[]): string[] =>
