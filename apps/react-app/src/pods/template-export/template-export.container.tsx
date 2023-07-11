@@ -28,5 +28,5 @@ export const TemplateExportContainer: React.FC = () => {
     console.log(exportManfredJSonToMarkdown(text));
   };
 
-  return <TemplateExport onExport={onExportJsonToWord} />;
+  return <TemplateExport onExportToWord={onExportJsonToWord} onExportToMarkdown={onExportJsonToMarkdown} />;
 };
