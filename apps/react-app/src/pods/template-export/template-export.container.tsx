@@ -3,27 +3,21 @@ import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@l
 import { DEFAULT_EXPORT_FILENAME } from '@/core';
 import { TemplateExport } from './template-export.component';
 import { onExportJsonToMarkdown } from '@/common-app/helpers';
-import { Document, Packer } from 'docx';
-import fs from 'fs';
-//  import { Blob } from 'buffer';
 
 export const TemplateExportContainer: React.FC = () => {
   const onSetManfredJson = async (text: string) => {
     try {
-      JSON.parse(text);
       const manfredJsonContent = parseStringToManfredJSon(text);
 
-      const x: any = await exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
+      await exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
 
-      const markdownContent = `# My JSON Data\n\n\`\`\`json\n${JSON.stringify(manfredJsonContent)}\n\`\`\``;
+      const markdownContent: string = `# Title \n ## subtitle\n- list-item ${JSON.stringify(manfredJsonContent)}`;
       const blob = new Blob([markdownContent], { type: 'text/markdown' });
 
-      const y = await new Promise<void>(resolve => {
-        onExportJsonToMarkdown(blob, 'archivo.md');
+      await new Promise<void>(resolve => {
+        onExportJsonToMarkdown(blob, 'manfred.md');
         resolve();
       });
-
-      console.log('Archivo .md generado', y);
     } catch (error) {
       alert('Hay un error, no está utilizando el formato correcto');
     }
