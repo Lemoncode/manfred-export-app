@@ -1,0 +1,7 @@
+<%if (typeof experienceCollection !== 'undefined') {%>
+### Experiencia / Carrera
+  <% for(var i=0; i < experienceCollection.length; i++) { %>
+#### <%= experienceCollection[i].name %>
+<%= experienceCollection[i].description %>
+  <% } %>
+<% } %>
