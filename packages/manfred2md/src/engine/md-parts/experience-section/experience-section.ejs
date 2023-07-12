@@ -1,7 +1,40 @@
+<% renderChallenge = (challenge) => challenge ? `\t- ${challenge.description}` : '' %>
+
+<% renderRole = (role) => {
+  if (!role) return '';
+  const name = role?.name;
+  const duration = role?.startDate + ' - ' + role?.finishDate || 'Actualidad';
+  const description = role?.description;
+  const challengeList = role.challenges?.map(challenge => renderChallenge(challenge));
+
+
+  return `
+  - **${name}**
+    - **Duración: **${duration}
+    - **Retos: **
+      ${challengeList ? challengeList.map(challenge => challenge).join('\n') : ''}
+  `;
+} %>
+
+<% const renderExperience = (experience) => {
+  if (!experience) return '';
+  const name = experience?.name;
+  const type = experience?.type;
+  const description = experience?.description;
+  const roles = experience.roles?.map(role => renderRole(role));
+
+  return `
+  - #### ${name}
+    - **Tipo de Organización: **${type}
+    - **Descripción: **${description}
+    - **Roles dentro de la empresa:**
+      ${roles?.join('\n')}
+  `;
+} %>
+
 <%if (typeof experienceCollection !== 'undefined') {%>
 ### Experiencia / Carrera
-  <% for(var i=0; i < experienceCollection.length; i++) { %>
-#### <%= experienceCollection[i].name %>
-<%= experienceCollection[i].description %>
-  <% } %>
+  <% experienceCollection.map(experience =>  {%>
+    <%- renderExperience(experience) %>
+  <% }) %>
 <% } %>
