@@ -1,6 +1,6 @@
 # David Bonilla Fuertes
 
-##### FUNDADOR EN MANFRED / C-LEVEL EXECUTIVE
+**FUNDADOR EN MANFRED / C-LEVEL EXECUTIVE**
 
 ---
 
@@ -10,7 +10,7 @@ Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de t
 
 ---
 
-**Mis enlaces**
+### Mis enlaces
 
 - ![linkedin](linkedin.png) [Linkedin](https://www.linkedin.com)
 - ![twitter](gorjeo.png) [Twitter](https://www.twitter.com)
@@ -20,172 +20,146 @@ Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de t
 
 ---
 
-## EXPERIENCIA/**CARRERA**
+### EXPERIENCIA / CARRERA
 
-### **Manfred**
+- #### Manfred
 
-### **Tipo de Organización**: Startup
+  - **Tipo de Organización:** Startup
 
-### Plataforma de Talento y agencia de recruiting técnico
+  - **Plataforma de Talento y agencia de recruiting técnico**
 
-### **Roles dentro de la empresa:**
+  - **Roles dentro de la empresa:**
 
-**-Fundador**
+    - **Fundador**
 
-**Duración:** 2018-06-20 - Actualidad
+    - **Duración:** 2018-06-20 - Actualidad
 
-**Retos:**
+    - **Retos:**
 
-- Adapatción de la organización y procesos de la empresa para escalar las operacionesde la misma.
+      - Adapatción de la organización y procesos de la empresa para escalar las operacionesde la misma.
 
-- Desarrollo de producto propio para escalar las operaciones de la compañía, especialmente la aportación de valor a candidatos.
+      - Desarrollo de producto propio para escalar las operaciones de la compañía, especialmente la aportación de valor a candidatos.
 
-- Culminación del proceso de compraventa de la compañía por parte de Angular, manteniendo el núcleo de empleados de la compañía y sin que la productividad o las ventas se resintieran antes, durante y después del mismo.
+      - Culminación del proceso de compraventa de la compañía por parte de Angular, manteniendo el núcleo de empleados de la compañía y sin que la productividad o las ventas se resintieran antes, durante y después del mismo.
 
-- Creación y publicación de contratos open source (candidatos y empresas) para construir un marco legal para una empresa de recruiting.
+      - Creación y publicación de contratos open source (candidatos y empresas) para construir un marco legal para una empresa de recruiting.
 
-- Definición del modelo de datos y los procesos necesarios para identificar, clasificar y gestionar perfiles de profesionales técnicos.
+      - Definición del modelo de datos y los procesos necesarios para identificar, clasificar y gestionar perfiles de profesionales técnicos.
 
-- Definición de formato CV extendido.
+      - Definición de formato CV extendido.
 
-- Definición e implementación de la web de la compañía.
+      - Definición e implementación de la web de la compañía.
 
-- Apertura de nueva filial en Bilbao.
+      - Apertura de nueva filial en Bilbao.
 
----
+- #### Comalatech
 
-### **Comalatech**
+  - **Tipo de Organización**: Startup
 
-### **Tipo de Organización**: Startup
+  - **Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.**
 
-### Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.
+  - **Roles dentro de la empresa:**
 
-### **Roles dentro de la empresa:**
+    - **CEO**
 
-**-CEO**
+    - **Duración:** 2017-02-01 - 2018-06-30
 
-**Duración:** 2017-02-01 - 2018-06-30
+    - **Retos:**
 
-**Retos:**
+      - Adapatción de todos los procesos de la compañía al nuevo RGPD.
 
-- Adapatción de todos los procesos de la compañía al nuevo RGPD.
+      - Apertura de nueva filial en Bilbao.
 
-- Apertura de nueva filial en Bilbao.
+      - Coordinación de actividades en Europa.
 
-- Coordinación de actividades en Europa.
+      - Estandarización de contratos.
 
-- Estandarización de contratos.
+      - Soporte.
 
-- Soporte.
+- #### Instituto de Empresa
 
----
+  - **Tipo de Organización**: Institución académica
 
-### **Instituto de Empresa**
+  - **Roles dentro de la empresa:**
 
-### **Tipo de Organización**: Institución académica
-
-### **Roles dentro de la empresa:**
-
-**-Profesor asociado de productividad y metodologías ágiles**
+    - **Profesor asociado de productividad y metodologías ágiles.**
 
 ---
 
-## EDUCACIÓN
+### EDUCACIÓN
 
-### **Ingeniería técnica Infomática**
+#### Ingeniería técnica Infomática
 
-Computer Science Grade
+- **Computer Science Grade**
+- **Tipo de Estudio:** Grado oficial
+- **Grado obtenido:** No obtenido
+- **Fecha de inicio y finalización:** 2002-09-15 - 2006-06-30
+- **Nombre de Institución:** UOC
+- **Ubicación de la Institución:** Cataluña, España
 
-**Tipo de Estudio:** Grado oficial
+#### Máster en Desarrollo de Aplicaciones Web
 
-**Grado obtenido:** No obtenido
+- **Computer Science Grade**
 
-**Fecha de inicio y finalización:** 2002-09-15 - 2006-06-30
+- **Tipo de Estudio:** Certificación
 
-**Nombre de Institución:** UOC
+- **Grado obtenido:** Obtenido
 
-**Ubicación de la Institución:** Cataluña, España
+- **Fecha de inicio y finalización:** 2000-09-15 - 2001-06-30
 
----
+- **Nombre de Institución:** CFDTI IBM/La Caixa
 
-### **Máster en Desarrollo de Aplicaciones Web**
+- **Ubicación de la Institución:** Madrid, España
 
-Computer Science Grade
+#### Certified Scrum Master
 
-**Tipo de Estudio:** Certificación
+- **Scrum Master certificado por la Scrum Alliance**
 
-**Grado obtenido:** Obtenido
+- **Tipo de Estudio:** Certificación
 
-**Fecha de inicio y finalización:** 2000-09-15 - 2001-06-30
+- **Grado obtenido:** Obtenido
 
-**Nombre de Institución:** CFDTI IBM/La Caixa
+- **Fecha de inicio y finalización:** 2007-05-14 - 2007-05-21
 
-**Ubicación de la Institución:** Madrid, España
+- **Nombre de Institución:** Scrum Alliance
 
----
-
-### **Certified Scrum Master**
-
-Scrum Master certificado por la Scrum Alliance
-
-**Tipo de Estudio:** Certificación
-
-**Grado obtenido:** Obtenido
-
-**Fecha de inicio y finalización:** 2007-05-14 - 2007-05-21
-
-**Nombre de Institución:** Scrum Alliance
-
-**Ubicación de la Institución:** Madrid, España
+- **Ubicación de la Institución:** Madrid, España
 
 ---
 
-## LENGUAJE/NIVEL
+### LENGUAJE / NIVEL
 
-### **Español**
+#### Español
 
 Habilidad nativo o bilingüe
 
----
-
-### **Inglés**
+#### Inglés
 
 Habilidad profesional completo
 
----
-
-### **Gallego**
+#### Gallego
 
 Habilidad básica
 
 ---
 
-## Soft Skills/**Nivel**
+### SOFT SKILLS / NIVEL
 
-**Liderazgo:** Liderar equipos/organizaciones para que alcancen los objetivos marcados, en tiempo y presupuesto, sin incrementar la rotación del personal.
+- **Liderazgo:** Liderar equipos/organizaciones para que alcancen los objetivos marcados, en tiempo y presupuesto, sin incrementar la rotación del personal.
 
-**Nivel:** Experto.
+  - **Nivel:** Experto.
 
----
+- **Atraer talento y retenerlo**
 
-**Atraer talento y retenerlo**
+  - **Nivel:** Experto.
 
-**Nivel:** Experto.
+- **Orientado a resultados:** Acabar proyectos, además de empezarlos.
 
----
+  - **Nivel:** Experto.
 
-**Orientado a resultados:** Acabar proyectos, además de empezarlos.
+- **Comunicación:** Comunicar lo que hago, cómo lo hago y -sobre todo- por qué lo hago, tanto de forma oral como escrita, con cierta efectividad.
 
-**Nivel:** Experto.
+  - **Nivel:** Experto.
 
----
-
-**Comunicación:** Comunicar lo que hago, cómo lo hago y -sobre todo- por qué lo hago, tanto de forma oral como escrita, con cierta efectividad.
-
-**Nivel:** Experto.
-
----
-
-**Logística:** Conocimientos avanzados de aprovisionamiento, almacenamiento, gestión y distribución de bienes.
-
-**Nivel:** Alto.
+- **Logística:** Conocimientos avanzados de aprovisionamiento, almacenamiento, gestión y distribución de bienes.
+  - **Nivel:** Alto.

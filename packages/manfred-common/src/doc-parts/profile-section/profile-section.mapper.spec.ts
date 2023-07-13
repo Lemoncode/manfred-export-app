@@ -1,7 +1,6 @@
-import { ManfredAwesomicCV, Person } from '@/model';
+import { ManfredAwesomicCV } from '@/model';
 import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
 import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
-import { ContactMean } from '../../../model/manfred-schema.model';
 
 describe('Testing profile-section.mapper.ts', () => {
   it('It should returns empty cv when passed cv is null', () => {

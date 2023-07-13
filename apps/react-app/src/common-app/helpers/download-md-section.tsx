@@ -1,4 +1,4 @@
-export const onExportJsonToMarkdown = (blob: Blob, filename: string) => {
+export const download = (blob: Blob, filename: string) => {
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement('a');
   document.body.appendChild(a);

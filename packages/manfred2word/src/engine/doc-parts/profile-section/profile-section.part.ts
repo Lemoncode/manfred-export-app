@@ -1,7 +1,6 @@
 import { Table, ITableOptions, TableRow, ITableRowOptions } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
-import { ProfileSectionVm } from './profile-section.vm';
-import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
+import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
 import { generateNameContactCell } from './name-contact';
 import { generateDescriptionCell } from './description';
 import { styles } from './profile-section.styles';

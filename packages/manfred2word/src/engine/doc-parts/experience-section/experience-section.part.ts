@@ -1,7 +1,10 @@
 import { TableCell, TableRow, Table } from 'docx';
 import { ManfredAwesomicCV } from '@/model';
-import { ExperienceVm } from './experience-section.vm';
-import { mapFromMacCvToExperienceSectionVm } from './experience-section.mapper';
+
+import { ExperienceVm, mapFromMacCvToExperienceSectionVm } from '@lemoncode/manfred-common/experience-section';
+
+//import { ExperienceVm } from './experience-section.vm';
+//import { mapFromMacCvToExperienceSectionVm } from './experience-section.mapper';
 import { styles } from './experience-section.styles';
 import { sectionExperienceSection, generateTitleExperienceSection } from './sections-experience-section.parts';
 
