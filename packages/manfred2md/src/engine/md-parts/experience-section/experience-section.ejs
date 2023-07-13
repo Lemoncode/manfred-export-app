@@ -1,11 +1,12 @@
 <% renderListItemIndent = (item, indentNumber) => {
-  if (!item) return '';
+  if (!item || typeof item === 'undefined') return '';
   const indent = '\t'.repeat(indentNumber);
-  return `${indent}- ${item}`;
+
+  return  `${indent}- ${item}`;
  } %>
 
 <% renderRole = (role) => {
-  if (!role) return '';
+  if (!role || typeof role === 'undefined') return '';
   const name = role?.name;
   const duration = role?.startDate + ' - ' + (role?.finishDate ?? 'Actualidad');
   const challenges = role?.challenges?.map(challenge => renderListItemIndent(challenge?.description, 4)).join('\n');
@@ -14,29 +15,30 @@
       ${renderListItemIndent(`**${name}**`, 2)}
       ${renderListItemIndent(`**Duración: **${duration}`, 3)}
       ${renderListItemIndent(`**Retos: **`, 3)}
-      ${challenges}
+      ${challenges ?? ''}
   `;
 } %>
 
 <% const renderExperience = (experience) => {
-  if (!experience) return '';
+  if (!experience || experience === 'undefined') return '';
   const name = experience?.name;
   const type = experience?.type;
   const description = experience?.description;
-  const roles = experience.roles?.map(role => renderRole(role));
+  const roles = experience?.roles?.map(role => renderRole(role));
 
   return `
     ${renderListItemIndent(`#### ${name}`, 0)}
     ${renderListItemIndent(`**Tipo de Organización: **${type}`, 1)}
     ${renderListItemIndent(`**Descripción: **${description}`, 1)}
     ${renderListItemIndent(`**Roles dentro de la empresa: **`, 1)}
-    ${roles?.join('\n')}
+    ${roles.join('\n') ?? ''}
   `;
+
 } %>
 
-<%if (typeof experienceCollection !== 'undefined') {
+<%if (experienceCollection && experienceCollection !== 'undefined') {
   return `
   ### Experiencia / Carrera
-  ${experienceCollection.map(experience => renderExperience(experience))}
+  ${experienceCollection.map(experience => renderExperience(experience)).join('\n')}
   `;
 } %>
