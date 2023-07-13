@@ -1,18 +1,20 @@
-<% renderChallenge = (challenge) => challenge ? `\t- ${challenge.description}` : '' %>
+<% renderListItemIndent = (item, indentNumber) => {
+  if (!item) return '';
+  const indent = '\t'.repeat(indentNumber);
+  return `${indent}- ${item}`;
+ } %>
 
 <% renderRole = (role) => {
   if (!role) return '';
   const name = role?.name;
-  const duration = role?.startDate + ' - ' + role?.finishDate || 'Actualidad';
-  const description = role?.description;
-  const challengeList = role.challenges?.map(challenge => renderChallenge(challenge));
-
+  const duration = role?.startDate + ' - ' + (role?.finishDate ?? 'Actualidad');
+  const challenges = role?.challenges?.map(challenge => renderListItemIndent(challenge?.description, 4)).join('\n');
 
   return `
-  - **${name}**
-    - **Duración: **${duration}
-    - **Retos: **
-      ${challengeList ? challengeList.map(challenge => challenge).join('\n') : ''}
+      ${renderListItemIndent(`**${name}**`, 2)}
+      ${renderListItemIndent(`**Duración: **${duration}`, 3)}
+      ${renderListItemIndent(`**Retos: **`, 3)}
+      ${challenges}
   `;
 } %>
 
@@ -24,17 +26,17 @@
   const roles = experience.roles?.map(role => renderRole(role));
 
   return `
-  - #### ${name}
-    - **Tipo de Organización: **${type}
-    - **Descripción: **${description}
-    - **Roles dentro de la empresa:**
-      ${roles?.join('\n')}
+    ${renderListItemIndent(`#### ${name}`, 0)}
+    ${renderListItemIndent(`**Tipo de Organización: **${type}`, 1)}
+    ${renderListItemIndent(`**Descripción: **${description}`, 1)}
+    ${renderListItemIndent(`**Roles dentro de la empresa: **`, 1)}
+    ${roles?.join('\n')}
   `;
 } %>
 
-<%if (typeof experienceCollection !== 'undefined') {%>
-### Experiencia / Carrera
-  <% experienceCollection.map(experience =>  {%>
-    <%- renderExperience(experience) %>
-  <% }) %>
-<% } %>
+<%if (typeof experienceCollection !== 'undefined') {
+  return `
+  ### Experiencia / Carrera
+  ${experienceCollection.map(experience => renderExperience(experience))}
+  `;
+} %>

@@ -1,9 +1,6 @@
-import { ManfredAwesomicCV } from '@/model';
-
-import { ExperienceVm, mapFromMacCvToExperienceSectionVm } from '@lemoncode/manfred-common/experience-section';
-
 import ejs from 'ejs';
-
+import { ExperienceVm, mapFromMacCvToExperienceSectionVm } from '@lemoncode/manfred-common/experience-section';
+import { ManfredAwesomicCV } from '@/model';
 import experienceTemplate from './experience-section.ejs?raw';
 
 export const generateExperiencieSection = (cv: ManfredAwesomicCV): string => {
