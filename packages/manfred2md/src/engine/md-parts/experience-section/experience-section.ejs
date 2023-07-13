@@ -1,6 +1,22 @@
 ### EXPERIENCIA / CARRERA
-<% for (const job of experienceCollection) { %>
-- #### <%= job.name %>
-  - **Tipo de Organización:** <%= job.type %>
-  - <%= job.description %>
-<% } %>
+<% if (experienceCollection && experienceCollection !== 'undefined') { -%>
+<% for (const job of experienceCollection) { -%>
+  - #### <%- job.name %>
+    - **Tipo de Organización:** <%- job.type %>
+    - **Descripción:** <%- job.description %>
+    - **Roles dentro de la empresa:**
+<% if (job.roles && job.roles !== 'undefined' ) { -%>
+<% for (const role of job.roles) { -%>
+      - **<%= role.name %>**
+        - **Duración:** <%= role.startDate %> - <%= role.finishDate ?? 'Actualidad' %>
+        - **Retos:**
+<% if (role.challenges && role.challenges !== 'undefined' ) { -%>
+<% for (const challenge of role.challenges) { -%>
+          - <%= challenge.description %>
+<% } -%>
+<% } -%>
+<% } -%>
+<% } -%>
+<% } -%>
+<% } -%>
+
