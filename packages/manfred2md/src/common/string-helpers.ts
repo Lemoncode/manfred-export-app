@@ -1,2 +1,1 @@
-export const removeIndent = (str: string) => str.replace(/^\s+/gm, "");
- 
+export const removeIndent = (str: string) => str.replace(/^\s+/gm, '');
