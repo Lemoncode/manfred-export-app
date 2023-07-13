@@ -1,7 +1,6 @@
 import { ManfredAwesomicCV } from '@/model';
 import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
-
-import { profileTemplate } from './profile-section.template';
+import profileTemplate from './profile-section.ejs?raw';
 import ejs from 'ejs';
 
 export const generateProfileSection = (cv: ManfredAwesomicCV): string => {
@@ -12,7 +11,7 @@ export const generateProfileSection = (cv: ManfredAwesomicCV): string => {
 
 const generateProfileSectionInner = (profileSectionVm: ProfileSectionVm): string => {
   const rootObject = {
-    ...profileSectionVm,
+    profile: profileSectionVm,
   };
 
   return ejs.render(profileTemplate, rootObject);
