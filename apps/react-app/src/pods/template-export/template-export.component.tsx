@@ -4,11 +4,12 @@ import { Button, Footer, Header, Navbar } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
-  onExport: (text: string) => void;
+  onExportToWord: (text: string) => void;
+  onExportToMarkdown: (text: string) => void;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExport } = props;
+  const { onExportToWord, onExportToMarkdown } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
 
@@ -16,9 +17,14 @@ export const TemplateExport: React.FC<Props> = props => {
     setText(event.target.value);
   };
 
-  const handleOnExport = () => {
+  const handleOnExportToWord = () => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onExport(text);
+    onExportToWord(text);
+  };
+
+  const handleOnExportToMarkdown = () => {
+    setUserChoice({ ...userChoice, manfredJsonContent: text });
+    onExportToMarkdown(text);
   };
 
   return (
@@ -32,14 +38,24 @@ export const TemplateExport: React.FC<Props> = props => {
           placeholder="Pega aquí tu JSON en formato MAC"
           className={classes.textarea}
         ></textarea>
-        <Button
-          disabled={text ? false : true}
-          onClick={handleOnExport}
-          className={classes.buttonClass}
-          showIcon={false}
-        >
-          Export
-        </Button>
+        <div className={classes.buttonContainer}>
+          <Button
+            disabled={text ? false : true}
+            onClick={handleOnExportToWord}
+            className={classes.buttonClass}
+            showIcon={false}
+          >
+            Export To Word
+          </Button>
+          <Button
+            disabled={text ? false : true}
+            onClick={handleOnExportToMarkdown}
+            className={classes.buttonClass}
+            showIcon={false}
+          >
+            Export To Markdwon
+          </Button>
+        </div>
       </div>
       <Footer />
     </div>

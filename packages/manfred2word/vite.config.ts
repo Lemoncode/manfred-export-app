@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import dts from 'vite-plugin-dts';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
+  plugins: [dts()],
   build: {
     emptyOutDir: false,
     lib: {
@@ -10,10 +12,11 @@ export default defineConfig({
       fileName: format => `manfred2word.${format}.js`,
       formats: ['es', 'cjs'],
     },
+    sourcemap: true,
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 });
