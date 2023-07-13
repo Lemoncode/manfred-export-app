@@ -2,7 +2,7 @@ import React from 'react';
 import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@lemoncode/manfred2word';
 import { exportManfredJSonToMarkdown } from '@lemoncode/manfred2md';
 import { DEFAULT_EXPORT_FILENAME } from '@/core';
-import { download } from '@/common-app/helpers';
+import { download } from '@/common';
 import { TemplateExport } from './template-export.component';
 
 export const TemplateExportContainer: React.FC = () => {
