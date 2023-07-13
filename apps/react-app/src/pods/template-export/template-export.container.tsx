@@ -1,8 +1,9 @@
 import React from 'react';
 import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@lemoncode/manfred2word';
-import { DEFAULT_EXPORT_FILENAME } from '@/core';
-import { TemplateExport } from './template-export.component';
 import { exportManfredJSonToMarkdown } from '@lemoncode/manfred2md';
+import { DEFAULT_EXPORT_FILENAME } from '@/core';
+import { download } from '@/common-app/helpers';
+import { TemplateExport } from './template-export.component';
 
 export const TemplateExportContainer: React.FC = () => {
   const parseManfredJson = (text: string) => {
@@ -12,8 +13,7 @@ export const TemplateExportContainer: React.FC = () => {
 
   const onExportJsonToWord = async (text: string) => {
     try {
-      const manfredJsonContent = parseManfredJson(text);
-
+      const manfredJsonContent = parseStringToManfredJSon(text);
       await exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
     } catch (error) {
       alert('Hay un error, no está utilizando el formato correcto');
@@ -21,11 +21,17 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  const onExportJsonToMarkdown = (text: string) => {
-    const manfredJsonContent = parseManfredJson(text);
+  const onExportJsonToMarkdown = async (text: string) => {
+    try {
+      const manfredJsonContent = parseManfredJson(text);
+      const content = exportManfredJSonToMarkdown(manfredJsonContent);
+      const blob = new Blob([content], { type: 'text/markdown' });
 
-    // TODO Flavio: Integrate Download
-    console.log(exportManfredJSonToMarkdown(manfredJsonContent));
+      await download(blob, 'manfred.md');
+    } catch (error) {
+      console.error(error);
+      alert('Hay un error, no está utilizando el formato correcto');
+    }
   };
 
   return <TemplateExport onExportToWord={onExportJsonToWord} onExportToMarkdown={onExportJsonToMarkdown} />;

@@ -48,7 +48,7 @@ export const textarea = css`
   color: ${theme.palette.light[700]};
 `;
 
-export const buttonContainer = css `
+export const buttonContainer = css`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,4 +70,3 @@ export const buttonClass = css`
     width: 100%;
   }
 `;
-
