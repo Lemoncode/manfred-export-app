@@ -1,7 +1,7 @@
 import { Paragraph, TextRun, TableCell, ITableCellOptions, ImageRun, ExternalHyperlink } from 'docx';
 import emailImage from '@/assets/email.png';
-import { ProfileSectionVm, RelevantLink } from '../profile-section.vm';
-import { revelantLinksImages } from '../profile-section.business';
+import { ProfileSectionVm, RelevantLink } from '@lemoncode/manfred-common/profile-section';
+import { relevantLinksImages } from '../profile-section.business';
 import { capitalizeWords } from '../../../engine.helpers';
 import { styles } from './name-contact-cell.styles';
 
@@ -60,11 +60,11 @@ const generateEmailsParagraphs = (emails: string[]): Paragraph[] =>
   });
 
 const generateLinksParagraphs = (relevantLinks: RelevantLink[], fullname: string): Paragraph[] => {
-  return relevantLinks.map((revelantLink: RelevantLink) => {
+  return relevantLinks.map((relevantLink: RelevantLink) => {
     return new Paragraph({
       children: [
         new ImageRun({
-          data: revelantLinksImages(revelantLink.type),
+          data: relevantLinksImages(relevantLink.type),
           transformation: {
             width: 20,
             height: 20,
@@ -72,8 +72,8 @@ const generateLinksParagraphs = (relevantLinks: RelevantLink[], fullname: string
         }),
         new TextRun({ text: '  ' }),
         new ExternalHyperlink({
-          children: [new TextRun({ text: capitalizeWords(revelantLink.type) })],
-          link: revelantLink.URL,
+          children: [new TextRun({ text: capitalizeWords(relevantLink.type) })],
+          link: relevantLink.URL,
         }),
       ],
       spacing: {
@@ -84,7 +84,7 @@ const generateLinksParagraphs = (relevantLinks: RelevantLink[], fullname: string
 };
 
 const generateProfileChildrenCell = (profileSectionVm: ProfileSectionVm): ITableCellOptions['children'] => {
-  const { fullname, title, emails, revelantLinks } = profileSectionVm;
+  const { fullname, title, emails, relevantLinks } = profileSectionVm;
 
   let children: ITableCellOptions['children'] = [];
 
@@ -96,12 +96,12 @@ const generateProfileChildrenCell = (profileSectionVm: ProfileSectionVm): ITable
     emails.length > 0 &&
     (children = [...children, generateContactLabel(), ...generateEmailsParagraphs(emails), generateLineSpacer()]);
 
-  Array.isArray(revelantLinks) &&
-    revelantLinks.length > 0 &&
+  Array.isArray(relevantLinks) &&
+    relevantLinks.length > 0 &&
     (children = [
       ...children,
       generateMyLinksLabel(),
-      ...generateLinksParagraphs(revelantLinks, fullname),
+      ...generateLinksParagraphs(relevantLinks, fullname),
       generateLineSpacer(),
     ]);
 

@@ -1,6 +1,6 @@
 import { it } from '@jest/globals';
 
-import { revelantLinksImages } from './profile-section.business';
+import { relevantLinksImages } from './profile-section.business';
 import githubImage from '@/assets/github.png';
 import linkedinImage from '@/assets/linkedin.png';
 import twitterImage from '@/assets/twitter.png';
@@ -12,7 +12,7 @@ describe('profile-section business specs', () => {
     const arg: any = null;
 
     // Act
-    const result = revelantLinksImages(arg);
+    const result = relevantLinksImages(arg);
 
     // Assert
     expect(result).toEqual('');
@@ -23,7 +23,7 @@ describe('profile-section business specs', () => {
     const arg: any = undefined;
 
     // Act
-    const result = revelantLinksImages(arg);
+    const result = relevantLinksImages(arg);
 
     // Assert
     expect(result).toEqual('');
@@ -39,7 +39,7 @@ describe('profile-section business specs', () => {
     const arg: any = a;
 
     // Act
-    const result = revelantLinksImages(arg);
+    const result = relevantLinksImages(arg);
 
     // Assert
     expect(result).toEqual(b);
