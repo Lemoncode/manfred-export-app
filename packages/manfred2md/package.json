@@ -19,8 +19,8 @@
   },
   "type": "module",
   "scripts": {
-    "start": "npm run build -- --watch",
-    "build": "vite build --mode development",
+    "start": "npm run build -- --mode development --watch",
+    "build": "vite build",
     "test": "jest -c ./config/test/jest.js",
     "test:watch": "npm test -- --watchAll -i"
   },

@@ -5,11 +5,6 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "require": "./src/index.ts",
-      "types": "./src/index.ts"
-    },
     "./experience-section": {
       "import": "./src/doc-parts/experience-section/index.ts",
       "require": "./src/doc-parts/experience-section/index.ts",

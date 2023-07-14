@@ -4,7 +4,7 @@
     "start": {
       "cache": false,
       "persistent": true,
-      "dependsOn": ["^build", "build"]
+      "dependsOn": ["^build"]
     },
     "build": {
       "outputs": ["dist/**"],
