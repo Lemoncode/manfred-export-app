@@ -9,7 +9,7 @@
   "description": "Manfred export app - Lemoncode Máster Front End TFM",
   "scripts": {
     "build": "turbo run build",
-    "start": "turbo run start --continue",
+    "start": "turbo run start",
     "start:react": "npm start -- --filter=react-app --filter=\"./packages/*\"",
     "start:md-lib": "npm start -- --filter=@lemoncode/manfred2md --filter=\"./packages/*\"",
     "test": "turbo run test",
