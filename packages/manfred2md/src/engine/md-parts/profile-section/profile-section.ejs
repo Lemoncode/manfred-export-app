@@ -1,7 +1,12 @@
 <% if (profile && profile !== 'undefined' ) { -%>
-# <%= profile.name + ' ' + profile.surnames %>
-**<%= profile.title %>**
+# <%= profile?.name + ' ' + profile?.surnames %>
+**<%= profile?.title %>**
 ---
+### Presentación
+<%= profile?.description %>
+---
+### Mis enlaces
+<% if (profile?.relevantLinks) { -%>
 
 
 <% } -%>
