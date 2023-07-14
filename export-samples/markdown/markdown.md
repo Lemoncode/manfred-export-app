@@ -26,55 +26,55 @@ Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de t
 
   - **Tipo de Organización:** Startup
 
-  - **Plataforma de Talento y agencia de recruiting técnico**
+  - **Descripción:** Plataforma de Talento y agencia de recruiting técnico
 
   - **Roles dentro de la empresa:**
 
     - **Fundador**
 
-    - **Duración:** 2018-06-20 - Actualidad
+      - **Duración:** 2018-06-20 - Actualidad
 
-    - **Retos:**
+      - **Retos:**
 
-      - Adapatción de la organización y procesos de la empresa para escalar las operacionesde la misma.
+        - Adapatción de la organización y procesos de la empresa para escalar las operacionesde la misma.
 
-      - Desarrollo de producto propio para escalar las operaciones de la compañía, especialmente la aportación de valor a candidatos.
+        - Desarrollo de producto propio para escalar las operaciones de la compañía, especialmente la aportación de valor a candidatos.
 
-      - Culminación del proceso de compraventa de la compañía por parte de Angular, manteniendo el núcleo de empleados de la compañía y sin que la productividad o las ventas se resintieran antes, durante y después del mismo.
+        - Culminación del proceso de compraventa de la compañía por parte de Angular, manteniendo el núcleo de empleados de la compañía y sin que la productividad o las ventas se resintieran antes, durante y después del mismo.
 
-      - Creación y publicación de contratos open source (candidatos y empresas) para construir un marco legal para una empresa de recruiting.
+        - Creación y publicación de contratos open source (candidatos y empresas) para construir un marco legal para una empresa de recruiting.
 
-      - Definición del modelo de datos y los procesos necesarios para identificar, clasificar y gestionar perfiles de profesionales técnicos.
+        - Definición del modelo de datos y los procesos necesarios para identificar, clasificar y gestionar perfiles de profesionales técnicos.
 
-      - Definición de formato CV extendido.
+        - Definición de formato CV extendido.
 
-      - Definición e implementación de la web de la compañía.
+        - Definición e implementación de la web de la compañía.
 
-      - Apertura de nueva filial en Bilbao.
+        - Apertura de nueva filial en Bilbao.
 
 - #### Comalatech
 
   - **Tipo de Organización**: Startup
 
-  - **Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.**
+  - **Descripción:** Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.
 
   - **Roles dentro de la empresa:**
 
     - **CEO**
 
-    - **Duración:** 2017-02-01 - 2018-06-30
+      - **Duración:** 2017-02-01 - 2018-06-30
 
-    - **Retos:**
+      - **Retos:**
 
-      - Adapatción de todos los procesos de la compañía al nuevo RGPD.
+        - Adapatción de todos los procesos de la compañía al nuevo RGPD.
 
-      - Apertura de nueva filial en Bilbao.
+        - Apertura de nueva filial en Bilbao.
 
-      - Coordinación de actividades en Europa.
+        - Coordinación de actividades en Europa.
 
-      - Estandarización de contratos.
+        - Estandarización de contratos.
 
-      - Soporte.
+        - Soporte.
 
 - #### Instituto de Empresa
 

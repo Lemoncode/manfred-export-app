@@ -53,7 +53,7 @@ export const TemplateExport: React.FC<Props> = props => {
             className={classes.buttonClass}
             showIcon={false}
           >
-            Export To Markdwon
+            Export To Markdown
           </Button>
         </div>
       </div>
