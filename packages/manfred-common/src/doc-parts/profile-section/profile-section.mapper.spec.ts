@@ -13,7 +13,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -32,7 +32,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -63,7 +63,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -94,7 +94,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -134,7 +134,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -175,7 +175,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -226,7 +226,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: 'Frontend developer',
       fullname: 'John Doe',
       emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
-      revelantLinks: [theLink] as RelevantLink[],
+      relevantLinks: [theLink] as RelevantLink[],
     };
 
     // Act

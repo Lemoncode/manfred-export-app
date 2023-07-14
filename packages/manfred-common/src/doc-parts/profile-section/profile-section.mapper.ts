@@ -8,7 +8,7 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
   const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
-  const revelantLinks = (cv?.aboutMe?.relevantLinks as RelevantLink[]) ?? [];
+  const relevantLinks = (cv?.aboutMe?.relevantLinks as RelevantLink[]) ?? [];
 
   return {
     name,
@@ -17,6 +17,6 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
     description,
     fullname,
     emails,
-    revelantLinks,
+    relevantLinks,
   };
 };
