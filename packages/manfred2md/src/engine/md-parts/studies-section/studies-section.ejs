@@ -1,3 +1,13 @@
-### Educación / Estudios
+### EDUCACIÓN
 
-<%_  "Hola" %>
+#### Ingeniería técnica Infomática
+
+<%_ if (studiesCollection && studiesCollection !== 'undefined') { -%>
+    <%_ for (const study of studiesCollection) { -%>
+    - **<%- study.description %>**
+    - **Tipo de Estudio:** <%- study.studyType %>
+    - **Grado obtenido:** <%- study.degreeAchieved ? "No obtenido" : "Obtenido"%>
+
+  <%_ } -%>
+<%_ } -%>
+
