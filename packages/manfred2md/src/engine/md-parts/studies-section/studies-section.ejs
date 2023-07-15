@@ -1,13 +1,26 @@
 ### EDUCACIÓN
 
-#### Ingeniería técnica Infomática
 
 <%_ if (studiesCollection && studiesCollection !== 'undefined') { -%>
-    <%_ for (const study of studiesCollection) { -%>
+
+  <%_ for (const study of studiesCollection) { -%>
+
+#### <%- study.name %>
+
+
     - **<%- study.description %>**
+
     - **Tipo de Estudio:** <%- study.studyType %>
+
     - **Grado obtenido:** <%- study.degreeAchieved ? "No obtenido" : "Obtenido"%>
 
-  <%_ } -%>
+    - **Fecha de inicio y finalización:** <%- study.startDate %> - <%- study.finishDate %>
+
+    - **Nombre de Institución:** <%- study.institution.name %><%- study.institution.description %>
+
+    - **Ubicación de la Institución:** <%- study.institution.location.region %>, <%- study.institution.location.country %>
+
+    <%_ } -%>
+
 <%_ } -%>
 
