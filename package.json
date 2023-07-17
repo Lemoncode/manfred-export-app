@@ -13,6 +13,7 @@
     "start:react": "npm start -- --filter=react-app --filter=\"./packages/*\"",
     "start:md-lib": "npm start -- --filter=@lemoncode/manfred2md --filter=\"./packages/*\"",
     "test": "turbo run test",
+    "type-check": "turbo run type-check",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,yml,html}\"",
     "changeset": "changeset",
     "publish-packages": "turbo run build --filter=./packages/* && changeset publish",
