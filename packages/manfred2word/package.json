@@ -19,8 +19,9 @@
   },
   "type": "module",
   "scripts": {
-    "start": "npm run build -- --watch",
+    "start": "run-p -l type-check \"build -- --mode development --watch\"",
     "build": "vite build",
+    "type-check": "tsc --noEmit --watch",
     "test": "jest -c ./config/test/jest.js",
     "test:watch": "npm test -- --watchAll -i"
   },
@@ -42,6 +43,7 @@
     "@lemoncode/tsconfig": "*",
     "@types/jest": "^29.5.0",
     "jest": "^29.6.1",
+    "npm-run-all": "^4.1.5",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6",
     "vite": "^4.0.4",
