@@ -21,6 +21,8 @@
   "scripts": {
     "start": "npm run build -- --mode development --watch",
     "build": "vite build",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
     "test": "jest -c ./config/test/jest.js",
     "test:watch": "npm test -- --watchAll -i"
   },

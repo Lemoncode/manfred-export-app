@@ -1,6 +1,6 @@
 import { ITableCellOptions, Paragraph, TableCell, TextRun } from 'docx';
 import { styles } from './description-cell.styles';
-import { ProfileSectionVm } from '../profile-section.vm';
+import { ProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
 
 /*
   ** This part of the CV *
