@@ -10,8 +10,12 @@
       "outputs": ["dist/**"],
       "dependsOn": ["^build", "type-check"]
     },
-    "type-check": {},
-    "type-check:watch": {},
+    "type-check": {
+      "dependsOn": ["^build"]
+    },
+    "type-check:watch": {
+      "dependsOn": ["^build"]
+    },
     "test": {}
   }
 }
