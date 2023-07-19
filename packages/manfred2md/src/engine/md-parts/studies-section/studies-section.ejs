@@ -1,0 +1,24 @@
+---
+
+### EDUCACIÓN
+
+<%_ if (studiesCollection && studiesCollection !== 'undefined') { -%>
+  <%_ for (const study of studiesCollection) { -%>
+#### <%= study.name %>
+
+- **<%= study.description %>**
+
+- **Tipo de Estudio:** <%= study.studyType %>
+
+- **Grado obtenido:** <%= study.degreeAchieved ? "No obtenido" : "Obtenido"%>
+
+- **Fecha de inicio y finalización:** <%= study.startDate %> - <%= study.finishDate === "" ? "Actualidad" : study.finishDate %>
+
+- **Nombre de Institución:** <%= study.institution.name %>
+
+- **Ubicación de la Institución:** <%= study.institution.location.region %>, <%= study.institution.location.country %>
+
+    <%_ } -%>
+
+<%_ } -%>
+

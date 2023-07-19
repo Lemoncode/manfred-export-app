@@ -1,5 +1,5 @@
 import { Paragraph, TextRun } from 'docx';
-import { ExperienceVm } from './experience-section.vm';
+import { ExperienceVm } from '@lemoncode/manfred-common/experience-section';
 import { Role } from '@/model';
 import { generateLineSpacer } from '@/common-app';
 
