@@ -1,6 +1,6 @@
 import { ManfredAwesomicCV } from '@/model';
 import { removeInvalidChars } from './json-parse.business';
-import { generateExperiencieSection, generateProfileSection, generateStudiesSection } from './md-parts';
+import { generateExperiencieSection, generateProfileSection, generateStudiesSection, generateLanguageSection } from './md-parts';
 
 // TODO: check whether to move to common manfred library
 export const parseStringToManfredJSon = (manfredJsonContent: string): ManfredAwesomicCV => {
@@ -14,9 +14,10 @@ export const exportManfredJSonToMarkdown = (manfredJsonContent: ManfredAwesomicC
   const experienceSection = generateExperiencieSection(manfredJsonContent);
   const profileSection = generateProfileSection(manfredJsonContent);
   const studySection = generateStudiesSection(manfredJsonContent);
-
+  const languageSection = generateLanguageSection(manfredJsonContent);
   return `${profileSection}
 ${experienceSection}
+${languageSection}
 ${studySection}
 `;
 };
