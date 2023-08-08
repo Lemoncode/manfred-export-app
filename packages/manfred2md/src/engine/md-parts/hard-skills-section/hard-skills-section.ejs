@@ -1,0 +1,14 @@
+### HARD SKILLS 
+
+<%_ if (hardSkillsCollection && hardSkillsCollection !== 'undefined') { -%>
+  <%_ for (const item of hardSkillsCollection) { -%>
+  - #### <%- item.skill.name %>
+    <%_ if (item.skill.description && item.skill.description !== 'undefined') { -%>
+
+    - **Descripción:** <%- item.skill.description %>
+    <%_ } -%>
+
+    - **Nivel:** <%- item.level %>
+
+  <%_ } -%>
+<%_ } -%>
