@@ -251,13 +251,16 @@
         font-weight: 500;
         color: var(--gray_color_800);
       }
-      .section__content > .date {
+      .main__section__item .date {
         color: var(--gray_color_900);
         font-size: 12px;
         letter-spacing: 0.48px;
         display: flex;
         flex-direction: column;
         gap: var(--spacing_8);
+      }
+      .main__section__item > .date-desktop {
+        display: none;
       }
       .section__content > .data {
         display: flex;
@@ -279,13 +282,27 @@
         main {
           gap: var(--spacing_32);
         }
+        .main__section__item {
+          display: grid;
+          grid-template-columns: minmax(106px, 15%) auto 1fr;
+          gap: var(--spacing_32);
+        }
+        .main__section__item > .date-desktop {
+          display: flex;
+          min-width: max-content;
+          align-items: flex-end;
+        }
         .section__content__header > h3 {
           font-size: 24px;
         }
         .section__content__header > h4 {
           font-size: 16px;
         }
+        .section__content > .date-mobile {
+          display: none;
+        }
         .section__content > .data {
+          grid-area: date;
           font-size: 14px;
           line-height: 18px;
         }
@@ -549,6 +566,10 @@
             <hr class="secondary-divider" />
           </div>
           <div class="main__section__item">
+            <div class="date date-desktop">
+              <p>Inicio: <b>2018-06-20</b></p>
+              <p>Fin: <b>Actualidad</b></p>
+            </div>
             <div class="line-icon">
               <div class="circle"></div>
               <hr class="line" />
@@ -558,7 +579,7 @@
                 <h3>Manfred</h3>
                 <h4>Plataforma de Talento y agencia de recruiting técnico</h4>
               </div>
-              <div class="date">
+              <div class="date date-mobile">
                 <p>Inicio: <b>2018-06-20</b></p>
                 <p>Fin: <b>Actualidad</b></p>
               </div>
@@ -595,6 +616,10 @@
             </div>
           </div>
           <div class="main__section__item">
+            <div class="date date-desktop">
+              <p>Inicio: <b>2017-02-01</b></p>
+              <p>Fin: <b>2018-06-30</b></p>
+            </div>
             <div class="line-icon">
               <div class="circle"></div>
               <hr class="line" />
@@ -604,7 +629,7 @@
                 <h3>Comalatech</h3>
                 <h4>Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.</h4>
               </div>
-              <div class="date">
+              <div class="date date-mobile">
                 <p>Inicio: <b>2017-02-01</b></p>
                 <p>Fin: <b>2018-06-30</b></p>
               </div>
@@ -624,6 +649,8 @@
             </div>
           </div>
           <div class="main__section__item">
+            <!-- this empty div is necessary if we don't have date data -->
+            <div class="date date-desktop"></div>
             <div class="line-icon">
               <div class="circle"></div>
               <hr class="line" />
@@ -646,6 +673,10 @@
             <hr class="secondary-divider" />
           </div>
           <div class="main__section__item">
+            <div class="date date-desktop">
+              <p>Inicio: <b>2002-09-15</b></p>
+              <p>Fin: <b>2006-06-30</b></p>
+            </div>
             <div class="line-icon">
               <div class="circle"></div>
               <hr class="line" />
@@ -655,7 +686,7 @@
                 <h3>Ingeniería Técnica Informática</h3>
                 <h4>Computer Science Grade</h4>
               </div>
-              <div class="date">
+              <div class="date date-mobile">
                 <p>Inicio: <b>2002-09-15</b></p>
                 <p>Fin: <b>2006-06-30</b></p>
               </div>
@@ -668,6 +699,10 @@
             </div>
           </div>
           <div class="main__section__item">
+            <div class="date date-desktop">
+              <p>Inicio: <b>2002-09-15</b></p>
+              <p>Fin: <b>2006-06-30</b></p>
+            </div>
             <div class="line-icon">
               <div class="circle"></div>
               <hr class="line" />
@@ -677,7 +712,7 @@
                 <h3>Master en Desarrollo de Aplicaciones Web</h3>
                 <h4>Computer Science Grade</h4>
               </div>
-              <div class="date">
+              <div class="date date-mobile">
                 <p>Inicio: <b>2002-09-15</b></p>
                 <p>Fin: <b>2006-06-30</b></p>
               </div>
@@ -690,6 +725,10 @@
             </div>
           </div>
           <div class="main__section__item">
+            <div class="date date-desktop">
+              <p>Inicio: <b>2007-05-14</b></p>
+              <p>Fin: <b>2007-05-21</b></p>
+            </div>
             <div class="line-icon">
               <div class="circle"></div>
               <hr class="line" />
@@ -699,7 +738,7 @@
                 <h3>Certified Scrum Master</h3>
                 <h4>Scrum Master certificado por la Scrum Alliance</h4>
               </div>
-              <div class="date">
+              <div class="date date-mobile">
                 <p>Inicio: <b>2007-05-14</b></p>
                 <p>Fin: <b>2007-05-21</b></p>
               </div>
