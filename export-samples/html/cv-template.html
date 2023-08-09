@@ -25,7 +25,7 @@
 
         /* colors */
         --primiry_color: #247a7e; /* only this color can be changed  */
-        --white_color: #fbfbfa;
+        --white_color: #f4f2f1;
         --black_color: #0d1418;
         --gray_color_600: #c6c3be;
         --gray_color_800: #787673;
@@ -82,6 +82,15 @@
         }
         .container {
           column-gap: var(--spacing_32);
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          grid-template-areas:
+            'aside divider header'
+            'aside divider main';
+          max-width: 1220px;
+          align-self: center;
         }
       }
       /* header styles */
@@ -147,6 +156,14 @@
           line-height: 20px;
         }
       }
+      @media (min-width: 1024px) {
+        h1 {
+          font-size: 52px;
+        }
+        h1 > span {
+          font-size: 40px;
+        }
+      }
       /* aside styles */
       aside {
         display: flex;
@@ -189,6 +206,9 @@
         text-decoration: none;
         text-transform: capitalize;
       }
+      .aside__section__item > a:hover {
+        color: var(--primiry_color);
+      }
       .aside__section__list-items {
         display: flex;
         flex-direction: column;
@@ -204,9 +224,16 @@
         }
         .aside__section__list-items {
           font-size: 14px;
+          line-height: 30px;
         }
       }
-      /* main section */
+      @media (min-width: 1024px) {
+        aside {
+          grid-area: aside;
+          padding: var(--spacing_64) 0;
+        }
+      }
+      /* main section styles */
       main {
         grid-area: main;
         display: flex;
