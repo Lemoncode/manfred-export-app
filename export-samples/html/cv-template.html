@@ -31,7 +31,7 @@
         --gray_color_800: #787673;
         --gray_color_900: #5c5a58;
       }
-
+      /* General styles */
       * {
         margin: 0;
         padding: 0;
@@ -75,6 +75,15 @@
       .svg-fill {
         fill: var(--gray_color_800);
       }
+
+      @media (min-width: 728px) {
+        body {
+          padding: var(--spacing_64);
+        }
+        .container {
+          column-gap: var(--spacing_32);
+        }
+      }
       /* header styles */
       header {
         grid-area: header;
@@ -88,7 +97,7 @@
       h1 {
         color: var(--primiry_color);
         font-family: Roboto;
-        font-size: 48px;
+        font-size: 40px;
         font-weight: 900;
         letter-spacing: 4.8px;
         text-transform: uppercase;
@@ -98,14 +107,15 @@
       }
       h1 > span {
         color: var(--gray_color_600);
-        font-size: 36px;
+        font-size: 32px;
         font-weight: 900;
         letter-spacing: 3.6px;
         text-transform: uppercase;
       }
-      h2 {
+      h2,
+      .job-title {
         color: var(--gray_color_900);
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 500;
         letter-spacing: 0.96px;
       }
@@ -119,6 +129,23 @@
       header > hr {
         border: var(--spacing_2) solid var(--primiry_color);
         width: 100%;
+      }
+
+      @media (min-width: 728px) {
+        h1 {
+          font-size: 48px;
+        }
+        h1 > span {
+          font-size: 36px;
+        }
+        h2,
+        .job-title {
+          font-size: 24px;
+        }
+        header > p {
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
       /* aside styles */
       aside {
@@ -170,6 +197,15 @@
         font-size: 12px;
         line-height: 24px;
       }
+
+      @media (min-width: 728px) {
+        .aside__section__item > a {
+          font-size: 16px;
+        }
+        .aside__section__list-items {
+          font-size: 14px;
+        }
+      }
       /* main section */
       main {
         grid-area: main;
@@ -211,7 +247,7 @@
         font-weight: 600;
       }
       .section__content__header > h4 {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         color: var(--gray_color_800);
       }
@@ -238,6 +274,21 @@
         gap: var(--spacing_12);
         padding-left: var(--spacing_16);
         font-weight: 300;
+      }
+      @media (min-width: 728px) {
+        main {
+          gap: var(--spacing_32);
+        }
+        .section__content__header > h3 {
+          font-size: 24px;
+        }
+        .section__content__header > h4 {
+          font-size: 16px;
+        }
+        .section__content > .data {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
       .line-icon {
         display: flex;
@@ -267,7 +318,7 @@
       <header>
         <h1>david <br /><span>bonilla fuertes</span></h1>
         <hr />
-        <h2>Fundador en Manfred / C-Level Executive</h2>
+        <p class="job-title">Fundador en Manfred / C-Level Executive</p>
         <p>
           Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor
           -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo
