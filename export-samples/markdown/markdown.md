@@ -143,23 +143,12 @@ Habilidad básica
 
 ---
 
-### SOFT SKILLS / NIVEL
+### HARD SKILLS
 
-- **Liderazgo:** Liderar equipos/organizaciones para que alcancen los objetivos marcados, en tiempo y presupuesto, sin incrementar la rotación del personal.
+JIRA / JAVA
 
-  - **Nivel:** Experto.
+---
 
-- **Atraer talento y retenerlo**
+### SOFT SKILLS
 
-  - **Nivel:** Experto.
-
-- **Orientado a resultados:** Acabar proyectos, además de empezarlos.
-
-  - **Nivel:** Experto.
-
-- **Comunicación:** Comunicar lo que hago, cómo lo hago y -sobre todo- por qué lo hago, tanto de forma oral como escrita, con cierta efectividad.
-
-  - **Nivel:** Experto.
-
-- **Logística:** Conocimientos avanzados de aprovisionamiento, almacenamiento, gestión y distribución de bienes.
-  - **Nivel:** Alto.
+Liderazgo / Atraer talento y retenerlo / Orientado a resultados / Comunicación / Logística
