@@ -1,14 +1,10 @@
 ### SOFT SKILLS 
 
 <%_ if (softSkillsCollection && softSkillsCollection !== 'undefined') { -%>
-  <%_ for (const item of softSkillsCollection) { -%>
-  - #### <%- item.skill.name %>
-    <%_ if (item.skill.description && item.skill.description !== 'undefined') { -%>
-
-    - **Descripción:** <%- item.skill.description %>
-    <%_ } -%>
-
-    - **Nivel:** <%- item.level %>
-
+  <%_ let str = ""; -%>
+  <%_ let i = 0; -%>
+  <%_ for (item of softSkillsCollection) { -%>
+    <%_ str = str + (i++ ? " / " : "") + item.skill.name; -%>
   <%_ } -%>
+  <%- str %>
 <%_ } -%>
