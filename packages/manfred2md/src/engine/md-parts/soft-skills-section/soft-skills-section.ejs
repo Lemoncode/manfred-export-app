@@ -1,10 +1,5 @@
 ### SOFT SKILLS 
 
 <%_ if (softSkillsCollection && softSkillsCollection !== 'undefined') { -%>
-  <%_ let str = ""; -%>
-  <%_ let i = 0; -%>
-  <%_ for (item of softSkillsCollection) { -%>
-    <%_ str = str + (i++ ? " / " : "") + item.skill.name; -%>
-  <%_ } -%>
-  <%- str %>
+  <%- softSkillsCollection.map(element => element.skill.name).join(' / ') %>
 <%_ } -%>
