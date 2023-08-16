@@ -1,10 +1,5 @@
 ### HARD SKILLS 
 
 <%_ if (hardSkillsCollection && hardSkillsCollection !== 'undefined') { -%>
-  <%_ let str = ""; -%>
-  <%_ let i = 0; -%>
-  <%_ for (item of hardSkillsCollection) { -%>
-    <%_ str = str + (i++ ? " / " : "") + item.skill.name; -%>
-  <%_ } -%>
-  <%- str %>
+  <%- hardSkillsCollection.map(element => element.skill.name).join(' / ') %>
 <%_ } -%>
