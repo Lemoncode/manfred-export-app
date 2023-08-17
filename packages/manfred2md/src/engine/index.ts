@@ -25,7 +25,7 @@ export const exportManfredJSonToMarkdown = (manfredJsonContent: ManfredAwesomicC
   return `${profileSection}
 ${experienceSection}
 ${languageSection}
-${hardSkillsSection}
 ${studySection}
+${hardSkillsSection}
 `;
 };
