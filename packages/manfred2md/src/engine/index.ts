@@ -5,6 +5,7 @@ import {
   generateProfileSection,
   generateStudiesSection,
   generateLanguageSection,
+  generateHardSkillsSection,
   generateSoftSkillsSection,
 } from './md-parts';
 
@@ -22,10 +23,12 @@ export const exportManfredJSonToMarkdown = (manfredJsonContent: ManfredAwesomicC
   const studySection = generateStudiesSection(manfredJsonContent);
   const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
   const languageSection = generateLanguageSection(manfredJsonContent);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
   return `${profileSection}
 ${experienceSection}
 ${languageSection}
 ${studySection}
+${hardSkillsSection}
 ${softSkillsSection}
 `;
 };
