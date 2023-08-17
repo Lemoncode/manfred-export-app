@@ -4,9 +4,9 @@ import twitterImage from '@/assets/twitter.png';
 import websiteImage from '@/assets/website.png';
 import otherImage from '@/assets/other.png';
 
-type TypesRevelantLinks = 'linkedin' | 'github' | 'twitter' | 'website' | 'other';
+type TypesRelevantLinks = 'linkedin' | 'github' | 'twitter' | 'website' | 'other';
 
-export const revelantLinksImages = (type: TypesRevelantLinks): string => {
+export const relevantLinksImages = (type: TypesRelevantLinks): string => {
   switch (type) {
     case 'linkedin':
       return linkedinImage;

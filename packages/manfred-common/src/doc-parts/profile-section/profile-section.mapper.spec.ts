@@ -1,7 +1,6 @@
-import { ManfredAwesomicCV, Person } from '@/model';
+import { ManfredAwesomicCV } from '@/model';
 import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
 import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
-import { ContactMean } from '../../../model/manfred-schema.model';
 
 describe('Testing profile-section.mapper.ts', () => {
   it('It should returns empty cv when passed cv is null', () => {
@@ -14,7 +13,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -33,7 +32,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -64,7 +63,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -95,7 +94,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -135,7 +134,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -176,7 +175,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      revelantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLink[],
     };
 
     // Act
@@ -227,7 +226,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: 'Frontend developer',
       fullname: 'John Doe',
       emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
-      revelantLinks: [theLink] as RelevantLink[],
+      relevantLinks: [theLink] as RelevantLink[],
     };
 
     // Act

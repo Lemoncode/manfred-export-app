@@ -1,0 +1,33 @@
+<%_ if (profile && profile !== 'undefined' ) { -%>
+# <%= profile?.fullname %>
+**<%= profile?.title %>**
+
+---
+
+### Presentación
+<%= profile?.description %>
+
+---
+
+### Mis enlaces
+  <%_ if (profile?.relevantLinks) { -%>
+    <%_ for (const link of profile?.relevantLinks) { -%>
+      <%_ if (link.type === 'linkedin') { -%>
+  - ![linkedin](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/feature/%23128-add-profile-section-to-md/media/linkedin.png) [Linkedin](<%= link.URL -%>)
+      <%_ } -%>
+      <%_ if (link.type === 'github') { -%>
+  - ![github](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/feature/%23128-add-profile-section-to-md/media/github.png) [Github](<%= link.URL -%>)
+      <%_ } -%>
+      <%_ if (link.type === 'twitter') { -%>
+  - ![twitter](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/feature/%23128-add-profile-section-to-md/media/twitter.png) [Twitter](<%= link.URL -%>)
+      <%_ } -%>
+      <%_ if (link.type === 'website') { -%>
+  - ![web](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/feature/%23128-add-profile-section-to-md/media/website.png) [Web](<%= link.URL -%>)
+      <%_ } -%>
+      <%_ if (link.type === 'other') { -%>
+  - ![other](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/feature/%23128-add-profile-section-to-md/media/navigator.png) [Other](<%= link.URL -%>)
+      <%_ } -%>
+    <%_ } %>
+  <%_ } -%>
+<%_ } -%>
+

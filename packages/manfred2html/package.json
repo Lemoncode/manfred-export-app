@@ -1,0 +1,57 @@
+{
+  "name": "@lemoncode/manfred2html",
+  "version": "0.0.0",
+  "description": "Tool to export Manfred CV format to html.",
+  "private": false,
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/manfred2html.js",
+  "main": "./dist/manfred2html.umd.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/manfred2html.js",
+      "require": "./dist/manfred2html.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "start": "npm run build -- --mode development --watch",
+    "build": "vite build",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "test": "jest -c ./config/test/jest.js",
+    "test:watch": "npm test -- --watchAll -i"
+  },
+  "keywords": [
+    "manfred2html",
+    "manfred export",
+    "manfred export html",
+    "manfred export to html"
+  ],
+  "author": "Lemoncode",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemoncode/manfred-export-app.git",
+    "directory": "packages/manfred2html"
+  },
+  "homepage": "https://github.com/Lemoncode/manfred-export-app/tree/main/packages/manfred2html",
+  "devDependencies": {
+    "@lemoncode/tsconfig": "*",
+    "@types/ejs": "^3.1.2",
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.2",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.2"
+  },
+  "dependencies": {
+    "@lemoncode/manfred-common": "*",
+    "ejs": "^3.1.9"
+  }
+}

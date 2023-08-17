@@ -5,7 +5,7 @@ export interface ProfileSectionVm {
   description: string;
   fullname: string;
   emails: string[];
-  revelantLinks: RelevantLink[];
+  relevantLinks: RelevantLink[];
 }
 
 export interface RelevantLink {

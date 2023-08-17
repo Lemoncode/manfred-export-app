@@ -1,0 +1,52 @@
+{
+  "name": "@lemoncode/manfred-common",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./experience-section": {
+      "import": "./src/doc-parts/experience-section/index.ts",
+      "require": "./src/doc-parts/experience-section/index.ts",
+      "types": "./src/doc-parts/experience-section/index.ts"
+    },
+    "./hard-skill-section": {
+      "import": "./src/doc-parts/hard-skill-section/index.ts",
+      "require": "./src/doc-parts/hard-skill-section/index.ts",
+      "types": "./src/doc-parts/hard-skill-section/index.ts"
+    },
+    "./language-section": {
+      "import": "./src/doc-parts/language-section/index.ts",
+      "require": "./src/doc-parts/language-section/index.ts",
+      "types": "./src/doc-parts/language-section/index.ts"
+    },
+    "./profile-section": {
+      "import": "./src/doc-parts/profile-section/index.ts",
+      "require": "./src/doc-parts/profile-section/index.ts",
+      "types": "./src/doc-parts/profile-section/index.ts"
+    },
+    "./soft-skill-section": {
+      "import": "./src/doc-parts/soft-skill-section/index.ts",
+      "require": "./src/doc-parts/soft-skill-section/index.ts",
+      "types": "./src/doc-parts/soft-skill-section/index.ts"
+    },
+    "./studies-section": {
+      "import": "./src/doc-parts/studies-section/index.ts",
+      "require": "./src/doc-parts/studies-section/index.ts",
+      "types": "./src/doc-parts/studies-section/index.ts"
+    }
+  },
+  "scripts": {
+    "test": "jest -c ./config/test/jest.js",
+    "test:watch": "npm test -- --watchAll -i"
+  },
+  "devDependencies": {
+    "@lemoncode/tsconfig": "*",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.6.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "author": "Lemoncode",
+  "license": "MIT"
+}

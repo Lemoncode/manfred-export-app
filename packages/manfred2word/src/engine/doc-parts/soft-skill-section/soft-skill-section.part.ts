@@ -1,4 +1,5 @@
 import { ManfredAwesomicCV } from '@/model';
+import { SoftSkillVM, mapFromCvToSoftSkillVm, sectionTitle } from '@lemoncode/manfred-common/soft-skill-section';
 import {
   renderParagraph,
   renderTable,
@@ -7,10 +8,7 @@ import {
   renderTextRun,
 } from '@/common-app/helpers/render-elements.helpers';
 import { TableRow, Table, XmlComponent } from 'docx';
-import { SoftSkillVM } from './soft-skill-section.vm';
 import { styles } from './soft-skill-section.styles';
-import { mapFromCvToSoftSkillVm } from './soft-skill-section.mapper';
-import { sectionTitle } from './soft-skill.constants';
 
 const getSkillNameList = (skillList: SoftSkillVM[]): string[] =>
   skillList.map(item => (item.skill?.name ? item.skill?.name : ''));
