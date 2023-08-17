@@ -6,6 +6,7 @@ import {
   generateStudiesSection,
   generateLanguageSection,
   generateHardSkillsSection,
+  generateSoftSkillsSection,
 } from './md-parts';
 
 // TODO: check whether to move to common manfred library
@@ -20,6 +21,7 @@ export const exportManfredJSonToMarkdown = (manfredJsonContent: ManfredAwesomicC
   const experienceSection = generateExperiencieSection(manfredJsonContent);
   const profileSection = generateProfileSection(manfredJsonContent);
   const studySection = generateStudiesSection(manfredJsonContent);
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
   const languageSection = generateLanguageSection(manfredJsonContent);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
   return `${profileSection}
@@ -27,5 +29,6 @@ ${experienceSection}
 ${languageSection}
 ${studySection}
 ${hardSkillsSection}
+${softSkillsSection}
 `;
 };
