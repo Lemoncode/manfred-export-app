@@ -27,7 +27,7 @@ export const TemplateExportContainer: React.FC = () => {
       const content = exportManfredJSonToMarkdown(manfredJsonContent);
       const blob = new Blob([content], { type: 'text/markdown' });
 
-      await download(blob, 'manfred.md');
+      await download(blob, 'CV.md');
     } catch (error) {
       console.error(error);
       alert('Hay un error, no está utilizando el formato correcto');
