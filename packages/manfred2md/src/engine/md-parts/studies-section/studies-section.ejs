@@ -25,7 +25,7 @@
 - **Nombre de Institución:** <%= study.institution.name %>
     <%_ } -%>
 
-    <%_ if ( study?.institution?.location?.region || study?.institution?.location?.country ) { -%>
+    <%_ if ( study.institution.location?.region || study.institution.location?.country ) { -%>
 - **Ubicación de la Institución:** <%= study.institution.location.region %>, <%= study.institution.location.country %>
     <%_ } -%>
   <%_ } -%>
