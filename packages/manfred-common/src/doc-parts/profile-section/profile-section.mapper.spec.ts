@@ -1,238 +1,307 @@
 import { ManfredAwesomicCV } from '@/model';
-import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
-import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
-
+import { mapFromMacCvToProfileSectionVm, mapRelevantLinksToVm } from './profile-section.mapper';
+import { ProfileSectionVm, RelevantLinkVm } from './profile-section.vm';
 describe('Testing profile-section.mapper.ts', () => {
-  it('It should returns empty cv when passed cv is null', () => {
-    // Arrange
-    const cv: any = null;
-    const expectedResult: ProfileSectionVm = {
-      name: '',
-      surnames: '',
-      title: '',
-      description: '',
-      fullname: ' ',
-      emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
-    };
+  describe('relevanLinksToVm specs', () => {
+    it('should return relevant link type with "otros" when passed relevantLinks type is "other"', () => {
+      // Arrange
+      const relevantLinks: any = [
+        {
+          type: 'other',
+          URL: 'https://www.google.es',
+          description: 'This is my link.',
+        },
+      ];
+      const expectedResult: RelevantLinkVm[] = [
+        {
+          type: 'otros',
+          URL: 'https://www.google.es',
+          description: 'This is my link.',
+        },
+      ];
+      // Act
+      const result = mapRelevantLinksToVm(relevantLinks);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
+    it('should return relevant link type with "web" when passed relevantLinks type is "website"', () => {
+      // Arrange
+      const relevantLinks: any = [
+        {
+          type: 'website',
+          URL: 'https://www.google.es',
+          description: 'This is my link.',
+        },
+      ];
+      const expectedResult: RelevantLinkVm[] = [
+        {
+          type: 'web',
+          URL: 'https://www.google.es',
+          description: 'This is my link.',
+        },
+      ];
+      // Act
+      const result = mapRelevantLinksToVm(relevantLinks);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should return relevant link type with "linkedin" when passed relevantLinks type is "linkedin"', () => {
+      // Arrange
+      const relevantLinks: any = [
+        {
+          type: 'linkedin',
+          URL: 'https://www.google.es',
+          description: 'This is my link.',
+        },
+      ];
+      const expectedResult: RelevantLinkVm[] = [
+        {
+          type: 'linkedin',
+          URL: 'https://www.google.es',
+          description: 'This is my link.',
+        },
+      ];
+      // Act
+      const result = mapRelevantLinksToVm(relevantLinks);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
   });
 
-  it('It should returns empty cv when passed cv is undefined', () => {
-    // Arrange
-    const cv: any = undefined;
-    const expectedResult: ProfileSectionVm = {
-      name: '',
-      surnames: '',
-      title: '',
-      description: '',
-      fullname: ' ',
-      emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
-    };
+  describe('mapFromMacCvToProfileSectionVm specs', () => {
+    it('It should returns empty cv when passed cv is null', () => {
+      // Arrange
+      const cv: any = null;
+      const expectedResult: ProfileSectionVm = {
+        name: '',
+        surnames: '',
+        title: '',
+        description: '',
+        fullname: ' ',
+        emails: [] as string[],
+        relevantLinks: [] as RelevantLinkVm[],
+      };
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
-  });
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-  it('It should returns empty cv when passed aboutMe field is null', () => {
-    // Arrange
-    const person: any = null;
+    it('It should returns empty cv when passed cv is undefined', () => {
+      // Arrange
+      const cv: any = undefined;
+      const expectedResult: ProfileSectionVm = {
+        name: '',
+        surnames: '',
+        title: '',
+        description: '',
+        fullname: ' ',
+        emails: [] as string[],
+        relevantLinks: [] as RelevantLinkVm[],
+      };
 
-    const cv: ManfredAwesomicCV = {
-      settings: {
-        language: '',
-        lastUpdate: '',
-        MACVersion: '',
-      },
-      aboutMe: {
-        profile: person,
-      },
-    };
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-    const expectedResult: ProfileSectionVm = {
-      name: '',
-      surnames: '',
-      title: '',
-      description: '',
-      fullname: ' ',
-      emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
-    };
+    it('It should returns empty cv when passed aboutMe field is null', () => {
+      // Arrange
+      const person: any = null;
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
-  });
+      const cv: ManfredAwesomicCV = {
+        settings: {
+          language: '',
+          lastUpdate: '',
+          MACVersion: '',
+        },
+        aboutMe: {
+          profile: person,
+        },
+      };
 
-  it('It should returns empty cv when passed aboutMe field is undefined', () => {
-    // Arrange
-    const person: any = undefined;
+      const expectedResult: ProfileSectionVm = {
+        name: '',
+        surnames: '',
+        title: '',
+        description: '',
+        fullname: ' ',
+        emails: [] as string[],
+        relevantLinks: [] as RelevantLinkVm[],
+      };
 
-    const cv: ManfredAwesomicCV = {
-      settings: {
-        language: '',
-        lastUpdate: '',
-        MACVersion: '',
-      },
-      aboutMe: {
-        profile: person,
-      },
-    };
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-    const expectedResult: ProfileSectionVm = {
-      name: '',
-      surnames: '',
-      title: '',
-      description: '',
-      fullname: ' ',
-      emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
-    };
+    it('It should returns empty cv when passed aboutMe field is undefined', () => {
+      // Arrange
+      const person: any = undefined;
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
-  });
+      const cv: ManfredAwesomicCV = {
+        settings: {
+          language: '',
+          lastUpdate: '',
+          MACVersion: '',
+        },
+        aboutMe: {
+          profile: person,
+        },
+      };
 
-  it('It should returns empty cv when any field from aboutMe field is null', () => {
-    // Arrange
-    const person: any = {
-      name: null,
-      surnames: null,
-      title: null,
-      description: null,
-      birthday: null,
-      avatar: null,
-      contact: null,
-      location: null,
-    };
+      const expectedResult: ProfileSectionVm = {
+        name: '',
+        surnames: '',
+        title: '',
+        description: '',
+        fullname: ' ',
+        emails: [] as string[],
+        relevantLinks: [] as RelevantLinkVm[],
+      };
 
-    const cv: ManfredAwesomicCV = {
-      settings: {
-        language: '',
-        lastUpdate: '',
-        MACVersion: '',
-      },
-      aboutMe: {
-        profile: person,
-      },
-    };
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-    const expectedResult: ProfileSectionVm = {
-      name: '',
-      surnames: '',
-      title: '',
-      description: '',
-      fullname: ' ',
-      emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
-    };
+    it('It should returns empty cv when any field from aboutMe field is null', () => {
+      // Arrange
+      const person: any = {
+        name: null,
+        surnames: null,
+        title: null,
+        description: null,
+        birthday: null,
+        avatar: null,
+        contact: null,
+        location: null,
+      };
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
-  });
+      const cv: ManfredAwesomicCV = {
+        settings: {
+          language: '',
+          lastUpdate: '',
+          MACVersion: '',
+        },
+        aboutMe: {
+          profile: person,
+        },
+      };
 
-  it('It should returns empty cv when any field from aboutMe field is undefined', () => {
-    // Arrange
+      const expectedResult: ProfileSectionVm = {
+        name: '',
+        surnames: '',
+        title: '',
+        description: '',
+        fullname: ' ',
+        emails: [] as string[],
+        relevantLinks: [] as RelevantLinkVm[],
+      };
 
-    const person: any = {
-      name: undefined,
-      surnames: undefined,
-      title: undefined,
-      description: undefined,
-      birthday: undefined,
-      avatar: undefined,
-      contact: undefined,
-      location: undefined,
-    };
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-    const cv: ManfredAwesomicCV = {
-      settings: {
-        language: '',
-        lastUpdate: '',
-        MACVersion: '',
-      },
-      aboutMe: {
-        profile: person,
-      },
-    };
+    it('It should returns empty cv when any field from aboutMe field is undefined', () => {
+      // Arrange
 
-    const expectedResult: ProfileSectionVm = {
-      name: '',
-      surnames: '',
-      title: '',
-      description: '',
-      fullname: ' ',
-      emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
-    };
+      const person: any = {
+        name: undefined,
+        surnames: undefined,
+        title: undefined,
+        description: undefined,
+        birthday: undefined,
+        avatar: undefined,
+        contact: undefined,
+        location: undefined,
+      };
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
-  });
+      const cv: ManfredAwesomicCV = {
+        settings: {
+          language: '',
+          lastUpdate: '',
+          MACVersion: '',
+        },
+        aboutMe: {
+          profile: person,
+        },
+      };
 
-  it('It should returns cv with proper data when fields from aboutMe field have valid values', () => {
-    // Arrange
-    const theContact: any = {
-      contactMails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'],
-    };
+      const expectedResult: ProfileSectionVm = {
+        name: '',
+        surnames: '',
+        title: '',
+        description: '',
+        fullname: ' ',
+        emails: [] as string[],
+        relevantLinks: [] as RelevantLinkVm[],
+      };
 
-    const theLink: any = {
-      type: 'github',
-      URL: 'john.doe@github.com',
-      description: 'This is my link.',
-    };
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
 
-    const person: any = {
-      name: 'John',
-      surnames: 'Doe',
-      title: 'Computer Science Bachelor',
-      description: 'Frontend developer',
-      birthday: '30/03/1990',
-      avatar: undefined,
-      contact: theContact,
-      location: undefined,
-    };
+    it('It should returns cv with proper data when fields from aboutMe field have valid values', () => {
+      // Arrange
+      const theContact: any = {
+        contactMails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'],
+      };
 
-    const cv: ManfredAwesomicCV = {
-      settings: {
-        language: 'English',
-        lastUpdate: '25/04/2023',
-        MACVersion: '1.0',
-      },
-      aboutMe: {
-        profile: person,
-        relevantLinks: [theLink],
-      },
-    };
+      const theLink: any = {
+        type: 'github',
+        URL: 'john.doe@github.com',
+        description: 'This is my link.',
+      };
 
-    const expectedResult: ProfileSectionVm = {
-      name: 'John',
-      surnames: 'Doe',
-      title: 'Computer Science Bachelor',
-      description: 'Frontend developer',
-      fullname: 'John Doe',
-      emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
-      relevantLinks: [theLink] as RelevantLink[],
-    };
+      const person: any = {
+        name: 'John',
+        surnames: 'Doe',
+        title: 'Computer Science Bachelor',
+        description: 'Frontend developer',
+        birthday: '30/03/1990',
+        avatar: undefined,
+        contact: theContact,
+        location: undefined,
+      };
 
-    // Act
-    const result = mapFromMacCvToProfileSectionVm(cv);
-    // Assert
-    expect(result).toEqual(expectedResult);
+      const cv: ManfredAwesomicCV = {
+        settings: {
+          language: 'English',
+          lastUpdate: '25/04/2023',
+          MACVersion: '1.0',
+        },
+        aboutMe: {
+          profile: person,
+          relevantLinks: [theLink],
+        },
+      };
+
+      const expectedResult: ProfileSectionVm = {
+        name: 'John',
+        surnames: 'Doe',
+        title: 'Computer Science Bachelor',
+        description: 'Frontend developer',
+        fullname: 'John Doe',
+        emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
+        relevantLinks: [theLink] as RelevantLinkVm[],
+      };
+
+      // Act
+      const result = mapFromMacCvToProfileSectionVm(cv);
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
   });
 });
 export {};

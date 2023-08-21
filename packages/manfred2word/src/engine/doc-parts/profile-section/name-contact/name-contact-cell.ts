@@ -1,6 +1,6 @@
 import { Paragraph, TextRun, TableCell, ITableCellOptions, ImageRun, ExternalHyperlink } from 'docx';
 import emailImage from '@/assets/email.png';
-import { ProfileSectionVm, RelevantLink } from '@lemoncode/manfred-common/profile-section';
+import { ProfileSectionVm, RelevantLinkVm } from '@lemoncode/manfred-common/profile-section';
 import { relevantLinksImages } from '../profile-section.business';
 import { capitalizeWords } from '../../../engine.helpers';
 import { styles } from './name-contact-cell.styles';
@@ -59,8 +59,8 @@ const generateEmailsParagraphs = (emails: string[]): Paragraph[] =>
     });
   });
 
-const generateLinksParagraphs = (relevantLinks: RelevantLink[], fullname: string): Paragraph[] => {
-  return relevantLinks.map((relevantLink: RelevantLink) => {
+const generateLinksParagraphs = (relevantLinks: RelevantLinkVm[], fullname: string): Paragraph[] => {
+  return relevantLinks.map((relevantLink: RelevantLinkVm) => {
     return new Paragraph({
       children: [
         new ImageRun({
