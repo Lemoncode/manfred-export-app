@@ -1,5 +1,5 @@
-import { ManfredAwesomicCV, ManfredRelevantLink } from '@/model';
-import { ProfileSectionVm, RelevantLinkVm } from './profile-section.vm';
+import { ManfredAwesomicCV } from '@/model';
+import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink } from './profile-section.vm';
 
 const mapLinkTypeToVm = (linkType: ManfredRelevantLink['type']): RelevantLinkVm['type'] => {
   switch (linkType) {

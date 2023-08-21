@@ -13,3 +13,11 @@ export interface RelevantLinkVm {
   URL: string;
   description?: string;
 }
+
+type ManfredRelevantLinkType = 'linkedin' | 'github' | 'twitter' | 'website' | 'other';
+
+export interface ManfredRelevantLink {
+  type: ManfredRelevantLinkType;
+  URL: string;
+  description?: string;
+}
