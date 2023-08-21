@@ -5,11 +5,11 @@ export interface ProfileSectionVm {
   description: string;
   fullname: string;
   emails: string[];
-  relevantLinks: RelevantLink[];
+  relevantLinks: RelevantLinkVm[];
 }
 
-export interface RelevantLink {
-  type: 'linkedin' | 'github' | 'twitter' | 'website' | 'other';
+export interface RelevantLinkVm {
+  type: 'linkedin' | 'github' | 'twitter' | 'web' | 'otros';
   URL: string;
   description?: string;
 }

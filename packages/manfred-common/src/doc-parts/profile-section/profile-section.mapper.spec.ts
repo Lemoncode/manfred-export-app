@@ -1,6 +1,74 @@
 import { ManfredAwesomicCV } from '@/model';
-import { mapFromMacCvToProfileSectionVm } from './profile-section.mapper';
-import { ProfileSectionVm, RelevantLink } from './profile-section.vm';
+import { mapFromMacCvToProfileSectionVm, mapRelevantLinksToVm } from './profile-section.mapper';
+import { ProfileSectionVm, RelevantLinkVm } from './profile-section.vm';
+
+describe('relevanLinksToVm specs', () => {
+  it('should return relevant link type with "otros" when passed relevantLinks type is "other"', () => {
+    // Arrange
+    const relevantLinks: any = [
+      {
+        type: 'other',
+        URL: 'https://www.google.es',
+        description: 'This is my link.',
+      },
+    ];
+    const expectedResult: RelevantLinkVm[] = [
+      {
+        type: 'otros',
+        URL: 'https://www.google.es',
+        description: 'This is my link.',
+      },
+    ];
+    // Act
+    const result = mapRelevantLinksToVm(relevantLinks);
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should return relevant link type with "web" when passed relevantLinks type is "website"', () => {
+    // Arrange
+    const relevantLinks: any = [
+      {
+        type: 'website',
+        URL: 'https://www.google.es',
+        description: 'This is my link.',
+      },
+    ];
+    const expectedResult: RelevantLinkVm[] = [
+      {
+        type: 'web',
+        URL: 'https://www.google.es',
+        description: 'This is my link.',
+      },
+    ];
+    // Act
+    const result = mapRelevantLinksToVm(relevantLinks);
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should return relevant link type with "linkedin" when passed relevantLinks type is "linkedin"', () => {
+    // Arrange
+    const relevantLinks: any = [
+      {
+        type: 'linkedin',
+        URL: 'https://www.google.es',
+        description: 'This is my link.',
+      },
+    ];
+    const expectedResult: RelevantLinkVm[] = [
+      {
+        type: 'linkedin',
+        URL: 'https://www.google.es',
+        description: 'This is my link.',
+      },
+    ];
+    // Act
+    const result = mapRelevantLinksToVm(relevantLinks);
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+});
 
 describe('Testing profile-section.mapper.ts', () => {
   it('It should returns empty cv when passed cv is null', () => {
@@ -13,7 +81,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLinkVm[],
     };
 
     // Act
@@ -32,7 +100,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLinkVm[],
     };
 
     // Act
@@ -63,7 +131,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLinkVm[],
     };
 
     // Act
@@ -94,7 +162,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLinkVm[],
     };
 
     // Act
@@ -134,7 +202,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLinkVm[],
     };
 
     // Act
@@ -175,7 +243,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: '',
       fullname: ' ',
       emails: [] as string[],
-      relevantLinks: [] as RelevantLink[],
+      relevantLinks: [] as RelevantLinkVm[],
     };
 
     // Act
@@ -226,7 +294,7 @@ describe('Testing profile-section.mapper.ts', () => {
       description: 'Frontend developer',
       fullname: 'John Doe',
       emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
-      relevantLinks: [theLink] as RelevantLink[],
+      relevantLinks: [theLink] as RelevantLinkVm[],
     };
 
     // Act
