@@ -34,5 +34,16 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  return <TemplateExport onExportToWord={onExportJsonToWord} onExportToMarkdown={onExportJsonToMarkdown} />;
+  const onExportJsonToHTML = async (text: string) => {
+    // TODO: Aquí como en el MD para el download
+    console.log('Export to HTML !!');
+  };
+
+  return (
+    <TemplateExport
+      onExportToWord={onExportJsonToWord}
+      onExportToMarkdown={onExportJsonToMarkdown}
+      onExportToHTML={onExportJsonToHTML}
+    />
+  );
 };
