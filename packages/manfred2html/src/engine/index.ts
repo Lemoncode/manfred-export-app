@@ -8,7 +8,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
 
   return `
     ${initialHTMLContent}
-    ${finalHTMLContent}
     ${generateProfileSection(manfredJsonContent)}
+    ${finalHTMLContent}
   `;
 };
