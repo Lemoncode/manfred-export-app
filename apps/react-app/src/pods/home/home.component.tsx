@@ -32,7 +32,7 @@ export const Home: React.FunctionComponent = () => {
               GetManfred
             </Link>{' '}
             te ofrece un formato abierto y open source que puedes descargar a tu local, con está herramienta, con sólo
-            pegar el JSON de tu perfil, podrás generar tu Curriculum en formato Word
+            pegar el JSON de tu perfil, podrás generar tu Curriculum en formato Word y Markdown.
           </div>
           <div className={classes.videoContainer}>
             <div className={classes.videoContent}>
