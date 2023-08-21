@@ -4,7 +4,8 @@ import { relevantLinksImages } from './profile-section.business';
 import githubImage from '@/assets/github.png';
 import linkedinImage from '@/assets/linkedin.png';
 import twitterImage from '@/assets/twitter.png';
-import otherImage from '@/assets/other.png';
+import otherImage from '@/assets/otros.png';
+import websiteImage from '@/assets/website.png';
 
 describe('profile-section business specs', () => {
   it('return "" when passed type is null', () => {
@@ -33,7 +34,8 @@ describe('profile-section business specs', () => {
     ['linkedin', linkedinImage],
     ['github', githubImage],
     ['twitter', twitterImage],
-    ['other', otherImage],
+    ['web', websiteImage],
+    ['otros', otherImage],
   ])('return proper image for %s value', (a: string, b: any) => {
     // Arrange
     const arg: any = a;
