@@ -1,24 +1,28 @@
 import { ManfredAwesomicCV } from '@/model';
 import {
-  generateInitialHTML,
-  generateEndHTML,
-  generateInitialHeaderHTML,
-  generateEndHeaderHTML,
+  generateHtmlDocumentStart,
+  generateHtmlDocumentEnd,
+  generateHeaderElementStart,
+  generateHeaderElementEnd,
   generateAboutMeSection,
-  generateInitialAsideHTML,
-  generateEndAsideHTML,
+  generateAsideElementStart,
+  generateAsideElementEnd,
   generateRelevantsLinksSection,
+  generateMainElementStart,
+  generateMainElementEnd,
 } from './html-parts';
 
 export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
-  const initialHtml = generateInitialHTML();
-  const endHtml = generateEndHTML();
-  const initialHeaderHtml = generateInitialHeaderHTML();
-  const endHeaderHtml = generateEndHeaderHTML();
+  const initialHtml = generateHtmlDocumentStart();
+  const endHtml = generateHtmlDocumentEnd();
+  const initialHeaderHtml = generateHeaderElementStart();
+  const endHeaderHtml = generateHeaderElementEnd();
   const aboutMeSection = generateAboutMeSection(manfredJsonContent);
-  const initialAsideHtml = generateInitialAsideHTML();
-  const endAsideHtml = generateEndAsideHTML();
+  const initialAsideHtml = generateAsideElementStart();
+  const endAsideHtml = generateAsideElementEnd();
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
+  const mainInitialHtml = generateMainElementStart();
+  const mainEndHtml = generateMainElementEnd();
 
   return `
     ${initialHtml}
@@ -28,6 +32,8 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
       ${initialAsideHtml}
         ${relevantsLinksSection}
       ${endAsideHtml}
+      ${mainInitialHtml}
+      ${mainEndHtml}
     ${endHtml}
   `;
 };
