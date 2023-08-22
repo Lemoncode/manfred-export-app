@@ -6,10 +6,11 @@ import * as classes from './template-export.styles';
 interface Props {
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
+  onExportToHTML: (text: string) => void;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExportToWord, onExportToMarkdown } = props;
+  const { onExportToWord, onExportToMarkdown, onExportToHTML } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
 
@@ -25,6 +26,11 @@ export const TemplateExport: React.FC<Props> = props => {
   const handleOnExportToMarkdown = () => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
     onExportToMarkdown(text);
+  };
+
+  const handleExportToHTML = () => {
+    setUserChoice({ ...userChoice, manfredJsonContent: text });
+    onExportToHTML(text);
   };
 
   return (
@@ -54,6 +60,14 @@ export const TemplateExport: React.FC<Props> = props => {
             showIcon={false}
           >
             Export To Markdown
+          </Button>
+          <Button
+            disabled={text ? false : true}
+            onClick={handleExportToHTML}
+            className={classes.buttonClass}
+            showIcon={false}
+          >
+            Export To HTML
           </Button>
         </div>
       </div>
