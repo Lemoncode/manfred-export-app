@@ -1,2 +1,2 @@
-export * from './initial-seed';
+export * from './root-template';
 export * from './profile-section';
