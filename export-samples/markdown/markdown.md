@@ -12,11 +12,11 @@ Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de t
 
 ### Mis enlaces
 
-- ![linkedin](linkedin.png) [Linkedin](https://www.linkedin.com)
-- ![twitter](gorjeo.png) [Twitter](https://www.twitter.com)
-- ![github](github.png) [Github](https://www.github.com)
-- ![website](navegador.png) [Website](https://www.website.com)
-- ![other](sitio-web.png) [Other](https://www.other.com)
+- ![linkedin](linkedin.svg) [Linkedin](https://www.linkedin.com)
+- ![twitter](twitter.svg) [Twitter](https://www.twitter.com)
+- ![github](github.svg) [Github](https://www.github.com)
+- ![web](website.svg) [Web](https://www.website.com)
+- ![otros](otros.svg) [Otros](https://www.other.com)
 
 ---
 

@@ -13,19 +13,19 @@
   <%_ if (profile?.relevantLinks) { -%>
     <%_ for (const link of profile?.relevantLinks) { -%>
       <%_ if (link.type === 'linkedin') { -%>
-  - ![linkedin](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/linkedin.png) [Linkedin](<%= link.URL -%>)
-      <%_ } -%>
-      <%_ if (link.type === 'github') { -%>
-  - ![github](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/github.png) [Github](<%= link.URL -%>)
+  - ![<%= link.type -%>](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/linkedin.svg) [<%= link.type -%>](<%= link.URL -%>)
       <%_ } -%>
       <%_ if (link.type === 'twitter') { -%>
-  - ![twitter](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/twitter.png) [Twitter](<%= link.URL -%>)
+  - ![<%= link.type -%>](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/twitter.svg) [<%= link.type -%>](<%= link.URL -%>)
       <%_ } -%>
-      <%_ if (link.type === 'website') { -%>
-  - ![web](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/website.png) [Web](<%= link.URL -%>)
+      <%_ if (link.type === 'github') { -%>
+  - ![<%= link.type -%>](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/github.svg) [<%= link.type -%>](<%= link.URL -%>)
       <%_ } -%>
-      <%_ if (link.type === 'other') { -%>
-  - ![other](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/navigator.png) [Other](<%= link.URL -%>)
+      <%_ if (link.type === 'web') { -%>
+  - ![<%= link.type -%>](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/website.svg) [<%= link.type -%>](<%= link.URL -%>)
+      <%_ } -%>
+      <%_ if (link.type === 'otros') { -%>
+  - ![<%= link.type -%>](https://raw.githubusercontent.com/Lemoncode/manfred-export-app/main/media/otros.svg) [<%= link.type -%>](<%= link.URL -%>)
       <%_ } -%>
     <%_ } %>
   <%_ } -%>
