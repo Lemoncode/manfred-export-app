@@ -1,12 +1,13 @@
 import { ManfredAwesomicCV } from '@/model';
-import { generateHTMLRootTemplate } from './html-parts';
-import { generateProfileSection } from './html-parts/profile-section';
+import { generateInitialHTML, generateEndHTML } from './html-parts';
 
 export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
-  const profileSection = generateProfileSection(manfredJsonContent);
-  const content = generateHTMLRootTemplate(profileSection + `<div>hola</div>`);
+  const initialHtml = generateInitialHTML();
+  const endHtml = generateEndHTML();
 
   return `
-    ${content}
+    ${initialHtml}
+
+    ${endHtml}
   `;
 };

@@ -1,2 +1,3 @@
-export * from './root-template';
+export * from './initial-html';
+export * from './end-html';
 export * from './profile-section';
