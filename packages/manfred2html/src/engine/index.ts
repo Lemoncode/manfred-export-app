@@ -13,27 +13,27 @@ import {
 } from './html-parts';
 
 export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
-  const initialHtml = generateHtmlDocumentStart();
-  const endHtml = generateHtmlDocumentEnd();
-  const initialHeaderHtml = generateHeaderElementStart();
-  const endHeaderHtml = generateHeaderElementEnd();
+  const htmlDocumentStart = generateHtmlDocumentStart();
+  const htmlDocumentEnd = generateHtmlDocumentEnd();
+  const headerElementStart = generateHeaderElementStart();
+  const headerElementEnd = generateHeaderElementEnd();
   const aboutMeSection = generateAboutMeSection(manfredJsonContent);
-  const initialAsideHtml = generateAsideElementStart();
-  const endAsideHtml = generateAsideElementEnd();
+  const asideElementStart = generateAsideElementStart();
+  const asideElementEnd = generateAsideElementEnd();
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
-  const mainInitialHtml = generateMainElementStart();
-  const mainEndHtml = generateMainElementEnd();
+  const mainElementStart = generateMainElementStart();
+  const mainElementEnd = generateMainElementEnd();
 
   return `
-    ${initialHtml}
-      ${initialHeaderHtml}
+    ${htmlDocumentStart}
+      ${headerElementStart}
         ${aboutMeSection}
-      ${endHeaderHtml}
-      ${initialAsideHtml}
+      ${headerElementEnd}
+      ${asideElementStart}
         ${relevantsLinksSection}
-      ${endAsideHtml}
-      ${mainInitialHtml}
-      ${mainEndHtml}
-    ${endHtml}
+      ${asideElementEnd}
+      ${mainElementStart}
+      ${mainElementEnd}
+    ${htmlDocumentEnd}
   `;
 };
