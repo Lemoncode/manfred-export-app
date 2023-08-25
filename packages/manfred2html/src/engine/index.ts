@@ -8,6 +8,7 @@ import {
   generateAsideElementStart,
   generateAsideElementEnd,
   generateRelevantsLinksSection,
+  generateLanguageSection,
   generateMainElementStart,
   generateMainElementEnd,
 } from './html-parts';
@@ -23,6 +24,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
   const mainElementStart = generateMainElementStart();
   const mainElementEnd = generateMainElementEnd();
+  const languageSection = generateLanguageSection(manfredJsonContent);
 
   return `
     ${htmlDocumentStart}
@@ -31,6 +33,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
       ${headerElementEnd}
       ${asideElementStart}
         ${relevantsLinksSection}
+        ${languageSection}
       ${asideElementEnd}
       ${mainElementStart}
       ${mainElementEnd}
