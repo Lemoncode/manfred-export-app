@@ -12,6 +12,7 @@ import {
   generateMainElementStart,
   generateMainElementEnd,
   generateExperiencesSection,
+  generateStudiesSection,
 } from './html-parts';
 
 export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
@@ -27,6 +28,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
   const mainElementEnd = generateMainElementEnd();
   const languageSection = generateLanguageSection(manfredJsonContent);
   const experienceSection = generateExperiencesSection(manfredJsonContent);
+  const studiesSection = generateStudiesSection(manfredJsonContent);
 
   return `
     ${htmlDocumentStart}
@@ -39,6 +41,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
       ${asideElementEnd}
       ${mainElementStart}
         ${experienceSection}
+        ${studiesSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
