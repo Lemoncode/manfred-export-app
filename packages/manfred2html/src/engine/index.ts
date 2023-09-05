@@ -13,6 +13,7 @@ import {
   generateSoftSkillsSection,
   generateMainElementStart,
   generateMainElementEnd,
+  generateExperiencesSection,
 } from './html-parts';
 
 export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
@@ -29,6 +30,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
   const languageSection = generateLanguageSection(manfredJsonContent);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
   const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
+  const experienceSection = generateExperiencesSection(manfredJsonContent);
 
   return `
     ${htmlDocumentStart}
@@ -42,6 +44,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
         ${softSkillsSection}
       ${asideElementEnd}
       ${mainElementStart}
+        ${experienceSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
