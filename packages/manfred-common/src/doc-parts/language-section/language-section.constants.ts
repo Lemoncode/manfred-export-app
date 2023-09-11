@@ -1,6 +1,7 @@
 import { LanguageType, LevelLanguageType } from './language-section.vm';
 
 export const languageList: LanguageType[] = [
+  { iso: 'de', name: 'Alemán' },
   { iso: 'es', name: 'Español' },
   { iso: 'it', name: 'Italiano' },
   { iso: 'en', name: 'Inglés' },
