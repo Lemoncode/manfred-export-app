@@ -8,7 +8,9 @@
       <div class="main__section__item">
         <div class="date date-desktop">
           <p>Inicio: <b><%- study.startDate %></b></p>
-          <p>Fin: <b><%- study.finishDate %></b></p>
+          <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
+            <p>Fin: <b><%- study.finishDate %></b></p>
+            <%_ } -%>
         </div>
         <div class="line-icon">
           <div class="circle"></div>
@@ -23,7 +25,9 @@
           </div>
           <div class="date date-mobile">
             <p>Inicio: <b><%- study.startDate %></b></p>
-            <p>Fin: <b><%- study.finishDate %></b></p>
+            <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
+              <p>Fin: <b><%- study.finishDate %></b></p>
+              <%_ } -%>            
           </div>
           <div class="data">
             <p>Tipo de estudios: <b><%- study.studyType %></b></p>
