@@ -1,3 +1,4 @@
+import { Settings } from '@lemoncode/manfred-common/model';
 import { ManfredAwesomicCV } from '@/model';
 import {
   generateHtmlDocumentStart,
@@ -17,11 +18,8 @@ import {
   generateStudiesSection,
 } from './html-parts';
 
-import { Settings } from '@lemoncode/manfred-common/model';
-import { StudiesSectionVm, mapFromMacCvToStudiesSectionVm } from '@lemoncode/manfred-common/studies-section';
-
 export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV, settings?: Settings): string => {
-  // A acad uno de estos le pasamos los settings
+  // A cada uno de estos le pasamos los settings
 
   const htmlDocumentStart = generateHtmlDocumentStart();
   const htmlDocumentEnd = generateHtmlDocumentEnd();
