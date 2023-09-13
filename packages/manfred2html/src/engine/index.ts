@@ -17,12 +17,17 @@ import {
   generateStudiesSection,
 } from './html-parts';
 
-export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
+import { Settings } from '@lemoncode/manfred-common/model';
+import { StudiesSectionVm, mapFromMacCvToStudiesSectionVm } from '@lemoncode/manfred-common/studies-section';
+
+export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV, settings?: Settings): string => {
+  // A acad uno de estos le pasamos los settings
+
   const htmlDocumentStart = generateHtmlDocumentStart();
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
-  const aboutMeSection = generateAboutMeSection(manfredJsonContent);
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings?.language);
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
@@ -31,7 +36,7 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): 
   const languageSection = generateLanguageSection(manfredJsonContent);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
   const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
-  const experienceSection = generateExperiencesSection(manfredJsonContent);
+  const experienceSection = generateExperiencesSection(manfredJsonContent, settings?.language);
   const studiesSection = generateStudiesSection(manfredJsonContent);
 
   return `
