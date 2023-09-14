@@ -1,6 +1,6 @@
 import React from 'react';
 import { useUserChoiceContext } from '@/core';
-import { Button, Footer, Header, Navbar } from '@/common-app/components';
+import { Button, Footer, Header, Modal, Navbar } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
@@ -13,6 +13,7 @@ export const TemplateExport: React.FC<Props> = props => {
   const { onExportToWord, onExportToMarkdown, onExportToHTML } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
+  const [openModal, setOpenModal] = React.useState<boolean>(false)
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
@@ -63,14 +64,14 @@ export const TemplateExport: React.FC<Props> = props => {
           </Button>
           <Button
             disabled={text ? false : true}
-            onClick={handleExportToHTML}
             className={classes.buttonClass}
             showIcon={false}
-          >
-            Export To HTML
+            onClick={() => {setOpenModal(true)}}
+          >Export To HTML
           </Button>
         </div>
       </div>
+      {openModal && <Modal closeModal={() => setOpenModal(false)} exportHtml={handleExportToHTML}/>}
       <Footer />
     </div>
   );
