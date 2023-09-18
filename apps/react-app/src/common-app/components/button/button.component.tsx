@@ -2,7 +2,7 @@ import React from 'react';
 import { cx } from '@emotion/css';
 import * as classes from './button.styles';
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   children?: React.ReactNode;
   showIcon?: boolean;
   disabled?: boolean;

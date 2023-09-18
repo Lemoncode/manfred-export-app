@@ -1,6 +1,6 @@
 import React from 'react';
 import { useUserChoiceContext } from '@/core';
-import { Button, Footer, Header, Modal, Navbar } from '@/common-app/components';
+import { Button, Footer, Header, Modal, Navbar, ExportConfig } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
@@ -33,6 +33,8 @@ export const TemplateExport: React.FC<Props> = props => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
     onExportToHTML(text);
   };
+
+  const handleCloseModal =()=> setOpenModal(false);
 
   return (
     <div className={classes.root}>
@@ -71,7 +73,10 @@ export const TemplateExport: React.FC<Props> = props => {
           </Button>
         </div>
       </div>
-      {openModal && <Modal closeModal={() => setOpenModal(false)} exportHtml={handleExportToHTML}/>}
+      {openModal && <Modal>
+
+        <ExportConfig handleExportconfigSelection={handleExportToHTML} onClose={handleCloseModal} />
+      </Modal>}
       <Footer />
     </div>
   );
