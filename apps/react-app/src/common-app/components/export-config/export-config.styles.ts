@@ -3,12 +3,12 @@ import { theme } from '@/core/theme';
 
 export const content = css`
   display: flex;
-  padding: ${theme.spacing(4)};
+  padding: ${theme.spacing(8)};
   flex-direction: column;
   align-items: center;
-  gap: 64px;
-  flex: 1 0 0;
-  align-self: stretch;
+  gap: ${theme.spacing(16)};
+  flex-grow: 1;
+  width: 100%;
   background: ${theme.palette.info[50]};
   font: ${theme.typography.mobile.h5};
   font-family: ${theme.typography.mobile.h5.fontFamily};
@@ -21,50 +21,39 @@ export const content = css`
   }
 `;
 
-export const formContainer = css`
+export const optionsContainer = css`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  align-self: stretch;
+  flex-grow: 1;
+  gap: ${theme.spacing(8)};
+  width: 100%;
 `;
-export const colorContent = css`
-  color: ${theme.palette.dark[900]};
+
+export const colorFieldset = css`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  align-self: stretch;
-  gap: 32px 24px;
+  justify-content: center;
+  gap: ${theme.spacing(8)};
+  width: 100%;
 
   @media (min-width: 1024px) {
-    align-items: flex-start;
     justify-content: start;
   }
-`;
 
-export const outerCircle = css`
+`;
+export const inputRadioButton = (color: string) => css`
+  appearance: none;
   width: 82px;
   height: 82px;
-  background-color: white;
-  border-radius: 50%;
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.25);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-
-  &[type: 'radio'] {
-    border: none;
-  }
-`;
-
-export const innerCircle = (color: string) => css`
-  width: 52px;
-  height: 52px;
   border-radius: 50%;
   background-color: ${color};
+  cursor: pointer;
+  outline: none;
+  border: 15px solid ${theme.palette.info[50]};
+  &[type='radio']:checked {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const title = css`
@@ -72,7 +61,7 @@ export const title = css`
   padding-bottom: ${theme.spacing(2)};
   display: block;
   color: ${theme.palette.dark[900]};
-  border-bottom: 1px solid ${theme.palette.dark[900]};
+  border-bottom: 1px solid ${theme.palette.info[900]};
 `;
 
 export const iframeCV = css`
@@ -84,14 +73,22 @@ export const iframeCV = css`
 export const buttonContainer = css`
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  gap: 32px;
+  align-items: center;
+  gap: ${theme.spacing(8)};
   align-self: strech;
-  padding: 16px;
+  padding: ${theme.spacing(4)};
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 export const buttonStyle = css`
-  @media (max-width: 725px) {
-    width: 358px;
+  width: 358px;
+
+  @media (min-width: 1024px) {
+    width:auto;
+    height: auto;
   }
 `;

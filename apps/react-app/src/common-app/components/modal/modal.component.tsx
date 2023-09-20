@@ -1,20 +1,13 @@
 import React from 'react';
 import * as classes from './modal.styles';
-import { Button } from '../button';
-import { SelectButton, ColorOptions } from './selectButton';
-
 
 interface Props {
   children: React.ReactNode;
+  isOpen: boolean;
 }
 
 export const Modal: React.FC<Props> = (props) => {
-  const { children } = props;
-
-
-  return (
-    <div className={classes.container}>
-      {children}
-    </div>
-  );
+  const { children, isOpen } = props;
+  
+  return isOpen && <div className={classes.container}>{children}</div>
 };

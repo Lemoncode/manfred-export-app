@@ -73,10 +73,9 @@ export const TemplateExport: React.FC<Props> = props => {
           </Button>
         </div>
       </div>
-      {openModal && <Modal>
-
-        <ExportConfig handleExportconfigSelection={handleExportToHTML} onClose={handleCloseModal} />
-      </Modal>}
+      <Modal isOpen={openModal}>
+        <ExportConfig exportConfigSelection={handleExportToHTML} cancelExport={handleCloseModal} />
+      </Modal>
       <Footer />
     </div>
   );
