@@ -10,7 +10,7 @@ interface Props {
 
 export const ExportConfig: React.FC<Props> = props => {
   const { exportConfigSelection, cancelExport } = props;
-  const [color, setColor] = React.useState<string>("");
+  const [color, setColor] = React.useState<string>(theme.palette.primary[600]);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setColor(event.target.value);
@@ -31,6 +31,7 @@ export const ExportConfig: React.FC<Props> = props => {
             value={theme.palette.primary[600]}
             className={classes.inputRadioButton(theme.palette.primary[600])}
             onChange={handleColorChange}
+            defaultChecked
           />
           <input
             type="radio"

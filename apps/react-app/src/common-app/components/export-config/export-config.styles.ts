@@ -51,7 +51,7 @@ export const inputRadioButton = (color: string) => css`
   outline: none;
   border: 15px solid ${theme.palette.info[50]};
   &[type='radio']:checked {
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 0px 4px ${theme.palette.dark[200]};
   }
 `;
 
