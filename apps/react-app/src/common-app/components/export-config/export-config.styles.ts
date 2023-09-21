@@ -10,14 +10,13 @@ export const content = css`
   flex-grow: 1;
   width: 100%;
   background: ${theme.palette.info[50]};
-  font: ${theme.typography.mobile.h5};
-  font-family: ${theme.typography.mobile.h5.fontFamily};
+  ${theme.typography.mobile.h5};
   @media (min-width: 725px) {
     border-radius: 16px;
-    font: ${theme.typography.tablet.h5};
+    ${theme.typography.tablet.h5};
   }
   @media (min-width: 1024px) {
-    font: ${theme.typography.desktop.h5};
+    ${theme.typography.desktop.h5};
   }
 `;
 
@@ -75,7 +74,6 @@ export const buttonContainer = css`
   justify-content: center;
   align-items: center;
   gap: ${theme.spacing(8)};
-  align-self: strech;
   padding: ${theme.spacing(4)};
   flex-direction: column;
 
@@ -85,10 +83,10 @@ export const buttonContainer = css`
 `;
 
 export const buttonStyle = css`
-  width: 358px;
-
+  max-width: 358px;
+  min-width: min-content;
+  widht: 100%;
   @media (min-width: 1024px) {
     width:auto;
-    height: auto;
   }
 `;
