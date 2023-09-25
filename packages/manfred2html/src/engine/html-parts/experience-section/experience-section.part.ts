@@ -8,7 +8,7 @@ import { englishExperienceLabels, spanishExperienceLabels } from './labels';
 export const generateExperiencesSection = (cv: ManfredAwesomicCV, language: Language = 'es'): string => {
   const experienceSectionVm = mapFromMacCvToExperienceSectionVm(cv);
 
-  return generateExperienceSectionInner(experienceSectionVm, 'en' /* language */);
+  return generateExperienceSectionInner(experienceSectionVm, 'es' /* language */);
 };
 
 const generateExperienceSectionInner = (experienceSectionVm: ExperienceVm[], language: Language): string => {
