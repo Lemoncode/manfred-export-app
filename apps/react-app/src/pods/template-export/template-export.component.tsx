@@ -34,10 +34,7 @@ export const TemplateExport: React.FC<Props> = props => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
     onDownloadToHTML(text);
   };
-  const handleOnExportToHtml = () => {
-    setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onExportToHtml(text);
-  };
+
   const handleCloseModal = () => setOpenModal(false);
 
   return (
