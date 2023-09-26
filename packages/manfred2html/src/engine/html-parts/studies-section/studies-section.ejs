@@ -1,7 +1,9 @@
 <%_ if (studiesCollection && studiesCollection.length !== 0) { -%>
     <section class="main__section">
       <div class="main__section__header">
-        <h2>Educación</h2>
+        <h2>
+          <%- labels.STUDIES_HEADING %>
+        </h2>
         <hr class="secondary-divider" />
       </div>
       <%_ for (const study of studiesCollection) { -%>
