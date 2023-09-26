@@ -31,9 +31,9 @@ export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV, s
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
   const mainElementStart = generateMainElementStart();
   const mainElementEnd = generateMainElementEnd();
-  const languageSection = generateLanguageSection(manfredJsonContent);
-  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
-  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
+  const languageSection = generateLanguageSection(manfredJsonContent, settings?.language);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings?.language);
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings?.language);
   const experienceSection = generateExperiencesSection(manfredJsonContent, settings?.language);
   const studiesSection = generateStudiesSection(manfredJsonContent);
 
