@@ -3,7 +3,7 @@ import { ManfredAwesomicCV } from '@/model';
 import { exportManfredJSonToHTMLTemplateA } from './template-a';
 import { exportManfredJSonToHTMLTemplateB } from './template-b';
 
-export const exportHTMLTemplate = (manfredJsonContent: ManfredAwesomicCV, settings?: Settings): string => {
+export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV, settings?: Settings): string => {
   const template = settings?.template || 'template-a';
 
   switch (template) {
