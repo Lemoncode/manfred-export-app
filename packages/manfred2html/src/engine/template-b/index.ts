@@ -17,8 +17,6 @@ import {
   generateStudiesSection,
 } from './html-parts';
 
-interface Settings {}
-
 export const exportManfredJSonToHTMLTemplateB = (
   manfredJsonContent: ManfredAwesomicCV,
   settings?: Settings
