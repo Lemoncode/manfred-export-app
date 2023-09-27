@@ -4,7 +4,7 @@ import {
   generateHtmlDocumentEnd,
   generateHeaderElementStart,
   generateHeaderElementEnd,
-  generateAboutMeSection,
+  generateHeaderSection,
   generateAsideElementStart,
   generateAsideElementEnd,
   generateRelevantsLinksSection,
@@ -17,6 +17,10 @@ import {
   generateStudiesSection,
 } from './html-parts';
 
+interface Settings {
+  template: string;
+}
+
 export const exportManfredJSonToHTMLTemplateB = (
   manfredJsonContent: ManfredAwesomicCV,
   settings?: Settings
@@ -25,7 +29,7 @@ export const exportManfredJSonToHTMLTemplateB = (
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
-  const aboutMeSection = generateAboutMeSection(manfredJsonContent);
+  const headerSection = generateHeaderSection(manfredJsonContent);
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
@@ -42,7 +46,7 @@ export const exportManfredJSonToHTMLTemplateB = (
       
       ${asideElementStart}
       ${headerElementStart}
-      ${aboutMeSection}
+      ${headerSection}
       ${headerElementEnd}
       ${asideElementEnd}
       ${mainElementStart}
