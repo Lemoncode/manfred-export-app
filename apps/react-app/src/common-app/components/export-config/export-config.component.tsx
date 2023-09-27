@@ -2,23 +2,24 @@ import React from 'react';
 import { theme } from '@/core/theme';
 import { Button } from '@/common-app/components';
 import * as classes from './export-config.styles';
-
 interface Props {
-  exportConfigSelection: (color?: string) => void;
+  htmlTemplate: string;
   cancelExport: () => void;
+  exportConfigSelection: (color?: string) => void;
 }
 
 export const ExportConfig: React.FC<Props> = props => {
-  const { exportConfigSelection, cancelExport } = props;
+  const { exportConfigSelection, cancelExport, htmlTemplate } = props;
   const [color, setColor] = React.useState<string>(theme.palette.primary[600]);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setColor(event.target.value);
-  }
+  };
 
   const handleExportConfigSelection = () => {
     exportConfigSelection(color);
-  }
+  };
+
   return (
     <div className={classes.content}>
       <div className={classes.optionsContainer}>
@@ -75,7 +76,7 @@ export const ExportConfig: React.FC<Props> = props => {
           />
         </fieldset>
         <p className={`${classes.title}`}>Ejemplo de previsualización</p>
-        <iframe id="iframeCV" className={classes.iframeCV}></iframe>
+        <iframe id="iframeCV" className={classes.iframeCV} srcDoc={htmlTemplate}></iframe>
         <div className={classes.buttonContainer}>
           <Button onClick={handleExportConfigSelection} showIcon={false} className={classes.buttonStyle}>
             DESCARGAR

@@ -6,14 +6,15 @@ import * as classes from './template-export.styles';
 interface Props {
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
-  onExportToHTML: (text: string) => void;
+  onDownloadToHTML: (text: string) => void;
+  onExportToHtml: (text: string) => string;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExportToWord, onExportToMarkdown, onExportToHTML } = props;
+  const { onExportToWord, onExportToMarkdown, onDownloadToHTML, onExportToHtml } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
-  const [openModal, setOpenModal] = React.useState<boolean>(false)
+  const [openModal, setOpenModal] = React.useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
@@ -29,12 +30,12 @@ export const TemplateExport: React.FC<Props> = props => {
     onExportToMarkdown(text);
   };
 
-  const handleExportToHTML = () => {
+  const handleDownloadToHTML = () => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onExportToHTML(text);
+    onDownloadToHTML(text);
   };
 
-  const handleCloseModal =()=> setOpenModal(false);
+  const handleCloseModal = () => setOpenModal(false);
 
   return (
     <div className={classes.root}>
@@ -68,13 +69,20 @@ export const TemplateExport: React.FC<Props> = props => {
             disabled={text ? false : true}
             className={classes.buttonClass}
             showIcon={false}
-            onClick={() => {setOpenModal(true)}}
-          >Export To HTML
+            onClick={() => {
+              setOpenModal(true);
+            }}
+          >
+            Export To HTML
           </Button>
         </div>
       </div>
       <Modal isOpen={openModal}>
-        <ExportConfig exportConfigSelection={handleExportToHTML} cancelExport={handleCloseModal} />
+        <ExportConfig
+          exportConfigSelection={handleDownloadToHTML}
+          cancelExport={handleCloseModal}
+          htmlTemplate={onExportToHtml(text)}
+        />
       </Modal>
       <Footer />
     </div>
