@@ -46,6 +46,7 @@ export const exportManfredJSonToHTMLTemplateB = (
       ${headerElementEnd}
       ${relevantsLinksSection}
       ${languageSection}
+      ${hardSkillsSection}
       ${asideElementEnd}
       ${mainElementStart}
         
