@@ -12,6 +12,7 @@ import {
   generateHardSkillsSection,
   generateSoftSkillsSection,
   generateMainElementStart,
+  generateAboutMeSection,
   generateMainElementEnd,
   generateExperiencesSection,
   generateStudiesSection,
@@ -30,6 +31,7 @@ export const exportManfredJSonToHTMLTemplateB = (
   const asideElementEnd = generateAsideElementEnd();
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
   const mainElementStart = generateMainElementStart();
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent);
   const mainElementEnd = generateMainElementEnd();
   const languageSection = generateLanguageSection(manfredJsonContent);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
@@ -50,7 +52,7 @@ export const exportManfredJSonToHTMLTemplateB = (
       ${softSkillsSection}
       ${asideElementEnd}
       ${mainElementStart}
-        
+      ${aboutMeSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;

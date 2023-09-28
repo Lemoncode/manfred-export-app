@@ -13,3 +13,4 @@ export * from './hard-skills-section';
 export * from './soft-skills-section';
 export * from './experience-section';
 export * from './studies-section';
+export * from './about-me-section';
