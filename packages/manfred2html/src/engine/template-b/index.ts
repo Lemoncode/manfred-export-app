@@ -41,7 +41,6 @@ export const exportManfredJSonToHTMLTemplateB = (
 
   return `
     ${htmlDocumentStart}
-      
       ${asideElementStart}
       ${headerElementStart}
       ${headerSection}
@@ -54,6 +53,7 @@ export const exportManfredJSonToHTMLTemplateB = (
       ${mainElementStart}
       ${aboutMeSection}
       ${experienceSection}
+      ${studiesSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
