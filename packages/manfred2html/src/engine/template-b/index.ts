@@ -53,6 +53,7 @@ export const exportManfredJSonToHTMLTemplateB = (
       ${asideElementEnd}
       ${mainElementStart}
       ${aboutMeSection}
+      ${experienceSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
