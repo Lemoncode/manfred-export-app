@@ -35,7 +35,19 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  const onExportJsonToHTML = async (text: string) => {
+  const onExportJsonToHTML = (text: string): string => {
+    try {
+      const manfredJsonContent = parseManfredJson(text);
+      const content = exportManfredJSonToHTML(manfredJsonContent);
+      return content || '';
+    } catch (error) {
+      console.error(error);
+      alert('Hay un error, no está utilizando el formato correcto');
+      return '';
+    }
+  };
+
+  const onDownloadJsonToHTML = async (text: string) => {
     try {
       const manfredJsonContent = parseManfredJson(text);
       const content = exportManfredJSonToHTML(manfredJsonContent);
@@ -47,12 +59,12 @@ export const TemplateExportContainer: React.FC = () => {
       alert('Hay un error, no está utilizando el formato correcto');
     }
   };
-
   return (
     <TemplateExport
       onExportToWord={onExportJsonToWord}
       onExportToMarkdown={onExportJsonToMarkdown}
-      onExportToHTML={onExportJsonToHTML}
+      onDownloadToHTML={onDownloadJsonToHTML}
+      onExportToHtml={onExportJsonToHTML}
     />
   );
 };
