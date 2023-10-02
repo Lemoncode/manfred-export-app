@@ -6,8 +6,8 @@ import * as classes from './template-export.styles';
 interface Props {
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
-  onDownloadToHTML: (text: string) => void;
-  onExportToHtml: (text: string) => string;
+  onDownloadToHTML: (text: string, color: string) => void;
+  onExportToHtml: (text: string, color: string) => string;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
@@ -30,9 +30,9 @@ export const TemplateExport: React.FC<Props> = props => {
     onExportToMarkdown(text);
   };
 
-  const handleDownloadToHTML = () => {
+  const handleDownloadToHTML = (color: string) => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onDownloadToHTML(text);
+    onDownloadToHTML(text, color);
   };
 
   const handleCloseModal = () => setOpenModal(false);
@@ -81,7 +81,8 @@ export const TemplateExport: React.FC<Props> = props => {
         <ExportConfig
           exportConfigSelection={handleDownloadToHTML}
           cancelExport={handleCloseModal}
-          htmlTemplate={onExportToHtml(text)}
+          htmlTemplate={text}
+          onExportToHtml={onExportToHtml}
         />
       </Modal>
       <Footer />
