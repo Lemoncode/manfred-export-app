@@ -8,3 +8,4 @@ export * from './header-element-start';
 export * from './header-element-end';
 export * from './header-section';
 export * from './relevants-links-section';
+export * from './language-section';
