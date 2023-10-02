@@ -4,3 +4,6 @@ export * from './aside-element-start';
 export * from './aside-element-end';
 export * from './main-element-start';
 export * from './main-element-end';
+export * from './header-element-start';
+export * from './header-element-end';
+export * from './header-section';
