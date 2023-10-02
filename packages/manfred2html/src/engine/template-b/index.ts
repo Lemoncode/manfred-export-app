@@ -10,6 +10,7 @@ import {
   generateAsideElementEnd,
   generateMainElementStart,
   generateMainElementEnd,
+  generateRelevantsLinksSection,
 } from './html-parts';
 
 export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwesomicCV, theme?: string): string => {
@@ -17,6 +18,7 @@ export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwes
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
+  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
   const headerSection = generateHeaderSection(manfredJsonContent);
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();

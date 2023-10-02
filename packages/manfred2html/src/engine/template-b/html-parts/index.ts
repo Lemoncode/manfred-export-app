@@ -7,3 +7,4 @@ export * from './main-element-end';
 export * from './header-element-start';
 export * from './header-element-end';
 export * from './header-section';
+export * from './relevants-links-section';
