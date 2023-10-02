@@ -17,7 +17,6 @@ export const ExportConfig: React.FC<Props> = props => {
     setColor(event.target.value);
     onExportToHtml(htmlTemplate, event.target.value);
   };
-  console.log(onExportToHtml(htmlTemplate, color));
   const handleExportConfigSelection = () => {
     exportConfigSelection(color);
   };
