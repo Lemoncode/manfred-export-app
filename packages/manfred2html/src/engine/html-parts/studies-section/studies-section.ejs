@@ -1,0 +1,55 @@
+<%_ if (studiesCollection && studiesCollection.length !== 0) { -%>
+    <section class="main__section">
+      <div class="main__section__header">
+        <h2>Educación</h2>
+        <hr class="secondary-divider" />
+      </div>
+      <%_ for (const study of studiesCollection) { -%>
+      <div class="main__section__item">
+        <div class="date date-desktop">
+          <p>Inicio: <b><%- study.startDate %></b></p>
+          <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
+            <p>Fin: <b><%- study.finishDate %></b></p>
+            <%_ } -%>
+        </div>
+        <div class="line-icon">
+          <div class="circle"></div>
+          <hr class="line" />
+        </div>
+        <div class="section__content">
+          <div class="section__content__header">
+            <h3><%- study.name %></h3>
+            <%_ if (study.description) { -%>
+                <h4><%- study.description %></h4>
+                <%_ } -%>
+          </div>
+          <div class="date date-mobile">
+            <p>Inicio: <b><%- study.startDate %></b></p>
+            <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
+              <p>Fin: <b><%- study.finishDate %></b></p>
+              <%_ } -%>            
+          </div>
+          <div class="data">
+            <p>Tipo de estudios: <b><%- study.studyType %></b></p>
+            <p>
+              Grado obtenido: <% if (study.degreeAchieved) { %>
+              <b>Obtenido</b>
+              <%} else { %>
+              <b>No obtenido</b>
+              <% } %>
+            </p>
+            <p>Nombre de la institución: <b><%- study.institution.name %></b></p>
+            <%_ if (study.location) { -%>
+            <p>
+              Ubicación de la institución:
+                <h4><%- study.description %></h4>                
+              <b><%- study.institution.location.region %> , <%- study.institution.location.country %> </b>
+            </p>
+            <%_ } -%>
+          </div>
+        </div>
+      </div>
+      <%_ } -%>
+    </section>
+    <%_ } -%>
+    
