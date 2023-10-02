@@ -5,17 +5,19 @@ import * as classes from './export-config.styles';
 interface Props {
   htmlTemplate: string;
   cancelExport: () => void;
-  exportConfigSelection: (color?: string) => void;
+  exportConfigSelection: (color: string) => void;
+  onExportToHtml: (text: string, color: string) => string;
 }
 
 export const ExportConfig: React.FC<Props> = props => {
-  const { exportConfigSelection, cancelExport, htmlTemplate } = props;
+  const { exportConfigSelection, cancelExport, htmlTemplate, onExportToHtml } = props;
   const [color, setColor] = React.useState<string>(theme.palette.primary[600]);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setColor(event.target.value);
+    onExportToHtml(htmlTemplate, event.target.value);
   };
-
+  console.log(onExportToHtml(htmlTemplate, color));
   const handleExportConfigSelection = () => {
     exportConfigSelection(color);
   };
@@ -76,7 +78,7 @@ export const ExportConfig: React.FC<Props> = props => {
           />
         </fieldset>
         <p className={`${classes.title}`}>Ejemplo de previsualización</p>
-        <iframe id="iframeCV" className={classes.iframeCV} srcDoc={htmlTemplate}></iframe>
+        <iframe id="iframeCV" className={classes.iframeCV} srcDoc={onExportToHtml(htmlTemplate, color)}></iframe>
         <div className={classes.buttonContainer}>
           <Button onClick={handleExportConfigSelection} showIcon={false} className={classes.buttonStyle}>
             DESCARGAR

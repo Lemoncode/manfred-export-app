@@ -35,10 +35,10 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  const onExportJsonToHTML = (text: string): string => {
+  const onExportJsonToHTML = (text: string, color: string): string => {
     try {
       const manfredJsonContent = parseManfredJson(text);
-      const content = exportManfredJSonToHTML(manfredJsonContent);
+      const content = exportManfredJSonToHTML(manfredJsonContent, color);
       return content || '';
     } catch (error) {
       console.error(error);
@@ -47,10 +47,10 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  const onDownloadJsonToHTML = async (text: string) => {
+  const onDownloadJsonToHTML = async (text: string, color: string) => {
     try {
       const manfredJsonContent = parseManfredJson(text);
-      const content = exportManfredJSonToHTML(manfredJsonContent);
+      const content = exportManfredJSonToHTML(manfredJsonContent, color);
       const blob = new Blob([content], { type: 'text/html' });
 
       await download(blob, 'manfred.html');

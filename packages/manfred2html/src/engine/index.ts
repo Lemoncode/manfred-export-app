@@ -16,8 +16,8 @@ import {
   generateExperiencesSection,
 } from './html-parts';
 
-export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
-  const htmlDocumentStart = generateHtmlDocumentStart();
+export const exportManfredJSonToHTML = (manfredJsonContent: ManfredAwesomicCV, color: string): string => {
+  const htmlDocumentStart = generateHtmlDocumentStart(color);
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
