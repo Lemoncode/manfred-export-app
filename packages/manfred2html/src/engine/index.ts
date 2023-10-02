@@ -4,7 +4,7 @@ import { exportManfredJSonToHTMLTemplateA } from './template-a';
 import { exportManfredJSonToHTMLTemplateB } from './template-b';
 
 export const exportHTMLTemplate = (manfredJsonContent: ManfredAwesomicCV, theme?: string): string => {
-  const template = theme || 'template-b';
+  const template = theme || 'template-a';
 
   switch (template) {
     case 'template-a':
