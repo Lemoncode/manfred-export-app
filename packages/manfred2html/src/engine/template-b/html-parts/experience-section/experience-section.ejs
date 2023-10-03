@@ -39,9 +39,12 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-            <p><%- experience.roles[0].startDate %> <%_ if(experience.roles[0].finishDate || experience.roles[0].finishDate === 'Actualidad') { -%>
-              <%- experience.roles[0].finishDate %>
-            <%_ } -%></p>
+            <p class="date"><%- new Date(experience.roles[0].startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(experience.roles[0].finishDate && experience.roles[0].finishDate.toLowerCase() !=='actualidad') { -%>
+              <%- "- "+new Date(experience.roles[0].finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
+            <%_ } else { -%>
+              - Actualidad
+              <%_}-%>
+            </p>
           </div>
             <%_ if(experience.type) { -%>
               <p class="section__content__data">Tipo de organización: <b><%- experience.type %></b></p>
