@@ -1,7 +1,7 @@
 import React from 'react';
 import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@lemoncode/manfred2word';
 import { exportManfredJSonToMarkdown } from '@lemoncode/manfred2md';
-import { exportManfredJSonToHTML } from '@lemoncode/manfred2html';
+import { exportHTMLTemplate } from '@lemoncode/manfred2html';
 import { DEFAULT_EXPORT_FILENAME } from '@/core';
 import { download } from '@/common';
 import { TemplateExport } from './template-export.component';
@@ -38,7 +38,7 @@ export const TemplateExportContainer: React.FC = () => {
   const onExportJsonToHTML = async (text: string) => {
     try {
       const manfredJsonContent = parseManfredJson(text);
-      const content = exportManfredJSonToHTML(manfredJsonContent);
+      const content = exportHTMLTemplate(manfredJsonContent);
       const blob = new Blob([content], { type: 'text/html' });
 
       await download(blob, 'manfred.html');
