@@ -1,18 +1,21 @@
 import React from 'react';
+import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
-import { Button, Footer, Header, Navbar } from '@/common-app/components';
+import { Button, Footer, Header, Modal, Navbar, ExportConfig } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
-  onExportToHTML: (text: string) => void;
+  onExportToHTML: (text: string, exportHTMLSettings: ExportHTMLSettings) => void;
+  onHTMLSettingSelectionChanged: (text: string, exportHTMLSettings: ExportHTMLSettings) => string;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExportToWord, onExportToMarkdown, onExportToHTML } = props;
+  const { onExportToWord, onExportToMarkdown, onExportToHTML, onHTMLSettingSelectionChanged } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
+  const [openModal, setOpenModal] = React.useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
@@ -28,10 +31,12 @@ export const TemplateExport: React.FC<Props> = props => {
     onExportToMarkdown(text);
   };
 
-  const handleExportToHTML = () => {
+  const handleOnExportToHTML = (exportHTMLSettings: ExportHTMLSettings) => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onExportToHTML(text);
+    onExportToHTML(text, exportHTMLSettings);
   };
+
+  const handleCloseModal = () => setOpenModal(false);
 
   return (
     <div className={classes.root}>
@@ -63,14 +68,24 @@ export const TemplateExport: React.FC<Props> = props => {
           </Button>
           <Button
             disabled={text ? false : true}
-            onClick={handleExportToHTML}
             className={classes.buttonClass}
             showIcon={false}
+            onClick={() => {
+              setOpenModal(true);
+            }}
           >
             Export To HTML
           </Button>
         </div>
       </div>
+      <Modal isOpen={openModal}>
+        <ExportConfig
+          htmlTemplate={text}
+          onExportToHTML={handleOnExportToHTML}
+          onHTMLSettingSelectionChanged={onHTMLSettingSelectionChanged}
+          cancelExport={handleCloseModal}
+        />
+      </Modal>
       <Footer />
     </div>
   );
