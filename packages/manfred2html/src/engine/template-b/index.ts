@@ -13,6 +13,7 @@ import {
   generateRelevantsLinksSection,
   generateLanguageSection,
   generateHardSkillsSection,
+  generateSoftSkillsSection,
 } from './html-parts';
 
 export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwesomicCV, theme?: string): string => {
@@ -23,6 +24,7 @@ export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwes
   const headerSection = generateHeaderSection(manfredJsonContent);
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
   const languageSection = generateLanguageSection(manfredJsonContent);
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();
