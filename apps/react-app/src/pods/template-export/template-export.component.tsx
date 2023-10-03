@@ -1,9 +1,10 @@
 import React from 'react';
 import { useUserChoiceContext } from '@/core';
-import { Button, Footer, Header, Modal, Navbar, ExportConfig } from '@/common-app/components';
+import { Button, Footer, Header, Modal, Navbar, ExportConfig, AlertMessage } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
+  error: boolean;
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
   onDownloadToHTML: (text: string) => void;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExportToWord, onExportToMarkdown, onDownloadToHTML, onExportToHtml } = props;
+  const { onExportToWord, onExportToMarkdown, onDownloadToHTML, onExportToHtml, error } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
   const [openModal, setOpenModal] = React.useState<boolean>(false);
@@ -77,12 +78,15 @@ export const TemplateExport: React.FC<Props> = props => {
           </Button>
         </div>
       </div>
-      <Modal isOpen={openModal}>
-        <ExportConfig
-          exportConfigSelection={handleDownloadToHTML}
-          cancelExport={handleCloseModal}
-          htmlTemplate={onExportToHtml(text)}
-        />
+      <Modal isOpen={openModal || error}>
+        {!error && (
+          <ExportConfig
+            exportConfigSelection={handleDownloadToHTML}
+            cancelExport={handleCloseModal}
+            htmlTemplate={onExportToHtml(text)}
+          />
+        )}
+        {error && <AlertMessage onClick={handleCloseModal} />}
       </Modal>
       <Footer />
     </div>

@@ -12,12 +12,14 @@ export const TemplateExportContainer: React.FC = () => {
     return parseStringToManfredJSon(text);
   };
 
+  const [error, setError] = React.useState(false);
+
   const onExportJsonToWord = async (text: string) => {
     try {
       const manfredJsonContent = parseStringToManfredJSon(text);
       await exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
     } catch (error) {
-      alert('Hay un error, no está utilizando el formato correcto');
+      // alert('Hay un error, no está utilizando el formato correcto');
       console.error(error);
     }
   };
@@ -31,7 +33,7 @@ export const TemplateExportContainer: React.FC = () => {
       await download(blob, 'CV.md');
     } catch (error) {
       console.error(error);
-      alert('Hay un error, no está utilizando el formato correcto');
+      // alert('Hay un error, no está utilizando el formato correcto');
     }
   };
 
@@ -42,7 +44,8 @@ export const TemplateExportContainer: React.FC = () => {
       return content || '';
     } catch (error) {
       console.error(error);
-      alert('Hay un error, no está utilizando el formato correcto');
+      setError(true);
+      // alert('Hay un error, no está utilizando el formato correcto');
       return '';
     }
   };
@@ -56,11 +59,12 @@ export const TemplateExportContainer: React.FC = () => {
       await download(blob, 'manfred.html');
     } catch (error) {
       console.error(error);
-      alert('Hay un error, no está utilizando el formato correcto');
+      // alert('Hay un error, no está utilizando el formato correcto');
     }
   };
   return (
     <TemplateExport
+      error={error}
       onExportToWord={onExportJsonToWord}
       onExportToMarkdown={onExportJsonToMarkdown}
       onDownloadToHTML={onDownloadJsonToHTML}
