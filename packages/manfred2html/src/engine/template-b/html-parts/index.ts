@@ -11,3 +11,4 @@ export * from './relevants-links-section';
 export * from './language-section';
 export * from './hard-skills-section';
 export * from './soft-skills-section';
+export * from './about-me-section';
