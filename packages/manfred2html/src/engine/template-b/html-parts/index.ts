@@ -9,3 +9,4 @@ export * from './header-element-end';
 export * from './header-section';
 export * from './relevants-links-section';
 export * from './language-section';
+export * from './hard-skills-section';
