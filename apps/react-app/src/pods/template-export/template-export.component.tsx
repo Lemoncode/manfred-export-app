@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
 import { Button, Footer, Header, Modal, Navbar, ExportConfig } from '@/common-app/components';
 import * as classes from './template-export.styles';
@@ -6,12 +7,12 @@ import * as classes from './template-export.styles';
 interface Props {
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
-  onDownloadToHTML: (text: string, color: string) => void;
-  onExportToHtml: (text: string, color: string) => string;
+  onExportToHTML: (text: string, exportHTMLSettings: ExportHTMLSettings) => void;
+  onHTMLSettingSelectionChanged: (text: string, exportHTMLSettings: ExportHTMLSettings) => string;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExportToWord, onExportToMarkdown, onDownloadToHTML, onExportToHtml } = props;
+  const { onExportToWord, onExportToMarkdown, onExportToHTML, onHTMLSettingSelectionChanged } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
   const [openModal, setOpenModal] = React.useState<boolean>(false);
@@ -30,9 +31,9 @@ export const TemplateExport: React.FC<Props> = props => {
     onExportToMarkdown(text);
   };
 
-  const handleDownloadToHTML = (color: string) => {
+  const handleOnExportToHTML = (exportHTMLSettings: ExportHTMLSettings) => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onDownloadToHTML(text, color);
+    onExportToHTML(text, exportHTMLSettings);
   };
 
   const handleCloseModal = () => setOpenModal(false);
@@ -79,10 +80,10 @@ export const TemplateExport: React.FC<Props> = props => {
       </div>
       <Modal isOpen={openModal}>
         <ExportConfig
-          exportConfigSelection={handleDownloadToHTML}
-          cancelExport={handleCloseModal}
           htmlTemplate={text}
-          onExportToHtml={onExportToHtml}
+          onExportToHTML={handleOnExportToHTML}
+          onHTMLSettingSelectionChanged={onHTMLSettingSelectionChanged}
+          cancelExport={handleCloseModal}
         />
       </Modal>
       <Footer />

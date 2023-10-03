@@ -1,7 +1,7 @@
 import React from 'react';
 import { exportManfredJSonToWordAndDownload, parseStringToManfredJSon } from '@lemoncode/manfred2word';
 import { exportManfredJSonToMarkdown } from '@lemoncode/manfred2md';
-import { exportManfredJSonToHTML } from '@lemoncode/manfred2html';
+import { exportManfredJSonToHTML, ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { DEFAULT_EXPORT_FILENAME } from '@/core';
 import { download } from '@/common';
 import { TemplateExport } from './template-export.component';
@@ -35,10 +35,10 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  const onExportJsonToHTML = (text: string, color: string): string => {
+  const onHTMLSettingChanged = (text: string, exportHTMLSettings: ExportHTMLSettings): string => {
     try {
       const manfredJsonContent = parseManfredJson(text);
-      const content = exportManfredJSonToHTML(manfredJsonContent, color);
+      const content = exportManfredJSonToHTML(manfredJsonContent, exportHTMLSettings);
       return content || '';
     } catch (error) {
       console.error(error);
@@ -47,10 +47,10 @@ export const TemplateExportContainer: React.FC = () => {
     }
   };
 
-  const onDownloadJsonToHTML = async (text: string, color: string) => {
+  const onExportToHTML = async (text: string, exportHTMLSettings: ExportHTMLSettings) => {
     try {
       const manfredJsonContent = parseManfredJson(text);
-      const content = exportManfredJSonToHTML(manfredJsonContent, color);
+      const content = exportManfredJSonToHTML(manfredJsonContent, exportHTMLSettings);
       const blob = new Blob([content], { type: 'text/html' });
 
       await download(blob, 'manfred.html');
@@ -63,8 +63,8 @@ export const TemplateExportContainer: React.FC = () => {
     <TemplateExport
       onExportToWord={onExportJsonToWord}
       onExportToMarkdown={onExportJsonToMarkdown}
-      onDownloadToHTML={onDownloadJsonToHTML}
-      onExportToHtml={onExportJsonToHTML}
+      onExportToHTML={onExportToHTML}
+      onHTMLSettingSelectionChanged={onHTMLSettingChanged}
     />
   );
 };
