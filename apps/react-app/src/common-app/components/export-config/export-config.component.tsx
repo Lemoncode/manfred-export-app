@@ -10,11 +10,15 @@ interface Props {
   onHTMLSettingSelectionChanged: (text: string, exportHTMLSettings: ExportHTMLSettings) => string;
 }
 
+const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
+
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
     primaryColor: theme.palette.primary[600],
   });
+  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
+
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
@@ -24,11 +28,15 @@ export const ExportConfig: React.FC<Props> = props => {
     onHTMLSettingSelectionChanged(htmlTemplate, { primaryColor: event.target.value });
   };
   const handleExportConfigSelection = () => {
+    setIsDownloadInProgress(true);
     onExportToHTML(exportHTMLSettings);
+
+    setTimeout(() => {
+      cancelExport();
+    }, DOWNLOAD_MESSAGE_TIMEOUT);
   };
 
   React.useEffect(() => {
-    console.log('exportHTMLSettings', exportHTMLSettings);
     setHtmlPreview(onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings));
   }, [exportHTMLSettings]);
 
@@ -90,13 +98,26 @@ export const ExportConfig: React.FC<Props> = props => {
         <p className={`${classes.title}`}>Ejemplo de previsualización</p>
         <iframe id="iframeCV" className={classes.iframeCV} srcDoc={htmlPreview}></iframe>
         <div className={classes.buttonContainer}>
-          <Button onClick={handleExportConfigSelection} showIcon={false} className={classes.buttonStyle}>
+          <Button
+            onClick={handleExportConfigSelection}
+            showIcon={false}
+            className={classes.buttonStyle}
+            disabled={isDownloadInProgress}
+          >
             DESCARGAR
           </Button>
-          <Button onClick={cancelExport} showIcon={false} className={classes.buttonStyle}>
+          <Button
+            onClick={cancelExport}
+            showIcon={false}
+            className={classes.buttonStyle}
+            disabled={isDownloadInProgress}
+          >
             CANCELAR
           </Button>
         </div>
+        {isDownloadInProgress && (
+          <div className={classes.downloadMessage}>Descarga completada. Revisa tu carpeta de descargas</div>
+        )}
       </div>
     </div>
   );
