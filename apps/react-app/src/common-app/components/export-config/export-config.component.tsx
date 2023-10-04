@@ -10,12 +10,14 @@ interface Props {
   onHTMLSettingSelectionChanged: (text: string, exportHTMLSettings: ExportHTMLSettings) => string;
 }
 
+const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
+
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
     primaryColor: theme.palette.primary[600],
   });
-  const [isDownload, setIsDownload] = React.useState<boolean>(false);
+  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
 
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
@@ -26,12 +28,12 @@ export const ExportConfig: React.FC<Props> = props => {
     onHTMLSettingSelectionChanged(htmlTemplate, { primaryColor: event.target.value });
   };
   const handleExportConfigSelection = () => {
-    setIsDownload(true);
+    setIsDownloadInProgress(true);
     onExportToHTML(exportHTMLSettings);
 
     setTimeout(() => {
       cancelExport();
-    }, 2500);
+    }, DOWNLOAD_MESSAGE_TIMEOUT);
   };
 
   React.useEffect(() => {
@@ -100,15 +102,20 @@ export const ExportConfig: React.FC<Props> = props => {
             onClick={handleExportConfigSelection}
             showIcon={false}
             className={classes.buttonStyle}
-            disabled={isDownload}
+            disabled={isDownloadInProgress}
           >
             DESCARGAR
           </Button>
-          <Button onClick={cancelExport} showIcon={false} className={classes.buttonStyle} disabled={isDownload}>
+          <Button
+            onClick={cancelExport}
+            showIcon={false}
+            className={classes.buttonStyle}
+            disabled={isDownloadInProgress}
+          >
             CANCELAR
           </Button>
         </div>
-        {isDownload && (
+        {isDownloadInProgress && (
           <div className={classes.downloadMessage}>Descarga completada. Revisa tu carpeta de descargas</div>
         )}
       </div>
