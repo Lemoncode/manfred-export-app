@@ -39,9 +39,12 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-            <p><%- study.startDate %> <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
-              <%- study.finishDate %>
-              <%_ } -%></p>  
+                <p class="date"><%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(study.finishDate && study.finishDate.toLowerCase() !=='actualidad') { -%>
+                  <%- "- "+new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
+                <%_ } else { -%>
+                  - Actualidad
+                  <%_}-%>
+                </p> 
           </div>
             <p class="data">Tipo de estudios: <b><%- study.studyType %></b></p>
             <p class="data">
