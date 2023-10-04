@@ -78,15 +78,16 @@ export const TemplateExport: React.FC<Props> = props => {
           </Button>
         </div>
       </div>
-      <Modal isOpen={openModal || error}>
-        {!error && (
+      <Modal isOpen={openModal}>
+        {text === '' && error ? (
+          <AlertMessage onClick={handleCloseModal} />
+        ) : (
           <ExportConfig
             exportConfigSelection={handleDownloadToHTML}
             cancelExport={handleCloseModal}
             htmlTemplate={onExportToHtml(text)}
           />
         )}
-        {error && <AlertMessage onClick={handleCloseModal} />}
       </Modal>
       <Footer />
     </div>

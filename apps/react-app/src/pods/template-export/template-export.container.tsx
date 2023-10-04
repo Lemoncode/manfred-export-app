@@ -21,6 +21,7 @@ export const TemplateExportContainer: React.FC = () => {
     } catch (error) {
       // alert('Hay un error, no está utilizando el formato correcto');
       console.error(error);
+      setError(true);
     }
   };
 
@@ -33,6 +34,7 @@ export const TemplateExportContainer: React.FC = () => {
       await download(blob, 'CV.md');
     } catch (error) {
       console.error(error);
+      setError(true);
       // alert('Hay un error, no está utilizando el formato correcto');
     }
   };
@@ -59,6 +61,7 @@ export const TemplateExportContainer: React.FC = () => {
       await download(blob, 'manfred.html');
     } catch (error) {
       console.error(error);
+      setError(true);
       // alert('Hay un error, no está utilizando el formato correcto');
     }
   };
