@@ -15,6 +15,8 @@ export const ExportConfig: React.FC<Props> = props => {
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
     primaryColor: theme.palette.primary[600],
   });
+  const [isDownload, setIsDownload] = React.useState<boolean>(false);
+
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
@@ -24,11 +26,15 @@ export const ExportConfig: React.FC<Props> = props => {
     onHTMLSettingSelectionChanged(htmlTemplate, { primaryColor: event.target.value });
   };
   const handleExportConfigSelection = () => {
+    setIsDownload(true);
     onExportToHTML(exportHTMLSettings);
+
+    setTimeout(() => {
+      cancelExport();
+    }, 2500);
   };
 
   React.useEffect(() => {
-    console.log('exportHTMLSettings', exportHTMLSettings);
     setHtmlPreview(onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings));
   }, [exportHTMLSettings]);
 
@@ -90,13 +96,21 @@ export const ExportConfig: React.FC<Props> = props => {
         <p className={`${classes.title}`}>Ejemplo de previsualización</p>
         <iframe id="iframeCV" className={classes.iframeCV} srcDoc={htmlPreview}></iframe>
         <div className={classes.buttonContainer}>
-          <Button onClick={handleExportConfigSelection} showIcon={false} className={classes.buttonStyle}>
+          <Button
+            onClick={handleExportConfigSelection}
+            showIcon={false}
+            className={classes.buttonStyle}
+            disabled={isDownload}
+          >
             DESCARGAR
           </Button>
-          <Button onClick={cancelExport} showIcon={false} className={classes.buttonStyle}>
+          <Button onClick={cancelExport} showIcon={false} className={classes.buttonStyle} disabled={isDownload}>
             CANCELAR
           </Button>
         </div>
+        {isDownload && (
+          <div className={classes.downloadMessage}>Descarga completada. Revisa tu carpeta de descargas</div>
+        )}
       </div>
     </div>
   );
