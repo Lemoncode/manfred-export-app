@@ -1,6 +1,7 @@
-import { ManfredAwesomicCV } from '../../model';
+import { ManfredAwesomicCV } from '@/model';
 import { ExperienceVm, Type } from './experience-section.vm';
 import { types } from './experience-section.contants';
+import { mapSortedRolesIntoExperience, sortExperienceByDate } from './experience-section.helpers';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
   let jobs: ExperienceVm[] = [];
@@ -16,7 +17,10 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
     jobs = [...jobs, { name: organizationName, description: organizationDescription, type: mapType, roles }];
   });
 
-  return jobs;
+  const jobsWithMappedRoles = mapSortedRolesIntoExperience(jobs);
+  const jobsSortedByDate = sortExperienceByDate(jobsWithMappedRoles);
+
+  return jobsSortedByDate;
 };
 
 export const mapOrganizationType = (type: string, types: Type[]): string => {
