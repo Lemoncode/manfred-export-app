@@ -3,6 +3,7 @@ import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { theme } from '@/core/theme';
 import { Button } from '@/common-app/components';
 import * as classes from './export-config.styles';
+import { useUserChoiceContext } from '@/core/user-choice';
 interface Props {
   htmlTemplate: string;
   cancelExport: () => void;
@@ -14,6 +15,7 @@ const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
 
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
+  const { userChoice } = useUserChoiceContext();
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
     primaryColor: theme.palette.primary[600],
   });
