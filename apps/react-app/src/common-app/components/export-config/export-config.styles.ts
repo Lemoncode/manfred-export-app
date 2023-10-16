@@ -38,7 +38,6 @@ export const colorFieldset = css`
   @media (min-width: 1024px) {
     justify-content: start;
   }
-
 `;
 export const inputRadioButton = (color: string) => css`
   appearance: none;
@@ -85,8 +84,27 @@ export const buttonContainer = css`
 export const buttonStyle = css`
   max-width: 358px;
   min-width: min-content;
-  widht: 100%;
+  width: 100%;
+
   @media (min-width: 1024px) {
-    width:auto;
+    width: auto;
+  }
+`;
+
+export const downloadMessage = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${theme.spacing(4)};
+  padding: ${theme.spacing(4)};
+  color: ${theme.palette.success[500]};
+  background-color: ${theme.palette.dark[500]};
+
+  ${theme.typography.mobile.h5};
+  @media (min-width: 725px) {
+    ${theme.typography.tablet.h5};
+  }
+  @media (min-width: 1024px) {
+    ${theme.typography.desktop.h5};
   }
 `;

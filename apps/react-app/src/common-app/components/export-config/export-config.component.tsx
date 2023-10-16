@@ -1,24 +1,46 @@
 import React from 'react';
+import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { theme } from '@/core/theme';
 import { Button } from '@/common-app/components';
 import * as classes from './export-config.styles';
+import { useUserChoiceContext } from '@/core/user-choice';
 interface Props {
   htmlTemplate: string;
   cancelExport: () => void;
-  exportConfigSelection: (color?: string) => void;
+  onExportToHTML: (exportHTMLSettings: ExportHTMLSettings) => void;
+  onHTMLSettingSelectionChanged: (text: string, exportHTMLSettings: ExportHTMLSettings) => string;
 }
 
+const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
+
 export const ExportConfig: React.FC<Props> = props => {
-  const { exportConfigSelection, cancelExport, htmlTemplate } = props;
-  const [color, setColor] = React.useState<string>(theme.palette.primary[600]);
+  const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
+  const { userChoice } = useUserChoiceContext();
+  const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
+    primaryColor: theme.palette.primary[600],
+  });
+  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
+
+  const [htmlPreview, setHtmlPreview] = React.useState<string>(
+    onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
+  );
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setColor(event.target.value);
+    setExportHTMLSettings({ primaryColor: event.target.value });
+    onHTMLSettingSelectionChanged(htmlTemplate, { primaryColor: event.target.value });
+  };
+  const handleExportConfigSelection = () => {
+    setIsDownloadInProgress(true);
+    onExportToHTML(exportHTMLSettings);
+
+    setTimeout(() => {
+      cancelExport();
+    }, DOWNLOAD_MESSAGE_TIMEOUT);
   };
 
-  const handleExportConfigSelection = () => {
-    exportConfigSelection(color);
-  };
+  React.useEffect(() => {
+    setHtmlPreview(onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings));
+  }, [exportHTMLSettings]);
 
   return (
     <div className={classes.content}>
@@ -76,15 +98,28 @@ export const ExportConfig: React.FC<Props> = props => {
           />
         </fieldset>
         <p className={`${classes.title}`}>Ejemplo de previsualización</p>
-        <iframe id="iframeCV" className={classes.iframeCV} srcDoc={htmlTemplate}></iframe>
+        <iframe id="iframeCV" className={classes.iframeCV} srcDoc={htmlPreview}></iframe>
         <div className={classes.buttonContainer}>
-          <Button onClick={handleExportConfigSelection} showIcon={false} className={classes.buttonStyle}>
+          <Button
+            onClick={handleExportConfigSelection}
+            showIcon={false}
+            className={classes.buttonStyle}
+            disabled={isDownloadInProgress}
+          >
             DESCARGAR
           </Button>
-          <Button onClick={cancelExport} showIcon={false} className={classes.buttonStyle}>
+          <Button
+            onClick={cancelExport}
+            showIcon={false}
+            className={classes.buttonStyle}
+            disabled={isDownloadInProgress}
+          >
             CANCELAR
           </Button>
         </div>
+        {isDownloadInProgress && (
+          <div className={classes.downloadMessage}>Descarga completada. Revisa tu carpeta de descargas</div>
+        )}
       </div>
     </div>
   );

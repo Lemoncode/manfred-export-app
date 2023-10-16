@@ -1,20 +1,23 @@
 import React from 'react';
+import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
 import { Button, Footer, Header, Modal, Navbar, ExportConfig } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
+  error: boolean;
+  setError: (error: boolean) => void;
   onExportToWord: (text: string) => void;
   onExportToMarkdown: (text: string) => void;
-  onDownloadToHTML: (text: string) => void;
-  onExportToHtml: (text: string) => string;
+  onExportToHTML: (text: string, exportHTMLSettings: ExportHTMLSettings) => void;
+  onHTMLSettingSelectionChanged: (text: string, exportHTMLSettings: ExportHTMLSettings) => string;
 }
 
 export const TemplateExport: React.FC<Props> = props => {
-  const { onExportToWord, onExportToMarkdown, onDownloadToHTML, onExportToHtml } = props;
+  const { error, setError, onExportToWord, onExportToMarkdown, onExportToHTML, onHTMLSettingSelectionChanged } = props;
   const { userChoice, setUserChoice } = useUserChoiceContext();
   const [text, setText] = React.useState<string>('');
-  const [openModal, setOpenModal] = React.useState<boolean>(false);
+  const [openSettingsModal, setOpenSettingsModal] = React.useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
@@ -30,12 +33,22 @@ export const TemplateExport: React.FC<Props> = props => {
     onExportToMarkdown(text);
   };
 
-  const handleDownloadToHTML = () => {
+  const handleOnExportToHTML = (exportHTMLSettings: ExportHTMLSettings) => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
-    onDownloadToHTML(text);
+    onExportToHTML(text, exportHTMLSettings);
   };
 
-  const handleCloseModal = () => setOpenModal(false);
+  const handleOpenSettingsModal = () => {
+    try {
+      JSON.parse(text);
+      setOpenSettingsModal(true);
+    } catch (error) {
+      setError(true);
+    }
+  };
+
+  const handleCloseSettingsModal = () => setOpenSettingsModal(false);
+  const handleCloseErrorModal = () => setError(false);
 
   return (
     <div className={classes.root}>
@@ -69,20 +82,25 @@ export const TemplateExport: React.FC<Props> = props => {
             disabled={text ? false : true}
             className={classes.buttonClass}
             showIcon={false}
-            onClick={() => {
-              setOpenModal(true);
-            }}
+            onClick={handleOpenSettingsModal}
           >
             Export To HTML
           </Button>
         </div>
       </div>
-      <Modal isOpen={openModal}>
+      <Modal isOpen={openSettingsModal}>
         <ExportConfig
-          exportConfigSelection={handleDownloadToHTML}
-          cancelExport={handleCloseModal}
-          htmlTemplate={onExportToHtml(text)}
+          htmlTemplate={text}
+          onExportToHTML={handleOnExportToHTML}
+          onHTMLSettingSelectionChanged={onHTMLSettingSelectionChanged}
+          cancelExport={handleCloseSettingsModal}
         />
+      </Modal>
+      <Modal isOpen={error}>
+        <div style={{ color: '#fff' }}>Hay un error, no está utilizando el formato correcto</div>
+        <Button onClick={handleCloseErrorModal} showIcon={false}>
+          Cerrar
+        </Button>
       </Modal>
       <Footer />
     </div>
