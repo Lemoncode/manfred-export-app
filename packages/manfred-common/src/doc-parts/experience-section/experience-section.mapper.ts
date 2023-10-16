@@ -17,8 +17,8 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
     jobs = [...jobs, { name: organizationName, description: organizationDescription, type: mapType, roles }];
   });
 
-  const jobsWithMappedRoles = mapSortedRolesIntoExperience(jobs);
-  const jobsSortedByDate = sortExperienceByDate(jobsWithMappedRoles);
+  const jobsWithMappedRoles: ExperienceVm[] = mapSortedRolesIntoExperience(jobs);
+  const jobsSortedByDate: ExperienceVm[] = sortExperienceByDate(jobsWithMappedRoles);
 
   return jobsSortedByDate;
 };

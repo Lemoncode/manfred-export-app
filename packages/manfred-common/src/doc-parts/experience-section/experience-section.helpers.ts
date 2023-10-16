@@ -1,22 +1,14 @@
 import { Role } from '@/model';
 import { ExperienceVm } from './experience-section.vm';
+import { dateExtractor, sortByDate } from '../../helpers';
 
-export const sortRolesByDate = (experience: ExperienceVm): ExperienceVm => {
-  let experienceWithSortedRoles = {
-    ...experience,
-    roles: experience.roles.sort(
-      (roleA: Role, roleB: Role) => new Date(roleB.startDate).getTime() - new Date(roleA.startDate).getTime()
-    ),
-  };
+export const sortRolesByDate = (experience: ExperienceVm): ExperienceVm => ({
+  ...experience,
+  roles: sortByDate(experience.roles, dateExtractor) as Role[],
+});
 
-  return experienceWithSortedRoles;
-};
-
-export const mapSortedRolesIntoExperience = (experience: ExperienceVm[]) =>
-  [...experience].map(experienceItem => sortRolesByDate(experienceItem));
+export const mapSortedRolesIntoExperience = (experience: ExperienceVm[]): ExperienceVm[] =>
+  experience.map(experienceItem => sortRolesByDate(experienceItem));
 
 export const sortExperienceByDate = (experience: ExperienceVm[]): ExperienceVm[] =>
-  [...experience].sort(
-    (experienceA: ExperienceVm, experienceB: ExperienceVm) =>
-      new Date(experienceB.roles[0].startDate).getTime() - new Date(experienceA.roles[0].startDate).getTime()
-  );
+  sortByDate(experience, dateExtractor) as ExperienceVm[];
