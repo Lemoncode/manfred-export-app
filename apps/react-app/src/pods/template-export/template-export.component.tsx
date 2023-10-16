@@ -97,10 +97,7 @@ export const TemplateExport: React.FC<Props> = props => {
         />
       </Modal>
       <Modal isOpen={error}>
-        <div style={{ color: '#fff' }}>Hay un error, no está utilizando el formato correcto</div>
-        <Button onClick={handleCloseErrorModal} showIcon={false}>
-          Cerrar
-        </Button>
+        <AlertMessage onClick={handleCloseErrorModal} />
       </Modal>
       <Footer />
     </div>
