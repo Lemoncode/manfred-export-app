@@ -1,11 +1,7 @@
-import { getTimeStamp } from '../../helpers/date-sort.helper';
 import { StudiesSectionVm } from './studies-section.vm';
 
-export const sortStudiesByDate = (studies: StudiesSectionVm[]): StudiesSectionVm[] => {
-  const sortedStudies = [...studies].sort(
+export const sortStudiesByDate = (studies: StudiesSectionVm[]): StudiesSectionVm[] =>
+  [...studies].sort(
     (studyA: StudiesSectionVm, studyB: StudiesSectionVm) =>
-      getTimeStamp(studyB.startDate) - getTimeStamp(studyA.startDate)
+      new Date(studyB.startDate).getTime() - new Date(studyA.startDate).getTime()
   );
-
-  return sortedStudies;
-};

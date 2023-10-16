@@ -1,28 +1,22 @@
 import { Role } from '@/model';
-import { getTimeStamp } from '../../helpers/date-sort.helper';
 import { ExperienceVm } from './experience-section.vm';
 
 export const sortRolesByDate = (experience: ExperienceVm): ExperienceVm => {
   let experienceWithSortedRoles = {
     ...experience,
     roles: experience.roles.sort(
-      (roleA: Role, roleB: Role) => getTimeStamp(roleB.startDate) - getTimeStamp(roleA.startDate)
+      (roleA: Role, roleB: Role) => new Date(roleB.startDate).getTime() - new Date(roleA.startDate).getTime()
     ),
   };
 
   return experienceWithSortedRoles;
 };
 
-export const mapSortedRolesIntoExperience = (experience: ExperienceVm[]) => {
-  const mappedExperience = [...experience].map(experienceItem => sortRolesByDate(experienceItem));
-  return mappedExperience;
-};
+export const mapSortedRolesIntoExperience = (experience: ExperienceVm[]) =>
+  [...experience].map(experienceItem => sortRolesByDate(experienceItem));
 
-export const sortExperienceByDate = (experience: ExperienceVm[]): ExperienceVm[] => {
-  const sortedExperience = [...experience].sort(
+export const sortExperienceByDate = (experience: ExperienceVm[]): ExperienceVm[] =>
+  [...experience].sort(
     (experienceA: ExperienceVm, experienceB: ExperienceVm) =>
-      getTimeStamp(experienceB.roles[0].startDate) - getTimeStamp(experienceA.roles[0].startDate)
+      new Date(experienceB.roles[0].startDate).getTime() - new Date(experienceA.roles[0].startDate).getTime()
   );
-
-  return sortedExperience;
-};
