@@ -6,8 +6,7 @@ export const dateExtractor = (item: StudiesSectionVm | ExperienceVm | Role): num
   'roles' in item ? new Date(item.roles[0].startDate).getTime() : new Date(item.startDate).getTime();
 
 export const sortByDate = (
-  array: StudiesSectionVm[] | ExperienceVm[] | Role[],
-  dateExtractor: (item: StudiesSectionVm | ExperienceVm | Role) => number
+  array: StudiesSectionVm[] | ExperienceVm[] | Role[]
 ): StudiesSectionVm[] | ExperienceVm[] | Role[] =>
   array.sort(
     (a: ExperienceVm | StudiesSectionVm | Role, b: ExperienceVm | StudiesSectionVm | Role) =>
