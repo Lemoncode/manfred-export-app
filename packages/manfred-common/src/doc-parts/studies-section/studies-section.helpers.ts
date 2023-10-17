@@ -1,4 +1,4 @@
-import { dateExtractor, sortByDate } from '../../helpers';
+import { sortByDate } from '../../helpers';
 
 import { StudiesSectionVm } from './studies-section.vm';
 

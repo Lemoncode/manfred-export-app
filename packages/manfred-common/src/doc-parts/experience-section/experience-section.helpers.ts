@@ -1,6 +1,6 @@
 import { Role } from '@/model';
 import { ExperienceVm } from './experience-section.vm';
-import { dateExtractor, sortByDate } from '../../helpers';
+import { sortByDate } from '../../helpers';
 
 export const sortRolesByDate = (experience: ExperienceVm): ExperienceVm => ({
   ...experience,
