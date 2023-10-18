@@ -1,10 +1,9 @@
 import React from 'react';
 import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { theme } from '@/core/theme';
-import { Button } from '@/common-app/components';
+import { Button, CustomSelect } from '@/common-app/components';
 import { useUserChoiceContext } from '@/core/user-choice';
 import { CustomSelectColor } from './components/customSelectColor.component';
-import { CustomSelect } from '../select/customSelect.component';
 import * as classes from './export-config.styles';
 interface Props {
   htmlTemplate: string;

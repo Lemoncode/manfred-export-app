@@ -5,4 +5,3 @@ export * from './navbar';
 export * from './card';
 export * from './modal';
 export * from './select';
-export * from './export-config';
