@@ -3,7 +3,7 @@ import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { theme } from '@/core/theme';
 import { Button, CustomSelect } from '@/common-app/components';
 import { useUserChoiceContext } from '@/core/user-choice';
-import { CustomSelectColor } from './components/customSelectColor.component';
+import { CustomSelectColor } from '../customSelectColor/customSelectColor.component';
 import * as classes from './export-config.styles';
 interface Props {
   htmlTemplate: string;
@@ -55,59 +55,7 @@ export const ExportConfig: React.FC<Props> = props => {
             <CustomSelect listOptions={OPTIONSlANGUAGE} label={'Idioma cabeceras'} />
           </div>
           <div className={classes.selectColorContainer}>
-            <CustomSelectColor label={'Colores'}>
-              <fieldset className={classes.colorFieldset}>
-                <input
-                  type="radio"
-                  id={theme.palette.primary[600]}
-                  name="color"
-                  value={theme.palette.primary[600]}
-                  className={classes.inputRadioButton(theme.palette.primary[600])}
-                  onChange={handleColorChange}
-                  defaultChecked
-                />
-                <input
-                  type="radio"
-                  id={theme.palette.secondary[600]}
-                  name="color"
-                  value={theme.palette.secondary[600]}
-                  className={classes.inputRadioButton(theme.palette.secondary[600])}
-                  onChange={handleColorChange}
-                />
-                <input
-                  type="radio"
-                  id={theme.palette.success[600]}
-                  name="color"
-                  value={theme.palette.success[600]}
-                  className={classes.inputRadioButton(theme.palette.success[600])}
-                  onChange={handleColorChange}
-                />
-                <input
-                  type="radio"
-                  id={theme.palette.warning[600]}
-                  name="color"
-                  value={theme.palette.warning[600]}
-                  className={classes.inputRadioButton(theme.palette.warning[600])}
-                  onChange={handleColorChange}
-                />
-                <input
-                  type="radio"
-                  id={theme.palette.error[600]}
-                  name="color"
-                  value={theme.palette.error[600]}
-                  className={classes.inputRadioButton(theme.palette.error[600])}
-                  onChange={handleColorChange}
-                />
-                <input
-                  type="radio"
-                  id={theme.palette.dark[600]}
-                  name="color"
-                  value={theme.palette.dark[600]}
-                  className={classes.inputRadioButton(theme.palette.dark[600])}
-                  onChange={handleColorChange}
-                />
-              </fieldset>
-            </CustomSelectColor>
+            <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
           </div>
         </div>
         <div className={classes.prevContainer}>

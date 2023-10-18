@@ -22,34 +22,9 @@ export const content = css`
   @media (min-width: 1024px) {
     ${theme.typography.desktop.h5};
     align-items: flex-center;
-    gap: 32px;
+    gap: ${theme.spacing(8)};
     align-self: stretch;
     padding: ${theme.spacing(8)};
-  }
-`;
-
-export const colorFieldset = css`
-  display: flex;
-  padding: 32px 0px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: ${theme.spacing(8)};
-  align-self: stretch;
-`;
-export const inputRadioButton = (color: string) => css`
-  appearance: none;
-  width: 82px;
-  height: 82px;
-  box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  background-color: ${color};
-  cursor: pointer;
-  outline: none;
-  border: 15px solid ${theme.palette.info[50]};
-  &[type='radio']:checked {
-    box-shadow: 0px 0px 0px 4px ${theme.palette.dark[200]};
   }
 `;
 
@@ -121,7 +96,6 @@ export const optionsContainer = css`
     flex-direction: row;
     align-items: flex-start;
     align-self: stretch;
-
     height: 512px;
   }
 `;

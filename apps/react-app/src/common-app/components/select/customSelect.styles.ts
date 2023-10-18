@@ -9,7 +9,7 @@ export const selectContainer = css`
 `;
 export const selectContent = css`
   display: flex;
-  padding: 12px 16px;
+  padding: ${theme.spacing(3)} ${theme.spacing(4)};
   align-items: flex-start;
   gap: ${theme.spacing(2)};
   align-self: stretch;
@@ -23,7 +23,7 @@ export const selectContent = css`
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px; /* 137.5% */
+    line-height: 22px;
     letter-spacing: 0.15px;
   }
 `;
@@ -31,16 +31,15 @@ export const selectContent = css`
 export const listContainer = css`
   display: flex;
   flex-direction: column;
-  padding: 8px 0px;
-  gap: 8px;
+  padding: ${theme.spacing(2)} ${theme.spacing(0)};
+  gap: ${theme.spacing(2)};
   border-radius: 4px;
-  //border: 1px solid blue;
   background: ${theme.palette.info[50]};
   box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
   li {
     display: flex;
-    height: 32px;
-    padding: 0px 16px;
+    height: ${theme.spacing(8)};
+    padding: ${theme.spacing(0)} ${theme.spacing(4)};
     justify-content: flex-start;
     align-items: center;
 
@@ -49,7 +48,7 @@ export const listContainer = css`
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
     letter-spacing: 0.25px;
 
     :hover {
