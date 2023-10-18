@@ -6,97 +6,99 @@ export const alertStyle = css`
   display: flex;
   flex-direction: column;
 
-  .modal-header {
-    background: ${theme.palette.error[500]};
-    height: 22px;
-    border-radius: 10px 10px 0px 0px;
-  }
-
-  .modal-content {
-    height: 173px;
-    background-color: ${theme.palette.info[50]};
-    border-radius: 0px 0px 10px 10px;
-    padding-top: ${theme.spacing(4)};
-    display: flex;
-    gap: ${theme.spacing(2)};
-  }
-
-  img {
-    width: 125px;
-    object-fit: cover;
-  }
-
-  .modal-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .modal-text {
-    display: flex;
-    flex-direction: column;
-    gap: ${theme.spacing(2)};
-    padding-right: ${theme.spacing(4)};
-  }
-
-  .modal-text--h1 {
-    color: ${theme.palette.dark[900]};
-    font-size: 32px;
-    font-weight: 500;
-    word-wrap: break-word;
-  }
-
-  .modal-text--h2 {
-    color: ${theme.palette.info[900]};
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    word-wrap: break-word;
-  }
-
-  .modal-text--p {
-    color: ${theme.palette.dark[900]};
-    font-size: 8px;
-    font-weight: 400;
-    word-wrap: break-word;
-  }
-
-  .modal-button {
-    align-self: flex-end;
-    margin-right: ${theme.spacing(5)};
-    margin-bottom: ${theme.spacing(2)};
-  }
-
-  @media (min-width: 728px) {
+  @media (min-width: 725px) {
     width: 548px;
+  }
+`;
 
-    .modal-header {
-      height: 34px;
-    }
+export const modalHeader = css`
+  background: ${theme.palette.error[500]};
+  height: 22px;
+  border-radius: 10px 10px 0px 0px;
 
-    .modal-content {
-      height: 270px;
-      padding-top: ${theme.spacing(6)};
-      gap: ${theme.spacing(4)};
-    }
+  @media (min-width: 725px) {
+    height: 34px;
+  }
+`;
 
-    img {
-      width: 195px;
-    }
+export const modalContent = css`
+  height: 173px;
+  background-color: ${theme.palette.info[50]};
+  border-radius: 0px 0px 10px 10px;
+  padding-top: ${theme.spacing(4)};
+  display: flex;
+  gap: ${theme.spacing(2)};
 
-    .modal-text--h1 {
-      font-size: 40px;
-    }
-    .modal-text--h2 {
-      font-size: 16px;
-    }
-    .modal-text--p {
-      font-size: 12px;
-    }
+  @media (min-width: 725px) {
+    height: 270px;
+    padding-top: ${theme.spacing(6)};
+    gap: ${theme.spacing(4)};
+  }
+`;
 
-    .modal-button {
-      margin-right: ${theme.spacing(8)};
-      margin-bottom: ${theme.spacing(5)};
-    }
+export const modalImage = css`
+  width: 125px;
+  object-fit: cover;
+
+  @media (min-width: 725px) {
+    width: 195px;
+  }
+`;
+
+export const modalMain = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const modalText = css`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing(2)};
+  padding-right: ${theme.spacing(4)};
+`;
+
+export const modalTextH1 = css`
+  color: ${theme.palette.dark[900]};
+  font-size: 32px;
+  font-weight: 500;
+  word-wrap: break-word;
+
+  @media (min-width: 725px) {
+    font-size: 40px;
+  }
+`;
+
+export const modalTextH2 = css`
+  color: ${theme.palette.info[900]};
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  @media (min-width: 725px) {
+    font-size: 16px;
+  }
+`;
+
+export const modalTextP = css`
+  color: ${theme.palette.dark[900]};
+  font-size: 8px;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  @media (min-width: 725px) {
+    font-size: 12px;
+  }
+`;
+
+export const modalButton = css`
+  align-self: flex-end;
+  margin-right: ${theme.spacing(5)};
+  margin-bottom: ${theme.spacing(2)};
+
+  @media (min-width: 725px) {
+    margin-right: ${theme.spacing(8)};
+    margin-bottom: ${theme.spacing(5)};
   }
 `;
