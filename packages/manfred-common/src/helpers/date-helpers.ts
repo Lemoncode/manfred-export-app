@@ -1,14 +1,10 @@
-import { ExperienceVm } from '../doc-parts/experience-section';
-import { StudiesSectionVm } from '../doc-parts/studies-section';
-import { Role } from '@/model';
+export const dateExtractor = <T>(item: T, path: keyof T): number => {
+  const date = item[path];
+  if (typeof date === 'string') {
+    return new Date(date).getTime();
+  }
+  throw new Error(`Invalid path: ${path.toString()}`);
+};
 
-export const dateExtractor = (item: StudiesSectionVm | ExperienceVm | Role): number =>
-  'roles' in item ? new Date(item.roles[0].startDate).getTime() : new Date(item.startDate).getTime();
-
-export const sortByDate = (
-  array: StudiesSectionVm[] | ExperienceVm[] | Role[]
-): StudiesSectionVm[] | ExperienceVm[] | Role[] =>
-  array.sort(
-    (a: ExperienceVm | StudiesSectionVm | Role, b: ExperienceVm | StudiesSectionVm | Role) =>
-      dateExtractor(b) - dateExtractor(a)
-  );
+export const sortByDate = <T>(array: T[], path: keyof T): T[] =>
+  array.sort((a: T, b: T) => dateExtractor(b, path) - dateExtractor(a, path));
