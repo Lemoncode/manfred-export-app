@@ -31,7 +31,7 @@ export const content = css`
 export const title = css`
   width: 100%;
   padding-bottom: ${theme.spacing(2)};
-  display: relative;
+  display: block;
   color: ${theme.palette.dark[900]};
   border-bottom: 1px solid ${theme.palette.info[900]};
 `;

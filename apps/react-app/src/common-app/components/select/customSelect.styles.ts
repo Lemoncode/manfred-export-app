@@ -2,6 +2,8 @@ import { css } from '@emotion/css';
 import { theme } from '@/core/theme';
 
 export const selectContainer = css`
+  position: relative;
+  cursor: pointer;
   @media (min-width: 725px) {
     flex-grow: 1;
     width: 100%;
@@ -29,8 +31,11 @@ export const selectContent = css`
 `;
 
 export const listContainer = css`
+  position: absolute;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 999;
   padding: ${theme.spacing(2)} ${theme.spacing(0)};
   gap: ${theme.spacing(2)};
   border-radius: 4px;
@@ -55,4 +60,8 @@ export const listContainer = css`
       background: ${theme.palette.primary[50]};
     }
   }
+`;
+export const rotate = (rotate: boolean) => css`
+  rotate: ${rotate ? '180deg' : '0deg'};
+  transition: rotate 0.3s ease;
 `;

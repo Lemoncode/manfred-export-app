@@ -1,22 +1,46 @@
-import { css } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 import { theme } from '@/core/theme';
+
+const openAnimation = keyframes`
+  0% {
+    max-height: 48px;
+  }
+
+  100% {
+    max-height: 500px;
+  }
+`;
+const closeAnimation = keyframes`
+  0% {
+    max-height: 500px;
+  }
+
+  100% {
+    max-height: 48px;
+  }
+`;
+
+export const rootOpenAnimation = css`
+  animation: ${openAnimation} 0.8s ease forwards;
+`;
+export const rootCloseAnimation = css`
+  animation: ${closeAnimation} 0.8s ease forwards;
+`;
 
 export const root = css`
   border-bottom: 1px solid ${theme.palette.info[600]};
+  overflow: hidden;
+  max-height: 48px;
 `;
-export const container = css`
+export const labelContainer = css`
   display: flex;
-  min-width: 100%;
-  height: 48px;
+  justify-content: space-between;
   padding: ${theme.spacing(3)} ${theme.spacing(4)};
-  align-items: flex-start;
   gap: ${theme.spacing(2)};
-  align-self: stretch;
   border-radius: 8px;
   background: ${theme.palette.info[50]};
-
+  cursor: pointer;
   span {
-    flex: 1 0 0;
     color: ${theme.palette.info[900]};
     font-family: Sanchez;
     font-size: 18px;
@@ -26,14 +50,12 @@ export const container = css`
   }
 `;
 export const colorFieldset = css`
+  background: ${theme.palette.info[50]};
   display: flex;
   padding: ${theme.spacing(8)} ${theme.spacing(0)};
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
   gap: ${theme.spacing(8)};
-  align-self: stretch;
 `;
 export const inputRadioButton = (color: string) => css`
   appearance: none;
@@ -48,4 +70,9 @@ export const inputRadioButton = (color: string) => css`
   &[type='radio']:checked {
     box-shadow: 0px 0px 0px 4px ${theme.palette.dark[200]};
   }
+`;
+
+export const rotate = (rotate: boolean) => css`
+  rotate: ${rotate ? '180deg' : '0deg'};
+  transition: rotate 0.3s ease;
 `;
