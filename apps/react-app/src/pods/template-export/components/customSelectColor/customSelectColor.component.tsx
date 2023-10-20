@@ -7,26 +7,28 @@ interface Props {
   label: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-type ToggleStatus = 'noInit' | 'open' | 'close';
+type CustomSelectState = 'noInit' | 'open' | 'close';
 
 export const CustomSelectColor: React.FC<Props> = ({ label, onChange }) => {
-  const [isOpen, setIsOpen] = React.useState<ToggleStatus>('noInit');
-  const [rotate, setRotate] = React.useState<boolean>(false);
+  const [customSelectState, setCustomSelectState] = React.useState<CustomSelectState>('noInit');
 
   const toggleIsOpen = () => {
-    setIsOpen(isOpen === 'open' ? 'close' : 'open');
-    setRotate(!rotate);
+    setCustomSelectState(customSelectState === 'open' ? 'close' : 'open');
   };
   return (
     <div
       className={cx(classes.root, {
-        [classes.rootOpenAnimation]: isOpen === 'open',
-        [classes.rootCloseAnimation]: isOpen === 'close',
+        [classes.rootOpenAnimation]: customSelectState === 'open',
+        [classes.rootCloseAnimation]: customSelectState === 'close',
       })}
     >
       <div className={classes.labelContainer} onClick={toggleIsOpen}>
         <span>{label}</span>
-        <img src="../assets/arrow_select.svg" alt="arrow select" className={classes.rotate(rotate)} />
+        <img
+          src="../assets/arrow_select.svg"
+          alt="arrow select"
+          className={classes.rotate(customSelectState === 'open')}
+        />
       </div>
       <fieldset className={classes.colorFieldset}>
         <input

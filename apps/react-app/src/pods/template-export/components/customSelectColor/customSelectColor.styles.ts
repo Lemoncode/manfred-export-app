@@ -72,7 +72,7 @@ export const inputRadioButton = (color: string) => css`
   }
 `;
 
-export const rotate = (rotate: boolean) => css`
-  rotate: ${rotate ? '180deg' : '0deg'};
+export const rotate = (customSelectState: boolean) => css`
+  rotate: ${customSelectState ? '180deg' : '0deg'};
   transition: rotate 0.3s ease;
 `;

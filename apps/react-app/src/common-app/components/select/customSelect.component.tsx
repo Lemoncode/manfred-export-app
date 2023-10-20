@@ -8,23 +8,20 @@ interface Props {
 export const CustomSelect: React.FC<Props> = ({ listOptions, label }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selectedOption, setSelectedOption] = React.useState<string>(label);
-  const [rotate, setRotate] = React.useState<boolean>(false);
 
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
-    setRotate(!rotate);
   };
 
   const handleOptionSelect = (option: string) => {
     setSelectedOption(option);
     setIsOpen(false);
-    setRotate(!rotate);
   };
   return (
     <div className={classes.selectContainer}>
       <div className={classes.selectContent} onClick={toggleIsOpen}>
         <span>{selectedOption || label}</span>
-        <img src="./assets/arrow_select.svg" alt="arrow select" className={classes.rotate(rotate)} />
+        <img src="./assets/arrow_select.svg" alt="arrow select" className={classes.rotate(isOpen)} />
       </div>
       {isOpen && (
         <ul className={classes.listContainer}>
