@@ -11,5 +11,6 @@ export const mapSortedRolesIntoExperience = (experience: ExperienceVm[]): Experi
 
 export const sortExperienceByDate = (experience: ExperienceVm[]): ExperienceVm[] =>
   experience.sort(
-    (a: ExperienceVm, b) => dateExtractor(b.roles[0], 'startDate') - dateExtractor(a.roles[0], 'startDate')
+    (a: ExperienceVm, b: ExperienceVm) =>
+      dateExtractor(b.roles[0], 'startDate') - dateExtractor(a.roles[0], 'startDate')
   );
