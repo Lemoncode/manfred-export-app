@@ -7,5 +7,6 @@ export default {
 
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg)$': '<rootDir>/config/mocks/fileMock.js',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 };
