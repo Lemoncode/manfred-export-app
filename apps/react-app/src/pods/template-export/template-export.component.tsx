@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
-import { Button, Footer, Header, Modal, Navbar, ExportConfig } from '@/common-app/components';
+import { Button, Footer, Header, Modal, Navbar, ExportConfig, AlertMessage } from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
@@ -97,10 +97,7 @@ export const TemplateExport: React.FC<Props> = props => {
         />
       </Modal>
       <Modal isOpen={error}>
-        <div style={{ color: '#fff' }}>Hay un error, no está utilizando el formato correcto</div>
-        <Button onClick={handleCloseErrorModal} showIcon={false}>
-          Cerrar
-        </Button>
+        <AlertMessage onClick={handleCloseErrorModal} />
       </Modal>
       <Footer />
     </div>
