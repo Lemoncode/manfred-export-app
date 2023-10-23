@@ -1,7 +1,7 @@
 import { css } from '@emotion/css';
 import { theme } from '@/core/theme';
 
-export const alertStyle = css`
+export const root = css`
   width: 352px;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@ export const alertStyle = css`
   }
 `;
 
-export const modalHeader = css`
+export const header = css`
   background: ${theme.palette.error[500]};
   height: 22px;
   border-radius: 10px 10px 0px 0px;
@@ -21,7 +21,7 @@ export const modalHeader = css`
   }
 `;
 
-export const modalContent = css`
+export const content = css`
   height: 173px;
   background-color: ${theme.palette.info[50]};
   border-radius: 0px 0px 10px 10px;
@@ -36,7 +36,7 @@ export const modalContent = css`
   }
 `;
 
-export const modalImage = css`
+export const backgroundImage = css`
   width: 125px;
   object-fit: cover;
 
@@ -45,20 +45,20 @@ export const modalImage = css`
   }
 `;
 
-export const modalMain = css`
+export const mainContent = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-export const modalText = css`
+export const textContainer = css`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing(2)};
   padding-right: ${theme.spacing(4)};
 `;
 
-export const modalTextH1 = css`
+export const textHeader = css`
   color: ${theme.palette.dark[900]};
   font-size: 32px;
   font-weight: 500;
@@ -69,7 +69,7 @@ export const modalTextH1 = css`
   }
 `;
 
-export const modalTextH2 = css`
+export const title = css`
   color: ${theme.palette.info[900]};
   font-family: Inter;
   font-size: 14px;
@@ -81,7 +81,7 @@ export const modalTextH2 = css`
   }
 `;
 
-export const modalTextP = css`
+export const description = css`
   color: ${theme.palette.dark[900]};
   font-size: 8px;
   font-weight: 400;
@@ -92,7 +92,7 @@ export const modalTextP = css`
   }
 `;
 
-export const modalButton = css`
+export const closeButton = css`
   align-self: flex-end;
   margin-right: ${theme.spacing(5)};
   margin-bottom: ${theme.spacing(2)};

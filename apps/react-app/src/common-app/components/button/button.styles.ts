@@ -12,7 +12,7 @@ export const buttonStyle = css`
   gap: 10px;
   width: max-content;
   height: 32px;
-
+  cursor: pointer;
   border: none;
   border-radius: 8px;
   ${theme.typography.button};
