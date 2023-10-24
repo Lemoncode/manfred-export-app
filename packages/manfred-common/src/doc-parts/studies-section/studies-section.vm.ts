@@ -1,4 +1,4 @@
-import { StudyType } from '@/model';
+import { Competence, PublicEntityDetails, StudyType } from '@/model';
 
 export interface StudiesSectionVm {
   studyType: string;
@@ -29,4 +29,15 @@ export interface CountryType {
 export interface StudyTypeWithTranslation {
   key: StudyType;
   value: string;
+}
+
+export interface StudiesManfredAwesomicCV {
+  studyType: StudyType;
+  degreeAchieved: boolean;
+  name: string;
+  description?: string;
+  startDate: string;
+  finishDate?: string;
+  institution?: PublicEntityDetails;
+  linkedCompetences?: Competence[];
 }

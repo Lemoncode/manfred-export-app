@@ -1,10 +1,13 @@
 import { ManfredAwesomicCV } from '@/model';
 import { CountryType, Institution, StudiesSectionVm, StudyTypeWithTranslation } from './studies-section.vm';
 import { studiesTypes, countryList } from './studies-section.constants';
+import { sortedStudiesByStartDate } from '@/helpers/studies-section.helpers';
 
 export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSectionVm[] => {
+  const sortedStudies = cv?.knowledge?.studies ? sortedStudiesByStartDate(cv?.knowledge?.studies) : [];
+
   const studiesMap: StudiesSectionVm[] =
-    cv?.knowledge?.studies?.map(study => {
+    sortedStudies.map(study => {
       const name = study?.name ?? '';
       const studyType = study?.studyType ?? '';
       const degreeAchieved = study?.degreeAchieved ?? false;
