@@ -92,6 +92,21 @@ describe('experience-section.helpers specs', () => {
       // Arrange
       const jobs: JobManfredAwesomicCV[] = [
         {
+          referrals: [
+            {
+              name: 'Name',
+              surnames: 'Surname1 Surname2',
+              title: 'Title',
+              contact: {
+                publicProfiles: [
+                  {
+                    type: 'type',
+                    URL: 'url',
+                  },
+                ],
+              },
+            },
+          ],
           organization: {
             name: 'name',
             description: 'description',
@@ -184,6 +199,21 @@ describe('experience-section.helpers specs', () => {
           ],
         },
         {
+          referrals: [
+            {
+              name: 'Name',
+              surnames: 'Surname1 Surname2',
+              title: 'Title',
+              contact: {
+                publicProfiles: [
+                  {
+                    type: 'type',
+                    URL: 'url',
+                  },
+                ],
+              },
+            },
+          ],
           organization: {
             name: 'name',
             description: 'description',
@@ -219,6 +249,24 @@ describe('experience-section.helpers specs', () => {
       // Arrange
       const jobs: JobManfredAwesomicCV[] = [
         {
+          competences: [
+            {
+              name: 'name',
+              type: 'type',
+            },
+            {
+              name: 'name',
+              type: 'type',
+            },
+            {
+              name: 'name',
+              type: 'type',
+            },
+            {
+              name: 'name',
+              type: 'name',
+            },
+          ],
           organization: {
             name: 'name',
             description: 'description',
@@ -314,6 +362,24 @@ describe('experience-section.helpers specs', () => {
           ],
         },
         {
+          competences: [
+            {
+              name: 'name',
+              type: 'type',
+            },
+            {
+              name: 'name',
+              type: 'type',
+            },
+            {
+              name: 'name',
+              type: 'type',
+            },
+            {
+              name: 'name',
+              type: 'name',
+            },
+          ],
           organization: {
             name: 'name',
             description: 'description',
