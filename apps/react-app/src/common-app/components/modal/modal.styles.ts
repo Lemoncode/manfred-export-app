@@ -8,13 +8,17 @@ export const container = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: ${theme.spacing(10)};
   position: absolute;
   z-index: 9999;
   top: 0;
   background: rgba(13, 20, 24, 0.75);
-  overflow: hidden;
-
+  & > :first-child {
+    max-width: 1400px;
+    align-self: center;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
   @media (min-width: 725px) {
     padding: ${theme.spacing(4)};
   }
