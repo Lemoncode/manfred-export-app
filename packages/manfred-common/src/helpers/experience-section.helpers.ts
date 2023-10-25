@@ -13,11 +13,8 @@ export const sortedJobsByStartDate = (jobs: JobManfredAwesomicCV[]): JobManfredA
   jobs
     ?.map(job => (job = { ...job, roles: sortedRolesByStartDate(job.roles) }))
     .sort((a, b) => {
-      const orderedRolesA = sortedRolesByStartDate(a.roles);
-      const orderedRolesB = sortedRolesByStartDate(b.roles);
-
-      const startDateA = new Date(orderedRolesA[0].startDate).getTime();
-      const startDateB = new Date(orderedRolesB[0].startDate).getTime();
+      const startDateA = new Date(a.roles[0].startDate).getTime();
+      const startDateB = new Date(b.roles[0].startDate).getTime();
 
       return startDateB - startDateA;
     });
