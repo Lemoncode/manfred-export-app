@@ -1,12 +1,12 @@
 import { ManfredAwesomicCV } from '@/model';
-import { sortedJobsByStartDate } from '@/helpers';
+import { sortedJobsByStartDate } from './experience-section.helpers';
 import { ExperienceVm, Type, JobManfredAwesomicCV } from './experience-section.vm';
 import { types } from './experience-section.contants';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
   const sortedJobs = cv?.experience?.jobs ? sortedJobsByStartDate(cv?.experience?.jobs) : [];
 
-  const experience = sortedJobs?.map(job => mapJobToExperience(job));
+  const experience = sortedJobs?.map((job: JobManfredAwesomicCV) => mapJobToExperience(job));
 
   return experience;
 };

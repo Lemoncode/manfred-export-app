@@ -1,4 +1,4 @@
-import { StudiesManfredAwesomicCV } from '@/doc-parts/studies-section';
+import { StudiesManfredAwesomicCV } from './studies-section.vm';
 import { sortedStudiesByStartDate } from './studies-section.helpers';
 
 describe('studies-section.helpers specs', () => {

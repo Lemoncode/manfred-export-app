@@ -12,6 +12,7 @@ export interface Type {
   value: string;
 }
 
+//Review if it can be moved to manfred schema
 export interface JobManfredAwesomicCV {
   [k: string]: unknown;
   organization: PublicEntityDetails;

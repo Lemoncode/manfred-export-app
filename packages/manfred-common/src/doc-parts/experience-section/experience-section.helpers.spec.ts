@@ -1,6 +1,6 @@
 import { Role } from '@/model';
 import { JobManfredAwesomicCV } from '@lemoncode/manfred-common/experience-section';
-import { sortedJobsByStartDate, sortedRolesByStartDate } from '.';
+import { sortedJobsByStartDate, sortedRolesByStartDate } from './experience-section.helpers';
 
 describe('experience-section.helpers specs', () => {
   describe('sortedRolesByStartDate', () => {

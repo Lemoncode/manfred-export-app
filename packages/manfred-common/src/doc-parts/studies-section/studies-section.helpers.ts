@@ -1,4 +1,4 @@
-import { StudiesManfredAwesomicCV } from '@/doc-parts/studies-section';
+import { StudiesManfredAwesomicCV } from './studies-section.vm';
 
 export const sortedStudiesByStartDate = (studies: StudiesManfredAwesomicCV[]): StudiesManfredAwesomicCV[] =>
   studies?.sort((a, b) => {

@@ -1,4 +1,4 @@
-import { JobManfredAwesomicCV } from '@/doc-parts/experience-section';
+import { JobManfredAwesomicCV } from '.';
 import { Role } from '@/model';
 
 export const sortedRolesByStartDate = (roles: [Role, ...Role[]]): [Role, ...Role[]] =>

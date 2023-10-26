@@ -31,6 +31,7 @@ export interface StudyTypeWithTranslation {
   value: string;
 }
 
+//Review if it can be moved to manfred schema
 export interface StudiesManfredAwesomicCV {
   studyType: StudyType;
   degreeAchieved: boolean;
