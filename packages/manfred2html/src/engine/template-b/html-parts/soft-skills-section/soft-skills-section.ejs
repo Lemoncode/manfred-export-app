@@ -1,0 +1,11 @@
+<%_ if (softSkillsCollection && softSkillsCollection.length !== 0) { -%>
+    <div class="aside__section">
+      <h3>Habilidades interpersonales</h3>
+      <ul class="aside__section__list-items">
+        <%_ for (const item of softSkillsCollection) { -%>
+          <li><%- item.skill.name %></li>
+        <%_ } -%>
+      </ul>
+    </div>
+  <%_ } -%>
+  
