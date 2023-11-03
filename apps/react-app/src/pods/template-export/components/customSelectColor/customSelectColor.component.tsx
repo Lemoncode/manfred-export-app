@@ -1,7 +1,8 @@
 import React from 'react';
-import { theme } from '@/core/theme';
-import * as classes from './customSelectColor.styles';
 import { cx } from '@emotion/css';
+import { ColorTheme, HexColor } from '@lemoncode/manfred2html';
+import { InputRadioButton } from './components';
+import * as classes from './customSelectColor.styles';
 
 interface Props {
   label: string;
@@ -31,55 +32,14 @@ export const CustomSelectColor: React.FC<Props> = ({ label, onChange }) => {
         />
       </div>
       <fieldset className={classes.colorFieldset}>
-        <input
-          type="radio"
-          id={theme.palette.primary[600]}
-          name="color"
-          value={theme.palette.primary[600]}
-          className={classes.inputRadioButton(theme.palette.primary[600])}
-          onChange={onChange}
-          defaultChecked
-        />
-        <input
-          type="radio"
-          id={theme.palette.secondary[600]}
-          name="color"
-          value={theme.palette.secondary[600]}
-          className={classes.inputRadioButton(theme.palette.secondary[600])}
-          onChange={onChange}
-        />
-        <input
-          type="radio"
-          id={theme.palette.success[600]}
-          name="color"
-          value={theme.palette.success[600]}
-          className={classes.inputRadioButton(theme.palette.success[600])}
-          onChange={onChange}
-        />
-        <input
-          type="radio"
-          id={theme.palette.warning[600]}
-          name="color"
-          value={theme.palette.warning[600]}
-          className={classes.inputRadioButton(theme.palette.warning[600])}
-          onChange={onChange}
-        />
-        <input
-          type="radio"
-          id={theme.palette.error[600]}
-          name="color"
-          value={theme.palette.error[600]}
-          className={classes.inputRadioButton(theme.palette.error[600])}
-          onChange={onChange}
-        />
-        <input
-          type="radio"
-          id={theme.palette.dark[600]}
-          name="color"
-          value={theme.palette.dark[600]}
-          className={classes.inputRadioButton(theme.palette.dark[600])}
-          onChange={onChange}
-        />
+        {Object.keys(HexColor).map(colorKey => (
+          <InputRadioButton
+            key={colorKey}
+            value={colorKey as ColorTheme}
+            hexColor={HexColor[colorKey as keyof typeof HexColor]}
+            onChange={onChange}
+          />
+        ))}
       </fieldset>
     </div>
   );

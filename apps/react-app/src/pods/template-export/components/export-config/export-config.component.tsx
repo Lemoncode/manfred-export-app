@@ -1,8 +1,12 @@
 import React from 'react';
-import { ExportHTMLSettings } from '@lemoncode/manfred2html';
-import { theme } from '@/core/theme';
+import {
+  TemplateCV,
+  ColorTheme,
+  Language,
+  ExportHTMLSettings,
+  createDefaultExportHTMLSettings,
+} from '@lemoncode/manfred2html';
 import { Button, CustomSelect } from '@/common-app/components';
-import { useUserChoiceContext } from '@/core/user-choice';
 import { CustomSelectColor } from '../customSelectColor/customSelectColor.component';
 import * as classes from './export-config.styles';
 interface Props {
@@ -13,15 +17,14 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const OPTIONSDESING = ['Item 1', 'Item 2', 'Item 3'];
-const OPTIONSlANGUAGE = ['Item 1', 'Item 2', 'Item 3'];
+const DESING_OPTIONS: TemplateCV[] = ['default', 'CV-1'];
+const LANGUAGE_OPTIONS: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
-  const { userChoice } = useUserChoiceContext();
-  const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
-    primaryColor: theme.palette.primary[600],
-  });
+  const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>(
+    createDefaultExportHTMLSettings()
+  );
   const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
 
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
@@ -29,8 +32,27 @@ export const ExportConfig: React.FC<Props> = props => {
   );
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setExportHTMLSettings({ primaryColor: event.target.value });
-    onHTMLSettingSelectionChanged(htmlTemplate, { primaryColor: event.target.value });
+    setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
+    onHTMLSettingSelectionChanged(htmlTemplate, {
+      ...exportHTMLSettings,
+      colorTheme: event.target.value as ColorTheme,
+    });
+  };
+
+  const handleTemplateChange = (templateCV: string) => {
+    setExportHTMLSettings({ ...exportHTMLSettings, template: templateCV as TemplateCV });
+    onHTMLSettingSelectionChanged(htmlTemplate, {
+      ...exportHTMLSettings,
+      template: templateCV as TemplateCV,
+    });
+  };
+
+  const handleLanguageChange = (language: string) => {
+    setExportHTMLSettings({ ...exportHTMLSettings, language: language as Language });
+    onHTMLSettingSelectionChanged(htmlTemplate, {
+      ...exportHTMLSettings,
+      language: language as Language,
+    });
   };
   const handleExportConfigSelection = () => {
     setIsDownloadInProgress(true);
@@ -51,8 +73,12 @@ export const ExportConfig: React.FC<Props> = props => {
       <div className={classes.optionsContainer}>
         <div className={classes.optionsContent}>
           <div className={classes.selectContainer}>
-            <CustomSelect listOptions={OPTIONSDESING} label={'Diseño'} />
-            <CustomSelect listOptions={OPTIONSlANGUAGE} label={'Idioma cabeceras'} />
+            <CustomSelect listOptions={DESING_OPTIONS} onSelectedOption={handleTemplateChange} label={'Diseño'} />
+            <CustomSelect
+              listOptions={LANGUAGE_OPTIONS}
+              onSelectedOption={handleLanguageChange}
+              label={'Idioma cabeceras'}
+            />
           </div>
           <div className={classes.selectColorContainer}>
             <CustomSelectColor label={'Colores'} onChange={handleColorChange} />

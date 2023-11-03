@@ -1,0 +1,11 @@
+<%_ if (languageCollection && languageCollection.length !== 0) { -%>
+  <div class="aside__section">
+    <h3>Idiomas / Nivel</h3>
+    <ul class="aside__section__list-items">
+      <%_ for (const language of languageCollection) { -%>
+        <li><%- language.name %> (<%- language.level %>)</li>
+      <%_ } -%>
+    </ul>
+  </div>
+<%_ } -%>
+

@@ -57,20 +57,6 @@ export const colorFieldset = css`
   justify-content: center;
   gap: ${theme.spacing(8)};
 `;
-export const inputRadioButton = (color: string) => css`
-  appearance: none;
-  width: 82px;
-  height: 82px;
-  box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  background-color: ${color};
-  cursor: pointer;
-  outline: none;
-  border: 15px solid ${theme.palette.info[50]};
-  &[type='radio']:checked {
-    box-shadow: 0px 0px 0px 4px ${theme.palette.dark[200]};
-  }
-`;
 
 export const rotate = (customSelectState: boolean) => css`
   rotate: ${customSelectState ? '180deg' : '0deg'};

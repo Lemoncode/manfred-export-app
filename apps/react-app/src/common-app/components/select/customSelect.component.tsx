@@ -4,8 +4,10 @@ import * as classes from './customSelect.styles';
 interface Props {
   listOptions: string[];
   label: string;
+  onSelectedOption: (option: string) => void;
 }
-export const CustomSelect: React.FC<Props> = ({ listOptions, label }) => {
+export const CustomSelect: React.FC<Props> = props => {
+  const { listOptions, label, onSelectedOption } = props;
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selectedOption, setSelectedOption] = React.useState<string>(label);
 
@@ -14,6 +16,7 @@ export const CustomSelect: React.FC<Props> = ({ listOptions, label }) => {
   };
 
   const handleOptionSelect = (option: string) => {
+    onSelectedOption(option);
     setSelectedOption(option);
     setIsOpen(false);
   };

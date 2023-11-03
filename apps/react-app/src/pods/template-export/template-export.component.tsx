@@ -2,8 +2,8 @@ import React from 'react';
 import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
 import { Button, Footer, Header, Modal, Navbar } from '@/common-app/components';
-import * as classes from './template-export.styles';
 import { ExportConfig } from './components/export-config';
+import * as classes from './template-export.styles';
 
 interface Props {
   error: boolean;
