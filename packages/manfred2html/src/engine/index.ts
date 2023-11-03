@@ -1,16 +1,19 @@
-import { ManfredAwesomicCV } from '@/model';
-
+import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
+import { mapExportHTMLSettingsToSettings } from '@/mappers';
 import { exportManfredJSonToHTMLTemplateA } from './template-a';
 import { exportManfredJSonToHTMLTemplateB } from './template-b';
 
-export const exportHTMLTemplate = (manfredJsonContent: ManfredAwesomicCV, theme?: string): string => {
-  const template = theme || 'template-a';
+export const exportHTMLTemplate = (
+  manfredJsonContent: ManfredAwesomicCV,
+  exportHTMLSettings: ExportHTMLSettings
+): string => {
+  const settings = mapExportHTMLSettingsToSettings(exportHTMLSettings);
 
-  switch (template) {
-    case 'template-a':
-      return exportManfredJSonToHTMLTemplateA(manfredJsonContent, theme);
-    case 'template-b':
-      return exportManfredJSonToHTMLTemplateB(manfredJsonContent, theme);
+  switch (settings.template) {
+    case 'default':
+      return exportManfredJSonToHTMLTemplateA(manfredJsonContent, settings);
+    case 'template-1':
+      return exportManfredJSonToHTMLTemplateB(manfredJsonContent, settings);
     default:
       throw new Error('Template not found');
   }

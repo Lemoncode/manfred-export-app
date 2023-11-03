@@ -1,6 +1,5 @@
 import React from 'react';
-import { ExportHTMLSettings } from '@lemoncode/manfred2html';
-import { theme } from '@/core/theme';
+import { ColorTheme, ExportHTMLSettings, createDefaultExportHTMLSettings } from '@lemoncode/manfred2html';
 import { Button, CustomSelect } from '@/common-app/components';
 import { useUserChoiceContext } from '@/core/user-choice';
 import { CustomSelectColor } from '../customSelectColor/customSelectColor.component';
@@ -19,9 +18,9 @@ const OPTIONSlANGUAGE = ['Item 1', 'Item 2', 'Item 3'];
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
   const { userChoice } = useUserChoiceContext();
-  const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>({
-    primaryColor: theme.palette.primary[600],
-  });
+  const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>(
+    createDefaultExportHTMLSettings()
+  );
   const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
 
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
@@ -29,8 +28,11 @@ export const ExportConfig: React.FC<Props> = props => {
   );
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setExportHTMLSettings({ primaryColor: event.target.value });
-    onHTMLSettingSelectionChanged(htmlTemplate, { primaryColor: event.target.value });
+    setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
+    onHTMLSettingSelectionChanged(htmlTemplate, {
+      ...exportHTMLSettings,
+      colorTheme: event.target.value as ColorTheme,
+    });
   };
   const handleExportConfigSelection = () => {
     setIsDownloadInProgress(true);

@@ -1,5 +1,4 @@
-import { ManfredAwesomicCV } from '@/model';
-
+import { ManfredAwesomicCV, Settings } from '@/model';
 import {
   generateHtmlDocumentStart,
   generateHtmlDocumentEnd,
@@ -19,8 +18,8 @@ import {
   generateStudiesSection,
 } from './html-parts';
 
-export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwesomicCV, theme?: string): string => {
-  const htmlDocumentStart = generateHtmlDocumentStart();
+export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
+  const htmlDocumentStart = generateHtmlDocumentStart(settings.colorTheme);
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
