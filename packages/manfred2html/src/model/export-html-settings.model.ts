@@ -1,6 +1,6 @@
 export type ColorTheme = 'default' | 'red' | 'green' | 'orange' | 'yellow' | 'dark';
-export type template = 'default' | 'template-1' | 'template-2';
-export type language = 'es' | 'en';
+export type TemplateCV = 'default' | 'CV-1';
+export type Language = 'es' | 'en';
 export enum HexColor {
   default = '#247A7E',
   red = '#E61934',
@@ -12,14 +12,14 @@ export enum HexColor {
 
 export interface ExportHTMLSettings {
   colorTheme: ColorTheme;
-  template: template;
-  language: language;
+  template: TemplateCV;
+  language: Language;
 }
 
 export interface Settings {
   colorTheme: HexColor;
-  template: template;
-  language: language;
+  template: TemplateCV;
+  language: Language;
 }
 
 export const createDefaultExportHTMLSettings = (): ExportHTMLSettings => ({

@@ -12,7 +12,7 @@ export const exportHTMLTemplate = (
   switch (settings.template) {
     case 'default':
       return exportManfredJSonToHTMLTemplateA(manfredJsonContent, settings);
-    case 'template-1':
+    case 'CV-1':
       return exportManfredJSonToHTMLTemplateB(manfredJsonContent, settings);
     default:
       throw new Error('Template not found');

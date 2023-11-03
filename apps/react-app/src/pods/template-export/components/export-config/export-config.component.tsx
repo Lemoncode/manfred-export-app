@@ -1,5 +1,11 @@
 import React from 'react';
-import { ColorTheme, ExportHTMLSettings, createDefaultExportHTMLSettings } from '@lemoncode/manfred2html';
+import {
+  TemplateCV,
+  ColorTheme,
+  Language,
+  ExportHTMLSettings,
+  createDefaultExportHTMLSettings,
+} from '@lemoncode/manfred2html';
 import { Button, CustomSelect } from '@/common-app/components';
 import { useUserChoiceContext } from '@/core/user-choice';
 import { CustomSelectColor } from '../customSelectColor/customSelectColor.component';
@@ -12,8 +18,8 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const OPTIONSDESING = ['Item 1', 'Item 2', 'Item 3'];
-const OPTIONSlANGUAGE = ['Item 1', 'Item 2', 'Item 3'];
+const OPTIONSDESING: TemplateCV[] = ['default', 'CV-1'];
+const OPTIONSlANGUAGE: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
@@ -32,6 +38,22 @@ export const ExportConfig: React.FC<Props> = props => {
     onHTMLSettingSelectionChanged(htmlTemplate, {
       ...exportHTMLSettings,
       colorTheme: event.target.value as ColorTheme,
+    });
+  };
+
+  const handleTemplateChange = (templateCV: string) => {
+    setExportHTMLSettings({ ...exportHTMLSettings, template: templateCV as TemplateCV });
+    onHTMLSettingSelectionChanged(htmlTemplate, {
+      ...exportHTMLSettings,
+      template: templateCV as TemplateCV,
+    });
+  };
+
+  const handleLanguageChange = (language: string) => {
+    setExportHTMLSettings({ ...exportHTMLSettings, language: language as Language });
+    onHTMLSettingSelectionChanged(htmlTemplate, {
+      ...exportHTMLSettings,
+      language: language as Language,
     });
   };
   const handleExportConfigSelection = () => {
@@ -53,8 +75,12 @@ export const ExportConfig: React.FC<Props> = props => {
       <div className={classes.optionsContainer}>
         <div className={classes.optionsContent}>
           <div className={classes.selectContainer}>
-            <CustomSelect listOptions={OPTIONSDESING} label={'Diseño'} />
-            <CustomSelect listOptions={OPTIONSlANGUAGE} label={'Idioma cabeceras'} />
+            <CustomSelect listOptions={OPTIONSDESING} onSelectedOption={handleTemplateChange} label={'Diseño'} />
+            <CustomSelect
+              listOptions={OPTIONSlANGUAGE}
+              onSelectedOption={handleLanguageChange}
+              label={'Idioma cabeceras'}
+            />
           </div>
           <div className={classes.selectColorContainer}>
             <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
