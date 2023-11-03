@@ -7,7 +7,6 @@ import {
   createDefaultExportHTMLSettings,
 } from '@lemoncode/manfred2html';
 import { Button, CustomSelect } from '@/common-app/components';
-import { useUserChoiceContext } from '@/core/user-choice';
 import { CustomSelectColor } from '../customSelectColor/customSelectColor.component';
 import * as classes from './export-config.styles';
 interface Props {
@@ -18,12 +17,11 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const OPTIONSDESING: TemplateCV[] = ['default', 'CV-1'];
-const OPTIONSlANGUAGE: Language[] = ['es', 'en'];
+const DESING_OPTIONS: TemplateCV[] = ['default', 'CV-1'];
+const LANGUAGE_OPTIONS: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {
   const { onExportToHTML, cancelExport, htmlTemplate, onHTMLSettingSelectionChanged } = props;
-  const { userChoice } = useUserChoiceContext();
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>(
     createDefaultExportHTMLSettings()
   );
@@ -75,9 +73,9 @@ export const ExportConfig: React.FC<Props> = props => {
       <div className={classes.optionsContainer}>
         <div className={classes.optionsContent}>
           <div className={classes.selectContainer}>
-            <CustomSelect listOptions={OPTIONSDESING} onSelectedOption={handleTemplateChange} label={'Diseño'} />
+            <CustomSelect listOptions={DESING_OPTIONS} onSelectedOption={handleTemplateChange} label={'Diseño'} />
             <CustomSelect
-              listOptions={OPTIONSlANGUAGE}
+              listOptions={LANGUAGE_OPTIONS}
               onSelectedOption={handleLanguageChange}
               label={'Idioma cabeceras'}
             />
