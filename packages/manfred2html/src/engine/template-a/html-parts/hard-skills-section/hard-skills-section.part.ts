@@ -1,10 +1,10 @@
 import ejs from 'ejs';
 import { HardSkillVM, mapFromCvToHardSkillVm } from '@lemoncode/manfred-common/hard-skill-section';
-import { ExportHTMLSettings, Language, ManfredAwesomicCV } from '@/model';
+import { Settings, Language, ManfredAwesomicCV } from '@/model';
 import { englishHardSkillsLabels, spanishHardSkillsLabels } from './labels';
 import hardSkillsTemplate from './hard-skills-section.ejs?raw';
 
-export const generateHardSkillsSection = (cv: ManfredAwesomicCV, settings: ExportHTMLSettings): string => {
+export const generateHardSkillsSection = (cv: ManfredAwesomicCV, settings: Settings): string => {
   const hardSkillsSectionVm = mapFromCvToHardSkillVm(cv);
   return generateHardSkillsSectionInner(hardSkillsSectionVm, settings.language);
 };
