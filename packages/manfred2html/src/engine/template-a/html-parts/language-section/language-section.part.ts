@@ -1,13 +1,12 @@
 import ejs from 'ejs';
-import { ManfredAwesomicCV } from '@/model';
+import { ManfredAwesomicCV, ExportHTMLSettings, Language } from '@/model';
 import { LanguageVm, mapFromCvToLanguageVm } from '@lemoncode/manfred-common/language-section';
-import languageTemplate from './language-section.ejs?raw';
-import { Language } from '@lemoncode/manfred-common/model';
 import { englishLanguageLabels, spanishLanguageLabels } from './labels';
+import languageTemplate from './language-section.ejs?raw';
 
-export const generateLanguageSection = (cv: ManfredAwesomicCV, language: Language = 'es'): string => {
+export const generateLanguageSection = (cv: ManfredAwesomicCV, settings: ExportHTMLSettings): string => {
   const languageSectionVm = mapFromCvToLanguageVm(cv);
-  return generateLanguageSectionInner(languageSectionVm, 'es');
+  return generateLanguageSectionInner(languageSectionVm, settings.language);
 };
 
 const generateLanguageSectionInner = (languageSectionVm: LanguageVm[], language: Language): string => {
