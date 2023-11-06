@@ -1,7 +1,6 @@
 import ejs from 'ejs';
 import { ExperienceVm, mapFromMacCvToExperienceSectionVm } from '@lemoncode/manfred-common/experience-section';
-import { Language } from '@lemoncode/manfred-common/model';
-import { ExportHTMLSettings, ManfredAwesomicCV } from '@/model';
+import { ExportHTMLSettings, Language, ManfredAwesomicCV } from '@/model';
 import experienceTemplate from './experience-section.ejs?raw';
 import { englishExperienceLabels, spanishExperienceLabels } from './labels';
 
