@@ -1,19 +1,19 @@
-import { ManfredAwesomicCV } from '@/model';
-import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
-import aboutMe from './about-me-section.ejs?raw';
 import ejs from 'ejs';
-import { Language } from '@lemoncode/manfred-common/model';
+import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
+import { ManfredAwesomicCV, ExportHTMLSettings, Language } from '@/model';
+import { englishAboutMeLabels, spanishAboutMeLabels } from './labels';
+import aboutMe from './about-me-section.ejs?raw';
 
-export const generateAboutMeSection = (cv: ManfredAwesomicCV, language: Language = 'es'): string => {
+export const generateAboutMeSection = (cv: ManfredAwesomicCV, settings: ExportHTMLSettings): string => {
   const profileSectionVm = mapFromMacCvToProfileSectionVm(cv);
 
-  return generateAboutMeSectionInner(profileSectionVm, language);
+  return generateAboutMeSectionInner(profileSectionVm, settings.language);
 };
 
 const generateAboutMeSectionInner = (profileSectionVm: ProfileSectionVm, language: Language): string => {
   const rootObject = {
     profile: profileSectionVm,
-    language: !language || language === 'es' ? null : language,
+    labels: !language || language === 'es' ? spanishAboutMeLabels : englishAboutMeLabels,
   };
 
   return ejs.render(aboutMe, rootObject);
