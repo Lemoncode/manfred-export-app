@@ -1,8 +1,4 @@
-// Since we are importing this as code, not as lib
-// We cannot use aliases (app will override this)
-// So instead of @model we have to use ../model
-// import { OrganizationType, Role } from '@/model';
-import { OrganizationType, Role } from '../../model';
+import { OrganizationType, PublicEntityDetails, Role } from '@/model';
 
 export interface ExperienceVm {
   name: string;
@@ -14,4 +10,12 @@ export interface ExperienceVm {
 export interface Type {
   key: OrganizationType;
   value: string;
+}
+
+//Review if it can be moved to manfred schema
+export interface JobManfredAwesomicCV {
+  [k: string]: unknown;
+  organization: PublicEntityDetails;
+  type?: OrganizationType | undefined;
+  roles: [Role, ...Role[]];
 }

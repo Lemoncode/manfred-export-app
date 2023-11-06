@@ -7,6 +7,8 @@ import { download } from '@/common';
 import { TemplateExport } from './template-export.component';
 
 export const TemplateExportContainer: React.FC = () => {
+  const [error, setError] = React.useState(false);
+
   const parseManfredJson = (text: string) => {
     JSON.parse(text);
     return parseStringToManfredJSon(text);
@@ -17,8 +19,7 @@ export const TemplateExportContainer: React.FC = () => {
       const manfredJsonContent = parseStringToManfredJSon(text);
       await exportManfredJSonToWordAndDownload(DEFAULT_EXPORT_FILENAME, manfredJsonContent);
     } catch (error) {
-      alert('Hay un error, no está utilizando el formato correcto');
-      console.error(error);
+      setError(true);
     }
   };
 
@@ -30,20 +31,7 @@ export const TemplateExportContainer: React.FC = () => {
 
       await download(blob, 'CV.md');
     } catch (error) {
-      console.error(error);
-      alert('Hay un error, no está utilizando el formato correcto');
-    }
-  };
-
-  const onHTMLSettingChanged = (text: string, exportHTMLSettings: ExportHTMLSettings): string => {
-    try {
-      const manfredJsonContent = parseManfredJson(text);
-      const content = exportManfredJSonToHTML(manfredJsonContent, exportHTMLSettings);
-      return content || '';
-    } catch (error) {
-      console.error(error);
-      alert('Hay un error, no está utilizando el formato correcto');
-      return '';
+      setError(true);
     }
   };
 
@@ -55,12 +43,20 @@ export const TemplateExportContainer: React.FC = () => {
 
       await download(blob, 'manfred.html');
     } catch (error) {
-      console.error(error);
-      alert('Hay un error, no está utilizando el formato correcto');
+      setError(true);
     }
   };
+
+  const onHTMLSettingChanged = (text: string, exportHTMLSettings: ExportHTMLSettings): string => {
+    const manfredJsonContent = parseManfredJson(text);
+    const content = exportManfredJSonToHTML(manfredJsonContent, exportHTMLSettings);
+    return content;
+  };
+
   return (
     <TemplateExport
+      error={error}
+      setError={setError}
       onExportToWord={onExportJsonToWord}
       onExportToMarkdown={onExportJsonToMarkdown}
       onExportToHTML={onExportToHTML}
