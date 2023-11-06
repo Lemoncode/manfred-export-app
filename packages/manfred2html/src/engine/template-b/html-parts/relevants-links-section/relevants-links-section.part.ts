@@ -10,10 +10,10 @@ export const generateRelevantsLinksSection = (cv: ManfredAwesomicCV, settings: S
   return generateRelevantsLinksSectionInner(profileSectionVm, settings.language);
 };
 
-const generateRelevantsLinksSectionInner = (profileSectionVm: ProfileSectionVm, language: Language): string => {
+const generateRelevantsLinksSectionInner = (profileSectionVm: ProfileSectionVm, language: Language = 'es'): string => {
   const rootObject = {
     profile: profileSectionVm,
-    labels: !language || language === 'es' ? spanishRelevantsLabels : englishRelevantsLabels,
+    labels: language === 'es' ? spanishRelevantsLabels : englishRelevantsLabels,
   };
 
   return ejs.render(relevantsLinksSection, rootObject);

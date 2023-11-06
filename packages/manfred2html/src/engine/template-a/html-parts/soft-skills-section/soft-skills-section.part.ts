@@ -9,10 +9,10 @@ export const generateSoftSkillsSection = (cv: ManfredAwesomicCV, settings: Setti
   return generateSoftSkillsSectionInner(softSkillsSectionVm, settings.language);
 };
 
-const generateSoftSkillsSectionInner = (softSkillsSectionVm: SoftSkillVM[], language: Language): string => {
+const generateSoftSkillsSectionInner = (softSkillsSectionVm: SoftSkillVM[], language: Language = 'es'): string => {
   const rootObject = {
     softSkillsCollection: softSkillsSectionVm,
-    labels: !language || language === 'es' ? spanishSoftSkillsLabels : englishSoftSkillsLabels,
+    labels: language === 'es' ? spanishSoftSkillsLabels : englishSoftSkillsLabels,
   };
   return ejs.render(softSkillsTemplate, rootObject);
 };

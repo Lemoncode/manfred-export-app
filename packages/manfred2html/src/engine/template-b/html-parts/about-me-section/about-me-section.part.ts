@@ -10,10 +10,10 @@ export const generateAboutMeSection = (cv: ManfredAwesomicCV, settings: Settings
   return generateAboutMeSectionInner(profileSectionVm, settings.language);
 };
 
-const generateAboutMeSectionInner = (profileSectionVm: ProfileSectionVm, language: Language): string => {
+const generateAboutMeSectionInner = (profileSectionVm: ProfileSectionVm, language: Language = 'es'): string => {
   const rootObject = {
     profile: profileSectionVm,
-    labels: !language || language === 'es' ? spanishAboutMeLabels : englishAboutMeLabels,
+    labels: language === 'es' ? spanishAboutMeLabels : englishAboutMeLabels,
   };
 
   return ejs.render(aboutMe, rootObject);

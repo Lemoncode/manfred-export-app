@@ -9,10 +9,10 @@ export const generateLanguageSection = (cv: ManfredAwesomicCV, settings: Setting
   return generateLanguageSectionInner(languageSectionVm, settings.language);
 };
 
-const generateLanguageSectionInner = (languageSectionVm: LanguageVm[], language: Language): string => {
+const generateLanguageSectionInner = (languageSectionVm: LanguageVm[], language: Language = 'es'): string => {
   const rootObject = {
     languageCollection: languageSectionVm,
-    labels: !language || language === 'es' ? spanishLanguageLabels : englishLanguageLabels,
+    labels: language === 'es' ? spanishLanguageLabels : englishLanguageLabels,
   };
   return ejs.render(languageSection, rootObject);
 };
