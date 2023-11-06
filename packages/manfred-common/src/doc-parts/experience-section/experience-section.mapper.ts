@@ -1,25 +1,24 @@
-import { ManfredAwesomicCV } from '../../model';
-import { ExperienceVm, Type } from './experience-section.vm';
+import { ManfredAwesomicCV } from '@/model';
+import { sortedJobsByStartDate } from './experience-section.helpers';
+import { ExperienceVm, Type, JobManfredAwesomicCV } from './experience-section.vm';
 import { types } from './experience-section.contants';
 
 export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): ExperienceVm[] => {
-  let jobs: ExperienceVm[] = [];
+  const sortedJobs = cv?.experience?.jobs ? sortedJobsByStartDate(cv?.experience?.jobs) : [];
 
-  cv?.experience?.jobs?.map(job => {
-    const organizationName: string = job.organization?.name ?? '';
-    const organizationDescription: string = job.organization?.description ?? '';
-    const organizationType: string = job.type ?? '';
-    const roles = job.roles?.map(role => role) ?? [];
+  const experience = sortedJobs?.map((job: JobManfredAwesomicCV) => mapJobToExperience(job));
 
-    const mapType = mapOrganizationType(organizationType, types);
-
-    jobs = [...jobs, { name: organizationName, description: organizationDescription, type: mapType, roles }];
-  });
-
-  return jobs;
+  return experience;
 };
 
-export const mapOrganizationType = (type: string, types: Type[]): string => {
+export const mapJobToExperience = (job: JobManfredAwesomicCV): ExperienceVm => ({
+  name: job.organization?.name ?? '',
+  description: job.organization?.description ?? '',
+  type: mapOrganizationType(job.type, types),
+  roles: job.roles?.map(role => role),
+});
+
+export const mapOrganizationType = (type: string = '', types: Type[]): string => {
   const result = types?.find(t => t.key === type);
   return result?.value ?? '';
 };
