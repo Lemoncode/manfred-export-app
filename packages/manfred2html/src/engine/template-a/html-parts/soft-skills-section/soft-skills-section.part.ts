@@ -1,13 +1,12 @@
 import ejs from 'ejs';
-import { ManfredAwesomicCV } from '@/model';
 import { SoftSkillVM, mapFromCvToSoftSkillVm } from '@lemoncode/manfred-common/soft-skill-section';
-import softSkillsTemplate from './soft-skills-section.ejs?raw';
-import { Language } from '@lemoncode/manfred-common/model';
+import { ManfredAwesomicCV, ExportHTMLSettings, Language } from '@/model';
 import { englishSoftSkillsLabels, spanishSoftSkillsLabels } from './labels';
+import softSkillsTemplate from './soft-skills-section.ejs?raw';
 
-export const generateSoftSkillsSection = (cv: ManfredAwesomicCV, language: Language = 'es'): string => {
+export const generateSoftSkillsSection = (cv: ManfredAwesomicCV, settings: ExportHTMLSettings): string => {
   const softSkillsSectionVm = mapFromCvToSoftSkillVm(cv);
-  return generateSoftSkillsSectionInner(softSkillsSectionVm, 'es');
+  return generateSoftSkillsSectionInner(softSkillsSectionVm, settings.language);
 };
 
 const generateSoftSkillsSectionInner = (softSkillsSectionVm: SoftSkillVM[], language: Language): string => {
