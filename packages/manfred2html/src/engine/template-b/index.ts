@@ -24,17 +24,17 @@ export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwes
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
   const headerSection = generateHeaderSection(manfredJsonContent);
-  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
-  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
-  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
-  const languageSection = generateLanguageSection(manfredJsonContent);
+  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent, settings);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
+  const languageSection = generateLanguageSection(manfredJsonContent, settings);
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();
   const mainElementStart = generateMainElementStart();
   const mainElementEnd = generateMainElementEnd();
-  const aboutMeSection = generateAboutMeSection(manfredJsonContent);
-  const experienceSection = generateExperiencesSection(manfredJsonContent);
-  const studiesSection = generateStudiesSection(manfredJsonContent);
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
+  const experienceSection = generateExperiencesSection(manfredJsonContent, settings);
+  const studiesSection = generateStudiesSection(manfredJsonContent, settings);
   return `
     ${htmlDocumentStart}
       ${asideElementStart}

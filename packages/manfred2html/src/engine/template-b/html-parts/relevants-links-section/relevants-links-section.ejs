@@ -1,6 +1,6 @@
 <%_ if (profile.relevantLinks && profile.relevantLinks.length !== 0) { -%>
   <div class="aside__section">
-        <h3>Mis enlaces</h3>
+        <h3><%- labels.RELEVANTS_HEADING %></h3>
         <div class="aside__section__link-items">
     <%_ for (const link of profile?.relevantLinks) { -%>
       <%_ if (link.type === 'linkedin') { -%>
