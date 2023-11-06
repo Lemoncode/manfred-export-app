@@ -1,7 +1,7 @@
 <%_ if (studiesCollection && studiesCollection.length !== 0) { -%>
     <section class="main__section">
       <div class="main__section__header">
-        <h2>Educación</h2>
+        <h2><%- labels.STUDIES_HEADING %></h2>
         <hr class="divider" />
       </div>
       <%_ for (const study of studiesCollection) { -%>
@@ -44,7 +44,7 @@
                 <%_ } else { -%>
                   - Actualidad
                   <%_}-%>
-                </p> 
+                </p>
           </div>
             <p class="data">Tipo de estudios: <b><%- study.studyType %></b></p>
             <p class="data">
@@ -57,7 +57,7 @@
             <p class="data">Nombre de la institución: <b><%- study.institution.name %></b></p>
             <%_ if (study.location) { -%>
             <p class="data">
-              Ubicación de la institución:              
+              Ubicación de la institución:
               <b><%- study.institution.location.region %> , <%- study.institution.location.country %> </b>
             </p>
             <%_ } -%>
@@ -66,4 +66,3 @@
       <%_ } -%>
     </section>
     <%_ } -%>
-    
