@@ -3,13 +3,33 @@ import { theme } from '@/core/theme';
 
 export const selectContainer = css`
   position: relative;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing(2)};
+
   @media (min-width: 725px) {
     flex-grow: 1;
     width: 100%;
   }
 `;
+
+export const label = css`
+  flex-grow: 1;
+  color: ${theme.palette.dark[300]};
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.15px;
+  padding: 0 ${theme.spacing(2)};
+  background-color: ${theme.palette.info[50]};
+  position: absolute;
+  top: -${theme.spacing(3)};
+  left: ${theme.spacing(3)};
+`;
 export const selectContent = css`
+  cursor: pointer;
   display: flex;
   padding: ${theme.spacing(3)} ${theme.spacing(4)};
   align-items: flex-start;
@@ -18,6 +38,7 @@ export const selectContent = css`
   border: 1px solid ${theme.palette.info[600]};
   border-radius: 8px;
   background: ${theme.palette.info[50]};
+
   span {
     flex-grow: 1;
     color: ${theme.palette.dark[900]};
@@ -32,6 +53,7 @@ export const selectContent = css`
 
 export const listContainer = css`
   position: absolute;
+  top: ${theme.spacing(12)};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -41,7 +63,9 @@ export const listContainer = css`
   border-radius: 4px;
   background: ${theme.palette.info[50]};
   box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+
   li {
+    cursor: pointer;
     display: flex;
     height: ${theme.spacing(8)};
     padding: ${theme.spacing(0)} ${theme.spacing(4)};

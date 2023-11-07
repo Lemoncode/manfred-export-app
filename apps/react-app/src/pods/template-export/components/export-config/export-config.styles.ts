@@ -11,6 +11,7 @@ export const content = css`
   width: 100%;
   background: ${theme.palette.info[50]};
   ${theme.typography.mobile.h5};
+
   @media (min-width: 725px) {
     ${theme.typography.tablet.h5};
     padding: ${theme.spacing(8)};
@@ -19,6 +20,7 @@ export const content = css`
     border-radius: 16px;
     align-items: stretch;
   }
+
   @media (min-width: 1024px) {
     ${theme.typography.desktop.h5};
     align-items: flex-center;
@@ -110,7 +112,7 @@ export const optionsContent = css`
   }
 
   @media (min-width: 1024px) {
-    gap: ${theme.spacing(4)};
+    gap: ${theme.spacing(10)};
   }
 `;
 export const selectContainer = css`
@@ -126,7 +128,8 @@ export const selectContainer = css`
   @media (min-width: 1024px) {
     width: 274px;
     flex-direction: column;
-    gap: ${theme.spacing(4)};
+    gap: ${theme.spacing(10)};
+    padding-top: ${theme.spacing(4)};
   }
 `;
 export const selectColorContainer = css`

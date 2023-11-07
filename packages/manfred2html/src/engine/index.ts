@@ -10,9 +10,9 @@ export const exportHTMLTemplate = (
   const settings = mapExportHTMLSettingsToSettings(exportHTMLSettings);
 
   switch (settings.template) {
-    case 'default':
+    case 'Moderno elegante':
       return exportManfredJSonToHTMLTemplateA(manfredJsonContent, settings);
-    case 'CV-1':
+    case 'Limpio y organizado':
       return exportManfredJSonToHTMLTemplateB(manfredJsonContent, settings);
     default:
       throw new Error('Template not found');

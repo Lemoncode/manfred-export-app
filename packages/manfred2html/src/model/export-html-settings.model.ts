@@ -1,5 +1,14 @@
 export type ColorTheme = 'default' | 'red' | 'green' | 'orange' | 'yellow' | 'dark';
-export type TemplateCV = 'default' | 'CV-1';
+export type TemplateCV =
+  | 'Moderno elegante'
+  | 'Limpio y organizado'
+  | 'Clásico'
+  | 'Minimalista'
+  | 'Artístico'
+  | 'Tecnológico'
+  | 'Creativo'
+  | 'Profesional'
+  | 'Elegante';
 export type Language = 'es' | 'en';
 export enum HexColor {
   default = '#247A7E',
@@ -24,6 +33,6 @@ export interface Settings {
 
 export const createDefaultExportHTMLSettings = (): ExportHTMLSettings => ({
   colorTheme: 'default',
-  template: 'default',
+  template: 'Moderno elegante',
   language: 'es',
 });
