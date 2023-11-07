@@ -11,7 +11,8 @@ export const codeMirrorTheme = EditorView.theme({
     width: '100%',
   },
   '.cm-scroller': { overflow: 'auto' },
-  '.cm content, .cm-gutters, .cm-gutterElement,': {
+  '.cm-gutterElement': { display: 'none' },
+  '.cm content, .cm-gutters,': {
     minHeight: '100%',
     backgroundColor: '#152128',
     color: '#AAB0B1',
