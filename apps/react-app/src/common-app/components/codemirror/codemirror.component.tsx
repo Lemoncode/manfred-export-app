@@ -26,6 +26,7 @@ export const CodeMirrorComponent: React.FC<Props> = props => {
         extensions: [
           basicSetup,
           json(),
+          EditorView.lineWrapping,
           EditorView.updateListener.of((u: ViewUpdate) => onChange(u.state.doc.toString())),
           placeholder('Pega aquí tu JSON en formato MAC'),
           codeMirrorTheme,
