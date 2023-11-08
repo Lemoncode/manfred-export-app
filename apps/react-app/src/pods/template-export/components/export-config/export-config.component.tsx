@@ -74,11 +74,11 @@ export const ExportConfig: React.FC<Props> = props => {
         <div className={classes.optionsContent}>
           <div className={classes.selectContainer}>
             <CustomSelect listOptions={DESING_OPTIONS} onSelectedOption={handleTemplateChange} label={'Diseño'} />
-            {/* <CustomSelect
+            <CustomSelect
               listOptions={LANGUAGE_OPTIONS}
               onSelectedOption={handleLanguageChange}
               label={'Idioma cabeceras'}
-            /> */}
+            />
           </div>
           <div className={classes.selectColorContainer}>
             <CustomSelectColor label={'Colores'} onChange={handleColorChange} />

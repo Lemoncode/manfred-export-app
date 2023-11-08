@@ -1,7 +1,8 @@
 import ejs from 'ejs';
 import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
+import { ISO_SPANISH_LANGUAGE } from '@/engine/engine.const';
 import { ManfredAwesomicCV, Settings, Language } from '@/model';
-import { englishRelevantsLabels, spanishRelevantsLabels } from './labels';
+import { getLabels } from './labels';
 import relevantsLinksSection from './relevants-links-section.ejs?raw';
 
 export const generateRelevantsLinksSection = (cv: ManfredAwesomicCV, settings: Settings): string => {
@@ -10,10 +11,13 @@ export const generateRelevantsLinksSection = (cv: ManfredAwesomicCV, settings: S
   return generateRelevantsLinksSectionInner(profileSectionVm, settings.language);
 };
 
-const generateRelevantsLinksSectionInner = (profileSectionVm: ProfileSectionVm, language: Language = 'es'): string => {
+const generateRelevantsLinksSectionInner = (
+  profileSectionVm: ProfileSectionVm,
+  language: Language = ISO_SPANISH_LANGUAGE
+): string => {
   const rootObject = {
     profile: profileSectionVm,
-    labels: language === 'es' ? spanishRelevantsLabels : englishRelevantsLabels,
+    labels: getLabels(language),
   };
 
   return ejs.render(relevantsLinksSection, rootObject);
