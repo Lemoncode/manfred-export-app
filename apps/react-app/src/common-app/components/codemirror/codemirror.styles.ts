@@ -6,7 +6,7 @@ export const codeMirrorTheme = EditorView.theme({
     flexDirection: 'column',
     display: 'flex',
     flexGrow: '1',
-    maxHeight: '50vh',
+    maxHeight: '40vh',
     height: '100%',
     width: '100%',
   },

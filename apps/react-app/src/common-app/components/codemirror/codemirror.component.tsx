@@ -36,7 +36,7 @@ export const CodeMirrorComponent: React.FC<Props> = props => {
     }
 
     return () => editorView.current?.destroy();
-  });
+  }, []);
 
   return <div className={className} ref={codeRef} />;
 };
