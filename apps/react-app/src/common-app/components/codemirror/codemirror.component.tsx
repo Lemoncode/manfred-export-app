@@ -15,53 +15,28 @@ interface Props {
 
 export const CodeMirrorComponent: React.FC<Props> = props => {
   const { value, onChange, className } = props;
-
-  const [view, setView] = React.useState<EditorView | null>(null);
-
   const codeRef = React.useRef<HTMLDivElement>(null);
+  const editorView = React.useRef<EditorView>();
   React.useEffect(() => {
     if (codeRef.current) {
-      let editorState = EditorState.create({
-        doc: value,
-        extensions: [
-          basicSetup,
-          json(),
-          EditorView.lineWrapping,
-          EditorView.updateListener.of((u: ViewUpdate) => onChange(u.state.doc.toString())),
-          placeholder('Pega aquí tu JSON en formato MAC'),
-          codeMirrorTheme,
-        ],
+      editorView.current = new EditorView({
+        state: EditorState.create({
+          doc: value,
+          extensions: [
+            basicSetup,
+            json(),
+            EditorView.lineWrapping,
+            EditorView.updateListener.of((u: ViewUpdate) => onChange(u.state.doc.toString())),
+            placeholder('Pega aquí tu JSON en formato MAC'),
+            codeMirrorTheme,
+          ],
+        }),
+        parent: codeRef.current,
       });
-
-      setView(
-        new EditorView({
-          state: editorState,
-          parent: codeRef.current,
-        })
-      );
-
-      return () => {
-        view?.destroy();
-      };
-    } else {
-      throw new Error('Se ha producido un error con el EditorJSON');
     }
-  }, []);
 
-  React.useEffect(() => {
-    if (view) {
-      let transaction = view.state.update({
-        changes: {
-          from: 0,
-          to: view.state.doc.length,
-          insert: value,
-        },
-      });
-      if (value !== view.state.doc.toString()) {
-        view.dispatch(transaction);
-      }
-    }
-  }, [value]);
+    return () => editorView.current?.destroy();
+  });
 
   return <div className={className} ref={codeRef} />;
 };
