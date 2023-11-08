@@ -1,7 +1,8 @@
 import ejs from 'ejs';
 import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
+import { ISO_SPANISH_LANGUAGE } from '@/engine/engine.const';
 import { ManfredAwesomicCV, Settings, Language } from '@/model';
-import { englishAboutMeLabels, spanishAboutMeLabels } from './labels';
+import { getLabels } from './labels';
 import aboutMe from './about-me-section.ejs?raw';
 
 export const generateAboutMeSection = (cv: ManfredAwesomicCV, settings: Settings): string => {
@@ -10,10 +11,13 @@ export const generateAboutMeSection = (cv: ManfredAwesomicCV, settings: Settings
   return generateAboutMeSectionInner(profileSectionVm, settings.language);
 };
 
-const generateAboutMeSectionInner = (profileSectionVm: ProfileSectionVm, language: Language = 'es'): string => {
+const generateAboutMeSectionInner = (
+  profileSectionVm: ProfileSectionVm,
+  language: Language = ISO_SPANISH_LANGUAGE
+): string => {
   const rootObject = {
     profile: profileSectionVm,
-    labels: language === 'es' ? spanishAboutMeLabels : englishAboutMeLabels,
+    labels: getLabels(language),
   };
 
   return ejs.render(aboutMe, rootObject);

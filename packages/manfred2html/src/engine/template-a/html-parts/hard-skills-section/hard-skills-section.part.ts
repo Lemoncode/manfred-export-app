@@ -1,7 +1,8 @@
 import ejs from 'ejs';
 import { HardSkillVM, mapFromCvToHardSkillVm } from '@lemoncode/manfred-common/hard-skill-section';
+import { ISO_SPANISH_LANGUAGE } from '@/engine/engine.const';
 import { Settings, Language, ManfredAwesomicCV } from '@/model';
-import { englishHardSkillsLabels, spanishHardSkillsLabels } from './labels';
+import { getLabels } from './labels';
 import hardSkillsTemplate from './hard-skills-section.ejs?raw';
 
 export const generateHardSkillsSection = (cv: ManfredAwesomicCV, settings: Settings): string => {
@@ -9,10 +10,13 @@ export const generateHardSkillsSection = (cv: ManfredAwesomicCV, settings: Setti
   return generateHardSkillsSectionInner(hardSkillsSectionVm, settings.language);
 };
 
-const generateHardSkillsSectionInner = (hardSkillsSectionVm: HardSkillVM[], language: Language = 'es'): string => {
+const generateHardSkillsSectionInner = (
+  hardSkillsSectionVm: HardSkillVM[],
+  language: Language = ISO_SPANISH_LANGUAGE
+): string => {
   const rootObject = {
     hardSkillsCollection: hardSkillsSectionVm,
-    labels: language === 'es' ? spanishHardSkillsLabels : englishHardSkillsLabels,
+    labels: getLabels(language),
   };
   return ejs.render(hardSkillsTemplate, rootObject);
 };
