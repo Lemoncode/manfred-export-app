@@ -1,7 +1,16 @@
 import React from 'react';
 import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
-import { Button, Footer, Header, Modal, Navbar, ExportConfig, AlertMessage } from '@/common-app/components';
+import {
+  Button,
+  Footer,
+  Header,
+  Modal,
+  Navbar,
+  ExportConfig,
+  AlertMessage,
+  CodeMirrorComponent,
+} from '@/common-app/components';
 import * as classes from './template-export.styles';
 
 interface Props {
@@ -19,9 +28,7 @@ export const TemplateExport: React.FC<Props> = props => {
   const [text, setText] = React.useState<string>('');
   const [openSettingsModal, setOpenSettingsModal] = React.useState<boolean>(false);
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
+  const handleChange = (value: string) => setText(value);
 
   const handleOnExportToWord = () => {
     setUserChoice({ ...userChoice, manfredJsonContent: text });
@@ -55,12 +62,7 @@ export const TemplateExport: React.FC<Props> = props => {
       <Navbar />
       <div className={classes.container}>
         <Header />
-        <textarea
-          onChange={handleChange}
-          value={text}
-          placeholder="Pega aquí tu JSON en formato MAC"
-          className={classes.textarea}
-        ></textarea>
+        <CodeMirrorComponent className={classes.textarea} value={text} onChange={handleChange}></CodeMirrorComponent>
         <div className={classes.buttonContainer}>
           <Button
             disabled={text ? false : true}
