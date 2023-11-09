@@ -15,8 +15,11 @@ export const codeMirrorTheme = EditorView.theme({
   '.cm content, .cm-gutters,': {
     minHeight: '100%',
     backgroundColor: '#152128',
-    color: '#AAB0B1',
+    color: 'theme.palette.light[500]',
     textAlign: 'start',
     border: 'none',
+  },
+  '.cm-line > span': {
+    color: 'theme.palette.primary[500]',
   },
 });

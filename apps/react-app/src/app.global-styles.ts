@@ -44,4 +44,22 @@ body {
 		overflow: hidden;
 		box-sizing: border-box;
   }
+  & ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background-color: none;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background-color: #9e9e9e;
+    border-radius: 4px;
+  }
+
 `;
