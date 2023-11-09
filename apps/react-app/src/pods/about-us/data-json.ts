@@ -47,4 +47,12 @@ export const userList: User[] = [
     description:
       'Desarrollador Front End, cursé el bootcamp de JavaScript de Lemoncode y decidí dar un giro a mi carrera profesional para volcarme en la programación. Mi carrera se ha centrado en puestos de gestión, relacionados con mis estudios (Finanzas y Contabilidad, Logística). No obstante, tras cursar el bootcamp de JavaScript de Lemoncode, decidí dar un giro a mi carrera profesional y volcarme en el mundo de la programación. Actualmente, estoy cursando el Máster Front End de Lemoncode, donde sigo ampliando mis habilidades en el desarrollo web.',
   },
+  {
+    avatar: './assets/miguel-galvez.jpg',
+    name: 'Miguel Gálvez',
+    job: 'Frontend Developer',
+    linkedin_url: 'https://es.linkedin.com/in/miguelgalvezk',
+    description:
+      'Graduado en Derecho y Ciencias Políticas. Con anterioridad a dedicarme al desarrollo web, ejercí en un despacho la abogacía penal. Cursé el Bootcamp de JavaScript de Lemoncode y su Máster de FrontEnd. Quedé entusiasmado con la combinación de análisis y creatividad, versatilidad y belleza de la programación. Actualmente estoy estudiando DAW y formándome ante cualquier oportunidad que encuentre en este apasionante sector.',
+  },
 ];
