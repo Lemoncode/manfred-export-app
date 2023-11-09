@@ -1,3 +1,4 @@
+import { theme } from '@/core';
 import { EditorView } from 'codemirror';
 
 export const codeMirrorTheme = EditorView.theme({
@@ -15,11 +16,11 @@ export const codeMirrorTheme = EditorView.theme({
   '.cm content, .cm-gutters,': {
     minHeight: '100%',
     backgroundColor: '#152128',
-    color: 'theme.palette.light[500]',
+    color: theme.palette.light[500],
     textAlign: 'start',
     border: 'none',
   },
   '.cm-line > span': {
-    color: 'theme.palette.primary[500]',
+    color: theme.palette.primary[500],
   },
 });
