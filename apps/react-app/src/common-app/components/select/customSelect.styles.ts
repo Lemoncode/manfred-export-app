@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 import { theme } from '@/core/theme';
 
 export const selectContainer = css`
@@ -51,7 +51,39 @@ export const selectContent = css`
   }
 `;
 
+const slideDown = keyframes`
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: min-content;
+    opacity: 1;
+  }
+`;
+
+const slideUp = keyframes`
+  from {
+    max-height: min-content;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+`;
+
+export const listContainerOpenAnimation = css`
+  animation: ${slideDown} 0.3s ease forwards;
+`;
+export const listContainerCloseAnimation = css`
+  animation: ${slideUp} 0.3s ease forwards;
+`;
+
 export const listContainer = css`
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
   position: absolute;
   top: ${theme.spacing(12)};
   width: 100%;

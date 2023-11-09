@@ -21,10 +21,10 @@ const closeAnimation = keyframes`
 `;
 
 export const rootOpenAnimation = css`
-  animation: ${openAnimation} 0.8s ease forwards;
+  animation: ${openAnimation} 0.3s ease forwards;
 `;
 export const rootCloseAnimation = css`
-  animation: ${closeAnimation} 0.8s ease forwards;
+  animation: ${closeAnimation} 0.3s ease forwards;
 `;
 
 export const root = css`

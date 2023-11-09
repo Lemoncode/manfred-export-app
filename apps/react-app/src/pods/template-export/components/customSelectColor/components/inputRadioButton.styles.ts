@@ -11,6 +11,7 @@ export const inputRadioButton = (color: string) => css`
   cursor: pointer;
   outline: none;
   border: 15px solid ${theme.palette.info[50]};
+
   &[type='radio']:checked {
     box-shadow: 0px 0px 0px 4px ${theme.palette.dark[200]};
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { cx } from '@emotion/css';
 import * as classes from './customSelect.styles';
 
 interface Props {
@@ -31,7 +32,12 @@ export const CustomSelect: React.FC<Props> = props => {
         <img src="./assets/arrow_select.svg" alt="arrow select" className={classes.rotate(isOpen)} />
       </div>
       {isOpen && (
-        <ul className={classes.listContainer}>
+        <ul
+          className={cx(classes.listContainer, {
+            [classes.listContainerOpenAnimation]: isOpen,
+            [classes.listContainerCloseAnimation]: !isOpen,
+          })}
+        >
           {listOptions &&
             listOptions.map((option, index) => (
               <li key={index} onClick={() => handleOptionSelect(option)}>

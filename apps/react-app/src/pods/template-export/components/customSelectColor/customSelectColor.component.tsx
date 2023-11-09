@@ -16,6 +16,12 @@ export const CustomSelectColor: React.FC<Props> = ({ label, onChange }) => {
   const toggleIsOpen = () => {
     setCustomSelectState(customSelectState === 'open' ? 'close' : 'open');
   };
+
+  React.useEffect(() => {
+    if (window.innerWidth >= 1024) {
+      setCustomSelectState('open');
+    }
+  }, []);
   return (
     <div
       className={cx(classes.root, {
