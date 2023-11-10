@@ -6,3 +6,4 @@ export * from './card';
 export * from './modal';
 export * from './select';
 export * from './alert-message';
+export * from './codemirror';
