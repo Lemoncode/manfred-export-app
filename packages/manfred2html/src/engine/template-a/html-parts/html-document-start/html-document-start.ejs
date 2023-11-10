@@ -286,6 +286,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing_8);
+        text-transform: capitalize;
       }
       .main__section__item > .date-desktop {
         display: none;
@@ -317,8 +318,11 @@
         }
         .main__section__item > .date-desktop {
           display: flex;
+          flex-direction: column;
+          gap: var(--spacing_8);
           min-width: max-content;
-          align-items: flex-end;
+          text-align: end;
+          padding-top: var(--spacing_8);
         }
         .section__content__header > h3 {
           font-size: 24px;

@@ -9,10 +9,14 @@
       <%_ for (const study of studiesCollection) { -%>
       <div class="main__section__item">
         <div class="date date-desktop">
-          <p>Inicio: <b><%- study.startDate %></b></p>
-          <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
-            <p>Fin: <b><%- study.finishDate %></b></p>
-            <%_ } -%>
+          <p>Inicio: <b><%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) %></b></p>
+          <p>Fin: <b>
+          <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>
+            <%- new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) %>
+          </b></p>
+          <%_ } else { -%>
+            Actualidad</b></p>
+            <%_}-%>
         </div>
         <div class="line-icon">
           <div class="circle"></div>
@@ -26,10 +30,10 @@
                 <%_ } -%>
           </div>
           <div class="date date-mobile">
-            <p>Inicio: <b><%- study.startDate %></b></p>
-            <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>            
-              <p>Fin: <b><%- study.finishDate %></b></p>
-              <%_ } -%>            
+            <%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) %>
+            <%_ if (study.finishDate || study.finishDate === 'Actualidad') { -%>
+              <%- " - "+new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) %></b></p>
+              <%_ } -%>
           </div>
           <div class="data">
             <p>Tipo de estudios: <b><%- study.studyType %></b></p>
@@ -44,7 +48,7 @@
             <%_ if (study.location) { -%>
             <p>
               Ubicación de la institución:
-                <h4><%- study.description %></h4>                
+                <h4><%- study.description %></h4>
               <b><%- study.institution.location.region %> , <%- study.institution.location.country %> </b>
             </p>
             <%_ } -%>
@@ -54,4 +58,3 @@
       <%_ } -%>
     </section>
     <%_ } -%>
-    
