@@ -6,8 +6,8 @@ interface Props {
   isOpen: boolean;
 }
 
-export const Modal: React.FC<Props> = (props) => {
+export const Modal: React.FC<Props> = props => {
   const { children, isOpen } = props;
-  
-  return isOpen && <div className={classes.container}>{children}</div>
+
+  return isOpen && <div className={classes.container}>{children}</div>;
 };
