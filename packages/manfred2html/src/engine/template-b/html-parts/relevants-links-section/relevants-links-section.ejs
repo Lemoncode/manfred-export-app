@@ -29,7 +29,7 @@
               </clipPath>
             </defs>
           </svg>
-          <a href="#" target="_blank">Linkedin</a>
+          <a href=<%= link.URL %> target="_blank">Linkedin</a>
         </div>
       <%_ } -%>
       <%_ if (link.type === 'github') { -%>
@@ -58,7 +58,7 @@
               </clipPath>
             </defs>
           </svg>
-          <a href="#" target="_blank">GitHub</a>
+          <a href=<%= link.URL %> target="_blank">GitHub</a>
         </div>
       <%_ } %>
       <%_ if (link.type === 'twitter') { -%>
@@ -69,7 +69,7 @@
               fill="#FBFBFA"
             />
           </svg>
-          <a href="#" target="_blank">Twitter</a>
+          <a href=<%= link.URL %> target="_blank">Twitter</a>
         </div>
       <%_ } %>
       <%_ if (link.type === 'web') { -%>
@@ -86,7 +86,7 @@
               fill="#FBFBFA"
             />
           </svg>
-          <a href="#" target="_blank">Web</a>
+          <a href=<%= link.URL %> target="_blank">Web</a>
         </div>
       <%_ } %>
       <%_ if (link.type === 'otros') { -%>
@@ -115,7 +115,7 @@
               fill="#FBFBFA"
             />
           </svg>
-          <a href="#" target="_blank">Otros</a>
+          <a href=<%= link.URL %> target="_blank">Otros</a>
         </div>
       <%_ } %>
     <%_ } %>
