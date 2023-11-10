@@ -1,16 +1,8 @@
 import React from 'react';
 import { ExportHTMLSettings } from '@lemoncode/manfred2html';
 import { useUserChoiceContext } from '@/core';
-import {
-  Button,
-  Footer,
-  Header,
-  Modal,
-  Navbar,
-  ExportConfig,
-  AlertMessage,
-  CodeMirrorComponent,
-} from '@/common-app/components';
+import { Button, Footer, Header, Modal, Navbar, AlertMessage, CodeMirrorComponent } from '@/common-app/components';
+import { ExportConfig } from './components/export-config';
 import * as classes from './template-export.styles';
 
 interface Props {

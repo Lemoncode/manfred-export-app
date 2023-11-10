@@ -1,10 +1,8 @@
 import React from 'react';
-
+import { basicSetup } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 import { json } from '@codemirror/lang-json';
-import { basicSetup } from 'codemirror';
 import { EditorView, ViewUpdate, placeholder } from '@codemirror/view';
-
 import { codeMirrorTheme } from './codemirror.styles';
 
 interface Props {

@@ -34,6 +34,11 @@
       "import": "./src/doc-parts/studies-section/index.ts",
       "require": "./src/doc-parts/studies-section/index.ts",
       "types": "./src/doc-parts/studies-section/index.ts"
+    },
+    "./model": {
+      "import": "./src/model/index.ts",
+      "require": "./src/model/index.ts",
+      "types": "./src/model/index.ts"
     }
   },
   "scripts": {

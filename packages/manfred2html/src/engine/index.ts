@@ -1,57 +1,20 @@
 import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
-import {
-  generateHtmlDocumentStart,
-  generateHtmlDocumentEnd,
-  generateHeaderElementStart,
-  generateHeaderElementEnd,
-  generateAboutMeSection,
-  generateAsideElementStart,
-  generateAsideElementEnd,
-  generateRelevantsLinksSection,
-  generateLanguageSection,
-  generateHardSkillsSection,
-  generateSoftSkillsSection,
-  generateMainElementStart,
-  generateMainElementEnd,
-  generateExperiencesSection,
-  generateStudiesSection,
-} from './html-parts';
+import { mapExportHTMLSettingsToSettings } from '@/mappers';
+import { exportManfredJSonToHTMLTemplateA } from './template-a';
+import { exportManfredJSonToHTMLTemplateB } from './template-b';
 
-export const exportManfredJSonToHTML = (
+export const exportHTMLTemplate = (
   manfredJsonContent: ManfredAwesomicCV,
   exportHTMLSettings: ExportHTMLSettings
 ): string => {
-  const htmlDocumentStart = generateHtmlDocumentStart(exportHTMLSettings.primaryColor);
-  const htmlDocumentEnd = generateHtmlDocumentEnd();
-  const headerElementStart = generateHeaderElementStart();
-  const headerElementEnd = generateHeaderElementEnd();
-  const aboutMeSection = generateAboutMeSection(manfredJsonContent);
-  const asideElementStart = generateAsideElementStart();
-  const asideElementEnd = generateAsideElementEnd();
-  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent);
-  const mainElementStart = generateMainElementStart();
-  const mainElementEnd = generateMainElementEnd();
-  const languageSection = generateLanguageSection(manfredJsonContent);
-  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
-  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent);
-  const experienceSection = generateExperiencesSection(manfredJsonContent);
-  const studiesSection = generateStudiesSection(manfredJsonContent);
+  const settings = mapExportHTMLSettingsToSettings(exportHTMLSettings);
 
-  return `
-    ${htmlDocumentStart}
-      ${headerElementStart}
-        ${aboutMeSection}
-      ${headerElementEnd}
-      ${asideElementStart}
-        ${relevantsLinksSection}
-        ${languageSection}
-        ${hardSkillsSection}
-        ${softSkillsSection}
-      ${asideElementEnd}
-      ${mainElementStart}
-        ${experienceSection}
-        ${studiesSection}
-      ${mainElementEnd}
-    ${htmlDocumentEnd}
-  `;
+  switch (settings.template) {
+    case 'Moderno elegante':
+      return exportManfredJSonToHTMLTemplateA(manfredJsonContent, settings);
+    case 'Limpio y organizado':
+      return exportManfredJSonToHTMLTemplateB(manfredJsonContent, settings);
+    default:
+      throw new Error('Template not found');
+  }
 };

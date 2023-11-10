@@ -1,0 +1,10 @@
+<%_ if (hardSkillsCollection && hardSkillsCollection.length !== 0) { -%>
+    <div class="aside__section">
+        <h3><%- labels.HARD_SKILLS_HEADING %></h3>
+      <ul class="aside__section__list-items">
+        <%_ for (const item of hardSkillsCollection) { -%>
+          <li><%- item.skill.name %></li>
+        <%_ } -%>
+      </ul>
+    </div>
+  <%_ } -%>
