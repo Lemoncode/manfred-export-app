@@ -1,0 +1,104 @@
+/* estos estilos irán en el html */
+
+:root {
+  /* spacing */
+  --space-base: 4px;
+  --space-2: calc(var(--space-base) / 2);
+  --space-8: calc(var(--space-base) * 2);
+  --space-12: calc(var(--space-base) * 3);
+  --space-16: calc(var(--space-base) * 4);
+  --space-24: calc(var(--space-base) * 6);
+  --space-32: calc(var(--space-base) * 8);
+  --space-48: calc(var(--space-base) * 12);
+  --space-64: calc(var(--space-base) * 16);
+
+  /* colors */
+  --primary-50: #eaf3f3;
+  --primary-100: #bcd9db;
+  --primary-200: #9cc7ca;
+  --primary-300: #6faeb1;
+  --primary-400: #539ea2;
+  --primary-500: #28868b;
+  --primary-600: #247a7e;
+  --primary-700: #247a7e;
+  --primary-800: #164a4c;
+  --primary-900: #11383a;
+
+  /* text */
+  --light-light-50: #fefefe;
+
+  /* background */
+  --info-info-50: #fbfbfa;
+
+  /*font-family*/
+  --ff-body: 'Poppins', sans-serif;
+  --ff-title: 'Bai Jamjuree', sans-serif;
+
+  /*font-sizes*/
+  --fs-xs: 10px;
+  --fs-s: 12px;
+  --fs-m: 14px;
+  --fs-l: 16px;
+  --fs-xl: 20px;
+  --fs-xxl: 32px;
+
+  /*font-wight*/
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--info-info-50);
+  color: var(--primary-900);
+  font-family: var(--ff-body);
+  line-height: 166.667%;
+  font-size: var(--fs-s);
+  min-width: 428px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  padding: 16px;
+}
+
+.title {
+  font-size: var(--fs-xl);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-bold);
+  color: var(--primary-500);
+  margin-bottom: var(--space-16);
+}
+.links__container {
+  display: flex;
+  flex-direction: column;
+  /*figma spase 8, cambio4*/
+  gap: var(--space-base);
+  padding-inline: var(--space-8);
+}
+.links__item {
+  color: var(--primary-400);
+  font-size: var(--fs-xs);
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+.links__item svg {
+  justify-self: center;
+}
