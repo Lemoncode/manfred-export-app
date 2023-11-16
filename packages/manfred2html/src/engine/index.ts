@@ -1,7 +1,7 @@
 import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
 import { mapExportHTMLSettingsToSettings } from '@/mappers';
-import { exportManfredJSonToHTMLTemplateA } from './template-a';
-import { exportManfredJSonToHTMLTemplateB } from './template-b';
+import { exportManfredJSonToCVModernoHTML } from './cv-moderno';
+import { exportManfredJSonToCVLimpioHTML } from './cv-limpio-organizado';
 
 export const exportHTMLTemplate = (
   manfredJsonContent: ManfredAwesomicCV,
@@ -11,9 +11,9 @@ export const exportHTMLTemplate = (
 
   switch (settings.template) {
     case 'Moderno elegante':
-      return exportManfredJSonToHTMLTemplateA(manfredJsonContent, settings);
+      return exportManfredJSonToCVModernoHTML(manfredJsonContent, settings);
     case 'Limpio y organizado':
-      return exportManfredJSonToHTMLTemplateB(manfredJsonContent, settings);
+      return exportManfredJSonToCVLimpioHTML(manfredJsonContent, settings);
     default:
       throw new Error('Template not found');
   }

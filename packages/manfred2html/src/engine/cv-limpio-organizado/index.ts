@@ -18,7 +18,7 @@ import {
   generateStudiesSection,
 } from './html-parts';
 
-export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
+export const exportManfredJSonToCVLimpioHTML = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
   const htmlDocumentStart = generateHtmlDocumentStart(settings.colorTheme);
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
