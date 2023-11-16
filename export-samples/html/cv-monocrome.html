@@ -6,22 +6,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;700&family=Poppins:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <title>CV Monocrome</title>
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <header class="container">
-      <h1>david <br /><span>bonilla fuertes</span></h1>
-
-      <p>Fundador en Manfred / C-Level Executive</p>
+    <div class="background"></div>
+    <header class="container header">
+      <h1 class="header__title">David <br /><span>bonilla fuertes</span></h1>
+      <p class="header__subtitle">Fundador en Manfred / C-Level Executive</p>
     </header>
-    <main class="container">
+    <main class="container section">
       <div class="column column-left"></div>
       <div class="column column-right"></div>
-      <section class="links">
+      <div>
+        <img src="" alt="" />
+      </div>
+      <section class="section links">
         <h2 class="title">Mis enlaces</h2>
         <div class="links__container">
           <a class="links__item" href="https://linkedin.com/in/david-bonilla" target="_blank">
@@ -102,22 +105,74 @@
           >
         </div>
       </section>
-      <section class="about">
+      <section class="section about">
         <h2 class="title">Sobre mi</h2>
+        <p>
+          Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor
+          -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo
+          que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en
+          la gestión de equipos y proyectos de construcción de activos digitales. Me apasiona contribuir en todo el
+          ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a
+          clientes, y también involucrarme en la comercialización del mismo. Me gusta trabajar con gente y para la
+          gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les
+          impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el
+          conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos
+          de usuarios y conferencias técnicas; y, a veces, organizándolos.
+        </p>
       </section>
-      <section class="hard-skills">
+      <section class="section hard-skills">
         <h2 class="title">Habilidades</h2>
+        <ul class="hard-skills__list">
+          <li class="chip chip-primary">NodeJs</li>
+          <li class="chip chip-primary">Git</li>
+          <li class="chip chip-primary">JavaScript</li>
+          <li class="chip chip-primary">Adobe creative claud</li>
+          <li class="chip chip-primary">Github</li>
+        </ul>
       </section>
-      <section class="soft-skills">
+      <section class="section soft-skills">
         <h2 class="title">Competencias</h2>
+        <ul class="soft-skills__list">
+          <li>Adaptabilidad al cambio</li>
+          <li>Aprendizaje continuo</li>
+          <li>Gestión de equipo</li>
+        </ul>
       </section>
-      <section class="languages">
+      <section class="section languages">
         <h2 class="title">Idiomas</h2>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Español</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-4"></div>
+            <figcaption class="language__caption">Nativo/Bilingüe</figcaption>
+          </figure>
+        </div>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Inglés</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-3"></div>
+            <figcaption class="language__caption">Fluido</figcaption>
+          </figure>
+        </div>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Alemán</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-2"></div>
+            <figcaption class="language__caption">Intermedio</figcaption>
+          </figure>
+        </div>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Gallego</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-1"></div>
+            <figcaption class="language__caption">Básico</figcaption>
+          </figure>
+        </div>
       </section>
-      <section class="experience">
+      <section class="section experience">
         <h2 class="title">Experiencia</h2>
       </section>
-      <section class="education">
+      <section class="section education">
         <h2 class="title">Educación</h2>
       </section>
     </main>
