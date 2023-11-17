@@ -345,6 +345,9 @@ body {
   background-color: var(--primary-50);
   border-radius: 16px;
   padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
 }
 .experience__date {
   font-family: var(--ff-title);
@@ -357,6 +360,7 @@ body {
   font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
   color: var(--primary-600);
+  line-height: 1.3;
 }
 .experience__company {
   font-size: var(--fs-l);
@@ -377,6 +381,7 @@ body {
   font-size: var(--fs-m);
   font-weight: var(--fw-medium);
   color: var(--primary-600);
+  margin-bottom: var(--space-16);
 }
 .experience__tools-list {
   padding: 0;
