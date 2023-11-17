@@ -1,0 +1,211 @@
+/* css vars */
+:root {
+  /* spacing */
+  --spacing_base: 4px;
+  --spacing_2: calc(var(--spacing_base) / 2);
+  --spacing_8: calc(var(--spacing_base) * 2);
+  --spacing_12: calc(var(--spacing_base) * 3);
+  --spacing_16: calc(var(--spacing_base) * 4);
+  --spacing_24: calc(var(--spacing_base) * 6);
+  --spacing_32: calc(var(--spacing_base) * 8);
+  --spacing_48: calc(var(--spacing_base) * 12);
+  --spacing_64: calc(var(--spacing_base) * 16);
+
+  /* colors */
+  --primary_color: #11383a; /* only this color can be changed  */
+  --gray_color_900: #5c5a58;
+  --gray_color_600: #dad6d1;
+  --white_color: #f4f2f1;
+  --black_color: #0d1418;
+  --gray_color_800: #787673;
+}
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: var(--primary_color);
+  font-style: normal;
+  background-color: white;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--spacing_32) var(--spacing_24);
+}
+header {
+  color: var(--primary_color);
+  font-family: Montserrat;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_12);
+}
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+h2 {
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  word-wrap: break-word;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing_48) 0;
+  gap: var(--spacing_12);
+}
+.aside__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_8);
+}
+
+.aside__container__item {
+  font-size: 11px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+  color: var(--gray_color_900);
+  display: flex;
+  gap: var(--spacing_8);
+}
+.aside__container__item a {
+  text-decoration: none;
+  color: inherit;
+}
+h3 {
+  color: var(--primary_color);
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  word-wrap: break-word;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+hr {
+  margin-top: var(--spacing_24);
+  margin-bottom: var(--spacing_24);
+  border-color: var(--gray_color_600);
+}
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_12);
+}
+
+.section__content {
+  color: var(--gray_color_900);
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 16px;
+  word-wrap: break-word;
+}
+
+/* languages section */
+.section__languages {
+  color: var(--gray_color_900);
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 16px;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_12);
+  padding: 0 var(--spacing_8);
+}
+.section__languages__item {
+  display: flex;
+  align-items: center;
+}
+
+.section__languages__item div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_8);
+  width: 120px; /* revisar  */
+}
+
+.section__languages__sub {
+  color: var(--gray_color_600);
+  font-size: 10px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+/* habilities section */
+ul {
+  padding-left: var(--spacing_24);
+}
+li:not(:last-child) {
+  margin-bottom: var(--spacing_8);
+}
+
+.section__education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_12);
+}
+
+.section__education div p:first-child {
+  color: #9b9894;
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 16px;
+  word-wrap: break-word;
+}
+
+.section__education div p:nth-child(2) {
+  color: var(--primary_color);
+  font-size: 12px;
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 16px;
+  word-wrap: break-word;
+}
+
+/* experiencie section */
+.section__experiencie {
+  display: flex;
+  flex-direction: column;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_12);
+}
+
+article header {
+  display: flex;
+  gap: var(--spacing_base);
+}
+
+article header h3 {
+  text-transform: capitalize;
+}
+
+.separator::before {
+  content: '';
+  margin-right: var(--spacing_8);
+}
+.separator::after {
+  content: '';
+  margin-left: var(--spacing_8);
+}
