@@ -6,7 +6,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,900;1,8..60,600&display=swap"
+      href="https://fonts.cdnfonts.com/css/source-serif-pro"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <title>CV Manfred Export</title>
@@ -33,7 +40,12 @@
         --manfred-light: #f8f7f3;
         --manfred-light-green: #78d549;
         --manfred-cream: #ebe8df;
-        --manfred-gradient: linear-gradient(90deg, #1e0b6e 0%, #3ba0b7 84.74%, #5ecabf 95.24%);
+        --manfred-gradient: linear-gradient(
+          90deg,
+          #1e0b6e 0%,
+          #3ba0b7 84.74%,
+          #5ecabf 95.24%
+        );
       }
 
       /* General styles */
@@ -43,7 +55,7 @@
         box-sizing: border-box;
       }
       html {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 15px;
         color: var(--manfred-dark);
         background-color: var(--manfred-light);
@@ -54,25 +66,30 @@
         min-height: 100vh;
         padding: var(--spacing_64) var(--spacing_32);
       }
+
       h1 {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+        text-transform: capitalize;
+        font-family: "Source Serif Pro", sans-serif;
+        font-size: 75px;
+        font-weight: 900;
+        letter-spacing: 1.23px;
         background: var(--manfred-gradient);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-family: 'Source Serif 4', serif;
-        font-size: 75px;
-        letter-spacing: 1.125px;
-        display: flex;
-        text-transform: capitalize;
-        flex-direction: column;
       }
-      h1 > span {
+
+      .surname {
         font-size: 48px;
         -webkit-text-fill-color: var(--manfred-blue);
         letter-spacing: -0.72px;
+        text-transform: capitalize;
       }
       h2 {
-        font-family: 'Source Serif 4', serif;
+        font-family: "Source Serif Pro", sans-serif;
         font-size: 28px;
         font-weight: 900;
         letter-spacing: 1.4px;
@@ -121,7 +138,7 @@
       }
       .job-title {
         color: var(--manfred-dark);
-        font-family: 'Source Serif 4', serif;
+        font-family: "Source Serif Pro", sans-serif;
         font-size: 24px;
         font-style: italic;
         font-weight: 600;
@@ -280,7 +297,7 @@
       }
 
       .tech__tools__heading {
-        font-family: 'Source Serif 4', serif;
+        font-family: "Source Serif Pro", sans-serif;
         font-size: 18px;
         font-weight: 700;
         line-height: 24px;
@@ -317,6 +334,12 @@
           min-width: 300px;
         }
       }
+
+      @media (min-width: 1024px) {
+        html > body {
+          padding: var(--spacing_32) var(--spacing_64);
+        }
+      }
     </style>
   </head>
   <body>
@@ -324,14 +347,27 @@
       <img src="./assets/Ellipse 14.svg" alt="foto cv" />
       <section class="header__content">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="10" viewBox="0 0 64 10" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="10"
+            viewBox="0 0 64 10"
+            fill="none"
+          >
             <path d="M1.10269e-06 5L64 5" stroke="#3BA0B7" stroke-width="9" />
           </svg>
-          <h1>david <br /><span>bonilla fuertes</span></h1>
+          <h1>david</h1>
+          <h2 class="surname">bonilla fuertes</h2>
           <p class="job-title">Fundador en Manfred / C-Level Executive</p>
         </div>
         <div class="header__content__address">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="24"
+            viewBox="0 0 18 24"
+            fill="none"
+          >
             <g clip-path="url(#clip0_1762_1661)">
               <path
                 d="M10.1109 23.4C12.5156 20.3906 18 13.0969 18 9C18 4.03125 13.9688 0 9 0C4.03125 0 0 4.03125 0 9C0 13.0969 5.48438 20.3906 7.88906 23.4C8.46562 24.1172 9.53438 24.1172 10.1109 23.4ZM14.2969 6.79688L8.29688 12.7969C7.85625 13.2375 7.14375 13.2375 6.70781 12.7969L3.70312 9.79688C3.2625 9.35625 3.2625 8.64375 3.70312 8.20781C4.14375 7.77188 4.85625 7.76719 5.29219 8.20781L7.49531 10.4109L12.7031 5.20312C13.1438 4.7625 13.8562 4.7625 14.2922 5.20312C14.7281 5.64375 14.7328 6.35625 14.2922 6.79219L14.2969 6.79688Z"
@@ -347,7 +383,13 @@
           <p>A Coruña, España</p>
         </div>
         <div class="header__content__links">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
             <g clip-path="url(#clip0_1745_1632)">
               <path
                 d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C5.06588 7.43313 4.79739 7.37979 4.54691 7.27604C4.29642 7.17229 4.06886 7.02015 3.87724 6.82835C3.68562 6.63654 3.5337 6.40883 3.43019 6.15825C3.32668 5.90766 3.27361 5.63912 3.274 5.368C3.2742 4.95978 3.39544 4.56078 3.6224 4.22147C3.84936 3.88216 4.17184 3.61777 4.54907 3.46173C4.92629 3.30569 5.34131 3.26502 5.74165 3.34485C6.14198 3.42469 6.50966 3.62144 6.79817 3.91024C7.08669 4.19903 7.28309 4.5669 7.36254 4.96731C7.44198 5.36773 7.40091 5.78271 7.2445 6.15978C7.0881 6.53685 6.8234 6.85908 6.48387 7.08571C6.14433 7.31234 5.74522 7.4332 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z"
@@ -360,7 +402,13 @@
               </clipPath>
             </defs>
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
             <g clip-path="url(#clip0_1745_1636)">
               <path
                 d="M12 0.296875C5.37 0.296875 0 5.66988 0 12.2969C0 17.5999 3.438 22.0969 8.205 23.6819C8.805 23.7949 9.025 23.4239 9.025 23.1049C9.025 22.8199 9.015 22.0649 9.01 21.0649C5.672 21.7889 4.968 19.4549 4.968 19.4549C4.422 18.0699 3.633 17.6999 3.633 17.6999C2.546 16.9559 3.717 16.9709 3.717 16.9709C4.922 17.0549 5.555 18.2069 5.555 18.2069C6.625 20.0419 8.364 19.5119 9.05 19.2049C9.158 18.4289 9.467 17.8999 9.81 17.5999C7.145 17.2999 4.344 16.2679 4.344 11.6699C4.344 10.3599 4.809 9.28988 5.579 8.44988C5.444 8.14688 5.039 6.92688 5.684 5.27388C5.684 5.27388 6.689 4.95188 8.984 6.50388C9.944 6.23688 10.964 6.10488 11.984 6.09888C13.004 6.10488 14.024 6.23688 14.984 6.50388C17.264 4.95188 18.269 5.27388 18.269 5.27388C18.914 6.92688 18.509 8.14688 18.389 8.44988C19.154 9.28988 19.619 10.3599 19.619 11.6699C19.619 16.2799 16.814 17.2949 14.144 17.5899C14.564 17.9499 14.954 18.6859 14.954 19.8099C14.954 21.4159 14.939 22.7059 14.939 23.0959C14.939 23.4109 15.149 23.7859 15.764 23.6659C20.565 22.0919 24 17.5919 24 12.2969C24 5.66988 18.627 0.296875 12 0.296875Z"
@@ -373,19 +421,37 @@
               </clipPath>
             </defs>
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
             <path
               d="M0.048762 0.640625L7.77054 10.9654L0 19.3598H1.74884L8.55193 12.0104L14.0486 19.3598H20L11.8438 8.45433L19.0765 0.640625H17.3277L11.0624 7.40935L6.00012 0.640625H0.048762ZM2.62056 1.92882H5.35462L17.4278 18.0714H14.6937L2.62056 1.92882Z"
               fill="#3BA0B7"
             />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="20"
+            viewBox="0 0 24 20"
+            fill="none"
+          >
             <path
               d="M21.742 10.4387C23.8608 8.31996 23.8608 4.88871 21.742 2.76996C19.867 0.89496 16.912 0.65121 14.7558 2.19246L14.6958 2.23371C14.1558 2.61996 14.032 3.36996 14.4183 3.90621C14.8045 4.44246 15.5545 4.56996 16.0908 4.18371L16.1508 4.14246C17.3545 3.28371 19.0008 3.41871 20.0433 4.46496C21.2245 5.64621 21.2245 7.55871 20.0433 8.73996L15.8358 12.955C14.6545 14.1362 12.742 14.1362 11.5608 12.955C10.5145 11.9087 10.3795 10.2625 11.2383 9.06246L11.2795 9.00246C11.6658 8.46246 11.5383 7.71246 11.002 7.32996C10.4658 6.94746 9.71203 7.07121 9.32953 7.60746L9.28828 7.66746C7.74328 9.81996 7.98703 12.775 9.86203 14.65C11.9808 16.7687 15.412 16.7687 17.5308 14.65L21.742 10.4387ZM2.25703 9.56121C0.138281 11.68 0.138281 15.1112 2.25703 17.23C4.13203 19.105 7.08703 19.3487 9.24328 17.8075L9.30328 17.7662C9.84328 17.38 9.96703 16.63 9.58078 16.0937C9.19453 15.5575 8.44453 15.43 7.90828 15.8162L7.84828 15.8575C6.64453 16.7162 4.99828 16.5812 3.95578 15.535C2.77453 14.35 2.77453 12.4375 3.95578 11.2562L8.16328 7.04496C9.34453 5.86371 11.257 5.86371 12.4383 7.04496C13.4845 8.09121 13.6195 9.73746 12.7608 10.9412L12.7195 11.0012C12.3333 11.5412 12.4608 12.2912 12.997 12.6737C13.5333 13.0562 14.287 12.9325 14.6695 12.3962L14.7108 12.3362C16.2558 10.18 16.012 7.22496 14.137 5.34996C12.0183 3.23121 8.58703 3.23121 6.46828 5.34996L2.25703 9.56121Z"
               fill="#3BA0B7"
             />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="20"
+            viewBox="0 0 24 20"
+            fill="none"
+          >
             <path
               d="M21.742 10.4387C23.8608 8.31996 23.8608 4.88871 21.742 2.76996C19.867 0.89496 16.912 0.65121 14.7558 2.19246L14.6958 2.23371C14.1558 2.61996 14.032 3.36996 14.4183 3.90621C14.8045 4.44246 15.5545 4.56996 16.0908 4.18371L16.1508 4.14246C17.3545 3.28371 19.0008 3.41871 20.0433 4.46496C21.2245 5.64621 21.2245 7.55871 20.0433 8.73996L15.8358 12.955C14.6545 14.1362 12.742 14.1362 11.5608 12.955C10.5145 11.9087 10.3795 10.2625 11.2383 9.06246L11.2795 9.00246C11.6658 8.46246 11.5383 7.71246 11.002 7.32996C10.4658 6.94746 9.71203 7.07121 9.32953 7.60746L9.28828 7.66746C7.74328 9.81996 7.98703 12.775 9.86203 14.65C11.9808 16.7687 15.412 16.7687 17.5308 14.65L21.742 10.4387ZM2.25703 9.56121C0.138281 11.68 0.138281 15.1112 2.25703 17.23C4.13203 19.105 7.08703 19.3487 9.24328 17.8075L9.30328 17.7662C9.84328 17.38 9.96703 16.63 9.58078 16.0937C9.19453 15.5575 8.44453 15.43 7.90828 15.8162L7.84828 15.8575C6.64453 16.7162 4.99828 16.5812 3.95578 15.535C2.77453 14.35 2.77453 12.4375 3.95578 11.2562L8.16328 7.04496C9.34453 5.86371 11.257 5.86371 12.4383 7.04496C13.4845 8.09121 13.6195 9.73746 12.7608 10.9412L12.7195 11.0012C12.3333 11.5412 12.4608 12.2912 12.997 12.6737C13.5333 13.0562 14.287 12.9325 14.6695 12.3962L14.7108 12.3362C16.2558 10.18 16.012 7.22496 14.137 5.34996C12.0183 3.23121 8.58703 3.23121 6.46828 5.34996L2.25703 9.56121Z"
               fill="#3BA0B7"
@@ -396,25 +462,43 @@
     </header>
     <main>
       <section class="main__section__header">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="6"
+          viewBox="0 0 32 6"
+          fill="none"
+        >
           <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
         </svg>
         <h2>Sobre mi</h2>
         <p>
-          Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor
-          -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo
-          que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en
-          la gestión de equipos y proyectos de construcción de activos digitales. Me apasiona contribuir en todo el
-          ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a
-          clientes, y también involucrarme en la comercialización del mismo. Me gusta trabajar con gente y para la
-          gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les
-          impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el
-          conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos
-          de usuarios y conferencias técnicas; y, a veces, organizándolos.
+          Llevo casi dos décadas desarrollando software, ocupando puestos a lo
+          largo de toda la cadena de valor -programacion, diseño de producto,
+          marketing, ventas y gestión de equipos, departamentos y empresas- pero
+          creo que el rol donde se cruzan mi vocación, mis habilidades y las
+          necesidades de la mayoría de las empresas es en la gestión de equipos
+          y proyectos de construcción de activos digitales. Me apasiona
+          contribuir en todo el ciclo de vida de un producto o servicio
+          informático, desde la definición hasta el mantenimiento o soporte a
+          clientes, y también involucrarme en la comercialización del mismo. Me
+          gusta trabajar con gente y para la gente. Como responsable de equipos,
+          mi principal prioridad siempre es eliminar cualquier problema que les
+          impida alcanzar todo su potencial. También procuro devolver a la
+          Comunidad informática parte del valor y el conocimiento que me han
+          aportado a lo largo de mi carrera profesional, dando charlas o
+          colaborando con grupos de usuarios y conferencias técnicas; y, a
+          veces, organizándolos.
         </p>
       </section>
       <section class="main__section__header">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="6"
+          viewBox="0 0 32 6"
+          fill="none"
+        >
           <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
         </svg>
         <h2>Idiomas</h2>
@@ -422,11 +506,29 @@
           <li>
             Español
             <div class="main__lang__level">
-              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
-                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
-                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
-                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#78D549" />
-                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#78D549" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="137"
+                height="29"
+                viewBox="0 0 137 29"
+                fill="none"
+              >
+                <path
+                  d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M108.158 6.10749L137 0V29H108.158V6.10749Z"
+                  fill="#78D549"
+                />
               </svg>
               <p>nativo/bilingüe</p>
             </div>
@@ -434,11 +536,29 @@
           <li>
             Inglés
             <div class="main__lang__level">
-              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
-                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
-                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
-                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#78D549" />
-                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="137"
+                height="29"
+                viewBox="0 0 137 29"
+                fill="none"
+              >
+                <path
+                  d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M108.158 6.10749L137 0V29H108.158V6.10749Z"
+                  fill="#EBE8DF"
+                />
               </svg>
               <p>fluido</p>
             </div>
@@ -446,11 +566,29 @@
           <li>
             Alemán
             <div class="main__lang__level">
-              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
-                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
-                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
-                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#EBE8DF" />
-                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="137"
+                height="29"
+                viewBox="0 0 137 29"
+                fill="none"
+              >
+                <path
+                  d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z"
+                  fill="#EBE8DF"
+                />
+                <path
+                  d="M108.158 6.10749L137 0V29H108.158V6.10749Z"
+                  fill="#EBE8DF"
+                />
               </svg>
               <p>intermedio</p>
             </div>
@@ -458,11 +596,29 @@
           <li>
             Gallego
             <div class="main__lang__level">
-              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
-                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
-                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#EBE8DF" />
-                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#EBE8DF" />
-                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="137"
+                height="29"
+                viewBox="0 0 137 29"
+                fill="none"
+              >
+                <path
+                  d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z"
+                  fill="#78D549"
+                />
+                <path
+                  d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z"
+                  fill="#EBE8DF"
+                />
+                <path
+                  d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z"
+                  fill="#EBE8DF"
+                />
+                <path
+                  d="M108.158 6.10749L137 0V29H108.158V6.10749Z"
+                  fill="#EBE8DF"
+                />
               </svg>
               <p>básico</p>
             </div>
@@ -471,20 +627,35 @@
       </section>
       <section class="main__skillset">
         <div class="main__section__header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="6"
+            viewBox="0 0 32 6"
+            fill="none"
+          >
             <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
           </svg>
           <h2>Competencias</h2>
         </div>
         <ul class="ul__technologies">
           <li class="li__technologies">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
               <g style="mix-blend-mode: luminosity">
                 <path
                   d="M5.20547 31.1379L2.46973 0.454102H32.5304L29.7916 31.1332L17.4817 34.5457L5.20547 31.1379Z"
                   fill="#E44D26"
                 />
-                <path d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z" fill="#F16529" />
+                <path
+                  d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z"
+                  fill="#F16529"
+                />
                 <path
                   d="M17.5001 14.3429H12.5202L12.1762 10.4891H17.5001V6.72607H8.06348L8.15371 7.73561L9.07848 18.1063H17.5001V14.3429ZM17.5001 24.1164L17.4834 24.1211L13.2924 22.989L13.0247 19.9881H9.24664L9.77383 25.8968L17.4829 28.0367L17.5001 28.0321V24.1164Z"
                   fill="#EBEBEB"
@@ -498,7 +669,13 @@
             HTML
           </li>
           <li class="li__technologies">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
               <g style="mix-blend-mode: luminosity">
                 <path
                   d="M34.1253 14.2461C32.9495 13.5625 31.3909 13.4805 30.0784 13.8633C29.9143 12.4414 28.9846 11.2109 27.8909 10.3359L27.4534 9.98047L27.0706 10.418C26.3323 11.2656 26.1135 12.6875 26.2229 13.7813C26.3049 14.5742 26.551 15.3945 27.0432 16.0508C26.6604 16.2695 26.2503 16.5703 25.8674 16.707C25.1018 16.9805 24.2542 17.2539 23.4338 17.2539H21.6018V13.3984H18.0471V6.5625H13.9456V9.84375H7.10963V13.3984H3.55494V17.2266H0.492444L0.437757 17.6367C0.301038 19.3867 0.519788 21.082 1.25807 22.6953L1.55885 23.2969L1.58619 23.3516C3.74635 27.0156 7.51979 28.5469 11.6487 28.5469C19.6331 28.5469 26.2229 24.9648 29.2307 17.4453C31.2542 17.5547 33.3323 16.9531 34.3167 15.0117L34.5628 14.5195L34.1253 14.2461ZM7.65651 10.6641H10.3909V13.6719H7.65651V10.6641ZM11.2385 22.75C11.2385 23.2148 10.8557 23.5977 10.3909 23.5977C9.92604 23.5977 9.54323 23.2148 9.54323 22.75C9.54323 22.2852 9.92604 21.9023 10.3909 21.9023C10.8557 21.9297 11.2385 22.2852 11.2385 22.75ZM7.65651 14.2188H10.3909V17.2266H7.65651V14.2188ZM4.10182 14.2188H7.10963V17.2266H4.10182V14.2188ZM11.676 27.9453C7.35573 27.918 5.03151 26.4688 3.11744 24.5547C3.69166 24.582 4.23854 24.6094 4.73073 24.6094C5.16823 24.6094 5.60573 24.6094 6.01588 24.582C7.08229 24.5273 8.01197 24.3906 8.7776 24.1719C9.40651 25.6211 10.5549 26.9609 12.6057 27.9453H11.676ZM13.9456 17.2266H10.9378V14.2188H13.9456V17.2266ZM13.9456 13.6719H10.9378V10.6641H13.9456V13.6719ZM17.5003 17.2266H14.4924V14.2188H17.5003V17.2266ZM17.5003 13.6719H14.4924V10.6641H17.5003V13.6719ZM17.5003 10.1172H14.4924V7.10938H17.5003V10.1172ZM21.0549 17.2266H18.0471V14.2188H21.0549V17.2266ZM10.6096 22.2031C10.5549 22.1758 10.4729 22.1484 10.3909 22.1484C10.0628 22.1484 9.78932 22.4219 9.78932 22.75C9.78932 23.0781 10.0628 23.3516 10.3909 23.3516C10.719 23.3516 10.9924 23.0781 10.9924 22.75C10.9924 22.668 10.9651 22.5859 10.9378 22.5312C10.8831 22.6133 10.8284 22.668 10.719 22.668C10.5823 22.668 10.4729 22.5586 10.4729 22.4219C10.5003 22.3125 10.5549 22.2305 10.6096 22.2031Z"
@@ -509,7 +686,13 @@
             Docker
           </li>
           <li class="li__technologies">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
               <g style="mix-blend-mode: luminosity">
                 <path
                   d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -524,9 +707,21 @@
             React
           </li>
           <li class="li__technologies">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-              <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <g
+                style="mix-blend-mode: luminosity"
+                clip-path="url(#clip0_1756_2013)"
+              >
+                <path
+                  d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                  fill="#F0DB4F"
+                />
                 <path
                   d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                   fill="#323330"
@@ -541,9 +736,21 @@
             JavaScript
           </li>
           <li class="li__technologies">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-              <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2004)">
-                <path d="M0 35H35V0H0V35Z" fill="url(#paint0_linear_1756_2004)" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+            >
+              <g
+                style="mix-blend-mode: luminosity"
+                clip-path="url(#clip0_1756_2004)"
+              >
+                <path
+                  d="M0 35H35V0H0V35Z"
+                  fill="url(#paint0_linear_1756_2004)"
+                />
                 <path
                   d="M27.5124 10.8477C25.7483 9.08353 23.375 8.10693 20.8653 8.10693C18.3555 8.10693 15.9823 9.08353 14.2181 10.8477L14.0291 11.0367C13.5775 10.9632 13.168 10.9212 12.7165 10.9212C10.6162 10.9212 8.57904 11.7508 7.07739 13.284C3.95858 16.4028 3.95858 21.4433 7.07739 24.5621C8.57904 26.0637 10.5742 26.8933 12.7165 26.8933H21.0648C23.543 26.8513 25.8428 25.8747 27.5649 24.1525C31.1983 20.4667 31.1983 14.4916 27.5124 10.8477ZM12.7375 25.1711C11.0468 25.1711 9.50313 24.4571 8.33752 23.2494C5.89077 20.8027 5.89077 16.8648 8.33752 14.4496C9.50313 13.284 11.0783 12.6119 12.7375 12.6119H12.7795C13.1155 12.6119 13.378 12.6539 13.6826 12.6854C14.0186 12.7589 14.3231 12.8009 14.6591 12.9059C15.2577 13.0949 15.8248 13.3995 16.3078 13.7355C16.5283 13.9245 16.8014 14.0715 16.9799 14.3026L17.1689 14.4916L19.7207 17.0433C20.0567 17.3794 20.0567 17.9044 19.7207 18.2825C19.5316 18.4715 19.3426 18.545 19.1221 18.545C18.9016 18.545 18.6705 18.4715 18.5235 18.2825L16.4233 16.1822L15.9718 15.7307C15.8983 15.6572 15.8248 15.6152 15.7828 15.5417C15.1842 15.0166 14.4701 14.6806 13.6826 14.5231C13.42 14.4496 13.1155 14.4496 12.853 14.4496H12.7375C11.5718 14.4916 10.5217 14.9431 9.69215 15.7622C7.92798 17.5264 7.92798 20.3512 9.69215 22.1153C10.5532 22.9764 11.6453 23.428 12.8845 23.428H13.672L14.4281 24.142C14.8062 24.5201 15.1842 24.8981 15.6357 25.1606H12.7375V25.1711ZM26.3048 22.9134C25.5172 23.701 24.5721 24.2996 23.522 24.6776C23.186 24.7931 22.8815 24.8666 22.5454 24.9821C22.0519 25.0976 21.5268 25.1711 21.0018 25.1711H20.8548C19.0486 25.1711 17.3579 24.5726 16.0033 23.4385C15.8143 23.2915 15.6252 23.1024 15.4362 22.9449L11.8239 19.3326C11.4878 18.9965 11.4878 18.4715 11.8239 18.0934C12.0129 17.9044 12.2019 17.8309 12.4224 17.8309C12.6429 17.8309 12.874 17.9044 13.021 18.0934L16.5913 21.6638C16.9274 21.9998 17.3054 22.2624 17.6835 22.5249C18.5865 23.0919 19.6366 23.386 20.7603 23.386C21.2538 23.386 21.7789 23.3125 22.2304 23.1969C22.5349 23.1234 22.829 23.0079 23.0915 22.8924C23.7636 22.5879 24.4041 22.1783 24.9712 21.6113C27.2604 19.3221 27.2604 15.5627 24.9712 13.263C23.8056 12.0973 22.3039 11.5303 20.8023 11.5303C19.6366 11.5303 18.513 11.8663 17.4944 12.5489C17.0009 12.1708 16.4758 11.8348 15.8773 11.5723C17.3054 10.4067 19.0696 9.8081 20.8023 9.8081C22.7555 9.8081 24.7087 10.5642 26.2103 12.0238C29.2766 15.0586 29.2766 19.9101 26.3048 22.9134Z"
                   fill="white"
@@ -572,7 +779,13 @@
       </section>
       <section class="main__skillset">
         <div class="main__section__header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="6"
+            viewBox="0 0 32 6"
+            fill="none"
+          >
             <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
           </svg>
           <h2>Habilidades</h2>
@@ -585,7 +798,13 @@
       </section>
       <section class="main__section">
         <div class="main__section__header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="6"
+            viewBox="0 0 32 6"
+            fill="none"
+          >
             <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
           </svg>
           <h2>Experiencia</h2>
@@ -594,7 +813,13 @@
           <h3>Manfred</h3>
           <h4>CEO</h4>
           <div class="section__content__date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
               <path
                 opacity="0.75"
                 d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
@@ -608,19 +833,22 @@
           </div>
           <div class="main__section__data">
             <p>
-              We grew the company from a recruiting agency to become a genuine career management platform. Now, we are
-              an international team of 45 people, taking care of the career of +20,000 professionals around the World.
-              To achieve this, we had to:
+              We grew the company from a recruiting agency to become a genuine
+              career management platform. Now, we are an international team of
+              45 people, taking care of the career of +20,000 professionals
+              around the World. To achieve this, we had to:
             </p>
             <ul>
               <li>Adapt the organization processes to scale its operations.</li>
               <li>Implementation of Holacracy as the management system.</li>
               <li>
-                Development of own product to scale the company operations, especially the value added to candidates.
+                Development of own product to scale the company operations,
+                especially the value added to candidates.
               </li>
               <li>
-                Completing the acquisition process by Sngular, maintaining the company's core of employees without any
-                productivity or sales suffering before, during, and after it.
+                Completing the acquisition process by Sngular, maintaining the
+                company's core of employees without any productivity or sales
+                suffering before, during, and after it.
               </li>
             </ul>
           </div>
@@ -628,13 +856,22 @@
           <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M5.20547 31.1379L2.46973 0.454102H32.5304L29.7916 31.1332L17.4817 34.5457L5.20547 31.1379Z"
                     fill="#E44D26"
                   />
-                  <path d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z" fill="#F16529" />
+                  <path
+                    d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z"
+                    fill="#F16529"
+                  />
                   <path
                     d="M17.5001 14.3429H12.5202L12.1762 10.4891H17.5001V6.72607H8.06348L8.15371 7.73561L9.07848 18.1063H17.5001V14.3429ZM17.5001 24.1164L17.4834 24.1211L13.2924 22.989L13.0247 19.9881H9.24664L9.77383 25.8968L17.4829 28.0367L17.5001 28.0321V24.1164Z"
                     fill="#EBEBEB"
@@ -648,7 +885,13 @@
               HTML
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M34.1253 14.2461C32.9495 13.5625 31.3909 13.4805 30.0784 13.8633C29.9143 12.4414 28.9846 11.2109 27.8909 10.3359L27.4534 9.98047L27.0706 10.418C26.3323 11.2656 26.1135 12.6875 26.2229 13.7813C26.3049 14.5742 26.551 15.3945 27.0432 16.0508C26.6604 16.2695 26.2503 16.5703 25.8674 16.707C25.1018 16.9805 24.2542 17.2539 23.4338 17.2539H21.6018V13.3984H18.0471V6.5625H13.9456V9.84375H7.10963V13.3984H3.55494V17.2266H0.492444L0.437757 17.6367C0.301038 19.3867 0.519788 21.082 1.25807 22.6953L1.55885 23.2969L1.58619 23.3516C3.74635 27.0156 7.51979 28.5469 11.6487 28.5469C19.6331 28.5469 26.2229 24.9648 29.2307 17.4453C31.2542 17.5547 33.3323 16.9531 34.3167 15.0117L34.5628 14.5195L34.1253 14.2461ZM7.65651 10.6641H10.3909V13.6719H7.65651V10.6641ZM11.2385 22.75C11.2385 23.2148 10.8557 23.5977 10.3909 23.5977C9.92604 23.5977 9.54323 23.2148 9.54323 22.75C9.54323 22.2852 9.92604 21.9023 10.3909 21.9023C10.8557 21.9297 11.2385 22.2852 11.2385 22.75ZM7.65651 14.2188H10.3909V17.2266H7.65651V14.2188ZM4.10182 14.2188H7.10963V17.2266H4.10182V14.2188ZM11.676 27.9453C7.35573 27.918 5.03151 26.4688 3.11744 24.5547C3.69166 24.582 4.23854 24.6094 4.73073 24.6094C5.16823 24.6094 5.60573 24.6094 6.01588 24.582C7.08229 24.5273 8.01197 24.3906 8.7776 24.1719C9.40651 25.6211 10.5549 26.9609 12.6057 27.9453H11.676ZM13.9456 17.2266H10.9378V14.2188H13.9456V17.2266ZM13.9456 13.6719H10.9378V10.6641H13.9456V13.6719ZM17.5003 17.2266H14.4924V14.2188H17.5003V17.2266ZM17.5003 13.6719H14.4924V10.6641H17.5003V13.6719ZM17.5003 10.1172H14.4924V7.10938H17.5003V10.1172ZM21.0549 17.2266H18.0471V14.2188H21.0549V17.2266ZM10.6096 22.2031C10.5549 22.1758 10.4729 22.1484 10.3909 22.1484C10.0628 22.1484 9.78932 22.4219 9.78932 22.75C9.78932 23.0781 10.0628 23.3516 10.3909 23.3516C10.719 23.3516 10.9924 23.0781 10.9924 22.75C10.9924 22.668 10.9651 22.5859 10.9378 22.5312C10.8831 22.6133 10.8284 22.668 10.719 22.668C10.5823 22.668 10.4729 22.5586 10.4729 22.4219C10.5003 22.3125 10.5549 22.2305 10.6096 22.2031Z"
@@ -659,7 +902,13 @@
               Docker
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -674,9 +923,21 @@
               React
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                  <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2013)"
+                >
+                  <path
+                    d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                    fill="#F0DB4F"
+                  />
                   <path
                     d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                     fill="#323330"
@@ -691,9 +952,21 @@
               JavaScript
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2004)">
-                  <path d="M0 35H35V0H0V35Z" fill="url(#paint0_linear_1756_2004)" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2004)"
+                >
+                  <path
+                    d="M0 35H35V0H0V35Z"
+                    fill="url(#paint0_linear_1756_2004)"
+                  />
                   <path
                     d="M27.5124 10.8477C25.7483 9.08353 23.375 8.10693 20.8653 8.10693C18.3555 8.10693 15.9823 9.08353 14.2181 10.8477L14.0291 11.0367C13.5775 10.9632 13.168 10.9212 12.7165 10.9212C10.6162 10.9212 8.57904 11.7508 7.07739 13.284C3.95858 16.4028 3.95858 21.4433 7.07739 24.5621C8.57904 26.0637 10.5742 26.8933 12.7165 26.8933H21.0648C23.543 26.8513 25.8428 25.8747 27.5649 24.1525C31.1983 20.4667 31.1983 14.4916 27.5124 10.8477ZM12.7375 25.1711C11.0468 25.1711 9.50313 24.4571 8.33752 23.2494C5.89077 20.8027 5.89077 16.8648 8.33752 14.4496C9.50313 13.284 11.0783 12.6119 12.7375 12.6119H12.7795C13.1155 12.6119 13.378 12.6539 13.6826 12.6854C14.0186 12.7589 14.3231 12.8009 14.6591 12.9059C15.2577 13.0949 15.8248 13.3995 16.3078 13.7355C16.5283 13.9245 16.8014 14.0715 16.9799 14.3026L17.1689 14.4916L19.7207 17.0433C20.0567 17.3794 20.0567 17.9044 19.7207 18.2825C19.5316 18.4715 19.3426 18.545 19.1221 18.545C18.9016 18.545 18.6705 18.4715 18.5235 18.2825L16.4233 16.1822L15.9718 15.7307C15.8983 15.6572 15.8248 15.6152 15.7828 15.5417C15.1842 15.0166 14.4701 14.6806 13.6826 14.5231C13.42 14.4496 13.1155 14.4496 12.853 14.4496H12.7375C11.5718 14.4916 10.5217 14.9431 9.69215 15.7622C7.92798 17.5264 7.92798 20.3512 9.69215 22.1153C10.5532 22.9764 11.6453 23.428 12.8845 23.428H13.672L14.4281 24.142C14.8062 24.5201 15.1842 24.8981 15.6357 25.1606H12.7375V25.1711ZM26.3048 22.9134C25.5172 23.701 24.5721 24.2996 23.522 24.6776C23.186 24.7931 22.8815 24.8666 22.5454 24.9821C22.0519 25.0976 21.5268 25.1711 21.0018 25.1711H20.8548C19.0486 25.1711 17.3579 24.5726 16.0033 23.4385C15.8143 23.2915 15.6252 23.1024 15.4362 22.9449L11.8239 19.3326C11.4878 18.9965 11.4878 18.4715 11.8239 18.0934C12.0129 17.9044 12.2019 17.8309 12.4224 17.8309C12.6429 17.8309 12.874 17.9044 13.021 18.0934L16.5913 21.6638C16.9274 21.9998 17.3054 22.2624 17.6835 22.5249C18.5865 23.0919 19.6366 23.386 20.7603 23.386C21.2538 23.386 21.7789 23.3125 22.2304 23.1969C22.5349 23.1234 22.829 23.0079 23.0915 22.8924C23.7636 22.5879 24.4041 22.1783 24.9712 21.6113C27.2604 19.3221 27.2604 15.5627 24.9712 13.263C23.8056 12.0973 22.3039 11.5303 20.8023 11.5303C19.6366 11.5303 18.513 11.8663 17.4944 12.5489C17.0009 12.1708 16.4758 11.8348 15.8773 11.5723C17.3054 10.4067 19.0696 9.8081 20.8023 9.8081C22.7555 9.8081 24.7087 10.5642 26.2103 12.0238C29.2766 15.0586 29.2766 19.9101 26.3048 22.9134Z"
                     fill="white"
@@ -725,7 +998,13 @@
           <h3>Comatech</h3>
           <h4>CEO</h4>
           <div class="section__content__date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
               <path
                 opacity="0.75"
                 d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
@@ -739,22 +1018,33 @@
           </div>
           <div class="main__section__data">
             <p>
-              Comalatech was a company with 17 employees and 3 million dollar revenue per year, developing plugins that
-              extend the functionalities of the Atlassian main products. My goal was to scale the organization to help
-              grow. With these solid foundations, Comalatech was finally acquired by Appfire in 2022.
+              Comalatech was a company with 17 employees and 3 million dollar
+              revenue per year, developing plugins that extend the
+              functionalities of the Atlassian main products. My goal was to
+              scale the organization to help grow. With these solid foundations,
+              Comalatech was finally acquired by Appfire in 2022.
             </p>
           </div>
           <a href="http://www.comatech.com">www.comatech.com</a>
           <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M5.20547 31.1379L2.46973 0.454102H32.5304L29.7916 31.1332L17.4817 34.5457L5.20547 31.1379Z"
                     fill="#E44D26"
                   />
-                  <path d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z" fill="#F16529" />
+                  <path
+                    d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z"
+                    fill="#F16529"
+                  />
                   <path
                     d="M17.5001 14.3429H12.5202L12.1762 10.4891H17.5001V6.72607H8.06348L8.15371 7.73561L9.07848 18.1063H17.5001V14.3429ZM17.5001 24.1164L17.4834 24.1211L13.2924 22.989L13.0247 19.9881H9.24664L9.77383 25.8968L17.4829 28.0367L17.5001 28.0321V24.1164Z"
                     fill="#EBEBEB"
@@ -768,7 +1058,13 @@
               HTML
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M34.1253 14.2461C32.9495 13.5625 31.3909 13.4805 30.0784 13.8633C29.9143 12.4414 28.9846 11.2109 27.8909 10.3359L27.4534 9.98047L27.0706 10.418C26.3323 11.2656 26.1135 12.6875 26.2229 13.7813C26.3049 14.5742 26.551 15.3945 27.0432 16.0508C26.6604 16.2695 26.2503 16.5703 25.8674 16.707C25.1018 16.9805 24.2542 17.2539 23.4338 17.2539H21.6018V13.3984H18.0471V6.5625H13.9456V9.84375H7.10963V13.3984H3.55494V17.2266H0.492444L0.437757 17.6367C0.301038 19.3867 0.519788 21.082 1.25807 22.6953L1.55885 23.2969L1.58619 23.3516C3.74635 27.0156 7.51979 28.5469 11.6487 28.5469C19.6331 28.5469 26.2229 24.9648 29.2307 17.4453C31.2542 17.5547 33.3323 16.9531 34.3167 15.0117L34.5628 14.5195L34.1253 14.2461ZM7.65651 10.6641H10.3909V13.6719H7.65651V10.6641ZM11.2385 22.75C11.2385 23.2148 10.8557 23.5977 10.3909 23.5977C9.92604 23.5977 9.54323 23.2148 9.54323 22.75C9.54323 22.2852 9.92604 21.9023 10.3909 21.9023C10.8557 21.9297 11.2385 22.2852 11.2385 22.75ZM7.65651 14.2188H10.3909V17.2266H7.65651V14.2188ZM4.10182 14.2188H7.10963V17.2266H4.10182V14.2188ZM11.676 27.9453C7.35573 27.918 5.03151 26.4688 3.11744 24.5547C3.69166 24.582 4.23854 24.6094 4.73073 24.6094C5.16823 24.6094 5.60573 24.6094 6.01588 24.582C7.08229 24.5273 8.01197 24.3906 8.7776 24.1719C9.40651 25.6211 10.5549 26.9609 12.6057 27.9453H11.676ZM13.9456 17.2266H10.9378V14.2188H13.9456V17.2266ZM13.9456 13.6719H10.9378V10.6641H13.9456V13.6719ZM17.5003 17.2266H14.4924V14.2188H17.5003V17.2266ZM17.5003 13.6719H14.4924V10.6641H17.5003V13.6719ZM17.5003 10.1172H14.4924V7.10938H17.5003V10.1172ZM21.0549 17.2266H18.0471V14.2188H21.0549V17.2266ZM10.6096 22.2031C10.5549 22.1758 10.4729 22.1484 10.3909 22.1484C10.0628 22.1484 9.78932 22.4219 9.78932 22.75C9.78932 23.0781 10.0628 23.3516 10.3909 23.3516C10.719 23.3516 10.9924 23.0781 10.9924 22.75C10.9924 22.668 10.9651 22.5859 10.9378 22.5312C10.8831 22.6133 10.8284 22.668 10.719 22.668C10.5823 22.668 10.4729 22.5586 10.4729 22.4219C10.5003 22.3125 10.5549 22.2305 10.6096 22.2031Z"
@@ -779,7 +1075,13 @@
               Docker
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -794,9 +1096,21 @@
               React
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                  <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2013)"
+                >
+                  <path
+                    d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                    fill="#F0DB4F"
+                  />
                   <path
                     d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                     fill="#323330"
@@ -811,9 +1125,21 @@
               JavaScript
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2004)">
-                  <path d="M0 35H35V0H0V35Z" fill="url(#paint0_linear_1756_2004)" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2004)"
+                >
+                  <path
+                    d="M0 35H35V0H0V35Z"
+                    fill="url(#paint0_linear_1756_2004)"
+                  />
                   <path
                     d="M27.5124 10.8477C25.7483 9.08353 23.375 8.10693 20.8653 8.10693C18.3555 8.10693 15.9823 9.08353 14.2181 10.8477L14.0291 11.0367C13.5775 10.9632 13.168 10.9212 12.7165 10.9212C10.6162 10.9212 8.57904 11.7508 7.07739 13.284C3.95858 16.4028 3.95858 21.4433 7.07739 24.5621C8.57904 26.0637 10.5742 26.8933 12.7165 26.8933H21.0648C23.543 26.8513 25.8428 25.8747 27.5649 24.1525C31.1983 20.4667 31.1983 14.4916 27.5124 10.8477ZM12.7375 25.1711C11.0468 25.1711 9.50313 24.4571 8.33752 23.2494C5.89077 20.8027 5.89077 16.8648 8.33752 14.4496C9.50313 13.284 11.0783 12.6119 12.7375 12.6119H12.7795C13.1155 12.6119 13.378 12.6539 13.6826 12.6854C14.0186 12.7589 14.3231 12.8009 14.6591 12.9059C15.2577 13.0949 15.8248 13.3995 16.3078 13.7355C16.5283 13.9245 16.8014 14.0715 16.9799 14.3026L17.1689 14.4916L19.7207 17.0433C20.0567 17.3794 20.0567 17.9044 19.7207 18.2825C19.5316 18.4715 19.3426 18.545 19.1221 18.545C18.9016 18.545 18.6705 18.4715 18.5235 18.2825L16.4233 16.1822L15.9718 15.7307C15.8983 15.6572 15.8248 15.6152 15.7828 15.5417C15.1842 15.0166 14.4701 14.6806 13.6826 14.5231C13.42 14.4496 13.1155 14.4496 12.853 14.4496H12.7375C11.5718 14.4916 10.5217 14.9431 9.69215 15.7622C7.92798 17.5264 7.92798 20.3512 9.69215 22.1153C10.5532 22.9764 11.6453 23.428 12.8845 23.428H13.672L14.4281 24.142C14.8062 24.5201 15.1842 24.8981 15.6357 25.1606H12.7375V25.1711ZM26.3048 22.9134C25.5172 23.701 24.5721 24.2996 23.522 24.6776C23.186 24.7931 22.8815 24.8666 22.5454 24.9821C22.0519 25.0976 21.5268 25.1711 21.0018 25.1711H20.8548C19.0486 25.1711 17.3579 24.5726 16.0033 23.4385C15.8143 23.2915 15.6252 23.1024 15.4362 22.9449L11.8239 19.3326C11.4878 18.9965 11.4878 18.4715 11.8239 18.0934C12.0129 17.9044 12.2019 17.8309 12.4224 17.8309C12.6429 17.8309 12.874 17.9044 13.021 18.0934L16.5913 21.6638C16.9274 21.9998 17.3054 22.2624 17.6835 22.5249C18.5865 23.0919 19.6366 23.386 20.7603 23.386C21.2538 23.386 21.7789 23.3125 22.2304 23.1969C22.5349 23.1234 22.829 23.0079 23.0915 22.8924C23.7636 22.5879 24.4041 22.1783 24.9712 21.6113C27.2604 19.3221 27.2604 15.5627 24.9712 13.263C23.8056 12.0973 22.3039 11.5303 20.8023 11.5303C19.6366 11.5303 18.513 11.8663 17.4944 12.5489C17.0009 12.1708 16.4758 11.8348 15.8773 11.5723C17.3054 10.4067 19.0696 9.8081 20.8023 9.8081C22.7555 9.8081 24.7087 10.5642 26.2103 12.0238C29.2766 15.0586 29.2766 19.9101 26.3048 22.9134Z"
                     fill="white"
@@ -845,7 +1171,13 @@
           <h3>Instituto de Empresa</h3>
           <h4>Profesor asociado de productividad y metodologías ágiles</h4>
           <div class="section__content__date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
               <path
                 opacity="0.75"
                 d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
@@ -860,13 +1192,22 @@
           <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M5.20547 31.1379L2.46973 0.454102H32.5304L29.7916 31.1332L17.4817 34.5457L5.20547 31.1379Z"
                     fill="#E44D26"
                   />
-                  <path d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z" fill="#F16529" />
+                  <path
+                    d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z"
+                    fill="#F16529"
+                  />
                   <path
                     d="M17.5001 14.3429H12.5202L12.1762 10.4891H17.5001V6.72607H8.06348L8.15371 7.73561L9.07848 18.1063H17.5001V14.3429ZM17.5001 24.1164L17.4834 24.1211L13.2924 22.989L13.0247 19.9881H9.24664L9.77383 25.8968L17.4829 28.0367L17.5001 28.0321V24.1164Z"
                     fill="#EBEBEB"
@@ -880,7 +1221,13 @@
               HTML
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M34.1253 14.2461C32.9495 13.5625 31.3909 13.4805 30.0784 13.8633C29.9143 12.4414 28.9846 11.2109 27.8909 10.3359L27.4534 9.98047L27.0706 10.418C26.3323 11.2656 26.1135 12.6875 26.2229 13.7813C26.3049 14.5742 26.551 15.3945 27.0432 16.0508C26.6604 16.2695 26.2503 16.5703 25.8674 16.707C25.1018 16.9805 24.2542 17.2539 23.4338 17.2539H21.6018V13.3984H18.0471V6.5625H13.9456V9.84375H7.10963V13.3984H3.55494V17.2266H0.492444L0.437757 17.6367C0.301038 19.3867 0.519788 21.082 1.25807 22.6953L1.55885 23.2969L1.58619 23.3516C3.74635 27.0156 7.51979 28.5469 11.6487 28.5469C19.6331 28.5469 26.2229 24.9648 29.2307 17.4453C31.2542 17.5547 33.3323 16.9531 34.3167 15.0117L34.5628 14.5195L34.1253 14.2461ZM7.65651 10.6641H10.3909V13.6719H7.65651V10.6641ZM11.2385 22.75C11.2385 23.2148 10.8557 23.5977 10.3909 23.5977C9.92604 23.5977 9.54323 23.2148 9.54323 22.75C9.54323 22.2852 9.92604 21.9023 10.3909 21.9023C10.8557 21.9297 11.2385 22.2852 11.2385 22.75ZM7.65651 14.2188H10.3909V17.2266H7.65651V14.2188ZM4.10182 14.2188H7.10963V17.2266H4.10182V14.2188ZM11.676 27.9453C7.35573 27.918 5.03151 26.4688 3.11744 24.5547C3.69166 24.582 4.23854 24.6094 4.73073 24.6094C5.16823 24.6094 5.60573 24.6094 6.01588 24.582C7.08229 24.5273 8.01197 24.3906 8.7776 24.1719C9.40651 25.6211 10.5549 26.9609 12.6057 27.9453H11.676ZM13.9456 17.2266H10.9378V14.2188H13.9456V17.2266ZM13.9456 13.6719H10.9378V10.6641H13.9456V13.6719ZM17.5003 17.2266H14.4924V14.2188H17.5003V17.2266ZM17.5003 13.6719H14.4924V10.6641H17.5003V13.6719ZM17.5003 10.1172H14.4924V7.10938H17.5003V10.1172ZM21.0549 17.2266H18.0471V14.2188H21.0549V17.2266ZM10.6096 22.2031C10.5549 22.1758 10.4729 22.1484 10.3909 22.1484C10.0628 22.1484 9.78932 22.4219 9.78932 22.75C9.78932 23.0781 10.0628 23.3516 10.3909 23.3516C10.719 23.3516 10.9924 23.0781 10.9924 22.75C10.9924 22.668 10.9651 22.5859 10.9378 22.5312C10.8831 22.6133 10.8284 22.668 10.719 22.668C10.5823 22.668 10.4729 22.5586 10.4729 22.4219C10.5003 22.3125 10.5549 22.2305 10.6096 22.2031Z"
@@ -891,7 +1238,13 @@
               Docker
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -906,9 +1259,21 @@
               React
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                  <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2013)"
+                >
+                  <path
+                    d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                    fill="#F0DB4F"
+                  />
                   <path
                     d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                     fill="#323330"
@@ -923,9 +1288,21 @@
               JavaScript
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2004)">
-                  <path d="M0 35H35V0H0V35Z" fill="url(#paint0_linear_1756_2004)" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2004)"
+                >
+                  <path
+                    d="M0 35H35V0H0V35Z"
+                    fill="url(#paint0_linear_1756_2004)"
+                  />
                   <path
                     d="M27.5124 10.8477C25.7483 9.08353 23.375 8.10693 20.8653 8.10693C18.3555 8.10693 15.9823 9.08353 14.2181 10.8477L14.0291 11.0367C13.5775 10.9632 13.168 10.9212 12.7165 10.9212C10.6162 10.9212 8.57904 11.7508 7.07739 13.284C3.95858 16.4028 3.95858 21.4433 7.07739 24.5621C8.57904 26.0637 10.5742 26.8933 12.7165 26.8933H21.0648C23.543 26.8513 25.8428 25.8747 27.5649 24.1525C31.1983 20.4667 31.1983 14.4916 27.5124 10.8477ZM12.7375 25.1711C11.0468 25.1711 9.50313 24.4571 8.33752 23.2494C5.89077 20.8027 5.89077 16.8648 8.33752 14.4496C9.50313 13.284 11.0783 12.6119 12.7375 12.6119H12.7795C13.1155 12.6119 13.378 12.6539 13.6826 12.6854C14.0186 12.7589 14.3231 12.8009 14.6591 12.9059C15.2577 13.0949 15.8248 13.3995 16.3078 13.7355C16.5283 13.9245 16.8014 14.0715 16.9799 14.3026L17.1689 14.4916L19.7207 17.0433C20.0567 17.3794 20.0567 17.9044 19.7207 18.2825C19.5316 18.4715 19.3426 18.545 19.1221 18.545C18.9016 18.545 18.6705 18.4715 18.5235 18.2825L16.4233 16.1822L15.9718 15.7307C15.8983 15.6572 15.8248 15.6152 15.7828 15.5417C15.1842 15.0166 14.4701 14.6806 13.6826 14.5231C13.42 14.4496 13.1155 14.4496 12.853 14.4496H12.7375C11.5718 14.4916 10.5217 14.9431 9.69215 15.7622C7.92798 17.5264 7.92798 20.3512 9.69215 22.1153C10.5532 22.9764 11.6453 23.428 12.8845 23.428H13.672L14.4281 24.142C14.8062 24.5201 15.1842 24.8981 15.6357 25.1606H12.7375V25.1711ZM26.3048 22.9134C25.5172 23.701 24.5721 24.2996 23.522 24.6776C23.186 24.7931 22.8815 24.8666 22.5454 24.9821C22.0519 25.0976 21.5268 25.1711 21.0018 25.1711H20.8548C19.0486 25.1711 17.3579 24.5726 16.0033 23.4385C15.8143 23.2915 15.6252 23.1024 15.4362 22.9449L11.8239 19.3326C11.4878 18.9965 11.4878 18.4715 11.8239 18.0934C12.0129 17.9044 12.2019 17.8309 12.4224 17.8309C12.6429 17.8309 12.874 17.9044 13.021 18.0934L16.5913 21.6638C16.9274 21.9998 17.3054 22.2624 17.6835 22.5249C18.5865 23.0919 19.6366 23.386 20.7603 23.386C21.2538 23.386 21.7789 23.3125 22.2304 23.1969C22.5349 23.1234 22.829 23.0079 23.0915 22.8924C23.7636 22.5879 24.4041 22.1783 24.9712 21.6113C27.2604 19.3221 27.2604 15.5627 24.9712 13.263C23.8056 12.0973 22.3039 11.5303 20.8023 11.5303C19.6366 11.5303 18.513 11.8663 17.4944 12.5489C17.0009 12.1708 16.4758 11.8348 15.8773 11.5723C17.3054 10.4067 19.0696 9.8081 20.8023 9.8081C22.7555 9.8081 24.7087 10.5642 26.2103 12.0238C29.2766 15.0586 29.2766 19.9101 26.3048 22.9134Z"
                     fill="white"
@@ -956,7 +1333,13 @@
       </section>
       <section class="main__section">
         <div class="main__section__header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="6"
+            viewBox="0 0 32 6"
+            fill="none"
+          >
             <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
           </svg>
           <h2>Educación</h2>
@@ -966,7 +1349,13 @@
           <h3>Ingeniería Técnica Informática</h3>
           <h4>OUC</h4>
           <div class="section__content__date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
               <path
                 opacity="0.75"
                 d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
@@ -981,21 +1370,31 @@
 
           <div class="main__section__data">
             <p>
-              Desarrollo de habilidades fundamentales en programación, algoritmos, estructuras de datos y tecnologías de
-              desarrollo de software.
+              Desarrollo de habilidades fundamentales en programación,
+              algoritmos, estructuras de datos y tecnologías de desarrollo de
+              software.
             </p>
           </div>
 
           <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M5.20547 31.1379L2.46973 0.454102H32.5304L29.7916 31.1332L17.4817 34.5457L5.20547 31.1379Z"
                     fill="#E44D26"
                   />
-                  <path d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z" fill="#F16529" />
+                  <path
+                    d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z"
+                    fill="#F16529"
+                  />
                   <path
                     d="M17.5001 14.3429H12.5202L12.1762 10.4891H17.5001V6.72607H8.06348L8.15371 7.73561L9.07848 18.1063H17.5001V14.3429ZM17.5001 24.1164L17.4834 24.1211L13.2924 22.989L13.0247 19.9881H9.24664L9.77383 25.8968L17.4829 28.0367L17.5001 28.0321V24.1164Z"
                     fill="#EBEBEB"
@@ -1009,7 +1408,13 @@
               HTML
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M34.1253 14.2461C32.9495 13.5625 31.3909 13.4805 30.0784 13.8633C29.9143 12.4414 28.9846 11.2109 27.8909 10.3359L27.4534 9.98047L27.0706 10.418C26.3323 11.2656 26.1135 12.6875 26.2229 13.7813C26.3049 14.5742 26.551 15.3945 27.0432 16.0508C26.6604 16.2695 26.2503 16.5703 25.8674 16.707C25.1018 16.9805 24.2542 17.2539 23.4338 17.2539H21.6018V13.3984H18.0471V6.5625H13.9456V9.84375H7.10963V13.3984H3.55494V17.2266H0.492444L0.437757 17.6367C0.301038 19.3867 0.519788 21.082 1.25807 22.6953L1.55885 23.2969L1.58619 23.3516C3.74635 27.0156 7.51979 28.5469 11.6487 28.5469C19.6331 28.5469 26.2229 24.9648 29.2307 17.4453C31.2542 17.5547 33.3323 16.9531 34.3167 15.0117L34.5628 14.5195L34.1253 14.2461ZM7.65651 10.6641H10.3909V13.6719H7.65651V10.6641ZM11.2385 22.75C11.2385 23.2148 10.8557 23.5977 10.3909 23.5977C9.92604 23.5977 9.54323 23.2148 9.54323 22.75C9.54323 22.2852 9.92604 21.9023 10.3909 21.9023C10.8557 21.9297 11.2385 22.2852 11.2385 22.75ZM7.65651 14.2188H10.3909V17.2266H7.65651V14.2188ZM4.10182 14.2188H7.10963V17.2266H4.10182V14.2188ZM11.676 27.9453C7.35573 27.918 5.03151 26.4688 3.11744 24.5547C3.69166 24.582 4.23854 24.6094 4.73073 24.6094C5.16823 24.6094 5.60573 24.6094 6.01588 24.582C7.08229 24.5273 8.01197 24.3906 8.7776 24.1719C9.40651 25.6211 10.5549 26.9609 12.6057 27.9453H11.676ZM13.9456 17.2266H10.9378V14.2188H13.9456V17.2266ZM13.9456 13.6719H10.9378V10.6641H13.9456V13.6719ZM17.5003 17.2266H14.4924V14.2188H17.5003V17.2266ZM17.5003 13.6719H14.4924V10.6641H17.5003V13.6719ZM17.5003 10.1172H14.4924V7.10938H17.5003V10.1172ZM21.0549 17.2266H18.0471V14.2188H21.0549V17.2266ZM10.6096 22.2031C10.5549 22.1758 10.4729 22.1484 10.3909 22.1484C10.0628 22.1484 9.78932 22.4219 9.78932 22.75C9.78932 23.0781 10.0628 23.3516 10.3909 23.3516C10.719 23.3516 10.9924 23.0781 10.9924 22.75C10.9924 22.668 10.9651 22.5859 10.9378 22.5312C10.8831 22.6133 10.8284 22.668 10.719 22.668C10.5823 22.668 10.4729 22.5586 10.4729 22.4219C10.5003 22.3125 10.5549 22.2305 10.6096 22.2031Z"
@@ -1020,7 +1425,13 @@
               Docker
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -1035,9 +1446,21 @@
               React
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                  <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2013)"
+                >
+                  <path
+                    d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                    fill="#F0DB4F"
+                  />
                   <path
                     d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                     fill="#323330"
@@ -1058,7 +1481,13 @@
           <h3>Master en Desarrollo de Aplicaciones Web</h3>
           <h4>CFDTI IBM/La Caixa</h4>
           <div class="section__content__date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
               <path
                 opacity="0.75"
                 d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
@@ -1073,7 +1502,13 @@
           <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -1088,9 +1523,21 @@
               React
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                  <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2013)"
+                >
+                  <path
+                    d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                    fill="#F0DB4F"
+                  />
                   <path
                     d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                     fill="#323330"
@@ -1111,7 +1558,13 @@
           <h3>Certified Scrum Master</h3>
           <h4>Scrum Alliance</h4>
           <div class="section__content__date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
               <path
                 opacity="0.75"
                 d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
@@ -1126,13 +1579,22 @@
           <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M5.20547 31.1379L2.46973 0.454102H32.5304L29.7916 31.1332L17.4817 34.5457L5.20547 31.1379Z"
                     fill="#E44D26"
                   />
-                  <path d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z" fill="#F16529" />
+                  <path
+                    d="M17.5 31.9374L27.4471 29.1795L29.7875 2.96289H17.5V31.9374Z"
+                    fill="#F16529"
+                  />
                   <path
                     d="M17.5001 14.3429H12.5202L12.1762 10.4891H17.5001V6.72607H8.06348L8.15371 7.73561L9.07848 18.1063H17.5001V14.3429ZM17.5001 24.1164L17.4834 24.1211L13.2924 22.989L13.0247 19.9881H9.24664L9.77383 25.8968L17.4829 28.0367L17.5001 28.0321V24.1164Z"
                     fill="#EBEBEB"
@@ -1146,7 +1608,13 @@
               HTML
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
                 <g style="mix-blend-mode: luminosity">
                   <path
                     d="M17.5 20.6172C19.2216 20.6172 20.6172 19.2216 20.6172 17.5C20.6172 15.7784 19.2216 14.3828 17.5 14.3828C15.7784 14.3828 14.3828 15.7784 14.3828 17.5C14.3828 19.2216 15.7784 20.6172 17.5 20.6172Z"
@@ -1161,9 +1629,21 @@
               React
             </li>
             <li class="li__technologies">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <g style="mix-blend-mode: luminosity" clip-path="url(#clip0_1756_2013)">
-                  <path d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z" fill="#F0DB4F" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+              >
+                <g
+                  style="mix-blend-mode: luminosity"
+                  clip-path="url(#clip0_1756_2013)"
+                >
+                  <path
+                    d="M0.384766 0.384766H34.6148V34.615H0.384766V0.384766Z"
+                    fill="#F0DB4F"
+                  />
                   <path
                     d="M31.8138 26.4512C31.5631 24.8896 30.5448 23.5779 27.5285 22.3548C26.4807 21.8733 25.3126 21.5285 24.9645 20.7345C24.8409 20.2723 24.8245 20.012 24.9027 19.7323C25.1272 18.8245 26.2108 18.5415 27.0697 18.8018C27.6229 18.9872 28.1465 19.4135 28.4623 20.0935C29.9394 19.137 29.9364 19.1433 30.9678 18.486C30.5902 17.9005 30.3887 17.6304 30.1415 17.3799C29.2531 16.3876 28.0426 15.8766 26.1066 15.9157L25.0982 16.0461C24.1319 16.2903 23.2109 16.7975 22.6709 17.4775C21.0505 19.3161 21.5126 22.5339 23.4844 23.8582C25.4269 25.3162 28.2805 25.6478 28.645 27.0112C28.9996 28.6803 27.4183 29.2206 25.8466 29.0286C24.6883 28.7877 24.0441 28.199 23.3477 27.1285C22.0658 27.8703 22.0658 27.8703 20.7478 28.6283C21.0604 29.3116 21.3888 29.6209 21.9127 30.2129C24.3922 32.728 30.597 32.6044 31.7099 28.7976C31.755 28.6669 32.0547 27.7952 31.8138 26.4512ZM18.9937 16.1172H15.792L15.7789 24.3947C15.7789 26.1551 15.87 27.7689 15.5837 28.2636C15.1153 29.2364 13.9015 29.1159 13.3483 28.9272C12.7853 28.6505 12.499 28.257 12.1673 27.7008C12.0763 27.5411 12.0079 27.4175 11.985 27.408L9.38184 29.0021C9.81469 29.8905 10.4523 30.6616 11.2691 31.1625C12.4892 31.8948 14.129 32.1193 15.844 31.7255C16.9602 31.4004 17.9232 30.727 18.4274 29.7018C19.1564 28.3579 19 26.7312 18.9934 24.932C19.0098 21.9966 18.9937 19.0618 18.9937 16.1172Z"
                     fill="#323330"
