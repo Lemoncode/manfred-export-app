@@ -257,6 +257,7 @@
         grid-template-columns: 16px 1fr;
         gap: var(--space-8);
         align-items: center;
+        cursor: pointer;
       }
       .links__item svg {
         justify-self: center;
@@ -455,10 +456,12 @@
         font-weight: var(--fw-light);
       }
       .experience__url {
+        display: block;
         font-size: var(--fs-xs);
         font-weight: var(--fw-light);
         color: var(--primary-500);
         letter-spacing: 0.5px;
+        cursor: pointer;
       }
       .experience__tools {
         font-family: var(--ff-title);
@@ -560,7 +563,7 @@
         margin-bottom: var(--space-8);
       }
       .education__technologies span {
-        color: var(--primary-900);
+        color: var(--primary-200);
         font-weight: var(--fw-light);
       }
 
@@ -670,14 +673,12 @@
           display: flex;
           flex-direction: column;
           flex-grow: 1;
-          border: 1px solid red;
         }
 
         .column-left {
           display: flex;
           flex-direction: column;
           flex-grow: 1;
-          border: 1px solid red;
           gap: var(--space-32);
         }
 
@@ -686,7 +687,6 @@
           display: flex;
           flex-direction: column;
           flex-grow: 1;
-          border: 1px solid red;
           padding-top: 40px;
         }
         .column-right--image {
@@ -894,7 +894,7 @@
                 company's core of employees without any productivity or sales suffering before, during, and after it.
               </p>
             </div>
-            <p class="experience__url">www.getmanfred.com</p>
+            <a href="https://www.getmanfred.com" class="experience__url">www.getmanfred.com</a>
             <div>
               <h5 class="experience__tools">Tecnologías y Herramientas</h5>
               <ul class="experience__tools-list">
@@ -922,7 +922,7 @@
               </p>
               <p>With these solid foundations, Comalatech was finally acquired by Appfire in 2022.</p>
             </div>
-            <p class="experience__url">www.comalatech.com</p>
+            <a href="https://www.comalatech.com" class="experience__url">www.comalatech.com</a>
 
             <div>
               <h5 class="experience__tools">Tecnologías y Herramientas</h5>
