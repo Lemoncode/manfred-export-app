@@ -25,7 +25,7 @@
         --space-64: calc(var(--space-base) * 16);
 
         /* colors */
-        /* --primary-50: #eaf3f3;
+        --primary-50: #eaf3f3;
         --primary-100: #bcd9db;
         --primary-200: #9cc7ca;
         --primary-300: #6faeb1;
@@ -34,19 +34,7 @@
         --primary-600: #247a7e;
         --primary-700: #247a7e;
         --primary-800: #164a4c;
-        --primary-900: #11383a; */
-
-        /*variables para comprobar colores*/
-        --primary-50: #ffe8eb;
-        --primary-100: #feb8c2;
-        --primary-200: #fe96a4;
-        --primary-300: #fe667a;
-        --primary-400: #fd4961;
-        --primary-500: #fd1b39;
-        --primary-600: #e61934;
-        --primary-700: #b41328;
-        --primary-800: #8b0f1f;
-        --primary-900: #6a0b18;
+        --primary-900: #11383a;
 
         /* text */
         --light-light-50: #fefefe;
@@ -102,13 +90,11 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       a {
         display: block;
         color: inherit;
         text-decoration: none;
       }
-
       body {
         margin: 0;
         background-color: var(--info-info-50);
@@ -131,7 +117,6 @@
         margin-left: auto;
         margin-right: auto;
       }
-
       .title {
         font-size: var(--fs-xl);
         font-family: var(--ff-title);
@@ -139,11 +124,9 @@
         color: var(--primary-500);
         margin-bottom: var(--space-16);
       }
-
       .section {
         padding-bottom: var(--space-32);
       }
-
       .chip {
         font-size: var(--fs-xs);
         border-radius: 30px;
@@ -152,12 +135,10 @@
         color: var(--primary-500);
         line-height: 2;
       }
-
       .chip-primary {
         color: var(--light-light-50);
         background-color: var(--primary-500);
       }
-
       @media screen and (min-width: 834px) {
         .container {
           padding: var(--space-16) var(--space-32);
@@ -199,7 +180,6 @@
       .background--image {
         height: 270px;
       }
-
       @media screen and (min-width: 834px) {
         .background {
           height: 150px;
@@ -231,13 +211,13 @@
         gap: var(--space-16);
       }
       .header__title {
+        height: min-content;
         display: flex;
         flex-direction: column;
         gap: var(--space-8);
         padding: var(--space-16) var(--space-32) var(--space-8);
         font-size: var(--fs-xl);
         font-weight: var(--fw-medium);
-        height: min-content;
       }
       .header__title span {
         text-transform: uppercase;
@@ -256,7 +236,6 @@
         border: 3px solid transparent;
         align-self: center;
       }
-
       .header__avatar::after {
         content: '';
         position: absolute;
@@ -268,7 +247,6 @@
         background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, var(--primary-500) 60%);
         border-radius: 16px;
       }
-
       .header__image {
         width: 100%;
         height: 100%;
@@ -278,7 +256,6 @@
         background-repeat: no-repeat;
         border-radius: 13px;
       }
-
       .header__filter {
         position: absolute;
         top: 0;
@@ -303,7 +280,6 @@
         .header__subtitle {
           padding: var(--space-16) 0;
         }
-
         .header__avatar {
           width: 175px;
           height: 177px;
@@ -314,14 +290,10 @@
           justify-content: space-between;
         }
       }
-
       @media screen and (min-width: 1024px) {
         .header__avatar {
-          /*tamaño de figma el comentado, el segundo mi aproximación, veo muy grande la imagen*/
           width: 220px;
           height: 223px;
-          /* width: 230px;
-    height: 233px; */
         }
       }
 
@@ -329,11 +301,9 @@
       .links__container {
         display: flex;
         flex-direction: column;
-        /*figma spase 8, cambio4*/
         gap: var(--space-base);
         padding-inline: var(--space-8);
       }
-
       .links__item {
         color: var(--primary-400);
         font-size: var(--fs-xs);
@@ -343,22 +313,20 @@
         align-items: center;
         cursor: pointer;
       }
-
       .links__item svg {
         justify-self: center;
       }
       .links__item span {
-        /*width que donde se quiera cortar*/
         width: 32ch;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
       }
+
       @media screen and (min-width: 834px) {
         .links__item {
           align-items: flex-start;
         }
-
         .links__item p {
           align-items: flex-start;
         }
@@ -388,6 +356,7 @@
         padding-inline: var(--space-8);
         gap: var(--space-8);
       }
+
       /* section soft-skills */
       .soft-skills__list {
         font-size: var(--fs-xs);
@@ -418,14 +387,12 @@
         gap: var(--space-2);
         margin: 0px;
       }
-
       .lenguage__icon {
         width: 114px;
         height: 24px;
         clip-path: polygon(0px 100%, 100% 0px, 100% 100%);
         background-image: var(--level-gradient);
       }
-
       .language__caption {
         font-size: var(--fs-xs);
         color: var(--primary-300);
@@ -607,16 +574,13 @@
         margin-bottom: var(--space-base);
         padding-inline: var(--space-8);
       }
-
       .decoration {
-        /* margin-top necesario para alinear con texto */
         margin-top: 5px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: var(--space-8);
       }
-
       .decoration__circle {
         width: 7px;
         height: 7px;
@@ -676,7 +640,6 @@
         margin-right: auto;
         margin-top: 30px;
       }
-
       .footer::before {
         position: absolute;
         content: '';
@@ -685,7 +648,6 @@
         height: 100%;
         clip-path: polygon(0 17%, 0% 100%, 80% 100%);
       }
-
       .footer::after {
         position: absolute;
         content: '';
@@ -699,7 +661,6 @@
           margin-top: 70px;
         }
       }
-
       @media screen and (min-width: 1024px) {
         .footer--image {
           margin-top: 100px;
@@ -710,7 +671,6 @@
       .column {
         display: none;
       }
-
       @media screen and (min-width: 834px) {
         .main {
           display: grid;
