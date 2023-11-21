@@ -67,14 +67,8 @@
         align-items: center;
         gap: var(--spacing_32);
         min-height: 100vh;
-        max-width: 1280px;
+        max-width: 1100px;
         padding: var(--spacing_64) var(--spacing_32);
-      }
-
-      @media (min-width: 1280px) {
-        .root {
-          padding: var(--spacing_64) 0px;
-        }
       }
 
       h1 {
@@ -92,29 +86,40 @@
         -webkit-text-fill-color: transparent;
       }
 
+      @media (min-width: 728px) {
+        h1 {
+          font-size: 82px;
+          font-weight: 900;
+        }
+      }
+
       .surname {
         font-size: 48px;
         -webkit-text-fill-color: var(--manfred-blue);
         letter-spacing: -0.72px;
         text-transform: capitalize;
       }
+
       h2 {
         font-family: 'Source Serif Pro', sans-serif;
         font-size: 28px;
         font-weight: 900;
         letter-spacing: 1.4px;
       }
+
       h3 {
         font-size: 24px;
         font-weight: 700;
         letter-spacing: 1.2px;
       }
+
       h4 {
         font-size: 18px;
         font-weight: 600;
         line-height: 24px;
         letter-spacing: 0.9px;
       }
+
       a {
         color: var(--manfred-green-blue);
         text-decoration: none;
@@ -122,11 +127,10 @@
         line-height: 24px;
         letter-spacing: 0.75px;
       }
-      @media (min-width: 728px) {
-        h1 {
-          font-size: 82px;
-          font-weight: 900;
-        }
+
+      .technologie__icon--gray-scale {
+        width: 35px;
+        filter: grayscale(100%);
       }
 
       /* header styles */
@@ -138,12 +142,14 @@
         gap: var(--spacing_24);
         width: 100%;
       }
+
       header > img {
         align-self: center;
         width: 225px;
         height: 225px;
         border-radius: 225px;
       }
+
       .header__content {
         display: flex;
         flex-direction: column;
@@ -155,6 +161,7 @@
         flex-direction: column;
         padding: var(--spacing_16) 0px;
       }
+
       .job-title {
         color: var(--manfred-dark);
         font-family: 'Source Serif Pro', sans-serif;
@@ -163,16 +170,19 @@
         font-weight: 600;
         letter-spacing: 1.2px;
       }
+
       .header__content__address {
         display: flex;
         align-items: center;
         gap: var(--spacing_8);
       }
+
       .header__content__address > p {
         font-size: 12px;
         font-weight: 400;
         letter-spacing: -0.18px;
       }
+
       .header__content__links {
         display: flex;
         align-items: center;
@@ -186,6 +196,7 @@
         .job-title {
           font-size: 32px;
         }
+
         header {
           justify-content: flex-start;
           align-items: center;
@@ -214,15 +225,38 @@
         flex-direction: column;
         gap: var(--spacing_64);
       }
+
+      .main__section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing_32);
+      }
+
+      .main__section > p {
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.75px;
+      }
+
+      .main__section__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: var(--spacing_16);
+        padding-bottom: var(--spacing_32);
+        border-bottom: 1px solid rgba(94, 202, 191, 0.3);
+      }
+
       .main__section__header {
         display: flex;
         flex-direction: column;
         gap: var(--spacing_16);
       }
-      .main__section__header > p {
-        font-weight: 500;
-        line-height: 24px;
-        letter-spacing: 0.75px;
+
+      .about-me__section {
+        gap: var(--spacing_16);
       }
 
       .ul__languages {
@@ -231,6 +265,7 @@
         gap: var(--spacing_16);
         width: 100%;
       }
+
       .li__languages {
         display: flex;
         gap: var(--spacing_16);
@@ -253,6 +288,7 @@
           width: 300px;
         }
       }
+
       .main__lang__level {
         display: flex;
         flex-direction: column;
@@ -266,11 +302,24 @@
         font-variant: all-small-caps;
         letter-spacing: 0.5px;
       }
+
       .ul__technologies {
         display: flex;
         gap: var(--spacing_16);
         flex-wrap: wrap;
       }
+
+      @media (min-width: 728px) {
+        .ul__technologies {
+          display: inline-flex;
+          flex-direction: row;
+          align-items: flex-start;
+          align-content: flex-start;
+          gap: var(--spacing_16);
+          flex-wrap: wrap;
+        }
+      }
+
       .li__technologies {
         font-weight: 600;
         letter-spacing: 0.75px;
@@ -283,13 +332,6 @@
         box-shadow: 0px 1px 2px 0px rgba(11, 15, 6, 0.25);
       }
 
-      .pill-icon-gray-scale {
-        width: 35px;
-        filter: grayscale(100%);
-      }
-      .main__section__header {
-        gap: var(--spacing_16);
-      }
       .main__section__skills__ul {
         display: flex;
         flex-direction: column;
@@ -297,6 +339,7 @@
         gap: var(--spacing_16);
         width: 100%;
       }
+
       .main__section__skills__li {
         width: 100%;
         padding: var(--spacing_16);
@@ -307,21 +350,7 @@
         letter-spacing: 0.75px;
         list-style-position: inside;
       }
-      .main__section {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing_32);
-      }
-      .main__section__item {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        gap: var(--spacing_16);
-        padding-bottom: var(--spacing_32);
-        border-bottom: 1px solid rgba(94, 202, 191, 0.3);
-      }
+
       .section__content__date {
         display: flex;
         height: 18px;
@@ -329,11 +358,13 @@
         gap: var(--spacing_16);
         padding-bottom: var(--spacing_16);
       }
+
       .main__section__data {
         font-weight: 500;
         line-height: 24px;
         letter-spacing: 0.75px;
       }
+
       .main__section__data > ul {
         padding-left: var(--spacing_16);
       }
@@ -344,17 +375,6 @@
         font-weight: 700;
         line-height: 24px;
         letter-spacing: 0.9px;
-      }
-
-      @media (min-width: 728px) {
-        .ul__technologies {
-          display: inline-flex;
-          flex-direction: row;
-          align-items: flex-start;
-          align-content: flex-start;
-          gap: var(--spacing_16);
-          flex-wrap: wrap;
-        }
       }
     </style>
   </head>
@@ -436,7 +456,7 @@
         </section>
       </header>
       <main>
-        <section class="main__section">
+        <section class="main__section about-me__section">
           <div class="main__section__header">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
               <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
@@ -524,23 +544,23 @@
           </div>
           <ul class="ul__technologies">
             <li class="li__technologies">
-              <img class="pill-icon-gray-scale" src="./assets/html-icon.png" alt="html" />
+              <img class="technologie__icon--gray-scale" src="./assets/html-icon.png" alt="html" />
               HTML
             </li>
             <li class="li__technologies">
-              <img class="pill-icon-gray-scale" src="./assets/docker-icon.png" alt="html" />
+              <img class="technologie__icon--gray-scale" src="./assets/docker-icon.png" alt="html" />
               Docker
             </li>
             <li class="li__technologies">
-              <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+              <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
               React
             </li>
             <li class="li__technologies">
-              <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+              <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
               JavaScript
             </li>
             <li class="li__technologies">
-              <img class="pill-icon-gray-scale" src="./assets/adobe-icon.png" alt="html" />
+              <img class="technologie__icon--gray-scale" src="./assets/adobe-icon.png" alt="html" />
               Adobe Creative Suit
             </li>
           </ul>
@@ -604,23 +624,23 @@
             <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
             <ul class="ul__technologies">
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/html-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/html-icon.png" alt="html" />
                 HTML
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/docker-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/docker-icon.png" alt="html" />
                 Docker
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
                 React
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
                 JavaScript
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/adobe-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/adobe-icon.png" alt="html" />
                 Adobe Creative Suit
               </li>
             </ul>
@@ -652,23 +672,23 @@
             <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
             <ul class="ul__technologies">
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/html-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/html-icon.png" alt="html" />
                 HTML
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/docker-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/docker-icon.png" alt="html" />
                 Docker
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
                 React
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
                 JavaScript
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/adobe-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/adobe-icon.png" alt="html" />
                 Adobe Creative Suit
               </li>
             </ul>
@@ -692,23 +712,23 @@
             <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
             <ul class="ul__technologies">
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/html-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/html-icon.png" alt="html" />
                 HTML
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/docker-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/docker-icon.png" alt="html" />
                 Docker
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
                 React
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
                 JavaScript
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/adobe-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/adobe-icon.png" alt="html" />
                 Adobe Creative Suit
               </li>
             </ul>
@@ -749,19 +769,19 @@
             <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
             <ul class="ul__technologies">
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/html-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/html-icon.png" alt="html" />
                 HTML
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/docker-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/docker-icon.png" alt="html" />
                 Docker
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
                 React
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
                 JavaScript
               </li>
             </ul>
@@ -785,11 +805,11 @@
             <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
             <ul class="ul__technologies">
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
                 React
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
                 JavaScript
               </li>
             </ul>
@@ -813,15 +833,15 @@
             <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
             <ul class="ul__technologies">
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/html-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/html-icon.png" alt="html" />
                 HTML
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/react-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/react-icon.png" alt="html" />
                 React
               </li>
               <li class="li__technologies">
-                <img class="pill-icon-gray-scale" src="./assets/js-icon.png" alt="html" />
+                <img class="technologie__icon--gray-scale" src="./assets/js-icon.png" alt="html" />
                 JavaScript
               </li>
             </ul>
