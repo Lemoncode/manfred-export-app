@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <title>CV Monocrome</title>
+
     <style>
       :root {
         /* spacing */
@@ -181,64 +182,131 @@
         height: 100%;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
       }
-
       .background--image {
         height: 270px;
       }
+
       @media screen and (min-width: 834px) {
         .background {
-          height: 158px;
+          height: 150px;
+        }
+        .background--image {
+          height: 205px;
         }
       }
+      @media screen and (min-width: 1024px) {
+        .background--image {
+          height: 250px;
+        }
+      }
+
       /* header tiene estilos diferentes si hay foto */
       .header {
         color: var(--light-light-50);
-        min-height: 170px;
+        min-height: 210px;
         font-family: var(--ff-title);
         font-weight: var(--fw-medium);
-        margin-bottom: var(--space-16);
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
       }
-
+      .header__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
       .header__title {
-        padding-inline: var(--space-16);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+        padding: var(--space-16) var(--space-32) var(--space-8);
         font-size: var(--fs-xl);
         font-weight: var(--fw-medium);
+        height: min-content;
       }
-
       .header__title span {
-        display: block;
         text-transform: uppercase;
         font-weight: var(--fw-extrabold);
         font-size: var(--fs-xxl);
-        margin-top: var(--space-12);
-        margin-bottom: 28px;
       }
       .header__subtitle {
         font-size: var(--fs-l);
         text-align: right;
       }
+      .header__avatar {
+        position: relative;
+        width: 150px;
+        height: 152px;
+        border-radius: 16px;
+        border: 3px solid transparent;
+        align-self: center;
+      }
 
-      .header--image {
-        margin-bottom: 0;
+      .header__avatar::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -3px;
+        left: -3px;
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+        background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, var(--primary-500) 60%);
+        border-radius: 16px;
       }
-      .header--image > .header__title {
-        padding-top: var(--space-32);
+      .header__image {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://media-asgard.s3.eu-west-1.amazonaws.com/22/11/22/46a1d99e-54b1-4d4f-b887-bd32b97684d8_david_squared_2018.jpg');
+        background-size: cover;
+        filter: saturate(25%);
+        background-repeat: no-repeat;
+        border-radius: 13px;
       }
+
+      .header__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-500);
+        opacity: 0.15;
+        border-radius: 13px;
+      }
+
       @media screen and (min-width: 834px) {
         .header {
+          min-height: 170px;
           display: flex;
           justify-content: space-between;
-          min-height: 125px;
-        }
-        .header__title {
-          padding-inline: 0;
-        }
-        .header__subtitle {
-          padding-top: var(--space-base);
-        }
-        .header--image > .header__title {
+          gap: var(--space-8);
+          padding-bottom: 0;
           padding-top: 0;
+        }
+        .header__title,
+        .header__subtitle {
+          padding: var(--space-16) 0;
+        }
+
+        .header__avatar {
+          width: 175px;
+          height: 177px;
+          align-self: flex-end;
+        }
+        .header__text {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .header__avatar {
+          /*tamaño de figma el comentado, el segundo mi aproximación, veo muy grande la imagen*/
+          width: 220px;
+          height: 223px;
+          /* width: 230px;
+    height: 233px; */
         }
       }
 
@@ -250,6 +318,7 @@
         gap: var(--space-base);
         padding-inline: var(--space-8);
       }
+
       .links__item {
         color: var(--primary-400);
         font-size: var(--fs-xs);
@@ -259,11 +328,23 @@
         align-items: center;
         cursor: pointer;
       }
+
       .links__item svg {
         justify-self: center;
       }
+      .links__item span {
+        /*width que donde se quiera cortar*/
+        width: 32ch;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
       @media screen and (min-width: 834px) {
         .links__item {
+          align-items: flex-start;
+        }
+
+        .links__item p {
           align-items: flex-start;
         }
         .links__item svg {
@@ -529,6 +610,7 @@
       }
       .decoration__line {
         flex-grow: 1;
+        border: none;
         border-left: 1px dotted var(--primary-500);
       }
       .education__group {
@@ -577,6 +659,7 @@
         max-width: 1024px;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 30px;
       }
 
       .footer::before {
@@ -596,69 +679,19 @@
         height: 100%;
         clip-path: polygon(0 34%, 0% 100%, 60% 100%);
       }
-
-      /* imagen */
-
-      .avatar {
-        position: relative;
-        width: 150px;
-        height: 152px;
-        border-radius: 16px;
-        border: 3px solid transparent;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: var(--space-32);
-        top: -20px;
-      }
       @media screen and (min-width: 834px) {
-        .avatar {
-          position: absolute;
-          width: 175px;
-          height: 177px;
-          top: -62px;
-          left: 50%;
-          transform: translateX(-50%);
+        .footer--image {
+          margin-top: 70px;
         }
-      }
-      @media screen and (min-width: 1024px) {
-        .avatar {
-          width: 230px;
-          height: 233px;
-          left: 100%;
-          transform: translateX(-100%);
-        }
-      }
-      .avatar::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        top: -3px;
-        left: -3px;
-        width: calc(100% + 6px);
-        height: calc(100% + 6px);
-        background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, var(--primary-500) 60%);
-        border-radius: 16px;
-      }
-      .image {
-        width: 100%;
-        height: 100%;
-        background-image: url('https://media-asgard.s3.eu-west-1.amazonaws.com/22/11/22/46a1d99e-54b1-4d4f-b887-bd32b97684d8_david_squared_2018.jpg');
-        background-size: cover;
-        filter: saturate(25%);
-        background-repeat: no-repeat;
-        border-radius: 13px;
       }
 
-      .filter {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--primary-500);
-        opacity: 0.15;
-        border-radius: 13px;
+      @media screen and (min-width: 1024px) {
+        .footer--image {
+          margin-top: 100px;
+        }
       }
+
+      /*responsive*/
       .column {
         display: none;
       }
@@ -704,31 +737,21 @@
     </style>
   </head>
   <body>
-    <!-- cambia el tamaño si hay imagen -->
-    <!-- <div class="background"></div> -->
-    <div class="background background--image"></div>
-    <!-- Header sin imagen -->
-    <!-- <header class="container header">
-      <h1 class="header__title">David <br /><span>bonilla fuertes</span></h1>
-      <p class="header__subtitle">Fundador en Manfred / C-Level Executive</p>
-    </header> -->
-    <!-- Header con imagen -->
-    <header class="container header header--image">
-      <h1 class="header__title">David <br /><span>bonilla fuertes</span></h1>
-      <p class="header__subtitle">Fundador en Manfred / C-Level Executive</p>
+    <div class="background"></div>
+    <header class="container header">
+      <div class="header__text">
+        <h1 class="header__title">David <br /><span>bonilla fuertes</span></h1>
+        <p class="header__subtitle">Fundador en Manfred / C-Level Executive</p>
+      </div>
+      <div class="header__avatar">
+        <div class="header__image"></div>
+        <div class="header__filter"></div>
+      </div>
     </header>
 
     <main class="container main">
       <div class="column column-left"></div>
-      <!--colum right sin imagen -->
-      <!-- <div class="column column-right"></div> -->
-      <!--colum right con imagen -->
-      <div class="column column-right column-right--image"></div>
-      <!-- cuando haya imagen el header cambia -->
-      <div class="avatar">
-        <div class="image"></div>
-        <div class="filter"></div>
-      </div>
+      <div class="column column-right"></div>
       <section class="section links">
         <h2 class="title">Mis Enlaces</h2>
         <div class="links__container">
@@ -739,7 +762,7 @@
                 fill="var(--primary-500)"
               />
             </svg>
-            https://linkedin.com/in/david-bonilla</a
+            <span>https://linkedin.com/in/david-bonillasdasdfasf/adfgasgrshtjrrtkry/skstdukduy</span></a
           >
           <a class="links__item" href="https://github.com/dbonilla" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -748,7 +771,7 @@
                 fill="var(--primary-500)"
               />
             </svg>
-            https://github.com/dbonilla</a
+            <span>https://github.com/dbonilla</span></a
           >
 
           <a class="links__item" href="https://twitter/david-bonilla" target="_blank">
@@ -759,9 +782,8 @@
                 clip-rule="evenodd"
                 d="M1.63226 14H12.3679C13.2694 14 14.0002 13.2693 14 12.3676V1.63224C14 0.730747 13.2692 0 12.3677 0H1.63226C0.730756 0 0 0.730747 0 1.63224V12.3678C0 13.2693 0.730756 14 1.63226 14ZM5.82306 7.50962L1.74662 2.05902H4.88843L7.56087 5.63222L10.8683 2.05902H11.7916L7.97336 6.18396L12.2793 11.9411H9.13745L6.23572 8.06118L2.64423 11.9411H1.72093L5.82306 7.50962Z"
                 fill="#28868B"
-              />
-            </svg>
-            https://twitter/david-bonilla</a
+              /></svg
+            ><span> https://twitter/david-bonilla</span></a
           >
           <a class="links__item" href="https://www.david-bonilla.com" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -770,9 +792,8 @@
                 clip-rule="evenodd"
                 d="M1.16667 0C0.522326 0 0 0.522308 0 1.16667V12.8333C0 13.4777 0.522326 14 1.16667 14H12.8333C13.4777 14 14 13.4777 14 12.8333V1.16667C14 0.522308 13.4777 0 12.8333 0H1.16667ZM12.2661 3.09198C13.4113 4.23721 13.4113 6.09189 12.2661 7.23712L9.98978 9.51342C8.84455 10.6587 6.98987 10.6587 5.84462 9.51342C4.83114 8.49992 4.69939 6.90266 5.53449 5.7392L5.5568 5.70673C5.76355 5.41691 6.17096 5.34998 6.46083 5.55676C6.75068 5.76348 6.8196 6.16886 6.61081 6.46082L6.58853 6.49321C6.12434 7.14185 6.19731 8.03166 6.76284 8.59719C7.40134 9.23571 8.4351 9.23571 9.07359 8.59719L11.3479 6.3189C11.9864 5.68038 11.9864 4.64666 11.3479 4.00814C10.7843 3.44261 9.89452 3.36962 9.24386 3.83382L9.21143 3.85611C8.92157 4.06489 8.51617 3.99596 8.30739 3.70615C8.09861 3.41626 8.16551 3.01087 8.45739 2.80209L8.48982 2.77981C9.65533 1.94675 11.2526 2.07848 12.2661 3.09198ZM1.73392 10.9079C0.588692 9.76272 0.588692 7.90804 1.73392 6.76281L4.01022 4.48651C5.15545 3.34128 7.01013 3.34128 8.15538 4.48651C9.16886 5.50001 9.30061 7.09727 8.46551 8.26273L8.4432 8.2952C8.23645 8.58508 7.82904 8.65195 7.53917 8.44516C7.24932 8.23844 7.1804 7.83306 7.38919 7.54118L7.41147 7.50871C7.87566 6.85808 7.80269 5.9682 7.23716 5.40267C6.59866 4.76422 5.5649 4.76422 4.92641 5.40267L2.65215 7.67897C2.01365 8.31748 2.01365 9.35128 2.65215 9.99179C3.21565 10.5573 4.10548 10.6302 4.75614 10.1661L4.78857 10.1438C5.07842 9.93504 5.48383 10.0039 5.69261 10.2938C5.90139 10.5837 5.83449 10.9891 5.54261 11.1978L5.51017 11.2201C4.34467 12.0532 2.74741 11.9214 1.73392 10.9079Z"
                 fill="var(--primary-500)"
-              />
-            </svg>
-            https://www.david-bonilla.com</a
+              /></svg
+            ><span> https://www.david-bonilla.com</span></a
           >
           <a class="links__item" href="mailto:dpadayao40@outlook.ph" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -781,7 +802,7 @@
                 fill="var(--primary-500)"
               />
             </svg>
-            dpadayao40@outlook.ph</a
+            <span>dpadayao40@outlook.ph</span></a
           >
           <p class="links__item">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
@@ -797,7 +818,7 @@
                 </clipPath>
               </defs>
             </svg>
-            A coruña, España
+            <span>A coruña, España</span>
           </p>
           <a class="links__item" href="tel:+639267621542" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -806,7 +827,7 @@
                 fill="var(--primary-500)"
               />
             </svg>
-            (+63) 9267621542</a
+            <span>(+63) 9267621542</span></a
           >
         </div>
       </section>
@@ -1026,7 +1047,9 @@
         const hardSkills = elementInDOM('.hard-skills');
         const softSkills = elementInDOM('.soft-skills');
         const education = elementInDOM('.educations');
-        const avatar = elementInDOM('.avatar');
+        const avatar = elementInDOM('.header__avatar');
+        const background = elementInDOM('.background');
+        const footer = elementInDOM('.footer');
 
         // Selecciona las columnas y comprueba que existan
         const columnLeft = elementInDOM('.column-left');
@@ -1036,15 +1059,20 @@
           // Mueve los elementos a las columnas correspondientes
           columnLeft.appendChild(aboutMe);
           columnLeft.appendChild(experience);
-          columnRight.appendChild(avatar);
           columnRight.appendChild(myLinks);
           columnRight.appendChild(languages);
           columnRight.appendChild(hardSkills);
           columnRight.appendChild(softSkills);
           columnRight.appendChild(education);
+
+          if (avatar) {
+            background.classList.add('background--image');
+            footer.classList.add('footer--image');
+          } else {
+            background.classList.remove('background--image');
+          }
         } else {
           // Mueve los elementos al contenedor
-          main.appendChild(avatar);
           main.appendChild(myLinks);
           main.appendChild(aboutMe);
           main.appendChild(languages);
