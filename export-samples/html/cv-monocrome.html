@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;500;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>CV Monocrome</title>
+
+    <style>
+      :root {
+        /* spacing */
+        --space-base: 4px;
+        --space-2: calc(var(--space-base) / 2);
+        --space-8: calc(var(--space-base) * 2);
+        --space-12: calc(var(--space-base) * 3);
+        --space-16: calc(var(--space-base) * 4);
+        --space-24: calc(var(--space-base) * 6);
+        --space-32: calc(var(--space-base) * 8);
+        --space-48: calc(var(--space-base) * 12);
+        --space-64: calc(var(--space-base) * 16);
+
+        /* colors */
+        --primary-50: #eaf3f3;
+        --primary-100: #bcd9db;
+        --primary-200: #9cc7ca;
+        --primary-300: #6faeb1;
+        --primary-400: #539ea2;
+        --primary-500: #28868b;
+        --primary-600: #247a7e;
+        --primary-700: #247a7e;
+        --primary-800: #164a4c;
+        --primary-900: #11383a;
+
+        /* text */
+        --light-light-50: #fefefe;
+
+        /* background */
+        --info-info-50: #fbfbfa;
+
+        /*font-family*/
+        --ff-body: 'Poppins', sans-serif;
+        --ff-title: 'Bai Jamjuree', sans-serif;
+
+        /*font-sizes*/
+        --fs-xs: 10px;
+        --fs-s: 12px;
+        --fs-m: 14px;
+        --fs-l: 16px;
+        --fs-xl: 20px;
+        --fs-xxl: 32px;
+
+        /*font-wight*/
+        --fw-light: 300;
+        --fw-regular: 400;
+        --fw-medium: 500;
+        --fw-bold: 600;
+        --fw-extrabold: 700;
+
+        /*Levels lenguages*/
+        --level1: var(--primary-50);
+        --level2: var(--primary-50);
+        --level3: var(--primary-50);
+        --level4: var(--primary-50);
+        --level-gradient: linear-gradient(
+          to right,
+          var(--level1),
+          var(--level1) 1.5rem,
+          transparent 1.5rem,
+          transparent calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level4) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem)
+        );
+      }
+
+      /* reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+      body {
+        margin: 0;
+        background-color: var(--info-info-50);
+        color: var(--primary-900);
+        font-family: var(--ff-body);
+        font-weight: 400;
+        line-height: 166.667%;
+        font-size: var(--fs-s);
+        min-width: 428px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+        position: relative;
+      }
+
+      /* utility */
+      .container {
+        padding: var(--space-16);
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .title {
+        font-size: var(--fs-xl);
+        font-family: var(--ff-title);
+        font-weight: var(--fw-extrabold);
+        color: var(--primary-500);
+        margin-bottom: var(--space-16);
+      }
+      .section {
+        padding-bottom: var(--space-32);
+      }
+      .chip {
+        font-size: var(--fs-xs);
+        border-radius: 30px;
+        padding: 0 var(--space-8);
+        background-color: var(--light-light-50);
+        color: var(--primary-500);
+        line-height: 2;
+      }
+      .chip-primary {
+        color: var(--light-light-50);
+        background-color: var(--primary-500);
+      }
+      @media screen and (min-width: 834px) {
+        .container {
+          padding: var(--space-16) var(--space-32);
+        }
+        .title {
+          font-size: var(--fs-m);
+        }
+      }
+
+      /* background decoration header */
+      .background {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 219px;
+        background-color: var(--primary-100);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 66%);
+        max-width: 1024px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .background::before {
+        position: absolute;
+        content: '';
+        background-color: var(--primary-300);
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 63%);
+      }
+      .background::after {
+        position: absolute;
+        content: '';
+        background-color: var(--primary-900);
+        background-image: radial-gradient(circle at 5% 30%, var(--primary-500) 0%, transparent 75%);
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+      }
+      .background--image {
+        height: 270px;
+      }
+      @media screen and (min-width: 834px) {
+        .background {
+          height: 150px;
+        }
+        .background--image {
+          height: 205px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .background--image {
+          height: 250px;
+        }
+      }
+
+      /* header */
+      .header {
+        font-family: var(--ff-title);
+        font-weight: var(--fw-medium);
+        color: var(--light-light-50);
+        min-height: 210px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+      .header__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+      .header__title {
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+        padding: var(--space-16) var(--space-32) var(--space-8);
+        font-size: var(--fs-xl);
+        font-weight: var(--fw-medium);
+      }
+      .header__title span {
+        text-transform: uppercase;
+        font-weight: var(--fw-extrabold);
+        font-size: var(--fs-xxl);
+      }
+      .header__subtitle {
+        font-size: var(--fs-l);
+        text-align: right;
+      }
+      .header__avatar {
+        position: relative;
+        width: 150px;
+        height: 152px;
+        border-radius: 16px;
+        border: 3px solid transparent;
+        align-self: center;
+      }
+      .header__avatar::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -3px;
+        left: -3px;
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+        background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, var(--primary-500) 60%);
+        border-radius: 16px;
+      }
+      .header__image {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://media-asgard.s3.eu-west-1.amazonaws.com/22/11/22/46a1d99e-54b1-4d4f-b887-bd32b97684d8_david_squared_2018.jpg');
+        background-size: cover;
+        filter: saturate(25%);
+        background-repeat: no-repeat;
+        border-radius: 13px;
+      }
+      .header__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-500);
+        opacity: 0.15;
+        border-radius: 13px;
+      }
+
+      @media screen and (min-width: 834px) {
+        .header {
+          min-height: 170px;
+          display: flex;
+          justify-content: space-between;
+          gap: var(--space-8);
+          padding-bottom: 0;
+          padding-top: 0;
+        }
+        .header__title,
+        .header__subtitle {
+          padding: var(--space-16) 0;
+        }
+        .header__avatar {
+          width: 175px;
+          height: 177px;
+          align-self: flex-end;
+        }
+        .header__text {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .header__avatar {
+          width: 220px;
+          height: 223px;
+        }
+      }
+
+      /* section link */
+      .links__container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-base);
+        padding-inline: var(--space-8);
+      }
+      .links__item {
+        color: var(--primary-400);
+        font-size: var(--fs-xs);
+        display: grid;
+        grid-template-columns: 16px 1fr;
+        gap: var(--space-8);
+        align-items: center;
+        cursor: pointer;
+      }
+      .links__item svg {
+        justify-self: center;
+      }
+      .links__item span {
+        width: 32ch;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      @media screen and (min-width: 834px) {
+        .links__item {
+          align-items: flex-start;
+        }
+        .links__item p {
+          align-items: flex-start;
+        }
+        .links__item svg {
+          margin-top: 1.5px;
+        }
+      }
+
+      /* section about */
+      @media screen and (min-width: 834px) {
+        .about {
+          font-size: var(--fs-l);
+          line-height: 24px;
+        }
+        .about .title {
+          font-size: 24px;
+        }
+      }
+
+      /* section hard-skills */
+      .hard-skills__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding-inline: var(--space-8);
+        gap: var(--space-8);
+      }
+
+      /* section soft-skills */
+      .soft-skills__list {
+        font-size: var(--fs-xs);
+        color: var(--primary-500);
+        padding-left: var(--space-24);
+      }
+
+      /* icono lenguajes */
+      .lenguage__container {
+        display: grid;
+        padding-inline: var(--space-8);
+        grid-template-columns: minmax(100px, auto) minmax(114px, 1fr);
+        align-items: center;
+        justify-items: start;
+      }
+      .lenguage__container + .lenguage__container {
+        padding-top: var(--space-12);
+      }
+      .lenguage__title {
+        color: var(--primary-500);
+        font-weight: var(--fw-medium);
+      }
+      .lenguage__image {
+        min-width: 7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-2);
+        margin: 0px;
+      }
+      .lenguage__icon {
+        width: 114px;
+        height: 24px;
+        clip-path: polygon(0px 100%, 100% 0px, 100% 100%);
+        background-image: var(--level-gradient);
+      }
+      .language__caption {
+        font-size: var(--fs-xs);
+        color: var(--primary-300);
+        font-weight: var(--fw-medium);
+      }
+
+      .level-1 {
+        --level1: var(--primary-500);
+        --level-gradient: linear-gradient(
+          to right,
+          var(--level1),
+          var(--level1) 1.5rem,
+          transparent 1.5rem,
+          transparent calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level4) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem)
+        );
+      }
+      .level-2 {
+        --level1: var(--primary-500);
+        --level2: var(--primary-500);
+        --level-gradient: linear-gradient(
+          to right,
+          var(--level1),
+          var(--level1) 1.5rem,
+          transparent 1.5rem,
+          transparent calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level4) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem)
+        );
+      }
+      .level-3 {
+        --level1: var(--primary-500);
+        --level2: var(--primary-500);
+        --level3: var(--primary-500);
+        --level-gradient: linear-gradient(
+          to right,
+          var(--level1),
+          var(--level1) 1.5rem,
+          transparent 1.5rem,
+          transparent calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level4) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem)
+        );
+      }
+      .level-4 {
+        --level1: var(--primary-500);
+        --level2: var(--primary-500);
+        --level3: var(--primary-500);
+        --level4: var(--primary-500);
+        --level-gradient: linear-gradient(
+          to right,
+          var(--level1),
+          var(--level1) 1.5rem,
+          transparent 1.5rem,
+          transparent calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem),
+          var(--level2) calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level3) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem),
+          transparent calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem),
+          var(--level4) calc(1.5rem + 0.375rem + 1.5rem + 0.375rem + 1.5rem + 0.375rem)
+        );
+      }
+
+      /* experiencies */
+      .experiencies__container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-32);
+        padding-top: var(--space-16);
+      }
+      .experience {
+        background-color: var(--primary-50);
+        border-radius: 16px;
+        padding: var(--space-16);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+      }
+      .experience__date {
+        font-family: var(--ff-title);
+        font-size: var(--fs-xs);
+        font-weight: var(--fw-light);
+        color: var(--primary-500);
+      }
+      .experience__position {
+        font-family: var(--ff-title);
+        font-size: var(--fs-xl);
+        font-weight: var(--fw-extrabold);
+        color: var(--primary-600);
+        line-height: 1.3;
+      }
+      .experience__company {
+        font-size: var(--fs-l);
+        font-weight: var(--fw-regular);
+        color: var(--primary-500);
+      }
+      .experience__text {
+        font-weight: var(--fw-light);
+      }
+      .experience__url {
+        display: block;
+        font-size: var(--fs-xs);
+        font-weight: var(--fw-light);
+        color: var(--primary-500);
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+      .experience__tools {
+        font-family: var(--ff-title);
+        font-size: var(--fs-m);
+        font-weight: var(--fw-medium);
+        color: var(--primary-600);
+        margin-bottom: var(--space-16);
+      }
+      .experience__tools-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-12);
+      }
+
+      @media screen and (min-width: 834px) {
+        .experiencies .title {
+          font-size: 24px;
+        }
+        .experience__text {
+          font-size: 24px;
+          font-size: var(--fs-m);
+          line-height: 24px;
+        }
+        .experience__position {
+          font-size: 24px;
+          margin-bottom: var(--space-8);
+        }
+        .experience__company {
+          font-size: var(--fs-xl);
+          margin-bottom: var(--space-16);
+        }
+        .experience__tools {
+          font-size: var(--fs-l);
+        }
+      }
+
+      /* educations */
+      .educations {
+        padding-bottom: var(--space-8);
+      }
+      .education {
+        display: flex;
+        gap: var(--space-8);
+        margin-bottom: var(--space-base);
+        padding-inline: var(--space-8);
+      }
+      .decoration {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-8);
+      }
+      .decoration__circle {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: var(--primary-500);
+      }
+      .decoration__line {
+        flex-grow: 1;
+        border: none;
+        border-left: 1px dotted var(--primary-500);
+      }
+      .education__group {
+        max-width: 42ch;
+      }
+      .education__date {
+        font-family: var(--ff-title);
+        font-size: var(--fs-xs);
+        font-weight: var(--fw-light);
+        color: var(--primary-500);
+        line-height: 1.6;
+      }
+      .education__title {
+        font-family: var(--ff-title);
+        font-weight: var(--fw-extrabold);
+        color: var(--primary-500);
+      }
+      .education__entity {
+        font-size: var(--fs-xs);
+        font-weight: var(--fw-bold);
+        color: var(--primary-400);
+      }
+      .education__text {
+        font-size: var(--fs-xs);
+        color: var(--primary-200);
+        line-height: 1.6;
+        margin-bottom: var(--space-2);
+      }
+      .education__technologies {
+        font-size: var(--fs-xs);
+        color: var(--primary-400);
+        margin-bottom: var(--space-8);
+      }
+      .education__technologies span {
+        color: var(--primary-200);
+        font-weight: var(--fw-light);
+      }
+
+      /* footer */
+      .footer {
+        position: relative;
+        width: 100%;
+        height: 55px;
+        background-color: var(--primary-100);
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+      }
+      .footer::before {
+        position: absolute;
+        content: '';
+        background-color: var(--primary-300);
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 17%, 0% 100%, 80% 100%);
+      }
+      .footer::after {
+        position: absolute;
+        content: '';
+        background-color: var(--primary-500);
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 34%, 0% 100%, 60% 100%);
+      }
+      @media screen and (min-width: 834px) {
+        .footer--image {
+          margin-top: 70px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .footer--image {
+          margin-top: 100px;
+        }
+      }
+
+      /*responsive*/
+      .column {
+        display: none;
+      }
+      @media screen and (min-width: 834px) {
+        .main {
+          display: grid;
+          grid-template-columns: 1fr 229px;
+          gap: var(--space-32);
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+
+        .column-left {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          gap: var(--space-32);
+        }
+
+        .column-right {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          padding-top: 40px;
+        }
+        .column-right--image {
+          padding-top: 156px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .main {
+          grid-template-columns: 1fr 335px;
+        }
+        .column-right--image {
+          padding-top: 215px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <header class="container header">
+      <div class="header__text">
+        <h1 class="header__title">David <br /><span>bonilla fuertes</span></h1>
+        <p class="header__subtitle">Fundador en Manfred / C-Level Executive</p>
+      </div>
+      <div class="header__avatar">
+        <div class="header__image"></div>
+        <div class="header__filter"></div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <div class="column column-left"></div>
+      <div class="column column-right"></div>
+      <section class="section links">
+        <h2 class="title">Mis Enlaces</h2>
+        <div class="links__container">
+          <a class="links__item" href="https://linkedin.com/in/david-bonilla" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M14 1H1.99687C1.44687 1 1 1.45313 1 2.00938V13.9906C1 14.5469 1.44687 15 1.99687 15H14C14.55 15 15 14.5469 15 13.9906V2.00938C15 1.45313 14.55 1 14 1ZM5.23125 13H3.15625V6.31875H5.23438V13H5.23125ZM4.19375 5.40625C3.52812 5.40625 2.99063 4.86562 2.99063 4.20312C2.99063 3.54063 3.52812 3 4.19375 3C4.85625 3 5.39687 3.54063 5.39687 4.20312C5.39687 4.86875 4.85938 5.40625 4.19375 5.40625ZM13.0094 13H10.9344V9.75C10.9344 8.975 10.9187 7.97813 9.85625 7.97813C8.775 7.97813 8.60938 8.82188 8.60938 9.69375V13H6.53438V6.31875H8.525V7.23125H8.55312C8.83125 6.70625 9.50938 6.15312 10.5188 6.15312C12.6187 6.15312 13.0094 7.5375 13.0094 9.3375V13Z"
+                fill="var(--primary-500)"
+              />
+            </svg>
+            <span>https://linkedin.com/in/david-bonillasdasdfasf/adfgasgrshtjrrtkry/skstdukduy</span></a
+          >
+          <a class="links__item" href="https://github.com/dbonilla" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M13.5 1H2.5C1.67188 1 1 1.67188 1 2.5V13.5C1 14.3281 1.67188 15 2.5 15H13.5C14.3281 15 15 14.3281 15 13.5V2.5C15 1.67188 14.3281 1 13.5 1ZM9.66562 12.9906C9.40312 13.0375 9.30625 12.875 9.30625 12.7406C9.30625 12.5719 9.3125 11.7094 9.3125 11.0125C9.3125 10.525 9.15 10.2156 8.95937 10.0531C10.1156 9.925 11.3344 9.76562 11.3344 7.76875C11.3344 7.2 11.1313 6.91563 10.8 6.55C10.8531 6.41563 11.0312 5.8625 10.7469 5.14375C10.3125 5.00938 9.31875 5.70312 9.31875 5.70312C8.90625 5.5875 8.45938 5.52812 8.01875 5.52812C7.57812 5.52812 7.13125 5.5875 6.71875 5.70312C6.71875 5.70312 5.725 5.00938 5.29063 5.14375C5.00625 5.85938 5.18125 6.4125 5.2375 6.55C4.90625 6.91563 4.75 7.2 4.75 7.76875C4.75 9.75625 5.91563 9.925 7.07188 10.0531C6.92188 10.1875 6.7875 10.4187 6.74062 10.75C6.44375 10.8844 5.68437 11.1156 5.23125 10.3156C4.94687 9.82188 4.43438 9.78125 4.43438 9.78125C3.92812 9.775 4.4 10.1 4.4 10.1C4.7375 10.2563 4.975 10.8562 4.975 10.8562C5.27812 11.7844 6.72813 11.4719 6.72813 11.4719C6.72813 11.9062 6.73438 12.6125 6.73438 12.7406C6.73438 12.875 6.64062 13.0375 6.375 12.9906C4.3125 12.3 2.86875 10.3375 2.86875 8.04375C2.86875 5.175 5.0625 2.99688 7.93125 2.99688C10.8 2.99688 13.125 5.175 13.125 8.04375C13.1281 10.3375 11.7281 12.3031 9.66562 12.9906ZM6.6 11.0813C6.54063 11.0938 6.48438 11.0687 6.47813 11.0281C6.47188 10.9812 6.5125 10.9406 6.57188 10.9281C6.63125 10.9219 6.6875 10.9469 6.69375 10.9875C6.70312 11.0281 6.6625 11.0688 6.6 11.0813ZM6.30312 11.0531C6.30312 11.0938 6.25625 11.1281 6.19375 11.1281C6.125 11.1344 6.07812 11.1 6.07812 11.0531C6.07812 11.0125 6.125 10.9781 6.1875 10.9781C6.24687 10.9719 6.30312 11.0063 6.30312 11.0531ZM5.875 11.0188C5.8625 11.0594 5.8 11.0781 5.74687 11.0594C5.6875 11.0469 5.64688 11 5.65938 10.9594C5.67188 10.9188 5.73438 10.9 5.7875 10.9125C5.85 10.9313 5.89062 10.9781 5.875 11.0188ZM5.49062 10.85C5.4625 10.8844 5.40312 10.8781 5.35625 10.8313C5.30937 10.7906 5.29688 10.7312 5.32812 10.7031C5.35625 10.6687 5.41563 10.675 5.4625 10.7219C5.50313 10.7625 5.51875 10.825 5.49062 10.85ZM5.20625 10.5656C5.17813 10.5844 5.125 10.5656 5.09062 10.5188C5.05625 10.4719 5.05625 10.4188 5.09062 10.3969C5.125 10.3688 5.17813 10.3906 5.20625 10.4375C5.24063 10.4844 5.24063 10.5406 5.20625 10.5656ZM5.00313 10.2625C4.975 10.2906 4.92812 10.275 4.89375 10.2437C4.85938 10.2031 4.85312 10.1562 4.88125 10.1344C4.90937 10.1062 4.95625 10.1219 4.99062 10.1531C5.025 10.1937 5.03125 10.2406 5.00313 10.2625ZM4.79375 10.0312C4.78125 10.0594 4.74062 10.0656 4.70625 10.0437C4.66562 10.025 4.64687 9.99062 4.65937 9.9625C4.67188 9.94375 4.70625 9.93437 4.74688 9.95C4.7875 9.97188 4.80625 10.0063 4.79375 10.0312Z"
+                fill="var(--primary-500)"
+              />
+            </svg>
+            <span>https://github.com/dbonilla</span></a
+          >
+
+          <a class="links__item" href="https://twitter/david-bonilla" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M4.5477 2.73921H3.10437L9.47799 11.2611H10.9213L4.5477 2.73921Z" fill="var(--primary-500)" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.63226 14H12.3679C13.2694 14 14.0002 13.2693 14 12.3676V1.63224C14 0.730747 13.2692 0 12.3677 0H1.63226C0.730756 0 0 0.730747 0 1.63224V12.3678C0 13.2693 0.730756 14 1.63226 14ZM5.82306 7.50962L1.74662 2.05902H4.88843L7.56087 5.63222L10.8683 2.05902H11.7916L7.97336 6.18396L12.2793 11.9411H9.13745L6.23572 8.06118L2.64423 11.9411H1.72093L5.82306 7.50962Z"
+                fill="var(--primary-500)"
+              /></svg
+            ><span> https://twitter/david-bonilla</span></a
+          >
+          <a class="links__item" href="https://www.david-bonilla.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.16667 0C0.522326 0 0 0.522308 0 1.16667V12.8333C0 13.4777 0.522326 14 1.16667 14H12.8333C13.4777 14 14 13.4777 14 12.8333V1.16667C14 0.522308 13.4777 0 12.8333 0H1.16667ZM12.2661 3.09198C13.4113 4.23721 13.4113 6.09189 12.2661 7.23712L9.98978 9.51342C8.84455 10.6587 6.98987 10.6587 5.84462 9.51342C4.83114 8.49992 4.69939 6.90266 5.53449 5.7392L5.5568 5.70673C5.76355 5.41691 6.17096 5.34998 6.46083 5.55676C6.75068 5.76348 6.8196 6.16886 6.61081 6.46082L6.58853 6.49321C6.12434 7.14185 6.19731 8.03166 6.76284 8.59719C7.40134 9.23571 8.4351 9.23571 9.07359 8.59719L11.3479 6.3189C11.9864 5.68038 11.9864 4.64666 11.3479 4.00814C10.7843 3.44261 9.89452 3.36962 9.24386 3.83382L9.21143 3.85611C8.92157 4.06489 8.51617 3.99596 8.30739 3.70615C8.09861 3.41626 8.16551 3.01087 8.45739 2.80209L8.48982 2.77981C9.65533 1.94675 11.2526 2.07848 12.2661 3.09198ZM1.73392 10.9079C0.588692 9.76272 0.588692 7.90804 1.73392 6.76281L4.01022 4.48651C5.15545 3.34128 7.01013 3.34128 8.15538 4.48651C9.16886 5.50001 9.30061 7.09727 8.46551 8.26273L8.4432 8.2952C8.23645 8.58508 7.82904 8.65195 7.53917 8.44516C7.24932 8.23844 7.1804 7.83306 7.38919 7.54118L7.41147 7.50871C7.87566 6.85808 7.80269 5.9682 7.23716 5.40267C6.59866 4.76422 5.5649 4.76422 4.92641 5.40267L2.65215 7.67897C2.01365 8.31748 2.01365 9.35128 2.65215 9.99179C3.21565 10.5573 4.10548 10.6302 4.75614 10.1661L4.78857 10.1438C5.07842 9.93504 5.48383 10.0039 5.69261 10.2938C5.90139 10.5837 5.83449 10.9891 5.54261 11.1978L5.51017 11.2201C4.34467 12.0532 2.74741 11.9214 1.73392 10.9079Z"
+                fill="var(--primary-500)"
+              /></svg
+            ><span> https://www.david-bonilla.com</span></a
+          >
+          <a class="links__item" href="mailto:dpadayao40@outlook.ph" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M13.5 1H2.5C1.67156 1 1 1.67156 1 2.5V13.5C1 14.3284 1.67156 15 2.5 15H13.5C14.3284 15 15 14.3284 15 13.5V2.5C15 1.67156 14.3284 1 13.5 1ZM6.56616 8.19075C3.73216 6.13397 3.76103 6.12878 3 5.53647V4.75C3 4.33578 3.33578 4 3.75 4H12.25C12.6642 4 13 4.33578 13 4.75V5.53647C12.2384 6.12925 12.2677 6.13409 9.43384 8.19078C9.10572 8.43 8.45284 9.00703 8 8.99997C7.54678 9.00678 6.89478 8.43038 6.56616 8.19075ZM13 6.80547V11.25C13 11.6642 12.6642 12 12.25 12H3.75C3.33578 12 3 11.6642 3 11.25V6.80547C3.43619 7.14278 4.04153 7.59409 5.97822 8.99966C6.42078 9.32281 7.16494 10.0042 7.99991 9.99997C8.84012 10.0042 9.59481 9.31119 10.0224 8.99919C11.9586 7.59403 12.5638 7.14275 13 6.80547Z"
+                fill="var(--primary-500)"
+              />
+            </svg>
+            <span>dpadayao40@outlook.ph</span></a
+          >
+          <p class="links__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
+              <g clip-path="url(#clip0_1825_4351)">
+                <path
+                  d="M6.74062 15.6C8.34375 13.5938 12 8.73125 12 6C12 2.6875 9.3125 0 6 0C2.6875 0 0 2.6875 0 6C0 8.73125 3.65625 13.5938 5.25938 15.6C5.64375 16.0781 6.35625 16.0781 6.74062 15.6ZM9.53125 4.53125L5.53125 8.53125C5.2375 8.825 4.7625 8.825 4.47188 8.53125L2.46875 6.53125C2.175 6.2375 2.175 5.7625 2.46875 5.47188C2.7625 5.18125 3.2375 5.17813 3.52813 5.47188L4.99687 6.94063L8.46875 3.46875C8.7625 3.175 9.2375 3.175 9.52812 3.46875C9.81875 3.7625 9.82187 4.2375 9.52812 4.52812L9.53125 4.53125Z"
+                  fill="var(--primary-500)"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1825_4351">
+                  <rect width="12" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span>A coruña, España</span>
+          </p>
+          <a class="links__item" href="tel:+639267621542" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M13.5 1H2.5C2.10218 1 1.72064 1.15804 1.43934 1.43934C1.15804 1.72064 1 2.10218 1 2.5L1 13.5C1 13.8978 1.15804 14.2794 1.43934 14.5607C1.72064 14.842 2.10218 15 2.5 15H13.5C13.8978 15 14.2794 14.842 14.5607 14.5607C14.842 14.2794 15 13.8978 15 13.5V2.5C15 2.10218 14.842 1.72064 14.5607 1.43934C14.2794 1.15804 13.8978 1 13.5 1ZM12.9878 10.6053L12.5191 12.6366C12.4953 12.7398 12.4371 12.832 12.3542 12.898C12.2713 12.964 12.1685 13 12.0625 13C7.0625 13 3 8.94656 3 3.9375C3.00372 3.83252 3.04104 3.7315 3.10646 3.64931C3.17189 3.56712 3.26196 3.5081 3.36344 3.48094L5.39469 3.01219C5.42934 3.00486 5.46459 3.00078 5.5 3C5.59065 3.00458 5.67841 3.03333 5.75419 3.08328C5.82997 3.13323 5.891 3.20256 5.93094 3.28406L6.86844 5.47156C6.8914 5.53054 6.90419 5.59299 6.90625 5.65625C6.89862 5.79501 6.83692 5.92526 6.73438 6.01906L5.55031 6.98781C6.26775 8.50841 7.49159 9.73225 9.01219 10.4497L9.98094 9.26562C10.0747 9.16308 10.205 9.10138 10.3438 9.09375C10.407 9.09579 10.4695 9.10857 10.5284 9.13156L12.7159 10.0691C12.7975 10.1089 12.8668 10.17 12.9168 10.2458C12.9668 10.3215 12.9955 10.4093 13 10.5C12.9994 10.5354 12.9953 10.5707 12.9878 10.6053Z"
+                fill="var(--primary-500)"
+              />
+            </svg>
+            <span>(+63) 9267621542</span></a
+          >
+        </div>
+      </section>
+      <section class="section about">
+        <h2 class="title">Sobre mi</h2>
+        <p>
+          Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor
+          -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas- pero creo
+          que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las empresas es en
+          la gestión de equipos y proyectos de construcción de activos digitales. Me apasiona contribuir en todo el
+          ciclo de vida de un producto o servicio informático, desde la definición hasta el mantenimiento o soporte a
+          clientes, y también involucrarme en la comercialización del mismo. Me gusta trabajar con gente y para la
+          gente. Como responsable de equipos, mi principal prioridad siempre es eliminar cualquier problema que les
+          impida alcanzar todo su potencial. También procuro devolver a la Comunidad informática parte del valor y el
+          conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos
+          de usuarios y conferencias técnicas; y, a veces, organizándolos.
+        </p>
+      </section>
+      <section class="section hard-skills">
+        <h2 class="title">Habilidades</h2>
+        <ul class="hard-skills__list">
+          <li class="chip chip-primary">NodeJs</li>
+          <li class="chip chip-primary">Git</li>
+          <li class="chip chip-primary">JavaScript</li>
+          <li class="chip chip-primary">Adobe creative claud</li>
+          <li class="chip chip-primary">Github</li>
+        </ul>
+      </section>
+      <section class="section soft-skills">
+        <h2 class="title">Competencias</h2>
+        <ul class="soft-skills__list">
+          <li>Adaptabilidad al cambio</li>
+          <li>Aprendizaje continuo</li>
+          <li>Gestión de equipo</li>
+        </ul>
+      </section>
+      <section class="section languages">
+        <h2 class="title">Idiomas</h2>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Español</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-4"></div>
+            <figcaption class="language__caption">Nativo/Bilingüe</figcaption>
+          </figure>
+        </div>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Inglés</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-3"></div>
+            <figcaption class="language__caption">Fluido</figcaption>
+          </figure>
+        </div>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Alemán</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-2"></div>
+            <figcaption class="language__caption">Intermedio</figcaption>
+          </figure>
+        </div>
+        <div class="lenguage__container">
+          <p class="lenguage__title">Gallego</p>
+          <figure type="language" class="lenguage__image">
+            <div class="lenguage__icon level-1"></div>
+            <figcaption class="language__caption">Básico</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section experiencies">
+        <h2 class="title">Experiencia</h2>
+        <div class="experiencies__container">
+          <div class="experience">
+            <p class="experience__date">Junio 2018-Actualidad</p>
+            <h3 class="experience__position">CEO</h3>
+            <h4 class="experience__company">Manfred</h4>
+            <div class="experience__text">
+              <p>We grew the company from a recruiting agency to become a genuine career management platform.</p>
+              <p>
+                Now, we are an international team of 45 people, taking care of the career of +20,000 professionals
+                around the World.
+              </p>
+              <p>
+                To achieve this, we had to: Adapt the organization processes to scale its operations. Implementation of
+                Holacracy as the management system. Development of own product to scale the company operations,
+                especially the value added to candidates. Completing the acquisition process by Sngular, maintaining the
+                company's core of employees without any productivity or sales suffering before, during, and after it.
+              </p>
+            </div>
+            <a href="https://www.getmanfred.com" class="experience__url">www.getmanfred.com</a>
+            <div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">HTML</li>
+                <li class="chip">Docker</li>
+                <li class="chip">React</li>
+                <li class="chip">JavaScript</li>
+                <li class="chip">Adobe Creative Suite</li>
+                <li class="chip">Figma</li>
+                <li class="chip">Photoshop</li>
+                <li class="chip">Linux</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience">
+            <p class="experience__date">Febrero 2017 - Junio 2018</p>
+            <h3 class="experience__position">CEO</h3>
+
+            <h4 class="experience__company">Comalatech</h4>
+            <div class="experience__text">
+              <p>
+                Comalatech was a company with 17 employees and 3 million dollar revenue per year, developing plugins
+                that extend the functionalities of the Atlassian main products. My goal was to scale the organization to
+                help grow.
+              </p>
+              <p>With these solid foundations, Comalatech was finally acquired by Appfire in 2022.</p>
+            </div>
+            <a href="https://www.comalatech.com" class="experience__url">www.comalatech.com</a>
+
+            <div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">HTML</li>
+                <li class="chip">Docker</li>
+                <li class="chip">React</li>
+                <li class="chip">JavaScript</li>
+                <li class="chip">Adobe Creative Suite</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience">
+            <p class="experience__date">Sep 2002 - Jun 2006</p>
+            <h3 class="experience__position">Profesor asociado de productividad y metodologías ágiles</h3>
+            <div>
+              <h4 class="experience__company">Instituto de empresa</h4>
+            </div>
+            <div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">HTML</li>
+                <li class="chip">Docker</li>
+                <li class="chip">React</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section educations">
+        <h2 class="title">Educación</h2>
+        <div class="education">
+          <div class="decoration">
+            <div class="decoration__circle"></div>
+            <hr class="decoration__line" />
+          </div>
+          <div class="education__group">
+            <p class="education__date">Sep 2002 - Jun 2006</p>
+            <p class="education__title">Ingeniería Técnica Informática</p>
+            <p class="education__entity">OUC</p>
+            <p class="education__text">
+              Desarrollo de habilidades fundamentales en programación, algoritmos, estructuras de datos y tecnologías de
+              desarrollo de software.
+            </p>
+            <p class="education__technologies">JAVA <span>|</span> C <span>|</span> Linux <span>|</span> Wireshark</p>
+          </div>
+        </div>
+        <div class="education">
+          <div class="decoration">
+            <div class="decoration__circle"></div>
+            <hr class="decoration__line" />
+          </div>
+          <div class="education__group">
+            <p class="education__date">Sep 2000 - Jun 2001</p>
+            <p class="education__title">Master en Desarrollo de Aplicaciones Web</p>
+            <p class="education__entity">CFDTI IBM/La Caixa</p>
+            <p class="education__technologies">React <span>|</span> Javascript</p>
+          </div>
+        </div>
+        <div class="education">
+          <div class="decoration">
+            <div class="decoration__circle"></div>
+            <hr class="decoration__line" />
+          </div>
+          <div class="education__group">
+            <p class="education__date">Sep 2000 - Jun 2001</p>
+            <p class="education__title">Certified Scrum Master</p>
+            <p class="education__entity">Scrum Alliance</p>
+            <p class="education__text">
+              Desarrollo de habilidades fundamentales en programación, algoritmos, estructuras de datos y tecnologías de
+              desarrollo de software.
+            </p>
+            <p class="education__technologies">React <span>|</span> Javascript</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+    <script>
+      // Selecciona un elemento del DOM
+      const elementInDOM = selector => document.querySelector(selector);
+
+      // Selecciona un elemento del DOM y comprueba que exista
+      const elementReady = selector => {
+        const element = elementInDOM(selector);
+        if (element && element instanceof HTMLElement) {
+          return element;
+        }
+        console.log(new Error(`Element with id ${selector} not found in DOM`));
+        return null;
+      };
+
+      // media query event handler (mobile)
+      function handleResize() {
+        // Selecciona los elementos y comprueba que existan
+        const main = elementInDOM('.main');
+        const aboutMe = elementInDOM('.about');
+        const experience = elementInDOM('.experiencies');
+        const myLinks = elementInDOM('.links');
+        const languages = elementInDOM('.languages');
+        const hardSkills = elementInDOM('.hard-skills');
+        const softSkills = elementInDOM('.soft-skills');
+        const education = elementInDOM('.educations');
+        const avatar = elementInDOM('.header__avatar');
+        const background = elementInDOM('.background');
+        const footer = elementInDOM('.footer');
+
+        // Selecciona las columnas y comprueba que existan
+        const columnLeft = elementInDOM('.column-left');
+        const columnRight = elementInDOM('.column-right');
+
+        if (window.innerWidth > 834) {
+          // Mueve los elementos a las columnas correspondientes
+          columnLeft.appendChild(aboutMe);
+          columnLeft.appendChild(experience);
+          columnRight.appendChild(myLinks);
+          columnRight.appendChild(languages);
+          columnRight.appendChild(hardSkills);
+          columnRight.appendChild(softSkills);
+          columnRight.appendChild(education);
+
+          if (avatar) {
+            background.classList.add('background--image');
+            footer.classList.add('footer--image');
+          } else {
+            background.classList.remove('background--image');
+          }
+        } else {
+          // Mueve los elementos al contenedor
+          main.appendChild(myLinks);
+          main.appendChild(aboutMe);
+          main.appendChild(languages);
+          main.appendChild(hardSkills);
+          main.appendChild(softSkills);
+          main.appendChild(experience);
+          main.appendChild(education);
+        }
+      }
+
+      // Se ejecuta cuando la página cambia de tamaño
+      window.addEventListener('resize', handleResize);
+
+      // Se ejecuta cuando la página está cargada
+      document.addEventListener('DOMContentLoaded', handleResize);
+    </script>
+  </body>
+</html>
