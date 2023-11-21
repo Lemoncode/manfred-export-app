@@ -25,7 +25,7 @@
         --space-64: calc(var(--space-base) * 16);
 
         /* colors */
-        --primary-50: #eaf3f3;
+        /* --primary-50: #eaf3f3;
         --primary-100: #bcd9db;
         --primary-200: #9cc7ca;
         --primary-300: #6faeb1;
@@ -34,7 +34,19 @@
         --primary-600: #247a7e;
         --primary-700: #247a7e;
         --primary-800: #164a4c;
-        --primary-900: #11383a;
+        --primary-900: #11383a; */
+
+        /*variables para comprobar colores*/
+        --primary-50: #ffe8eb;
+        --primary-100: #feb8c2;
+        --primary-200: #fe96a4;
+        --primary-300: #fe667a;
+        --primary-400: #fd4961;
+        --primary-500: #fd1b39;
+        --primary-600: #e61934;
+        --primary-700: #b41328;
+        --primary-800: #8b0f1f;
+        --primary-900: #6a0b18;
 
         /* text */
         --light-light-50: #fefefe;
@@ -60,12 +72,12 @@
         --fw-medium: 500;
         --fw-bold: 600;
         --fw-extrabold: 700;
-        /*font-wight*/
+
+        /*Levels lenguages*/
         --level1: var(--primary-50);
         --level2: var(--primary-50);
         --level3: var(--primary-50);
         --level4: var(--primary-50);
-
         --level-gradient: linear-gradient(
           to right,
           var(--level1),
@@ -127,14 +139,7 @@
         color: var(--primary-500);
         margin-bottom: var(--space-16);
       }
-      @media screen and (min-width: 834px) {
-        .container {
-          padding: var(--space-16) var(--space-32);
-        }
-        .title {
-          font-size: var(--fs-m);
-        }
-      }
+
       .section {
         padding-bottom: var(--space-32);
       }
@@ -151,6 +156,15 @@
       .chip-primary {
         color: var(--light-light-50);
         background-color: var(--primary-500);
+      }
+
+      @media screen and (min-width: 834px) {
+        .container {
+          padding: var(--space-16) var(--space-32);
+        }
+        .title {
+          font-size: var(--fs-m);
+        }
       }
 
       /* background decoration header */
@@ -200,12 +214,12 @@
         }
       }
 
-      /* header tiene estilos diferentes si hay foto */
+      /* header */
       .header {
-        color: var(--light-light-50);
-        min-height: 210px;
         font-family: var(--ff-title);
         font-weight: var(--fw-medium);
+        color: var(--light-light-50);
+        min-height: 210px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -254,6 +268,7 @@
         background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, var(--primary-500) 60%);
         border-radius: 16px;
       }
+
       .header__image {
         width: 100%;
         height: 100%;
@@ -781,7 +796,7 @@
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M1.63226 14H12.3679C13.2694 14 14.0002 13.2693 14 12.3676V1.63224C14 0.730747 13.2692 0 12.3677 0H1.63226C0.730756 0 0 0.730747 0 1.63224V12.3678C0 13.2693 0.730756 14 1.63226 14ZM5.82306 7.50962L1.74662 2.05902H4.88843L7.56087 5.63222L10.8683 2.05902H11.7916L7.97336 6.18396L12.2793 11.9411H9.13745L6.23572 8.06118L2.64423 11.9411H1.72093L5.82306 7.50962Z"
-                fill="#28868B"
+                fill="var(--primary-500)"
               /></svg
             ><span> https://twitter/david-bonilla</span></a
           >
