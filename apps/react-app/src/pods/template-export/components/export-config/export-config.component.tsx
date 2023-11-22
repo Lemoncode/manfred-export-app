@@ -17,7 +17,7 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const DESING_OPTIONS: TemplateCV[] = ['Moderno elegante', 'Limpio y organizado'];
+const DESING_OPTIONS: TemplateCV[] = ['Sith Elegance', 'Galactic CleanTech'];
 const LANGUAGE_OPTIONS: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {
