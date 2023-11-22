@@ -1,15 +1,15 @@
 export type ColorTheme = 'default' | 'red' | 'green' | 'orange' | 'yellow' | 'dark';
+
 export type TemplateCV =
-  | 'Moderno elegante'
-  | 'Limpio y organizado'
-  | 'Clásico'
-  | 'Minimalista'
-  | 'Artístico'
-  | 'Tecnológico'
-  | 'Creativo'
-  | 'Profesional'
-  | 'Elegante';
+  | 'Sith Elegance'
+  | 'Galactic CleanTech'
+  | 'Jedi minimalism'
+  | 'GalacticTech Innovations'
+  | 'Monochrome Force'
+  | 'X-Wing Squadron';
+
 export type Language = 'es' | 'en';
+
 export enum HexColor {
   default = '#247A7E',
   red = '#E61934',
@@ -33,6 +33,6 @@ export interface Settings {
 
 export const createDefaultExportHTMLSettings = (): ExportHTMLSettings => ({
   colorTheme: 'default',
-  template: 'Moderno elegante',
+  template: 'Sith Elegance',
   language: 'es',
 });
