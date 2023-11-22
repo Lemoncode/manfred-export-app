@@ -3,10 +3,10 @@ export type ColorTheme = 'default' | 'red' | 'green' | 'orange' | 'yellow' | 'da
 export type TemplateCV =
   | 'Sith Elegance'
   | 'Galactic CleanTech'
-  | 'Jedi minimalism'
-  | 'GalacticTech Innovations'
   | 'Monochrome Force'
-  | 'X-Wing Squadron';
+  | 'X-Wing Squadron'
+  | 'Jedi minimalism'
+  | 'GalacticTech Innovations';
 
 export type Language = 'es' | 'en';
 

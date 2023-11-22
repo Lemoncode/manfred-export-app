@@ -1,7 +1,7 @@
 import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
 import { mapExportHTMLSettingsToSettings } from '@/mappers';
-import { exportManfredJSonToCVModernoHTML } from './cv-moderno';
-import { exportManfredJSonToCVLimpioHTML } from './cv-limpio-organizado';
+import { exportManfredJSonToCVSithEleganceHTML } from './cv-sith-elegance';
+import { exportManfredJSonToCVGalacticCleanTechHTML } from './cv-galactic-cleantech';
 
 export const exportHTMLTemplate = (
   manfredJsonContent: ManfredAwesomicCV,
@@ -11,9 +11,9 @@ export const exportHTMLTemplate = (
 
   switch (settings.template) {
     case 'Sith Elegance':
-      return exportManfredJSonToCVModernoHTML(manfredJsonContent, settings);
+      return exportManfredJSonToCVSithEleganceHTML(manfredJsonContent, settings);
     case 'Galactic CleanTech':
-      return exportManfredJSonToCVLimpioHTML(manfredJsonContent, settings);
+      return exportManfredJSonToCVGalacticCleanTechHTML(manfredJsonContent, settings);
     default:
       throw new Error('Template not found');
   }
