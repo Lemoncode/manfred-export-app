@@ -1,0 +1,69 @@
+<script>
+    // Selecciona un elemento del DOM
+    const elementInDOM = selector => document.querySelector(selector);
+
+    // Selecciona un elemento del DOM y comprueba que exista
+    const elementReady = selector => {
+      const element = elementInDOM(selector);
+      if (element && element instanceof HTMLElement) {
+        return element;
+      }
+      console.log(new Error(`Element with id ${selector} not found in DOM`));
+      return null;
+    };
+
+    // media query event handler (mobile)
+    function handleResize() {
+      // Selecciona los elementos y comprueba que existan
+      const main = elementInDOM('.main');
+      const aboutMe = elementInDOM('.about');
+      const experience = elementInDOM('.experiencies');
+      const myLinks = elementInDOM('.links');
+      const languages = elementInDOM('.languages');
+      const hardSkills = elementInDOM('.hard-skills');
+      const softSkills = elementInDOM('.soft-skills');
+      const education = elementInDOM('.educations');
+      const avatar = elementInDOM('.header__avatar');
+      const background = elementInDOM('.background');
+      const footer = elementInDOM('.footer');
+
+      // Selecciona las columnas y comprueba que existan
+      const columnLeft = elementInDOM('.column-left');
+      const columnRight = elementInDOM('.column-right');
+
+      if (window.innerWidth > 834) {
+        // Mueve los elementos a las columnas correspondientes
+        columnLeft.appendChild(aboutMe);
+        columnLeft.appendChild(experience);
+        columnRight.appendChild(myLinks);
+        columnRight.appendChild(languages);
+        columnRight.appendChild(hardSkills);
+        columnRight.appendChild(softSkills);
+        columnRight.appendChild(education);
+
+        if (avatar) {
+          background.classList.add('background--image');
+          footer.classList.add('footer--image');
+        } else {
+          background.classList.remove('background--image');
+        }
+      } else {
+        // Mueve los elementos al contenedor
+        main.appendChild(myLinks);
+        main.appendChild(aboutMe);
+        main.appendChild(languages);
+        main.appendChild(hardSkills);
+        main.appendChild(softSkills);
+        main.appendChild(experience);
+        main.appendChild(education);
+      }
+    }
+
+    // Se ejecuta cuando la página cambia de tamaño
+    window.addEventListener('resize', handleResize);
+
+    // Se ejecuta cuando la página está cargada
+    document.addEventListener('DOMContentLoaded', handleResize);
+  </script>
+</body>
+</html>
