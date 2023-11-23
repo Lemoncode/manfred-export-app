@@ -4,20 +4,27 @@ import {
   generateHtmlDocumentEnd,
   generateHeaderElementStart,
   generateHeaderElementEnd,
+  generateHeaderUser,
+  generateHeaderAvatar,
 } from './html-parts';
 
 export const exportManfredJSonToCVMonochromeForceHTML = (
   manfredJsonContent: ManfredAwesomicCV,
   settings: Settings
 ): string => {
-  const htmlDocumentStart = generateHtmlDocumentStart(settings.colorTheme);
+  const htmlDocumentStart = generateHtmlDocumentStart(manfredJsonContent, settings.colorTheme);
   const htmlDocumentEnd = generateHtmlDocumentEnd();
-  const HeaderElementStart = generateHeaderElementStart();
-  const HeaderElementEnd = generateHeaderElementEnd();
+  const headerElementStart = generateHeaderElementStart();
+  const headerElementEnd = generateHeaderElementEnd();
+  const headerUser = generateHeaderUser(manfredJsonContent);
+  const headerAvatar = generateHeaderAvatar(manfredJsonContent);
+
   return `
     ${htmlDocumentStart}
-      ${HeaderElementStart}
-      ${HeaderElementEnd}
+      ${headerElementStart}
+        ${headerUser}
+        ${headerAvatar}
+      ${headerElementEnd}
     ${htmlDocumentEnd}
   `;
 };

@@ -2,18 +2,18 @@ import ejs from 'ejs';
 import { ProfileSectionVm, mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profile-section';
 import { ManfredAwesomicCV } from '@lemoncode/manfred-common/model';
 
-import headerUserTemplate from './header-user.ejs?raw';
+import headerAvatarTemplate from './header-avatar.ejs?raw';
 
-export const generateHeaderUser = (cv: ManfredAwesomicCV): string => {
+export const generateHeaderAvatar = (cv: ManfredAwesomicCV): string => {
   const profileSectionVm = mapFromMacCvToProfileSectionVm(cv);
 
-  return generateHeaderUserInner(profileSectionVm);
+  return generateHeaderAvatarInner(profileSectionVm);
 };
 
-const generateHeaderUserInner = (profileSectionVm: ProfileSectionVm): string => {
+const generateHeaderAvatarInner = (profileSectionVm: ProfileSectionVm): string => {
   const rootObject = {
     profile: profileSectionVm,
   };
 
-  return ejs.render(headerUserTemplate, rootObject);
+  return ejs.render(headerAvatarTemplate, rootObject);
 };
