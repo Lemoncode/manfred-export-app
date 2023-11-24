@@ -4,8 +4,7 @@ import {
   generateHtmlDocumentEnd,
   generateHeaderElementStart,
   generateHeaderElementEnd,
-  generateHeaderUser,
-  generateHeaderAvatar,
+  generateProfileSection,
 } from './html-parts';
 
 export const exportManfredJSonToCVMonochromeForceHTML = (
@@ -16,14 +15,12 @@ export const exportManfredJSonToCVMonochromeForceHTML = (
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
-  const headerUser = generateHeaderUser(manfredJsonContent);
-  const headerAvatar = generateHeaderAvatar(manfredJsonContent);
+  const profileSection = generateProfileSection(manfredJsonContent);
 
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
-        ${headerUser}
-        ${headerAvatar}
+        ${profileSection}
       ${headerElementEnd}
     ${htmlDocumentEnd}
   `;

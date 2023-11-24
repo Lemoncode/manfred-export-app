@@ -82,6 +82,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -101,6 +104,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -132,6 +138,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -163,6 +172,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -203,6 +215,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -244,6 +259,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -270,9 +288,9 @@ describe('Testing profile-section.mapper.ts', () => {
         title: 'Computer Science Bachelor',
         description: 'Frontend developer',
         birthday: '30/03/1990',
-        avatar: undefined,
+        avatar: { link: 'http://manfredexport.com' },
         contact: theContact,
-        location: undefined,
+        location: { municipality: 'Madrid', country: 'Spain' },
       };
 
       const cv: ManfredAwesomicCV = {
@@ -295,6 +313,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: 'John Doe',
         emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
         relevantLinks: [theLink] as RelevantLinkVm[],
+        avatarUrl: 'http://manfredexport.com',
+        city: 'Madrid',
+        country: 'Spain',
       };
 
       // Act

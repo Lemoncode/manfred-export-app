@@ -28,9 +28,9 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
   const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
 
-  //*un poco forzado
   const avatarUrl = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
-  const city = cv?.aboutMe?.profile?.location?.region ?? '';
+
+  const city = cv?.aboutMe?.profile?.location?.municipality ?? '';
   const country = cv?.aboutMe?.profile?.location?.country ?? '';
 
   const relevantLinks = cv?.aboutMe?.relevantLinks

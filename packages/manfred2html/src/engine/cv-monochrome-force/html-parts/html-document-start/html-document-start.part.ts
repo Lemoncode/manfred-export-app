@@ -7,5 +7,6 @@ import { mapFromMacCvToProfileSectionVm } from '@lemoncode/manfred-common/profil
 export const generateHtmlDocumentStart = (cv: ManfredAwesomicCV, color: HexColor): string => {
   const profileSectionVm = mapFromMacCvToProfileSectionVm(cv);
   const avatarUrl = profileSectionVm.avatarUrl;
+
   return ejs.render(htmlDocumentStartTemplate, { color, avatarUrl });
 };
