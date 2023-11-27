@@ -6,6 +6,9 @@ export interface ProfileSectionVm {
   fullname: string;
   emails: string[];
   relevantLinks: RelevantLinkVm[];
+  avatarUrl: string;
+  city: string;
+  country: string;
 }
 
 export interface RelevantLinkVm {

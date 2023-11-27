@@ -27,6 +27,12 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
   const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
+
+  const avatarUrl = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
+
+  const city = cv?.aboutMe?.profile?.location?.municipality ?? '';
+  const country = cv?.aboutMe?.profile?.location?.country ?? '';
+
   const relevantLinks = cv?.aboutMe?.relevantLinks
     ? mapRelevantLinksToVm(cv.aboutMe.relevantLinks as ManfredRelevantLink[])
     : [];
@@ -39,5 +45,8 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
     fullname,
     emails,
     relevantLinks,
+    avatarUrl,
+    city,
+    country,
   };
 };
