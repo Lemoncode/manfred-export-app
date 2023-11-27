@@ -116,6 +116,7 @@
         max-width: 1024px;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
       }
       .title {
         font-size: var(--fs-xl);
@@ -806,7 +807,7 @@
           >
         </div>
       </section>
-      <section class="section about">
+      <!-- <section class="section about">
         <h2 class="title">Sobre mi</h2>
         <p>
           Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor
@@ -820,7 +821,7 @@
           conocimiento que me han aportado a lo largo de mi carrera profesional, dando charlas o colaborando con grupos
           de usuarios y conferencias técnicas; y, a veces, organizándolos.
         </p>
-      </section>
+      </section> -->
       <section class="section hard-skills">
         <h2 class="title">Habilidades</h2>
         <ul class="hard-skills__list">
@@ -870,7 +871,7 @@
           </figure>
         </div>
       </section>
-      <section class="section experiencies">
+      <!-- <section class="section experiencies">
         <h2 class="title">Experiencia</h2>
         <div class="experiencies__container">
           <div class="experience">
@@ -947,7 +948,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="section educations">
         <h2 class="title">Educación</h2>
         <div class="education">
@@ -1032,13 +1033,18 @@
 
         if (window.innerWidth > 834) {
           // Mueve los elementos a las columnas correspondientes
-          columnLeft.appendChild(aboutMe);
-          columnLeft.appendChild(experience);
-          columnRight.appendChild(myLinks);
-          columnRight.appendChild(languages);
-          columnRight.appendChild(hardSkills);
-          columnRight.appendChild(softSkills);
-          columnRight.appendChild(education);
+          aboutMe && columnLeft.appendChild(aboutMe);
+          experience && columnLeft.appendChild(experience);
+          myLinks && columnRight.appendChild(myLinks);
+          languages && columnRight.appendChild(languages);
+          hardSkills && columnRight.appendChild(hardSkills);
+          softSkills && columnRight.appendChild(softSkills);
+          education && columnRight.appendChild(education);
+
+          // Comprueba que haya contenido en la colummna izquierda por el grid
+          if (!columnLeft.children.length > 0) {
+            columnLeft.style.display = 'none';
+          }
 
           if (avatar) {
             background.classList.add('background--image');
@@ -1048,13 +1054,13 @@
           }
         } else {
           // Mueve los elementos al contenedor
-          main.appendChild(myLinks);
-          main.appendChild(aboutMe);
-          main.appendChild(languages);
-          main.appendChild(hardSkills);
-          main.appendChild(softSkills);
-          main.appendChild(experience);
-          main.appendChild(education);
+          myLinks && main.appendChild(myLinks);
+          aboutMe && main.appendChild(aboutMe);
+          languages && main.appendChild(languages);
+          hardSkills && main.appendChild(hardSkills);
+          softSkills && main.appendChild(softSkills);
+          experience && main.appendChild(experience);
+          education && main.appendChild(education);
         }
       }
 
