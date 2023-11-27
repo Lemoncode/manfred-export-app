@@ -42,8 +42,8 @@
       education && columnRight.appendChild(education);
 
       // Comprueba que haya contenido en la colummna izquierda por el grid
-      if (!columnLeft.children.length > 0) {
-        columnLeft.style.display = 'none';
+      if (columnLeft.children.length === 0) {
+            columnLeft.style.display = 'none';
       }
 
       if (avatar) {
