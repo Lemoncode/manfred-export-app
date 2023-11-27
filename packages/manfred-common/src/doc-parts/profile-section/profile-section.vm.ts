@@ -5,6 +5,7 @@ export interface ProfileSectionVm {
   description: string;
   fullname: string;
   emails: string[];
+  phoneNumbers: PhoneNumbers[];
   relevantLinks: RelevantLinkVm[];
   avatarUrl: string;
   city: string;
@@ -23,4 +24,9 @@ export interface ManfredRelevantLink {
   type: ManfredRelevantLinkType;
   URL: string;
   description?: string;
+}
+
+export interface PhoneNumbers {
+  countryCode: number;
+  number: string;
 }
