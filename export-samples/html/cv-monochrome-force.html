@@ -106,7 +106,7 @@
         min-width: 428px;
         display: flex;
         flex-direction: column;
-        min-height: 100dvh;
+        min-height: 100svh;
         position: relative;
       }
 
@@ -116,6 +116,7 @@
         max-width: 1024px;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
       }
       .title {
         font-size: var(--fs-xl);
@@ -671,6 +672,10 @@
       .column {
         display: none;
       }
+      .main {
+        flex-grow: 1;
+      }
+
       @media screen and (min-width: 834px) {
         .main {
           display: grid;
@@ -1032,13 +1037,18 @@
 
         if (window.innerWidth > 834) {
           // Mueve los elementos a las columnas correspondientes
-          columnLeft.appendChild(aboutMe);
-          columnLeft.appendChild(experience);
-          columnRight.appendChild(myLinks);
-          columnRight.appendChild(languages);
-          columnRight.appendChild(hardSkills);
-          columnRight.appendChild(softSkills);
-          columnRight.appendChild(education);
+          aboutMe && columnLeft.appendChild(aboutMe);
+          experience && columnLeft.appendChild(experience);
+          myLinks && columnRight.appendChild(myLinks);
+          languages && columnRight.appendChild(languages);
+          hardSkills && columnRight.appendChild(hardSkills);
+          softSkills && columnRight.appendChild(softSkills);
+          education && columnRight.appendChild(education);
+
+          // Comprueba que haya contenido en la colummna izquierda por el grid
+          if (columnLeft.children.length === 0) {
+            columnLeft.style.display = 'none';
+          }
 
           if (avatar) {
             background.classList.add('background--image');
@@ -1048,13 +1058,13 @@
           }
         } else {
           // Mueve los elementos al contenedor
-          main.appendChild(myLinks);
-          main.appendChild(aboutMe);
-          main.appendChild(languages);
-          main.appendChild(hardSkills);
-          main.appendChild(softSkills);
-          main.appendChild(experience);
-          main.appendChild(education);
+          myLinks && main.appendChild(myLinks);
+          aboutMe && main.appendChild(aboutMe);
+          languages && main.appendChild(languages);
+          hardSkills && main.appendChild(hardSkills);
+          softSkills && main.appendChild(softSkills);
+          experience && main.appendChild(experience);
+          education && main.appendChild(education);
         }
       }
 

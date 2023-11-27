@@ -6,6 +6,9 @@ import {
   generateHeaderElementEnd,
   generateProfileSection,
   generateFooterSection,
+  generateMainElementStart,
+  generateMainElementEnd,
+  generateAboutMeSection,
 } from './html-parts';
 
 export const exportManfredJSonToCVMonochromeForceHTML = (
@@ -18,11 +21,18 @@ export const exportManfredJSonToCVMonochromeForceHTML = (
   const headerElementEnd = generateHeaderElementEnd();
   const profileSection = generateProfileSection(manfredJsonContent);
   const footerSection = generateFooterSection();
+  const mainElementStart = generateMainElementStart();
+  const mainElementEnd = generateMainElementEnd();
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
+
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
         ${profileSection}
       ${headerElementEnd}
+      ${mainElementStart}
+      ${aboutMeSection}
+      ${mainElementEnd}
       ${footerSection}
     ${htmlDocumentEnd}
   `;

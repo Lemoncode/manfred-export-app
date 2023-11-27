@@ -1,69 +1,74 @@
-  <script>
-    // Selecciona un elemento del DOM
-    const elementInDOM = selector => document.querySelector(selector);
+<script>
+  // Selecciona un elemento del DOM
+  const elementInDOM = selector => document.querySelector(selector);
 
-    // Selecciona un elemento del DOM y comprueba que exista
-    const elementReady = selector => {
-      const element = elementInDOM(selector);
-      if (element && element instanceof HTMLElement) {
-        return element;
-      }
-      console.log(new Error(`Element with id ${selector} not found in DOM`));
-      return null;
-    };
-
-    // media query event handler (mobile)
-    function handleResize() {
-      // Selecciona los elementos y comprueba que existan
-      const main = elementInDOM('.main');
-      const aboutMe = elementInDOM('.about');
-      const experience = elementInDOM('.experiencies');
-      const myLinks = elementInDOM('.links');
-      const languages = elementInDOM('.languages');
-      const hardSkills = elementInDOM('.hard-skills');
-      const softSkills = elementInDOM('.soft-skills');
-      const education = elementInDOM('.educations');
-      const avatar = elementInDOM('.header__avatar');
-      const background = elementInDOM('.background');
-      const footer = elementInDOM('.footer');
-
-      // Selecciona las columnas y comprueba que existan
-      const columnLeft = elementInDOM('.column-left');
-      const columnRight = elementInDOM('.column-right');
-
-      if (window.innerWidth > 834) {
-        // Mueve los elementos a las columnas correspondientes
-        columnLeft.appendChild(aboutMe);
-        columnLeft.appendChild(experience);
-        columnRight.appendChild(myLinks);
-        columnRight.appendChild(languages);
-        columnRight.appendChild(hardSkills);
-        columnRight.appendChild(softSkills);
-        columnRight.appendChild(education);
-
-        if (avatar) {
-          background.classList.add('background--image');
-          footer.classList.add('footer--image');
-        } else {
-          background.classList.remove('background--image');
-        }
-      } else {
-        // Mueve los elementos al contenedor
-        main.appendChild(myLinks);
-        main.appendChild(aboutMe);
-        main.appendChild(languages);
-        main.appendChild(hardSkills);
-        main.appendChild(softSkills);
-        main.appendChild(experience);
-        main.appendChild(education);
-      }
+  // Selecciona un elemento del DOM y comprueba que exista
+  const elementReady = selector => {
+    const element = elementInDOM(selector);
+    if (element && element instanceof HTMLElement) {
+      return element;
     }
+    console.log(new Error(`Element with id ${selector} not found in DOM`));
+    return null;
+  };
 
-    // Se ejecuta cuando la página cambia de tamaño
-    window.addEventListener('resize', handleResize);
+  // media query event handler (mobile)
+  function handleResize() {
+    // Selecciona los elementos y comprueba que existan
+    const main = elementInDOM('.main');
+    const aboutMe = elementInDOM('.about');
+    const experience = elementInDOM('.experiencies');
+    const myLinks = elementInDOM('.links');
+    const languages = elementInDOM('.languages');
+    const hardSkills = elementInDOM('.hard-skills');
+    const softSkills = elementInDOM('.soft-skills');
+    const education = elementInDOM('.educations');
+    const avatar = elementInDOM('.header__avatar');
+    const background = elementInDOM('.background');
+    const footer = elementInDOM('.footer');
 
-    // Se ejecuta cuando la página está cargada
-    document.addEventListener('DOMContentLoaded', handleResize);
-  </script>
+    // Selecciona las columnas y comprueba que existan
+    const columnLeft = elementInDOM('.column-left');
+    const columnRight = elementInDOM('.column-right');
+
+    if (window.innerWidth > 834) {
+      // Mueve los elementos a las columnas correspondientes
+      aboutMe && columnLeft.appendChild(aboutMe);
+      experience && columnLeft.appendChild(experience);
+      myLinks && columnRight.appendChild(myLinks);
+      languages && columnRight.appendChild(languages);
+      hardSkills && columnRight.appendChild(hardSkills);
+      softSkills && columnRight.appendChild(softSkills);
+      education && columnRight.appendChild(education);
+
+      // Comprueba que haya contenido en la colummna izquierda por el grid
+      if (columnLeft.children.length === 0) {
+            columnLeft.style.display = 'none';
+      }
+
+      if (avatar) {
+        background.classList.add('background--image');
+        footer.classList.add('footer--image');
+      } else {
+        background.classList.remove('background--image');
+      }
+    } else {
+      // Mueve los elementos al contenedor
+      myLinks && main.appendChild(myLinks);
+      aboutMe && main.appendChild(aboutMe);
+      languages && main.appendChild(languages);
+      hardSkills && main.appendChild(hardSkills);
+      softSkills && main.appendChild(softSkills);
+      experience && main.appendChild(experience);
+      education && main.appendChild(education);
+    }
+  }
+
+  // Se ejecuta cuando la página cambia de tamaño
+  window.addEventListener('resize', handleResize);
+
+  // Se ejecuta cuando la página está cargada
+  document.addEventListener('DOMContentLoaded', handleResize);
+</script>
 </body>
 </html>
