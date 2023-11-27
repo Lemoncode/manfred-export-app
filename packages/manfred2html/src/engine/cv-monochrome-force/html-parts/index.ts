@@ -4,3 +4,6 @@ export * from './header-element-start';
 export * from './header-element-end';
 export * from './profile-section';
 export * from './footer-section';
+export * from './main-element-start';
+export * from './main-element-end';
+export * from './about-me-section';
