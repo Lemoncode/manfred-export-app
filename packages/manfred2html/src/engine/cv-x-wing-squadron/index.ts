@@ -1,8 +1,8 @@
-import { ManfredAwesomicCV, Settings } from '@/model';
+import { ManfredAwesomicCV } from '@/model';
 import { generateHtmlDocumentStart, generateHtmlDocumentEnd } from './html-parts';
 
-export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
-  const htmlDocumentStart = generateHtmlDocumentStart(settings.colorTheme);
+export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
+  const htmlDocumentStart = generateHtmlDocumentStart();
   const htmlDocumentEnd = generateHtmlDocumentEnd();
 
   return `
