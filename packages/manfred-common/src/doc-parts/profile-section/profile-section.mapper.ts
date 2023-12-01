@@ -1,6 +1,7 @@
 import { ManfredAwesomicCV } from '@/model';
 import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink, PhoneNumbers } from './profile-section.vm';
 
+//Sólo afecta al .json de David Bonilla
 const mapLinkTypeToVm = (linkType: ManfredRelevantLink['type']): RelevantLinkVm['type'] => {
   switch (linkType) {
     case 'website':
@@ -26,9 +27,11 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const title = cv?.aboutMe?.profile?.title ?? '';
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
-  //la ruta estaba mal
+
+  //TODO: unir los links nuevo modelo, que incluya el resto de cosas que sale en la parte de los enlaces
   const emails = (cv?.careerPreferences?.contact?.contactMails as string[]) ?? [];
   const phoneNumbers = (cv?.careerPreferences?.contact?.phoneNumbers as PhoneNumbers[]) ?? [];
+
   const avatarUrl = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
 
   const city = cv?.aboutMe?.profile?.location?.municipality ?? '';

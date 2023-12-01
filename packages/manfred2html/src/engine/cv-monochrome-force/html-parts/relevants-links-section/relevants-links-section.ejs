@@ -1,10 +1,12 @@
+//TODO: estamos a la espera de ver como se unen los nuevos enlaces.
+
 <%_ if (profile.relevantLinks && profile.relevantLinks.length !==0 || profile && profile !=='undefined') { -%>
     <section class="section links">
         <h2 class="title"><%- labels.RELEVANTS_LINKS_HEADING %></h2>
         <div class="links__container">
         <%_ if (profile.relevantLinks && profile.relevantLinks.length !==0) { -%>
             <%_ for (const link of profile.relevantLinks) { -%>
-                <%_ if (link.type==='linkedin') { -%>
+                <%_ if (link.type ==='linkedin') { -%>
                 <a class="links__item" href=<%= link.URL %> target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                          <path
@@ -13,7 +15,7 @@
                     </svg>
                 <span><%= link.URL %></span></a>
                 <%_ } -%>
-                <%_ if (link.type==='github') { -%>
+                <%_ if (link.type ==='github') { -%>
                 <a class="links__item" href=<%= link.URL %> target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path
@@ -22,7 +24,7 @@
                     </svg>
                 <span><%= link.URL %></span></a>
                 <%_ } -%>
-                <%_ if (link.type==='twitter') { -%>
+                <%_ if (link.type ==='twitter') { -%>
                 <a class="links__item" href=<%= link.URL %> target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M4.5477 2.73921H3.10437L9.47799 11.2611H10.9213L4.5477 2.73921Z" fill="var(--primary-500)" />
