@@ -82,9 +82,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
-        avatar: ' ',
-        regionLocation: ' ',
-        countryLocation: ' ',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
@@ -104,9 +104,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
-        avatar: ' ',
-        regionLocation: ' ',
-        countryLocation: ' ',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
@@ -138,9 +138,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
-        avatar: ' ',
-        regionLocation: ' ',
-        countryLocation: ' ',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
@@ -172,9 +172,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
-        avatar: ' ',
-        regionLocation: ' ',
-        countryLocation: ' ',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
@@ -215,9 +215,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
-        avatar: ' ',
-        regionLocation: ' ',
-        countryLocation: ' ',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
@@ -259,9 +259,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: ' ',
         emails: [] as string[],
         relevantLinks: [] as RelevantLinkVm[],
-        avatar: ' ',
-        regionLocation: ' ',
-        countryLocation: ' ',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
