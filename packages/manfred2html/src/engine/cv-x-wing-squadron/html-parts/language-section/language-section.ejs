@@ -1,0 +1,50 @@
+<%_ if(languageCollection && languageCollection.length !== 0) { -%>
+  <section class="main__section">
+    <div class="main__section__header">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
+        <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
+      </svg>
+      <h2>Idiomas</h2>
+    </div>
+    <ul class="ul__languages">
+      <%_ for(const language of languageCollection) { -%>
+        <li class="li__languages"><%= language.name %>
+          <div class="main__lang__level">
+            <%_ if(language.level === 'Habilidad básica' || language.level === 'Habilidad limitada en el trabajo') { -%>
+              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
+                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
+                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#EBE8DF" />
+                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#EBE8DF" />
+                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
+              </svg>
+            <%_ } -%>
+            <%_ if(language.level === 'Habilidad profesional completo') { -%>
+              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
+                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
+                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
+                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#78D549" />
+                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
+              </svg>
+            <%_ } -%>
+            <%_ if(language.level === 'Habilidad profesional en el trabajo') { -%>
+              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
+                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
+                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
+                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#EBE8DF" />
+                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
+              </svg>
+            <%_ } -%>
+            <%_ if(language.level === 'Habilidad nativo o bilingüe') { -%>
+              <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
+                <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
+                <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
+                <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#78D549" />
+                <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#78D549" />
+              </svg>
+            <%_ } -%>
+            <p><%= language.level %></p>
+          </div>
+        </li>
+      <%_ } -%>
+    </ul>
+<%_ } -%>
