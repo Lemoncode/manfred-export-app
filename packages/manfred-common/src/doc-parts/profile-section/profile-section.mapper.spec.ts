@@ -314,8 +314,8 @@ describe('Testing profile-section.mapper.ts', () => {
         emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
         relevantLinks: [theLink] as RelevantLinkVm[],
         avatar: 'undefined',
-        regionLocation: 'undefined',
-        countryLocation: 'undefined',
+        regionLocation: 'location unknown',
+        countryLocation: 'country unknown',
       };
 
       // Act
