@@ -9,6 +9,7 @@ import {
   generateAboutMeSection,
   generateMainElementEnd,
   generateLanguageSection,
+  generateHardSkillsSection,
 } from './html-parts';
 
 export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
@@ -21,6 +22,7 @@ export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesom
   const aboutMeSection = generateAboutMeSection(manfredJsonContent);
   const mainElementEnd = generateMainElementEnd();
   const languageSection = generateLanguageSection(manfredJsonContent);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent);
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
@@ -29,6 +31,7 @@ export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesom
       ${mainElementStart}
         ${aboutMeSection}
         ${languageSection}
+        ${hardSkillsSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
