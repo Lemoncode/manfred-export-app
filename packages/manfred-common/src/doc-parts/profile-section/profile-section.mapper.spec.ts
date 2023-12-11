@@ -288,9 +288,14 @@ describe('Testing profile-section.mapper.ts', () => {
         title: 'Computer Science Bachelor',
         description: 'Frontend developer',
         birthday: '30/03/1990',
-        avatar: undefined,
+        avatar: {
+          link: '',
+        },
         contact: theContact,
-        location: undefined,
+        location: {
+          country: '',
+          region: '',
+        },
       };
 
       const cv: ManfredAwesomicCV = {
@@ -313,9 +318,9 @@ describe('Testing profile-section.mapper.ts', () => {
         fullname: 'John Doe',
         emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
         relevantLinks: [theLink] as RelevantLinkVm[],
-        avatar: 'undefined',
-        regionLocation: 'location unknown',
-        countryLocation: 'country unknown',
+        avatar: '',
+        regionLocation: '',
+        countryLocation: '',
       };
 
       // Act
@@ -325,4 +330,5 @@ describe('Testing profile-section.mapper.ts', () => {
     });
   });
 });
+
 export {};
