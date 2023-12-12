@@ -78,6 +78,7 @@ describe('mapFromMacCvToExperienceSectionVm', () => {
                 ],
               },
             ],
+            URL: '',
           },
         ],
       },
@@ -112,6 +113,7 @@ describe('mapFromMacCvToExperienceSectionVm', () => {
             ],
           },
         ],
+        URL: '',
       },
     ];
     expect(result).toEqual(expectResult);
