@@ -252,19 +252,19 @@ describe('experience-section.helpers specs', () => {
           competences: [
             {
               name: 'name',
-              type: 'type',
+              type: 'technology',
             },
             {
               name: 'name',
-              type: 'type',
+              type: 'technology',
             },
             {
               name: 'name',
-              type: 'type',
+              type: 'technology',
             },
             {
               name: 'name',
-              type: 'name',
+              type: 'technology',
             },
           ],
           organization: {
@@ -365,19 +365,19 @@ describe('experience-section.helpers specs', () => {
           competences: [
             {
               name: 'name',
-              type: 'type',
+              type: 'technology',
             },
             {
               name: 'name',
-              type: 'type',
+              type: 'technology',
             },
             {
               name: 'name',
-              type: 'type',
+              type: 'technology',
             },
             {
               name: 'name',
-              type: 'name',
+              type: 'technology',
             },
           ],
           organization: {
