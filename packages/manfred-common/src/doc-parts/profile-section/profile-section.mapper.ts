@@ -21,6 +21,18 @@ export const mapRelevantLinksToVm = (relevantLinks: ManfredRelevantLink[]): Rele
   }));
 };
 
+// export const phoneNumbersToVm = (
+//   phoneNumbers: {
+//     countryCode?: string;
+//     number?: string;
+//   }[]
+// ): PhoneNumbers[] => {
+//   return phoneNumbers.map(phone => ({
+//     countryCode: phone.countryCode,
+//     number: phone.number,
+//   }));
+// };
+
 export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSectionVm => {
   const name = cv?.aboutMe?.profile?.name ?? '';
   const surnames = cv?.aboutMe?.profile?.surnames ?? '';
@@ -28,7 +40,6 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
 
-  //TODO: unir los links nuevo modelo, que incluya el resto de cosas que sale en la parte de los enlaces
   const emails = (cv?.careerPreferences?.contact?.contactMails as string[]) ?? [];
   const phoneNumbers = (cv?.careerPreferences?.contact?.phoneNumbers as PhoneNumbers[]) ?? [];
 

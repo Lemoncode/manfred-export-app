@@ -1,6 +1,4 @@
-//TODO: estamos a la espera de ver como se unen los nuevos enlaces.
-
-<%_ if (profile.relevantLinks && profile.relevantLinks.length !==0 || profile && profile !=='undefined') { -%>
+<%_ if (profile.relevantLinks && profile.relevantLinks.length !==0 || profile.emails && profile.emails.length !==0 || profile.city && profile.country !== "undefined"|| profile.country && profile.country !== "undefined" || profile.phoneNumbers && profile.phoneNumbers.length !==0) { -%>
     <section class="section links">
         <h2 class="title"><%- labels.RELEVANTS_LINKS_HEADING %></h2>
         <div class="links__container">
@@ -43,7 +41,8 @@
                 <%_ } -%>
             <%_ } -%>
         <%_ } -%>
-        <%_ for (const mails of profile?.emails) { -%>
+        <%_ if (profile.emails && profile.emails.length !==0) { -%>
+            <%_ for (const mails of profile.emails) { -%>
                 <a class="links__item" href="mailto:<%= mails %>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path
@@ -51,38 +50,40 @@
                             fill="var(--primary-500)" />
                     </svg>
                 <span><%= mails %></span></a>
+            <%_ } -%>
+        <%_ } -%>
+        <%_ if (profile.city || profile.country) { -%>
+            <p class="links__item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
+                    <g clip-path="url(#clip0_1825_4351)">
+                        <path
+                            d="M6.74062 15.6C8.34375 13.5938 12 8.73125 12 6C12 2.6875 9.3125 0 6 0C2.6875 0 0 2.6875 0 6C0 8.73125 3.65625 13.5938 5.25938 15.6C5.64375 16.0781 6.35625 16.0781 6.74062 15.6ZM9.53125 4.53125L5.53125 8.53125C5.2375 8.825 4.7625 8.825 4.47188 8.53125L2.46875 6.53125C2.175 6.2375 2.175 5.7625 2.46875 5.47188C2.7625 5.18125 3.2375 5.17813 3.52813 5.47188L4.99687 6.94063L8.46875 3.46875C8.7625 3.175 9.2375 3.175 9.52812 3.46875C9.81875 3.7625 9.82187 4.2375 9.52812 4.52812L9.53125 4.53125Z"
+                            fill="var(--primary-500)" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1825_4351">
+                            <rect width="12" height="16" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <%_ if (profile.city && profile.country) { -%>
+                    <span><%= profile.city + ", " + profile.country %></span>
+                <%_ } else{ -%>
+                    <span><%= profile.city || profile.country %></span>
                 <%_ } -%>
-
-                <%_ if (profile.city || profile.country) { -%>
-                <p class="links__item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
-                        <g clip-path="url(#clip0_1825_4351)">
-                            <path
-                                d="M6.74062 15.6C8.34375 13.5938 12 8.73125 12 6C12 2.6875 9.3125 0 6 0C2.6875 0 0 2.6875 0 6C0 8.73125 3.65625 13.5938 5.25938 15.6C5.64375 16.0781 6.35625 16.0781 6.74062 15.6ZM9.53125 4.53125L5.53125 8.53125C5.2375 8.825 4.7625 8.825 4.47188 8.53125L2.46875 6.53125C2.175 6.2375 2.175 5.7625 2.46875 5.47188C2.7625 5.18125 3.2375 5.17813 3.52813 5.47188L4.99687 6.94063L8.46875 3.46875C8.7625 3.175 9.2375 3.175 9.52812 3.46875C9.81875 3.7625 9.82187 4.2375 9.52812 4.52812L9.53125 4.53125Z"
-                                fill="var(--primary-500)" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_1825_4351">
-                                <rect width="12" height="16" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <%_ if (profile.city && profile.country) { -%>
-                        <span><%= profile.city + ", " + profile.country %></span>
-                    <%_ } else{ -%>
-                        <span><%= profile.city || profile.country %></span>
-                    <%_ } -%>
-                </p>
-                <%_ } -%>
-                <%_ for (const phone of profile?.phoneNumbers) { -%>
+            </p>
+        <%_ } -%>
+        <%_ if (profile.phoneNumbers && profile.phoneNumbers.length !==0) { -%>
+            <%_ for (const phone of profile.phoneNumbers) { -%>
                 <a class="links__item" href="tel:<%= phone.countryCode + phone.number%>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path
                             d="M13.5 1H2.5C2.10218 1 1.72064 1.15804 1.43934 1.43934C1.15804 1.72064 1 2.10218 1 2.5L1 13.5C1 13.8978 1.15804 14.2794 1.43934 14.5607C1.72064 14.842 2.10218 15 2.5 15H13.5C13.8978 15 14.2794 14.842 14.5607 14.5607C14.842 14.2794 15 13.8978 15 13.5V2.5C15 2.10218 14.842 1.72064 14.5607 1.43934C14.2794 1.15804 13.8978 1 13.5 1ZM12.9878 10.6053L12.5191 12.6366C12.4953 12.7398 12.4371 12.832 12.3542 12.898C12.2713 12.964 12.1685 13 12.0625 13C7.0625 13 3 8.94656 3 3.9375C3.00372 3.83252 3.04104 3.7315 3.10646 3.64931C3.17189 3.56712 3.26196 3.5081 3.36344 3.48094L5.39469 3.01219C5.42934 3.00486 5.46459 3.00078 5.5 3C5.59065 3.00458 5.67841 3.03333 5.75419 3.08328C5.82997 3.13323 5.891 3.20256 5.93094 3.28406L6.86844 5.47156C6.8914 5.53054 6.90419 5.59299 6.90625 5.65625C6.89862 5.79501 6.83692 5.92526 6.73438 6.01906L5.55031 6.98781C6.26775 8.50841 7.49159 9.73225 9.01219 10.4497L9.98094 9.26562C10.0747 9.16308 10.205 9.10138 10.3438 9.09375C10.407 9.09579 10.4695 9.10857 10.5284 9.13156L12.7159 10.0691C12.7975 10.1089 12.8668 10.17 12.9168 10.2458C12.9668 10.3215 12.9955 10.4093 13 10.5C12.9994 10.5354 12.9953 10.5707 12.9878 10.6053Z"
                             fill="var(--primary-500)" />
                     </svg>
-                    <span>(<%= phone.countryCode %>) <%= phone.number %></span></a>
-                <%_ } -%>
+                <span>(<%= phone.countryCode %>) <%= phone.number %></span></a>
+            <%_ } -%>
+        <%_ } -%>
         </div>
     </section>
 <%_ } -%>

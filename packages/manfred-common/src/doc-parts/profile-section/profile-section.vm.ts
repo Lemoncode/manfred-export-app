@@ -27,6 +27,6 @@ export interface ManfredRelevantLink {
 }
 
 export interface PhoneNumbers {
-  countryCode: number;
+  countryCode: string;
   number: string;
 }
