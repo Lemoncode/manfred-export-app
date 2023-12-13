@@ -1,0 +1,10 @@
+<%_ if (softSkillsCollection && softSkillsCollection.length !== 0) { -%>
+    <section class="section soft-skills">
+      <h2 class="title"><%- labels.SOFT_SKILLS_HEADING %></h2>
+      <ul class="soft-skills__list">
+        <%_ for (const item of softSkillsCollection) { -%>
+          <li><%- item.skill.name %></li>
+        <%_ } -%>
+      </ul>
+    </section>
+  <%_ } -%>

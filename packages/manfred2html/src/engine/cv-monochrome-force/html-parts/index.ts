@@ -7,3 +7,4 @@ export * from './footer-section';
 export * from './main-element-start';
 export * from './main-element-end';
 export * from './about-me-section';
+export * from './soft-skills-section';
