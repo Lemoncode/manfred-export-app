@@ -72,6 +72,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address',
                 },
               },
+              linkedCompetences: [{ name: 'Competence 1' }, { name: 'Competence 2' }],
             },
           ],
         },
@@ -91,12 +92,14 @@ describe('studies-section.mapper specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
               address: 'address',
             },
           },
+          linkedCompetences: ['Competence 1', 'Competence 2'],
         },
       ];
 
@@ -134,6 +137,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address',
                 },
               },
+              linkedCompetences: [{ name: 'Competence 1' }, { name: 'Competence 2' }],
             },
             {
               studyType: 'certification',
@@ -151,6 +155,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address2',
                 },
               },
+              linkedCompetences: [{ name: 'Competence 3' }, { name: 'Competence 4' }],
             },
           ],
         },
@@ -170,12 +175,14 @@ describe('studies-section.mapper specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
               address: 'address',
             },
           },
+          linkedCompetences: ['Competence 1', 'Competence 2'],
         },
         {
           studyType: 'Certificación',
@@ -186,12 +193,14 @@ describe('studies-section.mapper specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
               address: 'address2',
             },
           },
+          linkedCompetences: ['Competence 3', 'Competence 4'],
         },
       ];
 

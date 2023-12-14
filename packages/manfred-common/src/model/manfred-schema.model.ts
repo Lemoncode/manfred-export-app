@@ -398,6 +398,6 @@ export interface Role {
  */
 export interface Competence {
   name: string;
-  type: 'tool' | 'technology' | 'practice' | 'hardware' | 'domain';
+  type?: 'tool' | 'technology' | 'practice' | 'hardware' | 'domain';
   description?: string;
 }
