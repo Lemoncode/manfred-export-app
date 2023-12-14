@@ -30,7 +30,9 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const relevantLinks = cv?.aboutMe?.relevantLinks
     ? mapRelevantLinksToVm(cv.aboutMe.relevantLinks as ManfredRelevantLink[])
     : [];
-
+  const avatar = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
+  const regionLocation = cv?.aboutMe?.profile?.location?.region ?? '';
+  const countryLocation = cv?.aboutMe?.profile?.location?.country ?? '';
   return {
     name,
     surnames,
@@ -39,5 +41,8 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
     fullname,
     emails,
     relevantLinks,
+    avatar,
+    regionLocation,
+    countryLocation,
   };
 };
