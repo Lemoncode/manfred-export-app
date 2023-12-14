@@ -16,7 +16,7 @@ export const exportHTMLTemplate = (
     case 'Galactic CleanTech':
       return exportManfredJSonToCVGalacticCleanTechHTML(manfredJsonContent, settings);
     case 'X-Wing Squadron':
-      return exportManfredJsonToCVXWingHTML(manfredJsonContent, settings);
+      return exportManfredJsonToCVXWingHTML(manfredJsonContent);
     default:
       throw new Error('Template not found');
   }
