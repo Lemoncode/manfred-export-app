@@ -31,6 +31,8 @@ export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesom
   const experienceSection = generateExperienceSection(manfredJsonContent);
   const studiesSection = generateStudiesSection(manfredJsonContent);
   const relevantLinksSection = generateRelevantLinksSection(manfredJsonContent, settings);
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
+  const mainElementEnd = generateMainElementEnd();
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
