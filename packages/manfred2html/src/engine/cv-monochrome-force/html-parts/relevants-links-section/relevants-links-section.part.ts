@@ -19,7 +19,6 @@ const generateRelevantsLinksSectionInner = (
     profile: profileSectionVm,
     labels: getLabels(language),
   };
-  console.log(profileSectionVm.emails);
 
   return ejs.render(relevantsLinksSection, rootObject);
 };

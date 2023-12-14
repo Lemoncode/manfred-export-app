@@ -10,6 +10,7 @@ import {
   generateMainElementEnd,
   generateAboutMeSection,
   generateRelevantsLinksSection,
+  generateStudiesSection,
 } from './html-parts';
 
 export const exportManfredJSonToCVMonochromeForceHTML = (
@@ -26,7 +27,7 @@ export const exportManfredJSonToCVMonochromeForceHTML = (
   const mainElementEnd = generateMainElementEnd();
   const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent, settings);
   const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
-
+  const studiesSection = generateStudiesSection(manfredJsonContent, settings);
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
@@ -35,6 +36,7 @@ export const exportManfredJSonToCVMonochromeForceHTML = (
       ${mainElementStart}
         ${relevantsLinksSection}
         ${aboutMeSection}
+        ${studiesSection}
       ${mainElementEnd}
       ${footerSection}
     ${htmlDocumentEnd}
