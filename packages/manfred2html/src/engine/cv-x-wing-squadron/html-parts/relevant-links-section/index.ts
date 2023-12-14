@@ -1,1 +1,1 @@
-export * from './relevant-links-section.part';
+export * from './relevants-links-section.part';
