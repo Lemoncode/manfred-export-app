@@ -1,0 +1,44 @@
+<%_ if (languageCollection && languageCollection.length !== 0) { -%>
+<section class="section languages">
+    <h2 class="title"><%- labels.LANGUAGE_HEADING %></h2>
+
+    <%_ for (const language of languageCollection) { -%>
+      <%_ if (language.level ==='Habilidad básica' || language.level ==='Habilidad limitada en el trabajo') { -%>
+        <div class="language__container">
+          <p class="language__title"><%- language.name %></p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-1"></div>
+            <figcaption class="language__caption"><%- labels.LEVEL_ONE %></figcaption>
+          </figure>
+        </div>
+      <%_ } -%>
+      <%_ if (language.level ==='Habilidad profesional en el trabajo') { -%>
+        <div class="language__container">
+          <p class="language__title"><%- language.name %></p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-2"></div>
+            <figcaption class="language__caption"><%- labels.LEVEL_TWO %></figcaption>
+          </figure>
+        </div>
+      <%_ } -%>
+      <%_ if (language.level ==='Habilidad profesional completo') { -%>
+        <div class="language__container">
+          <p class="language__title"><%- language.name %></p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-3"></div>
+            <figcaption class="language__caption"><%- labels.LEVEL_THREE %></figcaption>
+          </figure>
+        </div>
+      <%_ } -%>
+      <%_ if (language.level ==='Habilidad nativo o bilingüe') { -%>
+        <div class="language__container">
+          <p class="language__title"><%- language.name %></p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-4"></div>
+            <figcaption class="language__caption"><%- labels.LEVEL_FOUR %></figcaption>
+          </figure>
+        </div>
+      <%_ } -%>
+    <%_ } -%>
+</section>
+<%_ } -%>
