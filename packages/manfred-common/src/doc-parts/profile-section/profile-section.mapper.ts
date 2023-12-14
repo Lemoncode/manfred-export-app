@@ -21,18 +21,6 @@ export const mapRelevantLinksToVm = (relevantLinks: ManfredRelevantLink[]): Rele
   }));
 };
 
-// export const phoneNumbersToVm = (
-//   phoneNumbers: {
-//     countryCode?: string;
-//     number?: string;
-//   }[]
-// ): PhoneNumbers[] => {
-//   return phoneNumbers.map(phone => ({
-//     countryCode: phone.countryCode,
-//     number: phone.number,
-//   }));
-// };
-
 export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSectionVm => {
   const name = cv?.aboutMe?.profile?.name ?? '';
   const surnames = cv?.aboutMe?.profile?.surnames ?? '';

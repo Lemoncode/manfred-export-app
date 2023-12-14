@@ -1,4 +1,4 @@
-<%_ if (profile.relevantLinks && profile.relevantLinks.length !==0 || profile.emails && profile.emails.length !==0 || profile.city && profile.country !== "undefined"|| profile.country && profile.country !== "undefined" || profile.phoneNumbers && profile.phoneNumbers.length !==0) { -%>
+<%_ if (profile.relevantLinks && profile.relevantLinks.length !==0 || profile.emails && profile.emails.length !==0 || profile.city || profile.country || profile.phoneNumbers && profile.phoneNumbers.length !==0) { -%>
     <section class="section links">
         <h2 class="title"><%- labels.RELEVANTS_LINKS_HEADING %></h2>
         <div class="links__container">
