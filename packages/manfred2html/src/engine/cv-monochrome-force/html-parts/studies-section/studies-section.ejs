@@ -10,9 +10,8 @@
           <div class="education__group">
             <p class="education__date"><%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(study.finishDate && study.finishDate.toLowerCase() !=='actualidad') { -%>
               <%- "- "+new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
-            <%_ } else { -%>
-              - Actualidad
-              <%_}-%>
+            <%_ } else { -%> - Actualidad
+            <%_}-%>
             </p>
             <p class="education__title"><%- study.name %></p>
             <p class="education__entity"><%- study.institution.name %></p>
@@ -21,8 +20,17 @@
                 <%- study.description %>
               </p>
               <%_ } -%>
-            <%_ if (study) { -%>
-            <p class="education__technologies">JAVA <span>|</span> C <span>|</span> Linux <span>|</span> Wireshark</p>
+            <%_ if (study.linkedCompetences && study.linkedCompetences.length !== 0) { -%>
+            <p class="education__technologies">
+            <% study.linkedCompetences.forEach(function(competence, index) { %>
+              <% if (index === study.linkedCompetences.length - 1) { %>
+                <%- competence.name %>
+              <% } else { %>
+                <%- competence.name %> <span> | </span>
+              <% }; %>
+            <% }); %>
+            </p>
+            <%_ } -%>
           </div>
         </div>
       <%_ } -%>
