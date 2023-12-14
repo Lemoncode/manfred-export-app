@@ -1,5 +1,5 @@
 <%_ if (profile && profile !== 'undefined') { -%>
-  <%_ if (profile.avatar && profile.avatar.link) { -%>
+  <%_ if (profile.avatar) { -%>
     <img src="<%= profile?.avatar%>" alt="photo cv">
   <%_ } -%>
   <section class="header__content">
@@ -11,7 +11,7 @@
       <h2 class="surname"><%= profile?.surnames %></h2>
       <p class="job-title"><%= profile?.title %></p>
     </div>
-    <%_ if (profile.regionLocation && profile.countryLocation && profile.regionLocation !== 'undefined' && profile.countryLocation !== 'undefined') { -%>
+    <%_ if (profile.regionLocation) { -%>
       <div class="header__content__address">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24" fill="none">
           <g clip-path="url(#clip0_1762_1661)">
