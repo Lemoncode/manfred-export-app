@@ -1,4 +1,4 @@
-import { ManfredAwesomicCV } from '@/model';
+import { ManfredAwesomicCV, Settings } from '@/model';
 import {
   generateHtmlDocumentStart,
   generateHtmlDocumentEnd,
@@ -10,14 +10,14 @@ import {
   generateMainElementEnd,
 } from './html-parts';
 
-export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV): string => {
+export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
   const htmlDocumentStart = generateHtmlDocumentStart();
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
   const headerSection = generateHeaderSection(manfredJsonContent);
   const mainElementStart = generateMainElementStart();
-  const aboutMeSection = generateAboutMeSection(manfredJsonContent);
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
   const mainElementEnd = generateMainElementEnd();
   return `
     ${htmlDocumentStart}
