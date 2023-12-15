@@ -10,7 +10,7 @@
       <%_ for(const language of languageCollection) { -%>
         <li class="li__languages"><%= language.name %>
           <div class="main__lang__level">
-            <%_ if(language.level === 'Habilidad básica' || language.level === 'Habilidad limitada en el trabajo') { -%>
+            <%_ if(labels.LEVEL_FOUR === 'Basico' || labels.LEVEL_FOUR === 'Habilidad limitada en el trabajo') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#EBE8DF" />
@@ -18,7 +18,7 @@
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
               </svg>
             <%_ } -%>
-            <%_ if(language.level === 'Habilidad profesional completo') { -%>
+            <%_ if(labels.LEVEL_THREE === 'Intermedio') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
@@ -26,7 +26,7 @@
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
               </svg>
             <%_ } -%>
-            <%_ if(language.level === 'Habilidad profesional en el trabajo') { -%>
+            <%_ if(labels.LEVEL_TWO === 'Fluido') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
@@ -34,7 +34,7 @@
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
               </svg>
             <%_ } -%>
-            <%_ if(language.level === 'Habilidad nativo o bilingüe') { -%>
+            <%_ if(labels.LEVEL_ONE === 'Nativo/Bilingue') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
@@ -42,7 +42,6 @@
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#78D549" />
               </svg>
             <%_ } -%>
-            <p><%= language.level %></p>
           </div>
         </li>
       <%_ } -%>

@@ -4,5 +4,4 @@ export interface LanguageLabels {
   LEVEL_TWO: string;
   LEVEL_THREE: string;
   LEVEL_FOUR: string;
-  LEVEL_FIVE: string;
 }

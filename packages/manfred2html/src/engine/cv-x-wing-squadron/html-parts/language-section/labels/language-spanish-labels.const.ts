@@ -2,9 +2,8 @@ import { LanguageLabels } from './language-label.model';
 
 export const spanishLanguageLabels: LanguageLabels = {
   LANGUAGE_HEADING: 'Idiomas',
-  LEVEL_ONE: 'Nativo',
-  LEVEL_TWO: 'Habilidad profesional completo',
-  LEVEL_THREE: 'Habilidad profesional en el trabajo',
-  LEVEL_FOUR: 'Habilidad limitada en el trabajo',
-  LEVEL_FIVE: 'Habilidad básica',
+  LEVEL_ONE: 'Nativo/Bilingue',
+  LEVEL_TWO: 'Fluido',
+  LEVEL_THREE: 'Intermedio',
+  LEVEL_FOUR: 'Basico(Habilidad básica y limitada en el trabajo)',
 };

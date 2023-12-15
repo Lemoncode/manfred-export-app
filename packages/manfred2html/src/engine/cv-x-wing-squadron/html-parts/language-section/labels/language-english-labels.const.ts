@@ -2,9 +2,8 @@ import { LanguageLabels } from './language-label.model';
 
 export const englishLanguageLabels: LanguageLabels = {
   LANGUAGE_HEADING: 'Languages',
-  LEVEL_ONE: 'Native',
-  LEVEL_TWO: 'Full professional proficiency',
-  LEVEL_THREE: 'Professional working proficiency',
-  LEVEL_FOUR: 'Limited working proficiency',
-  LEVEL_FIVE: 'Elementary proficiency',
+  LEVEL_ONE: 'Native/Bilingual',
+  LEVEL_TWO: 'Fluent',
+  LEVEL_THREE: 'Intermediate',
+  LEVEL_FOUR: 'Basic (Elementary proficiency y limited working proficiency)',
 };
