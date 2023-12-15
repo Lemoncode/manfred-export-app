@@ -1,0 +1,36 @@
+<%_ if(experienceCollection && experienceCollection.length !== 0){ -%>
+<section class="section experiencies">
+    <h2 class="title"><%- labels.EXPERIENCE_CAREER_HEADING %></h2>
+    <div class="experiencies__container">
+      <%_ for(const experience of experienceCollection){ -%>
+      <div class="experience">
+        <p class="experience__date"><%- new Date(experience.roles[0].startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(experience.roles[0].finishDate && experience.roles[0].finishDate.toLowerCase() !=='actualidad') { -%>
+              <%- "- "+new Date(experience.roles[0].finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
+              <%_ } else { -%> - Actualidad<%_}-%></p>
+        <h3 class="experience__position"><%- experience.roles[0].name %></h3>
+        <h4 class="experience__company"><%- experience.name %></h4>
+        <%_ if(experience.roles[0].challenges && experience.roles[0].challenges.length !== 0) { -%>
+        <div class="experience__text">
+          <%_ for(const challenge of experience.roles[0].challenges){ -%>
+          <p><%- challenge.description %></p>
+          <%_}-%>
+        </div>
+        <%_}-%>
+        <%_ if(experience.url && experience.url !== "undefined") { -%>
+        <a href="https://www.getmanfred.com" class="experience__url"><%- experience.url %></a>
+        <%_}-%>
+        <%_ if(experience.roles[0].competences && experience.roles[0].competences.length !== 0) { -%>
+        <div>
+          <h5 class="experience__tools"><%- labels.EXPERIENCE_CAREER_TOOLS %></h5>
+          <ul class="experience__tools-list">
+          <%_ for(const competences of experience.roles[0].competences ){ -%>
+            <li class="chip"><%- competences.name %></li>
+          <%_ } -%>
+          </ul>
+        </div>
+        <%_ } -%>
+      </div>
+      <%_ } -%>
+    </div>
+  </section>
+<%_ }-%>

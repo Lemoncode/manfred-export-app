@@ -54,6 +54,7 @@ describe('mapFromMacCvToExperienceSectionVm', () => {
             organization: {
               name: 'name',
               description: 'description',
+              URL: 'https://lemoncode.net',
             },
             type: 'freelance',
             roles: [
@@ -89,6 +90,7 @@ describe('mapFromMacCvToExperienceSectionVm', () => {
       {
         name: 'name',
         description: 'description',
+        url: 'https://lemoncode.net',
         type: 'Autónomo',
         roles: [
           {
