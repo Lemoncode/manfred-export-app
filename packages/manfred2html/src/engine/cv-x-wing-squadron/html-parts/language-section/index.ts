@@ -1,1 +1,1 @@
-export * from './langauge-section.part';
+export * from './language-section.part';
