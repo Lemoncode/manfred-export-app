@@ -40,6 +40,12 @@ export interface Settings {
   language: Language;
 }
 
+export interface JediSettings {
+  colorTheme: HexColorJedi;
+  template: TemplateCV;
+  language: Language;
+}
+
 export const createDefaultExportHTMLSettings = (): ExportHTMLSettings => ({
   colorTheme: 'default',
   template: 'Sith Elegance',
