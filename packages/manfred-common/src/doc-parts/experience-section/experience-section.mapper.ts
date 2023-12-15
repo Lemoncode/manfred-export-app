@@ -16,6 +16,7 @@ export const mapJobToExperience = (job: JobManfredAwesomicCV): ExperienceVm => (
   description: job.organization?.description ?? '',
   type: mapOrganizationType(job.type, types),
   roles: job.roles?.map(role => role),
+  URL: job.organization?.URL ?? '',
 });
 
 export const mapOrganizationType = (type: string = '', types: Type[]): string => {
