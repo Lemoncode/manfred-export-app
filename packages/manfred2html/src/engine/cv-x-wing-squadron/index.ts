@@ -10,6 +10,7 @@ import {
   generateMainElementEnd,
   generateLanguageSection,
   generateHardSkillsSection,
+  generateSoftSkillsSection,
 } from './html-parts';
 
 export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
@@ -21,6 +22,7 @@ export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesom
   const mainElementStart = generateMainElementStart();
   const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
   const mainElementEnd = generateMainElementEnd();
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
   const languageSection = generateLanguageSection(manfredJsonContent, settings);
   return `
@@ -32,6 +34,7 @@ export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesom
         ${aboutMeSection}
         ${languageSection}
         ${hardSkillsSection}
+        ${softSkillsSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
