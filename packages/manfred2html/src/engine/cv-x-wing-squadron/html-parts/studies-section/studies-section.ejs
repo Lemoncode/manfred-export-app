@@ -27,7 +27,7 @@
             <%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(study.finishDate && study.finishDate.toLowerCase() !=='actualidad') { -%>
             <%- "- "+new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
             <%_ } else { -%>
-            - Actualidad
+            - <%= labels.CURRENT_DATE %>
             <%_}-%>
           </p>
         </div>
@@ -35,7 +35,7 @@
           <p><%= study.institution.description %></p>
         </div>
         <%_ if(study.linkedCompetences && study.linkedCompetences.length !== 0) { -%>
-          <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
+          <h3 class="tech__tools__heading"><%= labels.TECH_TOOLS_HEADING %></h3>
           <ul class="ul__technologies">
             <%_ for(const competence of study.linkedCompetences) { -%>
               <li class="li__technologies"><%= competence %></li>

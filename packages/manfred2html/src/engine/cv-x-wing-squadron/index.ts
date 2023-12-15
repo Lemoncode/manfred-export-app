@@ -13,6 +13,7 @@ import {
   generateSoftSkillsSection,
   generateExperienceSection,
   generateStudiesSection,
+  generateRelevantLinksSection,
 } from './html-parts';
 
 export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
@@ -29,10 +30,12 @@ export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesom
   const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
   const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
   const languageSection = generateLanguageSection(manfredJsonContent, settings);
+  const relevantLinksSection = generateRelevantLinksSection(manfredJsonContent);
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
       ${headerSection}
+        ${relevantLinksSection}
       ${headerElementEnd}
       ${mainElementStart}
         ${aboutMeSection}
