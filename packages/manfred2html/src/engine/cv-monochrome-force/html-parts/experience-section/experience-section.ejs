@@ -6,7 +6,7 @@
       <div class="experience">
         <p class="experience__date"><%- new Date(experience.roles[0].startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(experience.roles[0].finishDate && experience.roles[0].finishDate.toLowerCase() !=='actualidad') { -%>
               <%- "- "+new Date(experience.roles[0].finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
-              <%_ } else { -%> - Actualidad<%_}-%></p>
+              <%_ } else { -%> - <%- labels.CURRENT_DATE %> <%_ } -%>
         <h3 class="experience__position"><%- experience.roles[0].name %></h3>
         <h4 class="experience__company"><%- experience.name %></h4>
         <%_ if(experience.roles[0].challenges && experience.roles[0].challenges.length !== 0) { -%>
@@ -16,8 +16,8 @@
           <%_}-%>
         </div>
         <%_}-%>
-        <%_ if(experience.url && experience.url !== "undefined") { -%>
-        <a href="https://www.getmanfred.com" class="experience__url" target="_blank"><%- experience.url %></a>
+        <%_ if(experience.url) { -%>
+        <a href=<%= experience.url %> class="experience__url" target="_blank"><%- experience.url %></a>
         <%_}-%>
         <%_ if(experience.roles[0].competences && experience.roles[0].competences.length !== 0) { -%>
         <div>

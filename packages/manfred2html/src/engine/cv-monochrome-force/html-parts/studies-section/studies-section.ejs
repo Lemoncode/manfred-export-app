@@ -10,8 +10,7 @@
           <div class="education__group">
             <p class="education__date"><%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(study.finishDate && study.finishDate.toLowerCase() !=='actualidad') { -%>
               <%- "- "+new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
-            <%_ } else { -%> - Actualidad
-            <%_}-%>
+            <%_ } else { -%> - <%- labels.CURRENT_DATE %> <%_ } -%>
             </p>
             <p class="education__title"><%- study.name %></p>
             <p class="education__entity"><%- study.institution.name %></p>
