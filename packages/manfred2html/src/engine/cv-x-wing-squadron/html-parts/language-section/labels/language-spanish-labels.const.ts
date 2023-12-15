@@ -5,5 +5,5 @@ export const spanishLanguageLabels: LanguageLabels = {
   LEVEL_ONE: 'Nativo/Bilingue',
   LEVEL_TWO: 'Fluido',
   LEVEL_THREE: 'Intermedio',
-  LEVEL_FOUR: 'Basico(Habilidad básica y limitada en el trabajo)',
+  LEVEL_FOUR: 'Basico',
 };
