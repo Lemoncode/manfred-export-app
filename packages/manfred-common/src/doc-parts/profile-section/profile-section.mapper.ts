@@ -1,6 +1,7 @@
 import { ManfredAwesomicCV } from '@/model';
-import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink } from './profile-section.vm';
+import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink, PhoneNumbers } from './profile-section.vm';
 
+//Sólo afecta al .json de David Bonilla
 const mapLinkTypeToVm = (linkType: ManfredRelevantLink['type']): RelevantLinkVm['type'] => {
   switch (linkType) {
     case 'website':
@@ -26,7 +27,9 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const title = cv?.aboutMe?.profile?.title ?? '';
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
-  const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
+
+  const emails = (cv?.careerPreferences?.contact?.contactMails as string[]) ?? [];
+  const phoneNumbers = (cv?.careerPreferences?.contact?.phoneNumbers as PhoneNumbers[]) ?? [];
 
   const avatarUrl = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
 
@@ -48,5 +51,6 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
     avatarUrl,
     city,
     country,
+    phoneNumbers,
   };
 };
