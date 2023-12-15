@@ -1,4 +1,4 @@
-import { ManfredAwesomicCV } from '@/model';
+import { Competence, ManfredAwesomicCV } from '@/model';
 import { CountryType, Institution, StudiesSectionVm, StudyTypeWithTranslation } from './studies-section.vm';
 import { studiesTypes, countryList } from './studies-section.constants';
 import { sortedStudiesByStartDate } from './studies-section.helpers';
@@ -16,17 +16,18 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
       const description = study?.description ?? '';
       let institution: Institution = {
         name: study?.institution?.name ?? '',
+        description: study?.institution?.description ?? '',
         location: {
           country: study?.institution?.location?.country ?? '',
           region: study?.institution?.location?.region ?? '',
           address: study?.institution?.location?.address ?? '',
         },
       };
-
       const mapStudyType = mapStudiesTypes(studyType, studiesTypes);
       const mapCountry = mapCountries(institution.location.country, countryList);
       institution = { ...institution, location: { ...institution.location, country: mapCountry } };
-
+      const linkedCompetences: Competence[] = study?.linkedCompetences ?? [];
+      const mapLinkedCompetence = linkedCompetences.map(competence => competence.name);
       return {
         name,
         studyType: mapStudyType,
@@ -35,6 +36,7 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
         finishDate,
         description,
         institution,
+        linkedCompetences: mapLinkedCompetence,
       };
     }) ?? [];
 
