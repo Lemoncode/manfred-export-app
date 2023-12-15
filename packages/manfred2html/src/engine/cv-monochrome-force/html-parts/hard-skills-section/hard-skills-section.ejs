@@ -1,0 +1,10 @@
+<%_ if (hardSkillsCollection && hardSkillsCollection.length !== 0) { -%>
+    <section class="section hard-skills">
+        <h2 class="title"><%- labels.HARD_SKILLS_HEADING %></h2>
+        <ul class="hard-skills__list">
+            <%_ for (const item of hardSkillsCollection) { -%>
+                <li class="chip chip-primary"><%- item.skill.name %></li>
+            <%_ } -%>
+        </ul>
+      </section>
+  <%_ } -%>
