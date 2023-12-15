@@ -10,6 +10,8 @@ import {
   generateMainElementEnd,
   generateAboutMeSection,
   generateSoftSkillsSection,
+  generateRelevantsLinksSection,
+  generateHardSkillsSection,
 } from './html-parts';
 
 export const exportManfredJSonToCVMonochromeForceHTML = (
@@ -24,8 +26,10 @@ export const exportManfredJSonToCVMonochromeForceHTML = (
   const footerSection = generateFooterSection();
   const mainElementStart = generateMainElementStart();
   const mainElementEnd = generateMainElementEnd();
+  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent, settings);
   const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
   const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
 
   return `
     ${htmlDocumentStart}
@@ -35,6 +39,9 @@ export const exportManfredJSonToCVMonochromeForceHTML = (
       ${mainElementStart}
         ${aboutMeSection}
         ${softSkillsSection}
+        ${relevantsLinksSection}
+        ${aboutMeSection}
+        ${hardSkillsSection}
       ${mainElementEnd}
       ${footerSection}
     ${htmlDocumentEnd}
