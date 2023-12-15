@@ -4,45 +4,48 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="6" viewBox="0 0 32 6" fill="none">
         <path d="M5.51343e-07 3L32 3" stroke="#3BA0B7" stroke-width="6" />
       </svg>
-      <h2>Idiomas</h2>
+      <h2><%= labels.LANGUAGE_HEADING %></h2>
     </div>
     <ul class="ul__languages">
       <%_ for(const language of languageCollection) { -%>
         <li class="li__languages"><%= language.name %>
           <div class="main__lang__level">
-            <%_ if(language.level === 'Habilidad básica' || language.level === 'Habilidad limitada en el trabajo') { -%>
+            <%_ if(language.level === 'Elementary proficiency' || language.level === 'Limited working proficiency') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#EBE8DF" />
                 <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#EBE8DF" />
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
               </svg>
+              <p><%= labels.LEVEL_FOUR %></p>
             <%_ } -%>
-            <%_ if(language.level === 'Habilidad profesional completo') { -%>
+            <%_ if(language.level === 'Professional working proficiency') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
                 <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#78D549" />
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
               </svg>
+              <p><%= labels.LEVEL_THREE %></p>
             <%_ } -%>
-            <%_ if(language.level === 'Habilidad profesional en el trabajo') { -%>
+            <%_ if(language.level === 'Full professional proficiency') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
                 <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#EBE8DF" />
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#EBE8DF" />
               </svg>
+              <p><%= labels.LEVEL_TWO %></p>
             <%_ } -%>
-            <%_ if(language.level === 'Habilidad nativo o bilingüe') { -%>
+            <%_ if(language.level === 'Native or bilingual proficiency') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
                 <path d="M72.1055 13.7338L100.948 7.62939V28.9998H72.1055V13.7338Z" fill="#78D549" />
                 <path d="M108.158 6.10749L137 0V29H108.158V6.10749Z" fill="#78D549" />
               </svg>
+              <p><%= labels.LEVEL_ONE %></p>
             <%_ } -%>
-            <p><%= language.level %></p>
           </div>
         </li>
       <%_ } -%>
