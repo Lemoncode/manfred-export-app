@@ -30,6 +30,7 @@ export const ExportConfig: React.FC<Props> = props => {
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
+  const [isColorSelectVisible, setIsColorSelectVisible] = React.useState<boolean>(true);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
@@ -45,6 +46,7 @@ export const ExportConfig: React.FC<Props> = props => {
       ...exportHTMLSettings,
       template: templateCV as TemplateCV,
     });
+    setIsColorSelectVisible(templateCV !== 'X-Wing Squadron');
   };
 
   const handleLanguageChange = (language: string) => {
@@ -81,9 +83,11 @@ export const ExportConfig: React.FC<Props> = props => {
               label={'Idioma cabeceras'}
             /> */}
           </div>
-          <div className={classes.selectColorContainer}>
-            <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
-          </div>
+          {isColorSelectVisible && (
+            <div className={classes.selectColorContainer}>
+              <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
+            </div>
+          )}
         </div>
         <div className={classes.prevContainer}>
           <p className={`${classes.title}`}>Previsualización</p>
