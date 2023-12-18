@@ -25,12 +25,12 @@ export const ExportConfig: React.FC<Props> = props => {
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>(
     createDefaultExportHTMLSettings()
   );
-  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(true);
+  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
 
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
-  const [hideColorSelected, setHideColorSelected] = React.useState<boolean>(true);
+  const [hideColorSelected, setHideColorSelected] = React.useState<boolean>(false);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
@@ -47,9 +47,6 @@ export const ExportConfig: React.FC<Props> = props => {
       template: templateCV as TemplateCV,
     });
   };
-  React.useEffect(() => {
-    setHideColorSelected(exportHTMLSettings.template === 'X-Wing Squadron');
-  });
 
   const handleLanguageChange = (language: string) => {
     setExportHTMLSettings({ ...exportHTMLSettings, language: language as Language });
@@ -68,6 +65,7 @@ export const ExportConfig: React.FC<Props> = props => {
   };
 
   React.useEffect(() => {
+    setHideColorSelected(exportHTMLSettings.template === 'X-Wing Squadron');
     setHtmlPreview(onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings));
   }, [exportHTMLSettings]);
 
