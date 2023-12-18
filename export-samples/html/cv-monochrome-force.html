@@ -106,7 +106,7 @@
         min-width: 428px;
         display: flex;
         flex-direction: column;
-        min-height: 100dvh;
+        min-height: 100svh;
         position: relative;
       }
 
@@ -116,6 +116,7 @@
         max-width: 1024px;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
       }
       .title {
         font-size: var(--fs-xl);
@@ -364,22 +365,22 @@
         padding-left: var(--space-24);
       }
 
-      /* icono lenguajes */
-      .lenguage__container {
+      /* section languages */
+      .language__container {
         display: grid;
         padding-inline: var(--space-8);
         grid-template-columns: minmax(100px, auto) minmax(114px, 1fr);
         align-items: center;
         justify-items: start;
       }
-      .lenguage__container + .lenguage__container {
+      .language__container + .language__container {
         padding-top: var(--space-12);
       }
-      .lenguage__title {
+      .language__title {
         color: var(--primary-500);
         font-weight: var(--fw-medium);
       }
-      .lenguage__image {
+      .language__image {
         min-width: 7rem;
         display: flex;
         flex-direction: column;
@@ -387,7 +388,7 @@
         gap: var(--space-2);
         margin: 0px;
       }
-      .lenguage__icon {
+      .language__icon {
         width: 114px;
         height: 24px;
         clip-path: polygon(0px 100%, 100% 0px, 100% 100%);
@@ -482,7 +483,7 @@
         );
       }
 
-      /* experiencies */
+      /* section experiencies */
       .experiencies__container {
         display: flex;
         flex-direction: column;
@@ -564,7 +565,7 @@
         }
       }
 
-      /* educations */
+      /* section educations */
       .educations {
         padding-bottom: var(--space-8);
       }
@@ -671,6 +672,10 @@
       .column {
         display: none;
       }
+      .main {
+        flex-grow: 1;
+      }
+
       @media screen and (min-width: 834px) {
         .main {
           display: grid;
@@ -841,31 +846,31 @@
       </section>
       <section class="section languages">
         <h2 class="title">Idiomas</h2>
-        <div class="lenguage__container">
-          <p class="lenguage__title">Español</p>
-          <figure type="language" class="lenguage__image">
-            <div class="lenguage__icon level-4"></div>
+        <div class="language__container">
+          <p class="language__title">Español</p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-4"></div>
             <figcaption class="language__caption">Nativo/Bilingüe</figcaption>
           </figure>
         </div>
-        <div class="lenguage__container">
-          <p class="lenguage__title">Inglés</p>
-          <figure type="language" class="lenguage__image">
-            <div class="lenguage__icon level-3"></div>
+        <div class="language__container">
+          <p class="language__title">Inglés</p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-3"></div>
             <figcaption class="language__caption">Fluido</figcaption>
           </figure>
         </div>
-        <div class="lenguage__container">
-          <p class="lenguage__title">Alemán</p>
-          <figure type="language" class="lenguage__image">
-            <div class="lenguage__icon level-2"></div>
+        <div class="language__container">
+          <p class="language__title">Alemán</p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-2"></div>
             <figcaption class="language__caption">Intermedio</figcaption>
           </figure>
         </div>
-        <div class="lenguage__container">
-          <p class="lenguage__title">Gallego</p>
-          <figure type="language" class="lenguage__image">
-            <div class="lenguage__icon level-1"></div>
+        <div class="language__container">
+          <p class="language__title">Gallego</p>
+          <figure type="language" class="language__image">
+            <div class="language__icon level-1"></div>
             <figcaption class="language__caption">Básico</figcaption>
           </figure>
         </div>
@@ -998,10 +1003,8 @@
     </main>
     <footer class="footer"></footer>
     <script>
-      // Selecciona un elemento del DOM
       const elementInDOM = selector => document.querySelector(selector);
 
-      // Selecciona un elemento del DOM y comprueba que exista
       const elementReady = selector => {
         const element = elementInDOM(selector);
         if (element && element instanceof HTMLElement) {
@@ -1013,7 +1016,6 @@
 
       // media query event handler (mobile)
       function handleResize() {
-        // Selecciona los elementos y comprueba que existan
         const main = elementInDOM('.main');
         const aboutMe = elementInDOM('.about');
         const experience = elementInDOM('.experiencies');
@@ -1025,20 +1027,21 @@
         const avatar = elementInDOM('.header__avatar');
         const background = elementInDOM('.background');
         const footer = elementInDOM('.footer');
-
-        // Selecciona las columnas y comprueba que existan
         const columnLeft = elementInDOM('.column-left');
         const columnRight = elementInDOM('.column-right');
 
         if (window.innerWidth > 834) {
-          // Mueve los elementos a las columnas correspondientes
-          columnLeft.appendChild(aboutMe);
-          columnLeft.appendChild(experience);
-          columnRight.appendChild(myLinks);
-          columnRight.appendChild(languages);
-          columnRight.appendChild(hardSkills);
-          columnRight.appendChild(softSkills);
-          columnRight.appendChild(education);
+          aboutMe && columnLeft.appendChild(aboutMe);
+          experience && columnLeft.appendChild(experience);
+          myLinks && columnRight.appendChild(myLinks);
+          languages && columnRight.appendChild(languages);
+          hardSkills && columnRight.appendChild(hardSkills);
+          softSkills && columnRight.appendChild(softSkills);
+          education && columnRight.appendChild(education);
+
+          if (columnLeft.children.length === 0) {
+            columnLeft.style.display = 'none';
+          }
 
           if (avatar) {
             background.classList.add('background--image');
@@ -1047,21 +1050,18 @@
             background.classList.remove('background--image');
           }
         } else {
-          // Mueve los elementos al contenedor
-          main.appendChild(myLinks);
-          main.appendChild(aboutMe);
-          main.appendChild(languages);
-          main.appendChild(hardSkills);
-          main.appendChild(softSkills);
-          main.appendChild(experience);
-          main.appendChild(education);
+          myLinks && main.appendChild(myLinks);
+          aboutMe && main.appendChild(aboutMe);
+          hardSkills && main.appendChild(hardSkills);
+          softSkills && main.appendChild(softSkills);
+          languages && main.appendChild(languages);
+          experience && main.appendChild(experience);
+          education && main.appendChild(education);
         }
       }
 
-      // Se ejecuta cuando la página cambia de tamaño
       window.addEventListener('resize', handleResize);
 
-      // Se ejecuta cuando la página está cargada
       document.addEventListener('DOMContentLoaded', handleResize);
     </script>
   </body>

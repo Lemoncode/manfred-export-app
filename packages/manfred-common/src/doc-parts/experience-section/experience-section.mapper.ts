@@ -14,6 +14,7 @@ export const mapFromMacCvToExperienceSectionVm = (cv: ManfredAwesomicCV): Experi
 export const mapJobToExperience = (job: JobManfredAwesomicCV): ExperienceVm => ({
   name: job.organization?.name ?? '',
   description: job.organization?.description ?? '',
+  url: job.organization?.URL ?? '',
   type: mapOrganizationType(job.type, types),
   roles: job.roles?.map(role => role),
 });
