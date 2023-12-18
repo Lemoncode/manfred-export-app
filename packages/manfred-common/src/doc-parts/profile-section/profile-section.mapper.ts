@@ -1,7 +1,7 @@
 import { ManfredAwesomicCV } from '@/model';
 import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink, PhoneNumbers } from './profile-section.vm';
 
-//Sólo afecta al .json de David Bonilla
+//Only affects David Bonilla's .json because it's the only one that has the "website" type
 const mapLinkTypeToVm = (linkType: ManfredRelevantLink['type']): RelevantLinkVm['type'] => {
   switch (linkType) {
     case 'website':

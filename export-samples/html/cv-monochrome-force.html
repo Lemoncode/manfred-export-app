@@ -1003,10 +1003,8 @@
     </main>
     <footer class="footer"></footer>
     <script>
-      // Selecciona un elemento del DOM
       const elementInDOM = selector => document.querySelector(selector);
 
-      // Selecciona un elemento del DOM y comprueba que exista
       const elementReady = selector => {
         const element = elementInDOM(selector);
         if (element && element instanceof HTMLElement) {
@@ -1018,7 +1016,6 @@
 
       // media query event handler (mobile)
       function handleResize() {
-        // Selecciona los elementos y comprueba que existan
         const main = elementInDOM('.main');
         const aboutMe = elementInDOM('.about');
         const experience = elementInDOM('.experiencies');
@@ -1030,13 +1027,10 @@
         const avatar = elementInDOM('.header__avatar');
         const background = elementInDOM('.background');
         const footer = elementInDOM('.footer');
-
-        // Selecciona las columnas y comprueba que existan
         const columnLeft = elementInDOM('.column-left');
         const columnRight = elementInDOM('.column-right');
 
         if (window.innerWidth > 834) {
-          // Mueve los elementos a las columnas correspondientes
           aboutMe && columnLeft.appendChild(aboutMe);
           experience && columnLeft.appendChild(experience);
           myLinks && columnRight.appendChild(myLinks);
@@ -1045,7 +1039,6 @@
           softSkills && columnRight.appendChild(softSkills);
           education && columnRight.appendChild(education);
 
-          // Comprueba que haya contenido en la colummna izquierda por el grid
           if (columnLeft.children.length === 0) {
             columnLeft.style.display = 'none';
           }
@@ -1057,7 +1050,6 @@
             background.classList.remove('background--image');
           }
         } else {
-          // Mueve los elementos al contenedor
           myLinks && main.appendChild(myLinks);
           aboutMe && main.appendChild(aboutMe);
           hardSkills && main.appendChild(hardSkills);
@@ -1068,10 +1060,8 @@
         }
       }
 
-      // Se ejecuta cuando la página cambia de tamaño
       window.addEventListener('resize', handleResize);
 
-      // Se ejecuta cuando la página está cargada
       document.addEventListener('DOMContentLoaded', handleResize);
     </script>
   </body>
