@@ -4,9 +4,13 @@
     <div class="experiencies__container">
       <%_ for(const experience of experienceCollection){ -%>
       <div class="experience">
-        <p class="experience__date"><%- new Date(experience.roles[0].startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(experience.roles[0].finishDate && experience.roles[0].finishDate.toLowerCase() !=='actualidad') { -%>
+        <p class="experience__date">
+          <%- new Date(experience.roles[0].startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%>
+          <%_ if(experience.roles[0].finishDate && experience.roles[0].finishDate.toLowerCase() !== 'actualidad') { -%>
               <%- "- "+new Date(experience.roles[0].finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
-              <%_ } else { -%> - <%- labels.CURRENT_DATE %> <%_ } -%>
+          <%_ } else { -%>
+             - <%- labels.CURRENT_DATE %>
+          <%_ } -%>
         <h3 class="experience__position"><%- experience.roles[0].name %></h3>
         <h4 class="experience__company"><%- experience.name %></h4>
         <%_ if(experience.roles[0].challenges && experience.roles[0].challenges.length !== 0) { -%>
