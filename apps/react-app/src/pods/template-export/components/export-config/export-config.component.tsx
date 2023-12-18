@@ -30,6 +30,7 @@ export const ExportConfig: React.FC<Props> = props => {
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
+  const [hideColorSelected, setHideColorSelected] = React.useState<boolean>(false);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
@@ -64,6 +65,7 @@ export const ExportConfig: React.FC<Props> = props => {
   };
 
   React.useEffect(() => {
+    setHideColorSelected(exportHTMLSettings.template === 'X-Wing Squadron');
     setHtmlPreview(onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings));
   }, [exportHTMLSettings]);
 
@@ -81,9 +83,11 @@ export const ExportConfig: React.FC<Props> = props => {
               label={'Idioma cabeceras'}
             /> */}
           </div>
-          <div className={classes.selectColorContainer}>
-            <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
-          </div>
+          {!hideColorSelected && (
+            <div className={classes.selectColorContainer}>
+              <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
+            </div>
+          )}
         </div>
         <div className={classes.prevContainer}>
           <p className={`${classes.title}`}>Previsualización</p>
