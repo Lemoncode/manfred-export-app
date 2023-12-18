@@ -1,6 +1,6 @@
-import { ManfredAwesomicCV } from '@/model';
+import { ContactMean, ManfredAwesomicCV } from '@/model';
 import { mapFromMacCvToProfileSectionVm, mapRelevantLinksToVm } from './profile-section.mapper';
-import { ProfileSectionVm, RelevantLinkVm } from './profile-section.vm';
+import { PhoneNumbers, ProfileSectionVm, RelevantLinkVm } from './profile-section.vm';
 describe('Testing profile-section.mapper.ts', () => {
   describe('relevanLinksToVm specs', () => {
     it('should return relevant link type with "otros" when passed relevantLinks type is "other"', () => {
@@ -81,7 +81,11 @@ describe('Testing profile-section.mapper.ts', () => {
         description: '',
         fullname: ' ',
         emails: [] as string[],
+        phoneNumbers: [] as PhoneNumbers[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -100,7 +104,11 @@ describe('Testing profile-section.mapper.ts', () => {
         description: '',
         fullname: ' ',
         emails: [] as string[],
+        phoneNumbers: [] as PhoneNumbers[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -131,7 +139,11 @@ describe('Testing profile-section.mapper.ts', () => {
         description: '',
         fullname: ' ',
         emails: [] as string[],
+        phoneNumbers: [] as PhoneNumbers[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -162,7 +174,11 @@ describe('Testing profile-section.mapper.ts', () => {
         description: '',
         fullname: ' ',
         emails: [] as string[],
+        phoneNumbers: [] as PhoneNumbers[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -202,7 +218,11 @@ describe('Testing profile-section.mapper.ts', () => {
         description: '',
         fullname: ' ',
         emails: [] as string[],
+        phoneNumbers: [] as PhoneNumbers[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -243,7 +263,11 @@ describe('Testing profile-section.mapper.ts', () => {
         description: '',
         fullname: ' ',
         emails: [] as string[],
+        phoneNumbers: [] as PhoneNumbers[],
         relevantLinks: [] as RelevantLinkVm[],
+        avatarUrl: '',
+        city: '',
+        country: '',
       };
 
       // Act
@@ -254,8 +278,9 @@ describe('Testing profile-section.mapper.ts', () => {
 
     it('It should returns cv with proper data when fields from aboutMe field have valid values', () => {
       // Arrange
-      const theContact: any = {
+      const theContact: ContactMean = {
         contactMails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'],
+        phoneNumbers: [{ number: '659120720', countryCode: '+34' }],
       };
 
       const theLink: any = {
@@ -270,9 +295,8 @@ describe('Testing profile-section.mapper.ts', () => {
         title: 'Computer Science Bachelor',
         description: 'Frontend developer',
         birthday: '30/03/1990',
-        avatar: undefined,
-        contact: theContact,
-        location: undefined,
+        avatar: { link: 'http://manfredexport.com' },
+        location: { municipality: 'Madrid', country: 'Spain' },
       };
 
       const cv: ManfredAwesomicCV = {
@@ -285,6 +309,9 @@ describe('Testing profile-section.mapper.ts', () => {
           profile: person,
           relevantLinks: [theLink],
         },
+        careerPreferences: {
+          contact: theContact,
+        },
       };
 
       const expectedResult: ProfileSectionVm = {
@@ -293,8 +320,12 @@ describe('Testing profile-section.mapper.ts', () => {
         title: 'Computer Science Bachelor',
         description: 'Frontend developer',
         fullname: 'John Doe',
-        emails: ['john.doe@mydomain.com', 'john.doe@anydomain.com'] as string[],
+        emails: theContact.contactMails as string[],
+        phoneNumbers: theContact.phoneNumbers as PhoneNumbers[],
         relevantLinks: [theLink] as RelevantLinkVm[],
+        avatarUrl: 'http://manfredexport.com',
+        city: 'Madrid',
+        country: 'Spain',
       };
 
       // Act

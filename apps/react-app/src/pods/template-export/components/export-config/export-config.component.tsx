@@ -17,7 +17,7 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const DESING_OPTIONS: TemplateCV[] = ['Moderno elegante', 'Limpio y organizado'];
+const DESIGN_OPTIONS: TemplateCV[] = ['Sith Elegance', 'Galactic CleanTech', 'Monochrome Force'];
 const LANGUAGE_OPTIONS: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {
@@ -73,7 +73,7 @@ export const ExportConfig: React.FC<Props> = props => {
       <div className={classes.optionsContainer}>
         <div className={classes.optionsContent}>
           <div className={classes.selectContainer}>
-            <CustomSelect listOptions={DESING_OPTIONS} onSelectedOption={handleTemplateChange} label={'Diseño'} />
+            <CustomSelect listOptions={DESIGN_OPTIONS} onSelectedOption={handleTemplateChange} label={'Diseño'} />
             {/* Uncomment when we have all label translations */}
             {/* <CustomSelect
               listOptions={LANGUAGE_OPTIONS}

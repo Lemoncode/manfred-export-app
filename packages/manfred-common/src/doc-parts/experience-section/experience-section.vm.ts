@@ -1,8 +1,9 @@
-import { OrganizationType, PublicEntityDetails, Role } from '@/model';
+import { Competence, OrganizationType, PublicEntityDetails, Role } from '@/model';
 
 export interface ExperienceVm {
   name: string;
   description?: string;
+  url?: string;
   type?: string;
   roles: Role[];
 }
@@ -18,4 +19,5 @@ export interface JobManfredAwesomicCV {
   organization: PublicEntityDetails;
   type?: OrganizationType | undefined;
   roles: [Role, ...Role[]];
+  competences?: Competence[];
 }

@@ -8,6 +8,7 @@ export interface StudiesSectionVm {
   finishDate: string;
   description: string;
   institution: Institution;
+  linkedCompetences?: Competence[];
 }
 
 export interface Institution {

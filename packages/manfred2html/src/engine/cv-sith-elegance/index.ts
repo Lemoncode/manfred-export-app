@@ -4,52 +4,53 @@ import {
   generateHtmlDocumentEnd,
   generateHeaderElementStart,
   generateHeaderElementEnd,
-  generateHeaderSection,
+  generateAboutMeSection,
   generateAsideElementStart,
   generateAsideElementEnd,
-  generateMainElementStart,
-  generateMainElementEnd,
   generateRelevantsLinksSection,
   generateLanguageSection,
   generateHardSkillsSection,
   generateSoftSkillsSection,
-  generateAboutMeSection,
+  generateMainElementStart,
+  generateMainElementEnd,
   generateExperiencesSection,
   generateStudiesSection,
 } from './html-parts';
 
-export const exportManfredJSonToHTMLTemplateB = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
+export const exportManfredJSonToCVSithEleganceHTML = (
+  manfredJsonContent: ManfredAwesomicCV,
+  settings: Settings
+): string => {
   const htmlDocumentStart = generateHtmlDocumentStart(settings.colorTheme);
   const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
   const headerElementEnd = generateHeaderElementEnd();
-  const headerSection = generateHeaderSection(manfredJsonContent);
-  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent, settings);
-  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
-  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
-  const languageSection = generateLanguageSection(manfredJsonContent, settings);
+  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();
+  const relevantsLinksSection = generateRelevantsLinksSection(manfredJsonContent, settings);
   const mainElementStart = generateMainElementStart();
   const mainElementEnd = generateMainElementEnd();
-  const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
+  const languageSection = generateLanguageSection(manfredJsonContent, settings);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
   const experienceSection = generateExperiencesSection(manfredJsonContent, settings);
   const studiesSection = generateStudiesSection(manfredJsonContent, settings);
+
   return `
     ${htmlDocumentStart}
-      ${asideElementStart}
       ${headerElementStart}
-      ${headerSection}
+        ${aboutMeSection}
       ${headerElementEnd}
-      ${relevantsLinksSection}
-      ${languageSection}
-      ${hardSkillsSection}
-      ${softSkillsSection}
+      ${asideElementStart}
+        ${relevantsLinksSection}
+        ${languageSection}
+        ${hardSkillsSection}
+        ${softSkillsSection}
       ${asideElementEnd}
       ${mainElementStart}
-      ${aboutMeSection}
-      ${experienceSection}
-      ${studiesSection}
+        ${experienceSection}
+        ${studiesSection}
       ${mainElementEnd}
     ${htmlDocumentEnd}
   `;
