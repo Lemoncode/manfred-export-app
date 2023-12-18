@@ -25,12 +25,12 @@ export const ExportConfig: React.FC<Props> = props => {
   const [exportHTMLSettings, setExportHTMLSettings] = React.useState<ExportHTMLSettings>(
     createDefaultExportHTMLSettings()
   );
-  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(false);
+  const [isDownloadInProgress, setIsDownloadInProgress] = React.useState<boolean>(true);
 
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
-  const [isColorSelectVisible, setIsColorSelectVisible] = React.useState<boolean>(true);
+  const [hideColorSelected, setHideColorSelected] = React.useState<boolean>(true);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
@@ -46,8 +46,10 @@ export const ExportConfig: React.FC<Props> = props => {
       ...exportHTMLSettings,
       template: templateCV as TemplateCV,
     });
-    setIsColorSelectVisible(templateCV !== 'X-Wing Squadron');
   };
+  React.useEffect(() => {
+    setHideColorSelected(exportHTMLSettings.template === 'X-Wing Squadron');
+  });
 
   const handleLanguageChange = (language: string) => {
     setExportHTMLSettings({ ...exportHTMLSettings, language: language as Language });
@@ -83,7 +85,7 @@ export const ExportConfig: React.FC<Props> = props => {
               label={'Idioma cabeceras'}
             /> */}
           </div>
-          {isColorSelectVisible && (
+          {!hideColorSelected && (
             <div className={classes.selectColorContainer}>
               <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
             </div>
