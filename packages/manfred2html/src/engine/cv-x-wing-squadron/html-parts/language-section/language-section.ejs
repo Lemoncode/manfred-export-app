@@ -10,7 +10,7 @@
       <%_ for(const language of languageCollection) { -%>
         <li class="li__languages"><%= language.name %>
           <div class="main__lang__level">
-            <%_ if(language.level === 'Elementary proficiency' || language.level === 'Limited working proficiency') { -%>
+            <%_ if(language.level === 'Habilidad básica' || language.level === 'Habilidad limitada en el trabajo') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#EBE8DF" />
@@ -19,7 +19,7 @@
               </svg>
               <p><%= labels.LEVEL_FOUR %></p>
             <%_ } -%>
-            <%_ if(language.level === 'Professional working proficiency') { -%>
+            <%_ if(language.level === 'Habilidad profesional en el trabajo') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
@@ -28,7 +28,7 @@
               </svg>
               <p><%= labels.LEVEL_THREE %></p>
             <%_ } -%>
-            <%_ if(language.level === 'Full professional proficiency') { -%>
+            <%_ if(language.level === 'Habilidad profesional completo') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
@@ -37,7 +37,7 @@
               </svg>
               <p><%= labels.LEVEL_TWO %></p>
             <%_ } -%>
-            <%_ if(language.level === 'Native or bilingual proficiency') { -%>
+            <%_ if(language.level === 'Habilidad nativo o bilingüe') { -%>
               <svg xmlns="http://www.w3.org/2000/svg" width="137" height="29" viewBox="0 0 137 29" fill="none">
                 <path d="M0 28.9997L28.8421 22.8945V28.9997L0 28.9997Z" fill="#78D549" />
                 <path d="M36.0528 21.3681L64.8949 15.2568V28.9998H36.0528V21.3681Z" fill="#78D549" />
