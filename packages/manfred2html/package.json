@@ -44,6 +44,7 @@
     "@lemoncode/tsconfig": "*",
     "@types/ejs": "^3.1.2",
     "@types/jest": "^29.5.3",
+    "@types/markdown-it": "^13.0.7",
     "jest": "^29.6.2",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6",

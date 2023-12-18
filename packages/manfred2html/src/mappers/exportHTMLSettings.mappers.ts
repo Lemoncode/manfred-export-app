@@ -28,17 +28,13 @@ export const mapExportHTMLSettingsToSettings = (exportHTMLSettings: ExportHTMLSe
 
 export const mapMarkdownToHTML = (md: string): string => {
   const mdParser = markdownit({
-    html: false, // Evita el procesamiento de etiquetas HTML
-    allowedTags: [], // Evita el procesamiento de etiquetas HTML
     breaks: true,
     xhtmlOut: true,
     linkify: false,
     typographer: false,
-    quotes: '“”‘’',
-    highlight: (str: string, lang: string) => {
-      return '';
-    },
-  });
+  })
+    .enable(['paragraph', 'strong', 'cursive', 'link', 'list'], true)
+    .disable(['image', 'table', 'code', 'heading'], true);
 
   return mdParser.render(md);
 };
