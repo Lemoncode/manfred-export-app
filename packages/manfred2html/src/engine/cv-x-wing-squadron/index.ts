@@ -4,7 +4,10 @@ import {
   generateHtmlDocumentEnd,
   generateHeaderElementEnd,
   generateHeaderElementStart,
-  generateHeaderSection,
+  generateHeaderSectionStart,
+  generateHeaderSectionEnd,
+  generateAvatarSection,
+  generateUserInfoSection,
   generateMainElementStart,
   generateAboutMeSection,
   generateMainElementEnd,
@@ -18,24 +21,30 @@ import {
 
 export const exportManfredJsonToCVXWingHTML = (manfredJsonContent: ManfredAwesomicCV, settings: Settings): string => {
   const htmlDocumentStart = generateHtmlDocumentStart();
-  const htmlDocumentEnd = generateHtmlDocumentEnd();
   const headerElementStart = generateHeaderElementStart();
+  const headerSectionStart = generateHeaderSectionStart();
+  const headerSectionEnd = generateHeaderSectionEnd();
+  const avatarSection = generateAvatarSection(manfredJsonContent);
+  const userInfoSection = generateUserInfoSection(manfredJsonContent);
+  const relevantLinksSection = generateRelevantLinksSection(manfredJsonContent);
   const headerElementEnd = generateHeaderElementEnd();
-  const headerSection = generateHeaderSection(manfredJsonContent);
   const mainElementStart = generateMainElementStart();
   const aboutMeSection = generateAboutMeSection(manfredJsonContent, settings);
-  const mainElementEnd = generateMainElementEnd();
-  const studiesSection = generateStudiesSection(manfredJsonContent, settings);
-  const experienceSection = generateExperienceSection(manfredJsonContent, settings);
-  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
-  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
   const languageSection = generateLanguageSection(manfredJsonContent, settings);
-  const relevantLinksSection = generateRelevantLinksSection(manfredJsonContent);
+  const hardSkillsSection = generateHardSkillsSection(manfredJsonContent, settings);
+  const softSkillsSection = generateSoftSkillsSection(manfredJsonContent, settings);
+  const experienceSection = generateExperienceSection(manfredJsonContent, settings);
+  const studiesSection = generateStudiesSection(manfredJsonContent, settings);
+  const mainElementEnd = generateMainElementEnd();
+  const htmlDocumentEnd = generateHtmlDocumentEnd();
   return `
     ${htmlDocumentStart}
       ${headerElementStart}
-      ${headerSection}
-        ${relevantLinksSection}
+        ${avatarSection}
+        ${headerSectionStart}
+          ${userInfoSection}
+          ${relevantLinksSection}
+        ${headerSectionEnd}
       ${headerElementEnd}
       ${mainElementStart}
         ${aboutMeSection}
