@@ -1,35 +1,4 @@
-<%_ if (profile && profile !== 'undefined') { -%>
-  <%_ if (profile.avatar) { -%>
-    <img src="<%= profile?.avatar%>" alt="photo cv">
-  <%_ } -%>
-  <section class="header__content">
-    <div class="header__content__name">
-      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="10" viewBox="0 0 64 10" fill="none">
-        <path d="M1.10269e-06 5L64 5" stroke="#3BA0B7" stroke-width="9" />
-      </svg>
-      <h1><%= profile.name %> </h1>
-      <h2 class="surname"><%= profile?.surnames %></h2>
-      <p class="job-title"><%= profile?.title %></p>
-    </div>
-    <%_ if (profile.regionLocation) { -%>
-      <div class="header__content__address">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24" fill="none">
-          <g clip-path="url(#clip0_1762_1661)">
-            <path
-              d="M10.1109 23.4C12.5156 20.3906 18 13.0969 18 9C18 4.03125 13.9688 0 9 0C4.03125 0 0 4.03125 0 9C0 13.0969 5.48438 20.3906 7.88906 23.4C8.46562 24.1172 9.53438 24.1172 10.1109 23.4ZM14.2969 6.79688L8.29688 12.7969C7.85625 13.2375 7.14375 13.2375 6.70781 12.7969L3.70312 9.79688C3.2625 9.35625 3.2625 8.64375 3.70312 8.20781C4.14375 7.77188 4.85625 7.76719 5.29219 8.20781L7.49531 10.4109L12.7031 5.20312C13.1438 4.7625 13.8562 4.7625 14.2922 5.20312C14.7281 5.64375 14.7328 6.35625 14.2922 6.79219L14.2969 6.79688Z"
-              fill="#3BA0B7"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_1762_1661">
-              <rect width="18" height="24" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-        <p><%= profile?.regionLocation %>, <%= profile?.countryLocation %></p>
-      </div>
-    <%_ } -%>
-<%_ } -%>
+
 
 
 
