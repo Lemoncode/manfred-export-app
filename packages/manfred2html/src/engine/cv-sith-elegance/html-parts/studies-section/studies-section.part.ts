@@ -1,7 +1,6 @@
 import ejs from 'ejs';
 import { StudiesSectionVm, mapFromMacCvToStudiesSectionVm } from '@lemoncode/manfred-common/studies-section';
 import { ISO_SPANISH_LANGUAGE } from '@/engine/engine.const';
-import { mapMarkdownToHTML } from '@/mappers';
 import { ManfredAwesomicCV, Settings, Language } from '@/model';
 import { getLabels } from './labels';
 import studiesTemplate from './studies-section.ejs?raw';
@@ -19,7 +18,6 @@ const generateStudiesSectionInner = (
   const rootObject = {
     studiesCollection: studiesSection,
     labels: getLabels(language),
-    mapMarkdownToHTML,
   };
 
   return ejs.render(studiesTemplate, rootObject);
