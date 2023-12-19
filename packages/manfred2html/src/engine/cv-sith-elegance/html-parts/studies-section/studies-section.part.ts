@@ -6,17 +6,17 @@ import { getLabels } from './labels';
 import studiesTemplate from './studies-section.ejs?raw';
 
 export const generateStudiesSection = (cv: ManfredAwesomicCV, settings: Settings): string => {
-  const studiesSectionVm = mapFromMacCvToStudiesSectionVm(cv);
+  const studiesSection = mapFromMacCvToStudiesSectionVm(cv);
 
-  return generateStudiesSectionInner(studiesSectionVm, settings.language);
+  return generateStudiesSectionInner(studiesSection, settings.language);
 };
 
 const generateStudiesSectionInner = (
-  studiesSectionVm: StudiesSectionVm[],
+  studiesSection: StudiesSectionVm[],
   language: Language = ISO_SPANISH_LANGUAGE
 ): string => {
   const rootObject = {
-    studiesCollection: studiesSectionVm,
+    studiesCollection: studiesSection,
     labels: getLabels(language),
   };
 
