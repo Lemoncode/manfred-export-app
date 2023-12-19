@@ -36,21 +36,17 @@
               <%_ } -%>
           </div>
           <div class="data">
-            <p>Tipo de estudios: <b><%- study.studyType %></b></p>
-            <p>
-              Grado obtenido: <% if (study.degreeAchieved) { %>
-              <b>Obtenido</b>
-              <%} else { %>
-              <b>No obtenido</b>
-              <% } %>
-            </p>
-            <p>Nombre de la institución: <b><%- study.institution.name %></b></p>
-            <%_ if (study.location) { -%>
-            <p>
-              Ubicación de la institución:
-                <h4><%- study.description %></h4>
-              <b><%- study.institution.location.region %> , <%- study.institution.location.country %> </b>
-            </p>
+            <p><b><%- study.institution.name %></b></p>
+            <%_ if (study.linkedCompetences && study.linkedCompetences.length !== 0) { -%>
+              <p>
+                <% study.linkedCompetences.forEach(function(competence, index) { %>
+                  <% if (index === study.linkedCompetences.length - 1) { %>
+                    <%- competence.name %>
+                  <% } else { %>
+                    <%- competence.name %> <span> | </span>
+                  <% }; %>
+                <% }); %>
+                  </p>
             <%_ } -%>
           </div>
         </div>

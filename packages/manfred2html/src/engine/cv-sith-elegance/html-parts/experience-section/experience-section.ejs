@@ -39,18 +39,12 @@
                 <%_}-%>
           </div>
           <div class="data">
-            <%_ if(experience.type) { -%>
-              <p>Tipo de organización: <b><%- experience.type %></b></p>
-            <%_ } -%>
-            <p>Roles dentro de la empresa: <b><%- experience.roles[0].name %></b></p>
+            <p><b><%- experience.roles[0].name %></b></p>
             <%_ if(experience.roles[0].challenges && experience.roles[0].challenges.length !== 0) { -%>
-              <p>Retos:</p>
-                <ul>
-                  <%_ for(const challenge of experience.roles[0].challenges){ -%>
-                    <li><%- challenge.description %></li>
-                  <%_ }-%>
-                </ul>
-              <%_ }-%>
+                <%_ for(const challenge of experience.roles[0].challenges){ -%>
+                  <%- mapMarkdownToHTML(challenge.description) %>
+                <%_ }-%>
+            <%_ }-%>
           </div>
         </div>
       </div>
