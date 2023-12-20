@@ -50,16 +50,6 @@
         min-height: 100vh;
       }
 
-      ul, ul ul {
-        padding-left: var(--spacing_16);
-      }
-      p br {
-        margin-bottom: var(--spacing_12);
-      }
-
-      p span {
-        margin: 0 var(--spacing_8);
-      }
       .container {
         max-width: 1200px;
         background-color: var(--white_color);
@@ -231,6 +221,13 @@
       .about-me__description {
         flex-direction: column;
       }
+      .about-me__description * + * {
+        margin-top: var(--spacing_8);
+      }
+      .about-me__description ul, .about-me__description ol {
+        padding-left: var(--spacing_16);
+      }
+
       .section__content {
         flex-direction: column;
         gap: var(--spacing_8);
@@ -254,8 +251,17 @@
       .section__content__data {
         color: var(--gray_color_900);
       }
+      .section__content__data * + * {
+        margin-top: var(--spacing_8);
+      }
+      .section__content__data ul, .section__content__data ol {
+        padding-left: var(--spacing_16);
+      }
       .section__content__data b {
         font-weight: 600;
+      }
+      p.section__content__data span {
+        margin: 0 var(--spacing_8);
       }
       .section__content__data__ul {
         font-weight: 300;
