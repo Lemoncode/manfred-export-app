@@ -24,7 +24,7 @@
           <p><%- new Date(experience.roles[0].startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(experience.roles[0].finishDate && experience.roles[0].finishDate.toLowerCase() !=='actualidad') { -%>
             <%- "- "+new Date(experience.roles[0].finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
             <%_ } else { -%>
-            - Actualidad
+            - <%= labels.CURRENT_DATE %>
             <%_}-%>
           </p>
         </div>
@@ -40,9 +40,11 @@
             </ul>
           <%_ } -%>
         </div>
-        <a href="<%= experience.URL %>" target="_blank"><%= experience.name %></a>
+        <%_ if(experience.URL) { -%>
+          <a href="<%= experience.URL %>" target="_blank"><%= experience.name %></a>
+        <%_ } -%>
         <%_ if (experience.roles[0].competences && experience.roles[0].competence !== 0) { -%>
-          <h3 class="tech__tools__heading">Tecnologías y Herramientas</h3>
+          <h3 class="tech__tools__heading"><%= labels.TECH_TOOLS_HEADING %></h3>
           <ul class="ul__technologies">
             <%_ for(const competence of experience.roles[0].competences) { -%>
               <li class="li__technologies"><%= competence.name %></li>
