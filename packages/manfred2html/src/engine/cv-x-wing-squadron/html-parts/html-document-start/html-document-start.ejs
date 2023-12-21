@@ -74,7 +74,7 @@
       h1 {
         display: flex;
         flex-direction: column;
-        width: max-content;
+        min-width: min-content;
         text-transform: capitalize;
         font-family: 'Source Serif Pro', sans-serif;
         font-size: 75px;
@@ -163,6 +163,10 @@
         flex-grow: 1;
         padding: var(--spacing_16) 0px;
       }
+      
+      .header__content__name > * {
+        padding-left: var(--spacing_8);
+      }
 
       .header__content__name > * {
           padding-left: var(--spacing_8);
@@ -210,7 +214,7 @@
           justify-content: flex-start;
           align-items: center;
           flex-direction: row;
-          gap: var(--spacing_64);
+          gap: var(--spacing_48);
         }
 
         header > img {
