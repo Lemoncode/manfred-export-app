@@ -153,18 +153,25 @@
       .header__content {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         gap: var(--spacing_24);
       }
 
       .header__content__name {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         padding: var(--spacing_16) 0px;
       }
       
       .header__content__name > * {
         padding-left: var(--spacing_8);
       }
+
+      .header__content__name > * {
+          padding-left: var(--spacing_8);
+        }
+
 
       .job-title {
         color: var(--manfred-dark);
@@ -222,6 +229,7 @@
         .header__content__name {
           padding: 0px;
         }
+
       }
 
       /* main section styles */
