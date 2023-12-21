@@ -74,7 +74,7 @@
       h1 {
         display: flex;
         flex-direction: column;
-        width: min-content;
+        width: max-content;
         text-transform: capitalize;
         font-family: 'Source Serif Pro', sans-serif;
         font-size: 75px;
@@ -153,14 +153,21 @@
       .header__content {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         gap: var(--spacing_24);
       }
 
       .header__content__name {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         padding: var(--spacing_16) 0px;
       }
+
+      .header__content__name > * {
+          padding-left: var(--spacing_8);
+        }
+
 
       .job-title {
         color: var(--manfred-dark);
@@ -175,6 +182,7 @@
         display: flex;
         align-items: center;
         gap: var(--spacing_8);
+        padding-left: var(--spacing_8);
       }
 
       .header__content__address > p {
@@ -187,6 +195,7 @@
         display: flex;
         align-items: center;
         gap: var(--spacing_32);
+        padding-left: var(--spacing_8);
       }
 
       @media (min-width: 728px) {
@@ -216,6 +225,7 @@
         .header__content__name {
           padding: 0px;
         }
+
       }
 
       /* main section styles */
