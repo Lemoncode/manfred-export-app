@@ -137,7 +137,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address',
                 },
               },
-              linkedCompetences: [{ name: 'Competence 1' }, { name: 'Competence 2' }],
+              linkedCompetences: [],
             },
             {
               studyType: 'certification',

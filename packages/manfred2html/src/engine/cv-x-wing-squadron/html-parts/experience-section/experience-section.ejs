@@ -40,8 +40,8 @@
             </ul>
           <%_ } -%>
         </div>
-        <%_ if(experience.URL) { -%>
-          <a href="<%= experience.URL %>" target="_blank"><%= experience.name %></a>
+        <%_ if(experience.url) { -%>
+          <a href="<%= experience.url %>" target="_blank"><%= experience.name %></a>
         <%_ } -%>
         <%_ if (experience.roles[0].competences && experience.roles[0].competence !== 0) { -%>
           <h3 class="tech__tools__heading"><%= labels.TECH_TOOLS_HEADING %></h3>

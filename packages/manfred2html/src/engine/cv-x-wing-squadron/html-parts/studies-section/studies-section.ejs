@@ -38,7 +38,7 @@
           <h3 class="tech__tools__heading"><%= labels.TECH_TOOLS_HEADING %></h3>
           <ul class="ul__technologies">
             <%_ for(const competence of study.linkedCompetences) { -%>
-              <li class="li__technologies"><%= competence %></li>
+              <li class="li__technologies"><%= competence.name %></li>
           <%_}-%>
           </ul>
         <%_}-%>

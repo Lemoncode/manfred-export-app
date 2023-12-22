@@ -6,7 +6,6 @@ export interface ExperienceVm {
   url?: string;
   type?: string;
   roles: Role[];
-  URL: string;
 }
 
 export interface Type {
