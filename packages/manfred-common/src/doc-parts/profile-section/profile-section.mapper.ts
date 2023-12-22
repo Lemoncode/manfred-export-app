@@ -1,6 +1,7 @@
 import { ManfredAwesomicCV } from '@/model';
-import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink } from './profile-section.vm';
+import { ProfileSectionVm, RelevantLinkVm, ManfredRelevantLink, PhoneNumbers } from './profile-section.vm';
 
+//Only affects David Bonilla's .json because it's the only one that has the "website" type
 const mapLinkTypeToVm = (linkType: ManfredRelevantLink['type']): RelevantLinkVm['type'] => {
   switch (linkType) {
     case 'website':
@@ -26,13 +27,19 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
   const title = cv?.aboutMe?.profile?.title ?? '';
   const description = cv?.aboutMe?.profile?.description ?? '';
   const fullname = `${name ?? ''} ${surnames ?? ''}`;
-  const emails = (cv?.aboutMe?.profile?.contact?.contactMails as string[]) ?? [];
+
+  const emails = (cv?.careerPreferences?.contact?.contactMails as string[]) ?? [];
+  const phoneNumbers = (cv?.careerPreferences?.contact?.phoneNumbers as PhoneNumbers[]) ?? [];
+
+  const avatarUrl = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
+
+  const city = cv?.aboutMe?.profile?.location?.municipality ?? '';
+  const country = cv?.aboutMe?.profile?.location?.country ?? '';
+
   const relevantLinks = cv?.aboutMe?.relevantLinks
     ? mapRelevantLinksToVm(cv.aboutMe.relevantLinks as ManfredRelevantLink[])
     : [];
-  const avatar = (cv?.aboutMe?.profile?.avatar?.link as string) ?? '';
-  const regionLocation = cv?.aboutMe?.profile?.location?.region ?? '';
-  const countryLocation = cv?.aboutMe?.profile?.location?.country ?? '';
+
   return {
     name,
     surnames,
@@ -41,8 +48,9 @@ export const mapFromMacCvToProfileSectionVm = (cv: ManfredAwesomicCV): ProfileSe
     fullname,
     emails,
     relevantLinks,
-    avatar,
-    regionLocation,
-    countryLocation,
+    avatarUrl,
+    city,
+    country,
+    phoneNumbers,
   };
 };

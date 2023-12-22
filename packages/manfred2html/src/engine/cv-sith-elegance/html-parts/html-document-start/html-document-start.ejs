@@ -51,6 +51,17 @@
         min-height: 100vh;
         padding: var(--spacing_64) var(--spacing_16);
       }
+      ul  ul {
+        padding-left: var(--spacing_16);
+      }
+
+      p br {
+        margin-bottom: var(--spacing_12);
+      }
+
+      p span {
+        margin: 0 var(--spacing_8);
+      }
       .container {
         display: grid;
         grid-template-areas:
@@ -296,6 +307,8 @@
         flex-direction: column;
         gap: var(--spacing_8);
         font-size: 12px;
+        line-height: 18px;
+        font-weight: 300;
       }
       .section__content > .data b {
         font-weight: 600;
@@ -336,7 +349,8 @@
         .section__content > .data {
           grid-area: date;
           font-size: 14px;
-          line-height: 18px;
+          line-height: 21px;
+
         }
       }
       .line-icon {

@@ -1,4 +1,4 @@
-import { ManfredAwesomicCV } from '@/model';
+import { Competence, ManfredAwesomicCV } from '@/model';
 import { mapCountries, mapFromMacCvToStudiesSectionVm, mapStudiesTypes } from './studies-section.mapper';
 import { CountryType, StudiesSectionVm, StudyTypeWithTranslation } from './studies-section.vm';
 
@@ -72,7 +72,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address',
                 },
               },
-              linkedCompetences: [{ name: 'Competence 1' }, { name: 'Competence 2' }],
+              linkedCompetences: [{ name: 'CSS', type: 'technology' }],
             },
           ],
         },
@@ -99,7 +99,7 @@ describe('studies-section.mapper specs', () => {
               address: 'address',
             },
           },
-          linkedCompetences: ['Competence 1', 'Competence 2'],
+          linkedCompetences: [{ name: 'CSS', type: 'technology' }],
         },
       ];
 
@@ -155,7 +155,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address2',
                 },
               },
-              linkedCompetences: [{ name: 'Competence 3' }, { name: 'Competence 4' }],
+              linkedCompetences: [{ name: 'CSS', type: 'technology' }],
             },
           ],
         },
@@ -182,7 +182,7 @@ describe('studies-section.mapper specs', () => {
               address: 'address',
             },
           },
-          linkedCompetences: ['Competence 1', 'Competence 2'],
+          linkedCompetences: [],
         },
         {
           studyType: 'Certificación',
@@ -200,7 +200,7 @@ describe('studies-section.mapper specs', () => {
               address: 'address2',
             },
           },
-          linkedCompetences: ['Competence 3', 'Competence 4'],
+          linkedCompetences: [{ name: 'CSS', type: 'technology' }],
         },
       ];
 

@@ -26,8 +26,8 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
       const mapStudyType = mapStudiesTypes(studyType, studiesTypes);
       const mapCountry = mapCountries(institution.location.country, countryList);
       institution = { ...institution, location: { ...institution.location, country: mapCountry } };
-      const linkedCompetences: Competence[] = study?.linkedCompetences ?? [];
-      const mapLinkedCompetence = linkedCompetences.map(competence => competence.name);
+      const linkedCompetences = study?.linkedCompetences ?? [];
+
       return {
         name,
         studyType: mapStudyType,
@@ -36,7 +36,7 @@ export const mapFromMacCvToStudiesSectionVm = (cv: ManfredAwesomicCV): StudiesSe
         finishDate,
         description,
         institution,
-        linkedCompetences: mapLinkedCompetence,
+        linkedCompetences,
       };
     }) ?? [];
 

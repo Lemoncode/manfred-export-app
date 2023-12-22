@@ -5,10 +5,11 @@ export interface ProfileSectionVm {
   description: string;
   fullname: string;
   emails: string[];
+  phoneNumbers: PhoneNumbers[];
   relevantLinks: RelevantLinkVm[];
-  avatar?: string;
-  regionLocation?: string;
-  countryLocation?: string;
+  avatarUrl: string;
+  city: string;
+  country: string;
 }
 
 export interface RelevantLinkVm {
@@ -23,4 +24,9 @@ export interface ManfredRelevantLink {
   type: ManfredRelevantLinkType;
   URL: string;
   description?: string;
+}
+
+export interface PhoneNumbers {
+  countryCode: string;
+  number: string;
 }

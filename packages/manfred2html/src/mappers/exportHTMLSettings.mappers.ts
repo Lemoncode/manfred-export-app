@@ -1,3 +1,4 @@
+import markdownit from 'markdown-it';
 import { ColorTheme, ExportHTMLSettings, Settings, HexColor } from '@/model';
 
 export const mapColorThemeToHex = (colorTheme: ColorTheme): HexColor => {
@@ -24,3 +25,16 @@ export const mapExportHTMLSettingsToSettings = (exportHTMLSettings: ExportHTMLSe
   template: exportHTMLSettings.template || 'default',
   language: exportHTMLSettings.language || 'es',
 });
+
+export const mapMarkdownToHTML = (md: string): string => {
+  const mdParser = markdownit({
+    breaks: true,
+    xhtmlOut: true,
+    linkify: false,
+    typographer: false,
+  })
+    .enable(['paragraph', 'strong', 'cursive', 'link', 'list'], true)
+    .disable(['image', 'table', 'code', 'heading'], true);
+
+  return mdParser.render(md);
+};
