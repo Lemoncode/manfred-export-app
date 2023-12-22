@@ -85,8 +85,8 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      
-      .gradient-background {
+
+      .gradient__background {
         display: flex;
         flex-grow: 1;
         background: var(--manfred-gradient);
@@ -155,9 +155,10 @@
       header > img {
         align-self: center;
         border-radius: 225px;
-        height: 225px;
         min-width: 225px;
+        min-height: 225px;
         max-width: 350px;
+        max-height: 350px;
         object-fit: cover;
         background: var(--manfred-gradient);
       }
@@ -220,11 +221,6 @@
           align-items: center;
           flex-direction: row;
           gap: var(--spacing_48);
-        }
-
-        header > img {
-          min-width: 350px;
-          height: 350px;
         }
 
         .header__content {
