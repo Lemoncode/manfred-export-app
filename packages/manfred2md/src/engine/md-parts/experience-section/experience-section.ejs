@@ -1,7 +1,7 @@
+<%_ if (experienceCollection && experienceCollection.length > 0 && experienceCollection !== 'undefined') { -%>
 ---
 
 ### EXPERIENCIA / CARRERA
-<%_ if (experienceCollection && experienceCollection !== 'undefined') { -%>
   <%_ for (const job of experienceCollection) { -%>
   - #### <%- job.name %>
     <%_ if (job.type && job.type !== 'undefined' ) { -%>
@@ -9,20 +9,13 @@
     <%_ } -%>
     <%_ if (job.description && job.description !== 'undefined' ) { -%>
     - **Descripción:** <%- job.description %>
-    <%_ } -%>
     - **Roles dentro de la empresa:**
     <%_ if (job.roles && job.roles !== 'undefined' ) { -%>
       <%_ for (const role of job.roles) { -%>
       <%_ if (role.name && role.name !== 'undefined' ) { -%>
       - **<%= role.name %>**
-      <%_ } -%>
-        <%_ if (role.startDate && role.startDate !== 'undefined' && role.finishDate !== 'undefined' ) { -%>
+      <%_ } -%>    
         - **Duración:** <%= role.startDate %> - <%= role.finishDate ?? 'Actualidad' %>
-        <%_ } else if ((!role.startDate || role.startDate === 'undefined') && role.finishDate && role.finishDate !== 'undefined' ) {  -%>
-        - **Duración:** Finalizado en <%= role.finishDate %>
-        <%_ } else if ((!role.startDate || role.startDate === 'undefined') && role.finishDate !== 'undefined') {  -%>
-        - **Duración:** <%= role.finishDate ?? 'Actualidad' %>
-        <%_ } -%>
         <%_ if (role.challenges && role.challenges !== 'undefined' ) { -%>
         - **Retos:**       
           <%_ for (const challenge of role.challenges) { -%>
@@ -32,6 +25,7 @@
           <%_ } -%>
         <%_ } -%>
       <%_ } -%>
+    <%_ } -%>
     <%_ } -%>
   <%_ } -%>
 <%_ } -%>
