@@ -17,9 +17,7 @@
 - **Grado obtenido:** <%= study.degreeAchieved ? "No obtenido" : "Obtenido"%>
     <%_ } -%>
 
-    <%_ if ( study?.finishDate ) { -%>
 - **Fecha de inicio y finalización:** <%= study.startDate %> - <%= study.finishDate === "" ? "Actualidad" : study.finishDate %>
-    <%_ } -%>
 
     <%_ if ( study?.institution.name ) { -%>
 - **Nombre de Institución:** <%= study.institution.name %>
