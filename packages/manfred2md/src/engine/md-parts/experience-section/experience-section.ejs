@@ -9,24 +9,23 @@
     <%_ } -%>
     <%_ if (job.description && job.description !== 'undefined' ) { -%>
     - **Descripción:** <%- job.description %>
-    - **Roles dentro de la empresa:**
+    <%_ } -%>
     <%_ if (job.roles && job.roles !== 'undefined' ) { -%>
+    - **Roles dentro de la empresa:**
       <%_ for (const role of job.roles) { -%>
-      <%_ if (role.name && role.name !== 'undefined' ) { -%>
+        <%_ if (role.name && role.name !== 'undefined' ) { -%>
       - **<%= role.name %>**
-      <%_ } -%>    
+        <%_ } -%>
         - **Duración:** <%= role.startDate %> - <%= role.finishDate ?? 'Actualidad' %>
         <%_ if (role.challenges && role.challenges !== 'undefined' ) { -%>
-        - **Retos:**       
+        - **Retos:**
           <%_ for (const challenge of role.challenges) { -%>
-          <%_ if (challenge.description && challenge.description !== 'undefined') { -%>
+            <%_ if (challenge.description && challenge.description !== 'undefined') { -%>
           - <%= challenge.description %>
-          <%_ } -%>
+            <%_ } -%>
           <%_ } -%>
         <%_ } -%>
       <%_ } -%>
     <%_ } -%>
-    <%_ } -%>
   <%_ } -%>
 <%_ } -%>
-
