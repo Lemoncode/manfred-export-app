@@ -25,7 +25,7 @@
         --spacing_64: calc(var(--spacing_base) * 16);
 
         /* colors */
-        --primary_color: #11383a; /* only this color can be changed  */
+        --primary_color: <%= color -%>; /* only this color can be changed  */
         --BgColor: #fbfbfa;
         --white_color: #fefefe;
         --gray_color_900: #5c5a58;
@@ -107,6 +107,15 @@
         display: flex;
         gap: var(--spacing_8);
       }
+
+      .aside__container__item > :first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 20px;
+        max-width: 50px;
+      }
+
       .aside__container__item a {
         text-decoration: none;
         color: inherit;
@@ -188,6 +197,12 @@
         gap: var(--spacing_12);
       }
 
+      .section__education > div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_base);
+      }
+
       .section__education div p:first-child {
         color: var(--gray_color_700);
         font-size: 12px;
@@ -222,8 +237,14 @@
         gap: var(--spacing_base);
       }
 
-      article header h3 {
-        text-transform: capitalize;
+      article > header > h3 {
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: inherit;
+        text-transform: inherit;
         color: var(--primary_color);
       }
 
@@ -268,5 +289,5 @@
   </head>
   <body>
     <div class="root__container">
-      
+    
 
