@@ -1,7 +1,8 @@
 import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
-import { mapExportHTMLSettingsToSettings } from '@/mappers';
+import { mapExportHTMLSettingsToSettings, mapExportHTMLJediSettingsToSettings } from '@/mappers';
 import { exportManfredJSonToCVSithEleganceHTML } from './cv-sith-elegance';
 import { exportManfredJSonToCVGalacticCleanTechHTML } from './cv-galactic-cleantech';
+import { exportManfredJSonToCVJediMinimalismHTML } from './cv-jedi-minimalism';
 import { exportManfredJSonToCVJediMinimalismHTML } from './cv-jedi-minimalism';
 
 export const exportHTMLTemplate = (
@@ -9,6 +10,7 @@ export const exportHTMLTemplate = (
   exportHTMLSettings: ExportHTMLSettings
 ): string => {
   const settings = mapExportHTMLSettingsToSettings(exportHTMLSettings);
+  const Jedisettings = mapExportHTMLJediSettingsToSettings(exportHTMLSettings);
 
   switch (settings.template) {
     case 'Sith Elegance':
