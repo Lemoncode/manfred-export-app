@@ -38,12 +38,12 @@ export const exportManfredJSonToCVJediMinimalismHTML = (
   const mainElementStart = generateMainStart();
   const mainElementEnd = generateMainEnd();
   const aboutMeSection = generateAboutSection(manfredJsonContent, settings);
-  const lenguageSection = generateLenguageSection(manfredJsonContent);
-  const skillsSection = generateSkillsSection();
-  const studiesSection = generateStudiesSection();
+  const lenguageSection = generateLenguageSection(manfredJsonContent, settings);
+  const skillsSection = generateSkillsSection(manfredJsonContent, settings);
+  const studiesSection = generateStudiesSection(manfredJsonContent, settings);
   const rightSideStart = generateRightDivElementStart();
   const rightSideEnd = generateRightDivElementEnd();
-  const experienceSection = generateExperienceSection();
+  const experienceSection = generateExperienceSection(manfredJsonContent, settings);
   return `
     ${htmlDocumentStart}
       ${leftSideStart}

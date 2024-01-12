@@ -1,21 +1,20 @@
-<section>
-    <h3>Educación</h3>
-    <div class="section__content section__education">
-      <div>
-        <p>Sep 2002 - Jun 2006</p>
-        <p>Ingeniería Técnica Informática</p>
-        <p>OUC</p>
+  <%_ if (studiesCollection && studiesCollection.length !== 0) { -%>
+    <section >
+      <h3><%- labels.STUDIES_HEADING %></h3>      
+      <div class="section__content section__education">
+      <%_ for (const study of studiesCollection) { -%>
+        <div>
+          <p><%- new Date(study.startDate).toLocaleDateString(undefined, { year:"numeric", month:"short"})%> <%_ if(study.finishDate && study.finishDate.toLowerCase() !=='actualidad') { -%>
+            <%- "- "+new Date(study.finishDate).toLocaleDateString(undefined, { year:"numeric", month:"short"}) -%>
+          <%_ } else { -%>
+            - Actualidad
+            <%_}-%>
+          </p>
+          <p><%- study.name %></p>
+          <p><%- study.institution.name %></p>
+        </div>       
+        <%_ } -%>
       </div>
-      <div>
-        <p>Sep 2000 - Jun 2001</p>
-        <p>Master en Desarrollo de Aplicaciones Web</p>
-        <p>CFDTI IBM/La Caixa</p>
-      </div>
-      <div>
-        <p>Sep 2000 - Jun 2001</p>
-        <p>Certified Scrum Master</p>
-        <p>Scrum Alliance</p>
-      </div>
-    </div>
-  </section>
-  <hr class="hide" />
+    </section>
+    <hr class="hide" />
+    <%_ } -%>

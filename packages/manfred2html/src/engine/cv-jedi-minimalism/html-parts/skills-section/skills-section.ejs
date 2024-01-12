@@ -1,13 +1,13 @@
-<section>
-    <h3>habilidades</h3>
-    <div class="section__content">
-      <ul>
-        <li>NodeJS</li>
-        <li>JavaScript</li>
-        <li>HTML</li>
-        <li>Figma</li>
-        <li>React</li>
-      </ul>
-    </div>
-  </section>
-  <hr />
+  <%_ if (softSkillsCollection && softSkillsCollection.length !== 0) { -%>   
+    <section>
+      <h3><%- labels.SOFT_SKILLS_HEADING %></h3>
+      <div class="section__content">
+        <ul>
+          <%_ for (const item of softSkillsCollection) { -%>
+            <li><%- item.skill.name %></li>
+          <%_ } -%>         
+        </ul>
+      </div>
+    </section>
+    <hr />
+  <%_ } -%>
