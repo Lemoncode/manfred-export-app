@@ -74,7 +74,7 @@
       h1 {
         display: flex;
         flex-direction: column;
-        width: min-content;
+        min-width: min-content;
         text-transform: capitalize;
         font-family: 'Source Serif Pro', sans-serif;
         font-size: 75px;
@@ -86,6 +86,15 @@
         -webkit-text-fill-color: transparent;
       }
 
+      .gradient__background {
+        display: flex;
+        flex-grow: 1;
+        background: var(--manfred-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
       @media (min-width: 728px) {
         h1 {
           font-size: 82px;
@@ -129,7 +138,7 @@
       }
 
       .technologie__icon--gray-scale {
-        width: 35px;
+        max-width: 35px;
         filter: grayscale(100%);
       }
 
@@ -145,9 +154,13 @@
 
       header > img {
         align-self: center;
-        width: 225px;
-        height: 225px;
         border-radius: 225px;
+        min-width: 225px;
+        min-height: 225px;
+        max-width: 350px;
+        max-height: 350px;
+        object-fit: cover;
+        background: var(--manfred-gradient);
       }
 
       .header__content {
@@ -160,6 +173,10 @@
         display: flex;
         flex-direction: column;
         padding: var(--spacing_16) 0px;
+      }
+
+      .header__content__name > * {
+        padding-left: var(--spacing_8);
       }
 
       .job-title {
@@ -175,6 +192,7 @@
         display: flex;
         align-items: center;
         gap: var(--spacing_8);
+        padding-left: var(--spacing_8);
       }
 
       .header__content__address > p {
@@ -187,9 +205,10 @@
         display: flex;
         align-items: center;
         gap: var(--spacing_32);
+        padding-left: var(--spacing_8);
       }
 
-      @media (min-width: 1024px) {
+      @media (min-width: 728px) {
         .header__content__address > p {
           font-size: 16px;
         }
@@ -201,12 +220,7 @@
           justify-content: flex-start;
           align-items: center;
           flex-direction: row;
-          gap: var(--spacing_64);
-        }
-
-        header > img {
-          width: 350px;
-          height: 350px;
+          gap: var(--spacing_48);
         }
 
         .header__content {
@@ -387,7 +401,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="10" viewBox="0 0 64 10" fill="none">
               <path d="M1.10269e-06 5L64 5" stroke="#3BA0B7" stroke-width="9" />
             </svg>
-            <h1>david</h1>
+            <div class="gradient__background">
+              <h1>david</h1>
+            </div>
             <h2 class="surname">bonilla fuertes</h2>
             <p class="job-title">Fundador en Manfred / C-Level Executive</p>
           </div>

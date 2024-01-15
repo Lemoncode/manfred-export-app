@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.cdnfonts.com/css/source-serif-pro" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>CV Manfred Export</title>
+    <style>
+      /* css vars */
+      :root {
+        /* spacing */
+        --spacing_base: 4px;
+        --spacing_2: calc(var(--spacing_base) / 2);
+        --spacing_8: calc(var(--spacing_base) * 2);
+        --spacing_12: calc(var(--spacing_base) * 3);
+        --spacing_16: calc(var(--spacing_base) * 4);
+        --spacing_24: calc(var(--spacing_base) * 6);
+        --spacing_32: calc(var(--spacing_base) * 8);
+        --spacing_48: calc(var(--spacing_base) * 12);
+        --spacing_64: calc(var(--spacing_base) * 16);
+        /* colors */
+        --manfred-dark: #353241;
+        --manfred-blue: #1e0b6e;
+        --manfred-purple: #7d64d6;
+        --manfred-green-blue: #3ba0b7;
+        --manfred-green-light: #5ecabf;
+        --manfred-grey: #837e93;
+        --manfred-light: #f8f7f3;
+        --manfred-light-green: #78d549;
+        --manfred-cream: #ebe8df;
+        --manfred-gradient: linear-gradient(90deg, #1e0b6e 0%, #3ba0b7 84.74%, #5ecabf 95.24%);
+      }
+
+      /* General styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        color: var(--manfred-dark);
+        background-color: var(--manfred-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing_32);
+        min-height: 100vh;
+        max-width: 1100px;
+        padding: var(--spacing_64) var(--spacing_32);
+      }
+
+      h1 {
+        display: flex;
+        flex-direction: column;
+        min-width: min-content;
+        text-transform: capitalize;
+        font-family: 'Source Serif Pro', sans-serif;
+        font-size: 75px;
+        font-weight: 900;
+        letter-spacing: 1.23px;
+        background: var(--manfred-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .gradient__background {
+        display: flex;
+        flex-grow: 1;
+        background: var(--manfred-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+      @media (min-width: 728px) {
+        h1 {
+          font-size: 82px;
+          font-weight: 900;
+        }
+      }
+
+      .surname {
+        font-size: 48px;
+        -webkit-text-fill-color: var(--manfred-blue);
+        letter-spacing: -0.72px;
+        text-transform: capitalize;
+      }
+
+      h2 {
+        font-family: 'Source Serif Pro', sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 1.4px;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.9px;
+      }
+
+      a {
+        color: var(--manfred-green-blue);
+        text-decoration: none;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.75px;
+      }
+
+      .technologie__icon--gray-scale {
+        max-width: 35px;
+        filter: grayscale(100%);
+      }
+
+      /* header styles */
+      header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: flex-start;
+        gap: var(--spacing_24);
+        width: 100%;
+      }
+
+      header > img {
+        align-self: center;
+        border-radius: 225px;
+        min-width: 225px;
+        min-height: 225px;
+        max-width: 350px;
+        max-height: 350px;
+        object-fit: cover;
+        background: var(--manfred-gradient);
+      }
+
+      .header__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: var(--spacing_24);
+      }
+
+      .header__content__name {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: var(--spacing_16) 0px;
+      }
+
+      .header__content__name > * {
+        padding-left: var(--spacing_8);
+      }
+
+      .job-title {
+        color: var(--manfred-dark);
+        font-family: 'Source Serif Pro', sans-serif;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+      }
+
+      .header__content__address {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing_8);
+        padding-left: var(--spacing_8);
+      }
+
+      .header__content__address > p {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: -0.18px;
+      }
+
+      .header__content__links {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing_32);
+        padding-left: var(--spacing_8);
+      }
+
+      @media (min-width: 728px) {
+        .header__content__address > p {
+          font-size: 16px;
+        }
+        .job-title {
+          font-size: 32px;
+        }
+
+        header {
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row;
+          gap: var(--spacing_48);
+        }
+
+        .header__content {
+          justify-content: space-between;
+        }
+
+        .header__content__name {
+          padding: 0px;
+        }
+
+      }
+
+      /* main section styles */
+      main {
+        display: flex;
+        padding: var(--spacing_32) 0px;
+        flex-direction: column;
+        gap: var(--spacing_64);
+      }
+
+      .main__section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing_32);
+      }
+
+      .main__section > p {
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.75px;
+      }
+
+      .main__section__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: var(--spacing_16);
+        width: 100%;
+        padding-bottom: var(--spacing_32);
+        border-bottom: 1px solid rgba(94, 202, 191, 0.3);
+      }
+
+      .main__section__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_16);
+      }
+
+      .about-me__section {
+        gap: var(--spacing_16);
+      }
+
+      .ul__languages {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_16);
+        width: 100%;
+      }
+
+      .li__languages {
+        display: flex;
+        gap: var(--spacing_16);
+        padding: var(--spacing_16);
+        justify-content: space-between;
+        align-items: center;
+        border-radius: var(--spacing_8);
+        background: #fff;
+        box-shadow: 0px 1px 2px 0px rgba(11, 15, 6, 0.25);
+        width: 100%;
+        min-width: 300px;
+      }
+
+      @media (min-width: 728px) {
+        .ul__languages {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .li__languages {
+          width: 300px;
+        }
+      }
+
+      .main__lang__level {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--spacing_base);
+        color: var(--manfred-grey);
+        text-transform: uppercase;
+        font-family: Montserrat;
+        font-size: 10px;
+        font-weight: 500;
+        font-variant: all-small-caps;
+        letter-spacing: 0.5px;
+      }
+
+      .ul__technologies {
+        display: flex;
+        gap: var(--spacing_16);
+        flex-wrap: wrap;
+      }
+
+      @media (min-width: 728px) {
+        .ul__technologies {
+          display: inline-flex;
+          flex-direction: row;
+          align-items: flex-start;
+          align-content: flex-start;
+          gap: var(--spacing_16);
+          flex-wrap: wrap;
+        }
+      }
+
+      .li__technologies {
+        font-weight: 600;
+        letter-spacing: 0.75px;
+        display: flex;
+        padding: var(--spacing_8) var(--spacing_12);
+        align-items: center;
+        gap: var(--spacing_8);
+        border-radius: var(--spacing_8);
+        background: #fff;
+        box-shadow: 0px 1px 2px 0px rgba(11, 15, 6, 0.25);
+      }
+
+      .main__section__skills__ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing_16);
+        width: 100%;
+      }
+
+      .main__section__skills__li {
+        width: 100%;
+        padding: var(--spacing_16);
+        border-radius: var(--spacing_8);
+        background: #fff;
+        box-shadow: 0px 1px 2px 0px rgba(11, 15, 6, 0.25);
+        font-weight: 600;
+        letter-spacing: 0.75px;
+        list-style-position: inside;
+      }
+
+      .section__content__date {
+        display: flex;
+        height: 18px;
+        align-items: flex-start;
+        gap: var(--spacing_16);
+        padding-bottom: var(--spacing_16);
+      }
+
+      .main__section__data {
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.75px;
+      }
+
+      .main__section__data > ul {
+        padding-left: var(--spacing_16);
+      }
+
+      .tech__tools__heading {
+        font-family: 'Source Serif Pro', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
