@@ -14,6 +14,7 @@ export interface StudiesSectionVm {
 export interface Institution {
   name: string;
   location: Location;
+  description: string;
 }
 
 export interface Location {

@@ -92,6 +92,7 @@ describe('studies-section.mapper specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
@@ -136,6 +137,7 @@ describe('studies-section.mapper specs', () => {
                   address: 'address',
                 },
               },
+              linkedCompetences: [],
             },
             {
               studyType: 'certification',
@@ -173,6 +175,7 @@ describe('studies-section.mapper specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
@@ -190,6 +193,7 @@ describe('studies-section.mapper specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
