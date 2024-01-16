@@ -17,7 +17,13 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const DESIGN_OPTIONS: TemplateCV[] = ['Sith Elegance', 'Galactic CleanTech', 'Monochrome Force', 'Jedi minimalism'];
+const DESIGN_OPTIONS: TemplateCV[] = [
+  'Sith Elegance',
+  'Galactic CleanTech',
+  'X-Wing Squadron',
+  'Monochrome Force',
+  'Jedi minimalism',
+];
 const LANGUAGE_OPTIONS: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {
@@ -30,6 +36,7 @@ export const ExportConfig: React.FC<Props> = props => {
   const [htmlPreview, setHtmlPreview] = React.useState<string>(
     onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings)
   );
+  const [hideColorSelected, setHideColorSelected] = React.useState<boolean>(false);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setExportHTMLSettings({ ...exportHTMLSettings, colorTheme: event.target.value as ColorTheme });
@@ -64,6 +71,7 @@ export const ExportConfig: React.FC<Props> = props => {
   };
 
   React.useEffect(() => {
+    setHideColorSelected(exportHTMLSettings.template === 'X-Wing Squadron');
     setHtmlPreview(onHTMLSettingSelectionChanged(htmlTemplate, exportHTMLSettings));
   }, [exportHTMLSettings]);
 
@@ -81,9 +89,11 @@ export const ExportConfig: React.FC<Props> = props => {
               label={'Idioma cabeceras'}
             /> */}
           </div>
-          <div className={classes.selectColorContainer}>
-            <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
-          </div>
+          {!hideColorSelected && (
+            <div className={classes.selectColorContainer}>
+              <CustomSelectColor label={'Colores'} onChange={handleColorChange} />
+            </div>
+          )}
         </div>
         <div className={classes.prevContainer}>
           <p className={`${classes.title}`}>Previsualización</p>

@@ -15,6 +15,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -31,6 +32,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -47,6 +49,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
@@ -69,6 +72,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
@@ -85,6 +89,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -101,6 +106,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -123,6 +129,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
@@ -139,6 +146,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -161,6 +169,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description',
           institution: {
             name: 'name',
+            description: 'description',
             location: {
               country: 'España',
               region: 'region',
@@ -177,6 +186,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -201,6 +211,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
@@ -223,6 +234,7 @@ describe('studies-section.helpers specs', () => {
           description: 'description2',
           institution: {
             name: 'name2',
+            description: 'description2',
             location: {
               country: 'Italia',
               region: 'region2',
