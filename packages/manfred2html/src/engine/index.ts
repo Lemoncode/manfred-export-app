@@ -1,8 +1,10 @@
 import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
-import { mapExportHTMLSettingsToSettings } from '@/mappers';
+import { mapExportHTMLSettingsToSettings, mapExportHTMLJediSettingsToSettings } from '@/mappers';
 import { exportManfredJSonToCVSithEleganceHTML } from './cv-sith-elegance';
 import { exportManfredJSonToCVGalacticCleanTechHTML } from './cv-galactic-cleantech';
 import { exportManfredJSonToCVMonochromeForceHTML } from './cv-monochrome-force';
+import { exportManfredJSonToCVJediMinimalismHTML } from './cv-jedi-minimalism';
+
 export const exportHTMLTemplate = (
   manfredJsonContent: ManfredAwesomicCV,
   exportHTMLSettings: ExportHTMLSettings
@@ -16,6 +18,8 @@ export const exportHTMLTemplate = (
       return exportManfredJSonToCVGalacticCleanTechHTML(manfredJsonContent, settings);
     case 'Monochrome Force':
       return exportManfredJSonToCVMonochromeForceHTML(manfredJsonContent, settings);
+    case 'Jedi minimalism':
+      return exportManfredJSonToCVJediMinimalismHTML(manfredJsonContent, settings);
     default:
       throw new Error('Template not found');
   }

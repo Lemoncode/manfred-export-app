@@ -1,5 +1,5 @@
 import markdownit from 'markdown-it';
-import { ColorTheme, ExportHTMLSettings, Settings, HexColor } from '@/model';
+import { ColorTheme, ExportHTMLSettings, Settings, HexColor, HexColorJedi, JediSettings } from '@/model';
 
 export const mapColorThemeToHex = (colorTheme: ColorTheme): HexColor => {
   switch (colorTheme) {
@@ -17,6 +17,25 @@ export const mapColorThemeToHex = (colorTheme: ColorTheme): HexColor => {
       return HexColor.dark;
     default:
       return HexColor.default;
+  }
+};
+
+export const mapJediColorThemeToHex = (colorTheme: ColorTheme): HexColorJedi => {
+  switch (colorTheme) {
+    case 'default':
+      return HexColorJedi.default;
+    case 'red':
+      return HexColorJedi.red;
+    case 'green':
+      return HexColorJedi.green;
+    case 'orange':
+      return HexColorJedi.orange;
+    case 'yellow':
+      return HexColorJedi.yellow;
+    case 'dark':
+      return HexColorJedi.dark;
+    default:
+      return HexColorJedi.default;
   }
 };
 
@@ -38,3 +57,8 @@ export const mapMarkdownToHTML = (md: string): string => {
 
   return mdParser.render(md);
 };
+export const mapExportHTMLJediSettingsToSettings = (exportHTMLSettings: ExportHTMLSettings): JediSettings => ({
+  colorTheme: mapJediColorThemeToHex(exportHTMLSettings.colorTheme),
+  template: exportHTMLSettings.template || 'default',
+  language: exportHTMLSettings.language || 'es',
+});

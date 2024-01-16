@@ -17,7 +17,7 @@ interface Props {
 }
 
 const DOWNLOAD_MESSAGE_TIMEOUT = 2500;
-const DESIGN_OPTIONS: TemplateCV[] = ['Sith Elegance', 'Galactic CleanTech', 'Monochrome Force'];
+const DESIGN_OPTIONS: TemplateCV[] = ['Sith Elegance', 'Galactic CleanTech', 'Monochrome Force', 'Jedi minimalism'];
 const LANGUAGE_OPTIONS: Language[] = ['es', 'en'];
 
 export const ExportConfig: React.FC<Props> = props => {

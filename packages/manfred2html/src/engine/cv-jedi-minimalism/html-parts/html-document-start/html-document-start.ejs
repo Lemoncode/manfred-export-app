@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>CV Manfred Export</title>
+    <style>
+      /* css vars */
+      :root {
+        /* spacing */
+        --spacing_base: 4px;
+        --spacing_2: calc(var(--spacing_base) / 2);
+        --spacing_8: calc(var(--spacing_base) * 2);
+        --spacing_12: calc(var(--spacing_base) * 3);
+        --spacing_16: calc(var(--spacing_base) * 4);
+        --spacing_24: calc(var(--spacing_base) * 6);
+        --spacing_32: calc(var(--spacing_base) * 8);
+        --spacing_48: calc(var(--spacing_base) * 12);
+        --spacing_64: calc(var(--spacing_base) * 16);
+
+        /* colors */
+        --primary_color: <%= color -%>; /* only this color can be changed  */
+        --BgColor: #fbfbfa;
+        --white_color: #fefefe;
+        --gray_color_900: #5c5a58;
+        --gray_color_700: #9b9894;
+        --gray_color_600: #c6c3be;
+        --gray_color_500: #dad6d1;
+        --black_color: #0d1418;
+      }
+      /* General styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        color: var(--primary_color);
+        font-style: normal;
+        background-color: var(--BgColor);
+      }
+      .root__container {
+        background-color: var(--white_color);
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+        padding: var(--spacing_48) var(--spacing_24);
+      }
+      body {
+        margin: 0;
+      }
+      /* General styles - typography */
+      h1 {
+        font-size: 32px;
+        font-weight: 800;
+        text-transform: capitalize;
+      }
+      h2 {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        word-wrap: break-word;
+      }
+      h3 {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        word-wrap: break-word;
+      }
+      /* header - styles */
+      header {
+        font-family: Montserrat;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_12);
+      }
+
+      /* aside - styles */
+      aside {
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacing_48) 0;
+        gap: var(--spacing_12);
+      }
+      .aside__container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_8);
+      }
+      .aside__container__item {
+        font-size: 11px;
+        font-family: Inter;
+        font-weight: 500;
+        word-wrap: break-word;
+        color: var(--gray_color_900);
+        display: flex;
+        gap: var(--spacing_8);
+      }
+
+      .aside__container__item > :first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 20px;
+        max-width: 50px;
+      }
+
+      .aside__container__item a {
+        text-decoration: none;
+        color: inherit;
+      }
+      /* main - styles */
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+      hr {
+        margin-top: var(--spacing_24);
+        margin-bottom: var(--spacing_24);
+        border-color: rgba(218, 214, 209, 0.3);
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_12);
+      }
+      .section__content {
+        color: var(--gray_color_900);
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 16px;
+        word-wrap: break-word;
+      }
+
+      /* languages section */
+      .section__languages {
+        color: var(--gray_color_900);
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 16px;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_12);
+        padding: 0 var(--spacing_8);
+      }
+      .section__languages__item {
+        display: flex;
+        align-items: center;
+      }
+
+      .section__languages__item > :first-child {
+        min-width: 100px;
+        max-width: 150px;
+      }
+
+      .section__languages__item > :last-child {
+        display: flex;
+        min-width: 150px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--spacing_base);
+      }
+
+      .section__languages__sub {
+        color: var(--gray_color_600);
+        font-size: 10px;
+        font-family: Inter;
+        font-weight: 500;
+        word-wrap: break-word;
+      }
+
+      /* skills section */
+      ul {
+        padding-left: var(--spacing_24);
+      }
+      li:not(:last-child) {
+        margin-bottom: var(--spacing_8);
+      }
+
+      /* education section */
+      .section__education {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_12);
+      }
+
+      .section__education > div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_base);
+      }
+
+      .section__education div p:first-child {
+        color: var(--gray_color_700);
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 16px;
+        word-wrap: break-word;
+      }
+
+      .section__education div p:nth-child(2) {
+        color: var(--primary_color);
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 600;
+        line-height: 16px;
+        word-wrap: break-word;
+      }
+
+      /* experiencie section */
+      .section__experiencie {
+        display: flex;
+        flex-direction: column;
+      }
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_12);
+      }
+
+      article header {
+        display: flex;
+        gap: var(--spacing_base);
+      }
+
+      article > header > h3 {
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        color: var(--primary_color);
+      }
+
+      .separator::before {
+        content: '|';
+        margin-right: var(--spacing_8);
+        margin-left: var(--spacing_8);
+      }
+
+      @media (min-width: 728px) {
+        .root__container {
+          grid-template-columns: 1fr 1fr;
+          align-items: start;
+          max-width: 1024px;
+          justify-content: space-between;
+          margin: auto;
+        }
+        .root__container::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 50%;
+          width: 1px;
+          height: 100vh;
+          background-color: var(--gray_color_500);
+          transform: translateX(-50%);
+        }
+        .left {
+          grid-column: 1 / 2;
+          padding: 0 var(--spacing_24);
+        }
+
+        .right {
+          grid-column: 2 / 3;
+          padding: 0 var(--spacing_24);
+        }
+        .hide {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root__container">
+    
+

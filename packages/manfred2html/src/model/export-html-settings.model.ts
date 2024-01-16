@@ -19,6 +19,15 @@ export enum HexColor {
   dark = '#1B2B33',
 }
 
+export enum HexColorJedi {
+  default = '#11383A',
+  red = '#6A0B18',
+  green = '#0D5127',
+  orange = '#5F2816',
+  yellow = '#66570C',
+  dark = '#0D1418',
+}
+
 export interface ExportHTMLSettings {
   colorTheme: ColorTheme;
   template: TemplateCV;
@@ -27,6 +36,12 @@ export interface ExportHTMLSettings {
 
 export interface Settings {
   colorTheme: HexColor;
+  template: TemplateCV;
+  language: Language;
+}
+
+export interface JediSettings {
+  colorTheme: HexColorJedi;
   template: TemplateCV;
   language: Language;
 }
