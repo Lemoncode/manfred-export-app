@@ -35,13 +35,7 @@ export interface ExportHTMLSettings {
 }
 
 export interface Settings {
-  colorTheme: HexColor;
-  template: TemplateCV;
-  language: Language;
-}
-
-export interface JediSettings {
-  colorTheme: HexColorJedi;
+  colorTheme: HexColor | HexColorJedi;
   template: TemplateCV;
   language: Language;
 }

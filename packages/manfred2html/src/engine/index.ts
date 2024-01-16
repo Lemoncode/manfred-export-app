@@ -1,9 +1,8 @@
 import { ManfredAwesomicCV, ExportHTMLSettings } from '@/model';
-import { mapExportHTMLSettingsToSettings, mapExportHTMLJediSettingsToSettings } from '@/mappers';
+import { mapExportHTMLSettingsToSettings } from '@/mappers';
 import { exportManfredJSonToCVSithEleganceHTML } from './cv-sith-elegance';
 import { exportManfredJSonToCVGalacticCleanTechHTML } from './cv-galactic-cleantech';
 import { exportManfredJsonToCVXWingHTML } from './cv-x-wing-squadron';
-
 import { exportManfredJSonToCVMonochromeForceHTML } from './cv-monochrome-force';
 import { exportManfredJSonToCVJediMinimalismHTML } from './cv-jedi-minimalism';
 
