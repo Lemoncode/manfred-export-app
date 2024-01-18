@@ -1,9 +1,9 @@
-<%_ if (profile.relevantLinks && profile.relevantLinks.length > 0) { -%>
+<%_ if (profile.relevantLinks && profile.relevantLinks.length > 0 || profile.phoneNumbers && profile.phoneNumbers.length > 0 ||profile.emails && profile.emails.length > 0 || profile.city && profile.country ) { -%>
   
   <h2>Contact</h2>
       <div class="aside__container">     
-       <%_ for (const link of profile?.relevantLinks) { -%>
-        <%_ if (link.type === 'phone') { -%>
+       <%_ for (const number of profile?.phoneNumbers) { -%>       
+        <%_ if (number.length > 0) { -%>
           <div class="aside__container__item">
             <div>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,10 +13,13 @@
                 />
               </svg>
             </div>
-            <a href="tel:+#"><%=link.URL%></a>
+            <a href="tel:+#"><%=profile.phoneNumbers[0].countryCode%> <%=profile.phoneNumbers[0].number%></a>
           </div>
-        <%_ } -%>
-        <%_ if (link.type === 'email') { -%>
+          <%_ } %>  
+          <%_ } -%>
+
+      <%_ for (const email of profile?.emails) { -%>       
+        <%_ if (email.length > 0) { -%>
           <div class="aside__container__item">
             <div>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,22 +31,26 @@
                 />
               </svg>
             </div>
-            <a href="mailto:#"><%=link.URL%></a>
+            <a href="mailto:#"><%=email%></a>
           </div>
-        <%_ } %>
-        <%_ if (link.type === 'localizacion') { -%>
-          <div class="aside__container__item">
-            <div>
-              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M7.74249 15.6405C9.34977 13.629 13.0155 8.7539 13.0155 6.01557C13.0155 2.69447 10.321 0 6.99994 0C3.67885 0 0.984375 2.69447 0.984375 6.01557C0.984375 8.7539 4.65011 13.629 6.2574 15.6405C6.64277 16.1198 7.35712 16.1198 7.74249 15.6405ZM10.5404 4.54301L6.52998 8.55338C6.23546 8.8479 5.75923 8.8479 5.46785 8.55338L3.45953 6.5482C3.16502 6.25368 3.16502 5.77745 3.45953 5.48607C3.75404 5.19469 4.23027 5.19156 4.52165 5.48607L5.99421 6.95863L9.4751 3.47775C9.76961 3.18324 10.2458 3.18324 10.5372 3.47775C10.8286 3.77226 10.8317 4.24849 10.5372 4.53987L10.5404 4.54301Z"
-                  fill="#DAD6D1"
-                />
-              </svg>
-            </div>
-            <a href="https://www.google.com/maps?q=37.7749,-122.4194" target="_blank"><%=link.URL%></a>
+        <%_ } %> 
+          <%_ } -%>
+                    
+      <%_ if (profile.city && profile.country) { -%>
+        <div class="aside__container__item">
+          <div>
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.74249 15.6405C9.34977 13.629 13.0155 8.7539 13.0155 6.01557C13.0155 2.69447 10.321 0 6.99994 0C3.67885 0 0.984375 2.69447 0.984375 6.01557C0.984375 8.7539 4.65011 13.629 6.2574 15.6405C6.64277 16.1198 7.35712 16.1198 7.74249 15.6405ZM10.5404 4.54301L6.52998 8.55338C6.23546 8.8479 5.75923 8.8479 5.46785 8.55338L3.45953 6.5482C3.16502 6.25368 3.16502 5.77745 3.45953 5.48607C3.75404 5.19469 4.23027 5.19156 4.52165 5.48607L5.99421 6.95863L9.4751 3.47775C9.76961 3.18324 10.2458 3.18324 10.5372 3.47775C10.8286 3.77226 10.8317 4.24849 10.5372 4.53987L10.5404 4.54301Z"
+                fill="#DAD6D1"
+              />
+            </svg>
           </div>
-        <%_ } %>        
+          <a href="https://www.google.com/maps?q=37.7749,-122.4194" target="_blank"><%=profile.city%>, <%=profile.country%></a>
+        </div>
+      <%_ } %>              
+          
+      <%_ for (const link of profile?.relevantLinks) { -%>   
         <%_ if (link.type === 'linkedin') { -%>
           <div class="aside__container__item">
             <div>
