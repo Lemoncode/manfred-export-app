@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from '@emotion/css';
-import { ColorTheme, HexColor } from '@lemoncode/manfred2html';
+import { ColorTheme, HexCommonColor } from '@lemoncode/manfred2html';
 import { InputRadioButton } from './components';
 import * as classes from './customSelectColor.styles';
 
@@ -38,11 +38,11 @@ export const CustomSelectColor: React.FC<Props> = ({ label, onChange }) => {
         />
       </div>
       <fieldset className={classes.colorFieldset}>
-        {Object.keys(HexColor).map(colorKey => (
+        {Object.keys(HexCommonColor).map(colorKey => (
           <InputRadioButton
             key={colorKey}
             value={colorKey as ColorTheme}
-            hexColor={HexColor[colorKey as keyof typeof HexColor]}
+            hexColor={HexCommonColor[colorKey as keyof typeof HexCommonColor]}
             onChange={onChange}
           />
         ))}

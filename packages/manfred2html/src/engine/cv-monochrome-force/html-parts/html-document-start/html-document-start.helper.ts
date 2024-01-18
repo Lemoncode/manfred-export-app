@@ -1,4 +1,4 @@
-import { HexColor } from '@/model';
+import { HexColor, HexCommonColor } from '@/model';
 
 interface ColorPalette {
   fifty: string;
@@ -15,7 +15,7 @@ interface ColorPalette {
 
 export const createColorPalette = (color: HexColor): ColorPalette => {
   switch (color) {
-    case HexColor.default:
+    case HexCommonColor.default:
       return {
         fifty: '#eaf3f3',
         hundred: '#bcd9db',
@@ -28,7 +28,7 @@ export const createColorPalette = (color: HexColor): ColorPalette => {
         eightHundred: '#164a4c',
         nineHundred: '#11383a',
       };
-    case HexColor.red:
+    case HexCommonColor.red:
       return {
         fifty: '#ffe8eb',
         hundred: '#feb8c2',
@@ -41,7 +41,7 @@ export const createColorPalette = (color: HexColor): ColorPalette => {
         eightHundred: '#8b0f1f',
         nineHundred: '#6a0b18',
       };
-    case HexColor.green:
+    case HexCommonColor.green:
       return {
         fifty: '#e9f9ef',
         hundred: '#baeccd',
@@ -54,7 +54,7 @@ export const createColorPalette = (color: HexColor): ColorPalette => {
         eightHundred: '#126b33',
         nineHundred: '#0d5127',
       };
-    case HexColor.orange:
+    case HexCommonColor.orange:
       return {
         fifty: '#fcefeb',
         hundred: '#f6cdc0',
@@ -67,7 +67,7 @@ export const createColorPalette = (color: HexColor): ColorPalette => {
         eightHundred: '#7c341d',
         nineHundred: '#5f2816',
       };
-    case HexColor.yellow:
+    case HexCommonColor.yellow:
       return {
         fifty: '#fefae8',
         hundred: '#fcf0b9',
@@ -80,7 +80,7 @@ export const createColorPalette = (color: HexColor): ColorPalette => {
         eightHundred: '#86720f',
         nineHundred: '#66570c',
       };
-    case HexColor.dark:
+    case HexCommonColor.dark:
       return {
         fifty: '#e9eaeb',
         hundred: '#b9bfc1',
