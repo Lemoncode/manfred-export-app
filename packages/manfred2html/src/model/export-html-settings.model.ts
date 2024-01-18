@@ -10,7 +10,7 @@ export type TemplateCV =
 
 export type Language = 'es' | 'en';
 
-export enum HexColor {
+export enum HexCommonColor {
   default = '#247A7E',
   red = '#E61934',
   green = '#1DB155',
@@ -19,7 +19,7 @@ export enum HexColor {
   dark = '#1B2B33',
 }
 
-export enum HexColorJedi {
+export enum HexJediMinimalismColor {
   default = '#11383A',
   red = '#6A0B18',
   green = '#0D5127',
@@ -28,6 +28,8 @@ export enum HexColorJedi {
   dark = '#0D1418',
 }
 
+export type HexColor = HexCommonColor | HexJediMinimalismColor;
+
 export interface ExportHTMLSettings {
   colorTheme: ColorTheme;
   template: TemplateCV;
@@ -35,7 +37,7 @@ export interface ExportHTMLSettings {
 }
 
 export interface Settings {
-  colorTheme: HexColor | HexColorJedi;
+  colorTheme: HexColor;
   template: TemplateCV;
   language: Language;
 }

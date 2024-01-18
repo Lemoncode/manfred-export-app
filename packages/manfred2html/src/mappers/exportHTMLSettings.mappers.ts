@@ -1,49 +1,49 @@
 import markdownit from 'markdown-it';
-import { ColorTheme, ExportHTMLSettings, Settings, HexColor, HexColorJedi } from '@/model';
+import { ColorTheme, ExportHTMLSettings, Settings, HexCommonColor, HexJediMinimalismColor } from '@/model';
 
-export const mapColorThemeToHex = (colorTheme: ColorTheme): HexColor => {
+export const mapCommonColorThemeToHex = (colorTheme: ColorTheme): HexCommonColor => {
   switch (colorTheme) {
     case 'default':
-      return HexColor.default;
+      return HexCommonColor.default;
     case 'red':
-      return HexColor.red;
+      return HexCommonColor.red;
     case 'green':
-      return HexColor.green;
+      return HexCommonColor.green;
     case 'orange':
-      return HexColor.orange;
+      return HexCommonColor.orange;
     case 'yellow':
-      return HexColor.yellow;
+      return HexCommonColor.yellow;
     case 'dark':
-      return HexColor.dark;
+      return HexCommonColor.dark;
     default:
-      return HexColor.default;
+      return HexCommonColor.default;
   }
 };
 
-export const mapJediColorThemeToHex = (colorTheme: ColorTheme): HexColorJedi => {
+export const mapJediColorThemeToHex = (colorTheme: ColorTheme): HexJediMinimalismColor => {
   switch (colorTheme) {
     case 'default':
-      return HexColorJedi.default;
+      return HexJediMinimalismColor.default;
     case 'red':
-      return HexColorJedi.red;
+      return HexJediMinimalismColor.red;
     case 'green':
-      return HexColorJedi.green;
+      return HexJediMinimalismColor.green;
     case 'orange':
-      return HexColorJedi.orange;
+      return HexJediMinimalismColor.orange;
     case 'yellow':
-      return HexColorJedi.yellow;
+      return HexJediMinimalismColor.yellow;
     case 'dark':
-      return HexColorJedi.dark;
+      return HexJediMinimalismColor.dark;
     default:
-      return HexColorJedi.default;
+      return HexJediMinimalismColor.default;
   }
 };
 
 export const mapExportHTMLSettingsToSettings = (exportHTMLSettings: ExportHTMLSettings): Settings => ({
   colorTheme:
-    exportHTMLSettings.template !== 'Jedi minimalism'
-      ? mapColorThemeToHex(exportHTMLSettings.colorTheme)
-      : mapJediColorThemeToHex(exportHTMLSettings.colorTheme),
+    exportHTMLSettings.template === 'Jedi minimalism'
+      ? mapJediColorThemeToHex(exportHTMLSettings.colorTheme)
+      : mapCommonColorThemeToHex(exportHTMLSettings.colorTheme),
   template: exportHTMLSettings.template || 'default',
   language: exportHTMLSettings.language || 'es',
 });
