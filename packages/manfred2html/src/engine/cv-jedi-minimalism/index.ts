@@ -9,6 +9,9 @@ import {
   generateHeaderSection,
   generateRightDivElementStart,
   generateRightDivElementEnd,
+  generateAsideElementStart,
+  generateAsideElementEnd,
+  generateContactSection,
 } from './html-parts';
 
 export const exportManfredJSonToCVJediMinimalismHTML = (
@@ -24,13 +27,19 @@ export const exportManfredJSonToCVJediMinimalismHTML = (
   const leftSideEnd = generateLeftDivElementEnd();
   const rightSideStart = generateRightDivElementStart();
   const rightSideEnd = generateRightDivElementEnd();
+  const asideElementStart = generateAsideElementStart();
+  const asideElementEnd = generateAsideElementEnd();
+  const contactSection = generateContactSection(manfredJsonContent, settings);
 
   return `
     ${htmlDocumentStart}
       ${leftSideStart}
         ${headerElementStart}
           ${headerSection}
-        ${headerElementEnd}             
+        ${headerElementEnd}
+        ${asideElementStart}
+        ${contactSection}
+      ${asideElementEnd}             
       ${leftSideEnd}
       ${rightSideStart}      
       ${rightSideEnd}

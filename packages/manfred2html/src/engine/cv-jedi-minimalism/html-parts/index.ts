@@ -7,3 +7,6 @@ export * from './header-element-end';
 export * from './header-section';
 export * from './right-side-start';
 export * from './right-side-end';
+export * from './aside-element-start';
+export * from './aside-element-end';
+export * from './contact-section';
