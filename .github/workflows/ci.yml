@@ -2,9 +2,6 @@ name: Continuos Integration workflow
 
 on: pull_request
 
-env:
-  HUSKY: 0
-
 jobs:
   ci:
     runs-on: ubuntu-latest
