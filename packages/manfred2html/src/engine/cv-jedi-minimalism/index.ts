@@ -29,7 +29,7 @@ export const exportManfredJSonToCVJediMinimalismHTML = (
   const rightSideEnd = generateRightDivElementEnd();
   const asideElementStart = generateAsideElementStart();
   const asideElementEnd = generateAsideElementEnd();
-  const contactSection = generateContactSection(manfredJsonContent);
+  const contactSection = generateContactSection(manfredJsonContent, settings);
 
   return `
     ${htmlDocumentStart}

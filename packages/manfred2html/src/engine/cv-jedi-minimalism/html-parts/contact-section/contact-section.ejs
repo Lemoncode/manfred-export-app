@@ -1,43 +1,47 @@
-<%_ if (profile.relevantLinks && profile.relevantLinks.length > 0 || profile.phoneNumbers && profile.phoneNumbers.length > 0 ||profile.emails && profile.emails.length > 0 || profile.city && profile.country ) { -%>
+<%_ if (profile.relevantLinks && profile.relevantLinks.length > 0 || profile.emails && profile.emails.length > 0 || profile.city || profile.country || profile.phoneNumbers && profile.phoneNumbers.length > 0) { -%>
   
-  <h2>Contact</h2>
-      <div class="aside__container">     
-       <%_ for (const number of profile?.phoneNumbers) { -%>       
-        <%_ if (number.length > 0) { -%>
-          <div class="aside__container__item">
-            <div>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1.5 2.3125C1.5 1.86377 1.86377 1.5 2.3125 1.5H4.06171C4.45889 1.5 4.79786 1.78715 4.86315 2.17893L5.46385 5.78307C5.52249 6.13491 5.3448 6.48385 5.02576 6.64337L3.7679 7.2723C4.67489 9.52614 6.47387 11.3251 8.7277 12.2321L9.35663 10.9742C9.51615 10.6552 9.86509 10.4775 10.2169 10.5362L13.8211 11.1368C14.2129 11.2021 14.5 11.5411 14.5 11.9383V13.6875C14.5 14.1362 14.1362 14.5 13.6875 14.5H12.0625C6.22899 14.5 1.5 9.77101 1.5 3.9375V2.3125Z"
-                  fill="#DAD6D1"
-                />
-              </svg>
-            </div>
-            <a href="tel:+#"><%=profile.phoneNumbers[0].countryCode%> <%=profile.phoneNumbers[0].number%></a>
-          </div>
-          <%_ } %>  
+  <h2><%- labels.RELEVANTS_LINKS_HEADING %></h2>
+      <div class="aside__container"> 
+        <%_ if (profile.phoneNumbers && profile.phoneNumbers.length > 0) { -%>    
+          <%_ for (const phone of profile?.phoneNumbers) { -%>       
+            <%_ if (phone.number.length > 0) { -%>  
+              <div class="aside__container__item">
+                <div>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.5 2.3125C1.5 1.86377 1.86377 1.5 2.3125 1.5H4.06171C4.45889 1.5 4.79786 1.78715 4.86315 2.17893L5.46385 5.78307C5.52249 6.13491 5.3448 6.48385 5.02576 6.64337L3.7679 7.2723C4.67489 9.52614 6.47387 11.3251 8.7277 12.2321L9.35663 10.9742C9.51615 10.6552 9.86509 10.4775 10.2169 10.5362L13.8211 11.1368C14.2129 11.2021 14.5 11.5411 14.5 11.9383V13.6875C14.5 14.1362 14.1362 14.5 13.6875 14.5H12.0625C6.22899 14.5 1.5 9.77101 1.5 3.9375V2.3125Z"
+                      fill="#DAD6D1"
+                    />
+                  </svg>
+                </div>
+                <a href="tel:+#"><%=phone.countryCode%> <%=phone.number%></a>
+              </div>
+            <%_ } -%>
           <%_ } -%>
-
-      <%_ for (const email of profile?.emails) { -%>       
-        <%_ if (email.length > 0) { -%>
-          <div class="aside__container__item">
-            <div>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M2.26375 4.93939C1.78863 5.23634 1.5 5.7571 1.5 6.31738V12.7292C1.5 13.6267 2.22754 14.3542 3.125 14.3542H12.875C13.7725 14.3542 14.5 13.6267 14.5 12.7292V6.31738C14.5 5.7571 14.2114 5.23634 13.7362 4.93939L8.86125 1.89251C8.33431 1.56317 7.66569 1.56317 7.13875 1.89251L2.26375 4.93939ZM4.38819 6.90744C4.01483 6.65852 3.51037 6.75942 3.26146 7.13278C3.01255 7.50615 3.11344 8.01061 3.48681 8.25952L7.54931 10.9679C7.82222 11.1498 8.17778 11.1498 8.45069 10.9679L12.5132 8.25952C12.8866 8.01061 12.9875 7.50615 12.7385 7.13278C12.4896 6.75942 11.9852 6.65852 11.6118 6.90744L8 9.31531L4.38819 6.90744Z"
-                  fill="#DAD6D1"
-                />
-              </svg>
-            </div>
-            <a href="mailto:#"><%=email%></a>
-          </div>
         <%_ } %> 
+
+        <%_ if (profile.emails && profile.emails.length > 0) { -%>    
+          <%_ for (const email of profile?.emails) { -%>       
+            <%_ if (email.length > 0) { -%>  
+              <div class="aside__container__item">
+                <div>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.26375 4.93939C1.78863 5.23634 1.5 5.7571 1.5 6.31738V12.7292C1.5 13.6267 2.22754 14.3542 3.125 14.3542H12.875C13.7725 14.3542 14.5 13.6267 14.5 12.7292V6.31738C14.5 5.7571 14.2114 5.23634 13.7362 4.93939L8.86125 1.89251C8.33431 1.56317 7.66569 1.56317 7.13875 1.89251L2.26375 4.93939ZM4.38819 6.90744C4.01483 6.65852 3.51037 6.75942 3.26146 7.13278C3.01255 7.50615 3.11344 8.01061 3.48681 8.25952L7.54931 10.9679C7.82222 11.1498 8.17778 11.1498 8.45069 10.9679L12.5132 8.25952C12.8866 8.01061 12.9875 7.50615 12.7385 7.13278C12.4896 6.75942 11.9852 6.65852 11.6118 6.90744L8 9.31531L4.38819 6.90744Z"
+                      fill="#DAD6D1"
+                    />
+                  </svg>
+                </div>
+                <a href="mailto:#"><%=email%></a>
+              </div>
+            <%_ } -%>
           <%_ } -%>
+        <%_ } %>      
                     
-      <%_ if (profile.city && profile.country) { -%>
-        <div class="aside__container__item">
+        <%_ if (profile.city || profile.country) { -%>
+          <div class="aside__container__item">
           <div>
             <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -47,12 +51,13 @@
             </svg>
           </div>
           <a href="https://www.google.com/maps?q=37.7749,-122.4194" target="_blank"><%=profile.city%>, <%=profile.country%></a>
-        </div>
-      <%_ } %>              
-          
-      <%_ for (const link of profile?.relevantLinks) { -%>   
-        <%_ if (link.type === 'linkedin') { -%>
-          <div class="aside__container__item">
+          </div>
+        <%_ } %>              
+       
+        <%_ if (profile.relevantLinks && profile.relevantLinks.length > 0) { -%>    
+          <%_ for (const link of profile?.relevantLinks) { -%>   
+            <%_ if (link.type === 'linkedin') { -%>
+              <div class="aside__container__item">
             <div>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1874_491)">
@@ -69,10 +74,10 @@
               </svg>
             </div>
             <a href="#" target="_blank"><%=link.URL%></a>
-          </div>
-        <%_ } %>
-        <%_ if (link.type === 'github') { -%>
-          <div class="aside__container__item">
+              </div>
+            <%_ } %>
+            <%_ if (link.type === 'github') { -%>
+              <div class="aside__container__item">
             <div>
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -82,10 +87,10 @@
               </svg>
             </div>
             <a href="#" target="_blank"><%=link.URL%></a>
-          </div>
-        <%_ } %>      
-        <%_ if (link.type === 'twitter') { -%>
-          <div class="aside__container__item">
+              </div>
+            <%_ } %>      
+            <%_ if (link.type === 'twitter') { -%>
+              <div class="aside__container__item">
             <div>
               <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -96,10 +101,10 @@
               </svg>
             </div>
             <a href="#" target="_blank"><%=link.URL%></a>
-          </div>
-        <%_ } %>
-        <%_ if (link.type === 'otros') { -%>
-          <div class="aside__container__item">
+              </div>
+            <%_ } %>
+            <%_ if (link.type === 'otros') { -%>
+              <div class="aside__container__item">
             <div>
               <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -110,8 +115,9 @@
               </svg>
             </div>
             <a href="#" target="_blank"><%=link.URL%></a>
-          </div>
-        <%_ } %>        
+              </div>
+            <%_ } %>        
+          <%_ } %> 
         <%_ } %>      
     </div>  
       <%_ } -%>
