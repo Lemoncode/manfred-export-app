@@ -21,4 +21,4 @@ jobs:
           npm install -D --arch=x64 --platform=linux turbo
           npm ci
       - name: Tests
-        run: num test
+        run: npm run test
