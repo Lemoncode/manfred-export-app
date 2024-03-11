@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>CV Manfred Export</title>
+    <style>
+      /* css vars */
+      :root {
+        /* spacing */
+        --spacing_base: 4px;
+        --spacing_2: calc(var(--spacing_base) / 2);
+        --spacing_8: calc(var(--spacing_base) * 2);
+        --spacing_12: calc(var(--spacing_base) * 3);
+        --spacing_16: calc(var(--spacing_base) * 4);
+        --spacing_24: calc(var(--spacing_base) * 6);
+        --spacing_32: calc(var(--spacing_base) * 8);
+        --spacing_48: calc(var(--spacing_base) * 12);
+        --spacing_64: calc(var(--spacing_base) * 16);
+
+        /* colors */
+        --primary_color: #247a7e; /* only this color can be changed  */
+        --white_color: #f4f2f1;
+        --black_color: #0d1418;
+        --gray_color_600: #c6c3be;
+        --gray_color_800: #787673;
+        --gray_color_900: #5c5a58;
+      }
+      /* General styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-family: Raleway, Roboto, sans-serif;
+        font-size: 16px;
+        color: var(--black_color);
+        font-style: normal;
+        background-color: var(--white_color);
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: var(--spacing_64) var(--spacing_16);
+      }
+      .container {
+        display: grid;
+        grid-template-areas:
+          'header'
+          'aside'
+          'main';
+        row-gap: var(--spacing_32);
+        column-gap: var(--spacing_32);
+      }
+      @media (min-width: 728px) {
+        body {
+          padding: var(--spacing_64);
+        }
+        .container {
+          column-gap: var(--spacing_32);
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          grid-template-areas:
+            'header header'
+            'aside main'
+            'aside main';
+          max-width: 1220px;
+          align-self: center;
+        }
+      }
+
+      /* header styles */
+      header {
+        grid-area: header;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing_4);
+        align-self: stretch;
+      }
+      .header-title {
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: auto;
+      }
+      .header-name {
+        display: inline-block;
+        font-family: Mohave;
+        font-size: 64px;
+        font-weight: 500;
+        letter-spacing: 4.8px;
+        text-transform: uppercase;
+        color: var(--primary_color);
+        padding: 0 var(--spacing_16) 0 0;
+      }
+      .header-left-gap {
+        display: none;
+      }
+      .header-right-gap {
+        display: block;
+        flex: auto;
+      }
+      .header-bordered-gap {
+        border-bottom: 1px solid var(--primary_color);
+      }
+      .header-subtitle {
+        display: flex;
+        flex-direction: column;
+        padding: 0 var(--spacing_16) var(--spacing_16) 0;
+      }
+      .header-surname {
+        font-family: Mohave;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        color: var(--gray_color_900);
+        white-space: nowrap;
+        padding-right: var(--spacing_16);
+      }
+      .header-job-position {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--gray_color_900);
+        border-left: var(--spacing_8) solid var(--primary_color);
+        padding-left: var(--spacing_16);
+      }
+
+      @media (min-width: 1024px) {
+        .header-name {
+          padding-left: var(--spacing_16);
+        }
+        .header-surname {
+          padding-left: var(--spacing_16);
+        }
+        .header-left-gap {
+          display: block;
+          min-width: 100px;
+        }
+        .header-subtitle {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      /* aside styles */
+      .aside-area {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: var(--spacing_64);
+      }
+      .aside-section {
+        display: flex;
+        flex-direction: column;
+        padding: 0 var(--spacing_16) 0 var(--spacing_16);
+        gap: var(--spacing_16);
+        border-left: 1px solid var(--primary_color);
+        min-height: 100%;
+      }
+      .aside-section-name {
+        color: var(--primary_color);
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.96px;
+        text-transform: uppercase;
+      }
+      .aside-section-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_16);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.96px;
+        color: var(--gray_color_900);
+        list-style-type: none;
+      }
+      .aside-section-list li {
+        position: relative;
+        text-align: left;
+        line-height: 1.8em;
+      }
+      .aside-section-list li::before {
+        content: '';
+        display: block;
+        height: 7px;
+        width: 7px;
+        background: var(--primary_color);
+        border-radius: 60px;
+        position: absolute;
+        left: -20px;
+        top: 4px;
+      }
+      .aside-section-list li:first-letter {
+        text-transform: capitalize;
+      }
+      .aside-section-list a {
+        text-decoration: none;
+        letter-spacing: 0.96px;
+        color: var(--gray_color_900);
+      }
+      .aside-section-link-list-item {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: var(--spacing_8);
+      }
+
+      @media (min-width: 1024px) {
+        .aside-area {
+          text-align: right;
+        }
+
+        .aside-section {
+          border-left: none;
+          border-right: 1px solid var(--primary_color);
+          min-height: 100%;
+        }
+
+        .aside-section-list li {
+          text-align: right;
+        }
+        .aside-section-list li::before {
+          content: '';
+          display: block;
+          height: 0;
+          width: 0;
+        }
+        .aside-section-list li::after {
+          content: '';
+          display: block;
+          height: 7px;
+          width: 7px;
+          background: var(--primary_color);
+          border-radius: 60px;
+          position: absolute;
+          right: -20px;
+          top: 7px;
+        }
+        .aside-section-link-list-item {
+          flex-direction: row-reverse;
+        }
+      }
+
+      /* main styles */
+      .main-chapter {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_32);
+      }
+
+      .main-chapter-gap {
+        min-height: var(--spacing_64);
+      }
+
+      .main-chapter-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: fit-content;
+      }
+      .main-chapter-header-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--primary_color);
+        text-transform: uppercase;
+        padding: 0 var(--spacing_32) 0 0;
+        white-space: nowrap;
+        letter-spacing: 1px;
+      }
+
+      .main-chapter-header-line {
+        border-bottom: 1px solid var(--primary_color);
+        width: 75%;
+      }
+
+      .main-chapter-body {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        letter-spacing: 0.96px;
+        gap: var(--spacing_32);
+        border-left: 1px solid var(--primary_color);
+        padding-left: var(--spacing_16);
+      }
+
+      .main-chapter ul {
+        list-style-position: outside;
+        padding-left: var(--spacing_32);
+      }
+
+      .main-chapter b {
+        color: var(--gray_color_900);
+      }
+
+      .main-chapter-article {
+        font: Raleway;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_16);
+      }
+
+      .main-chapter-article-title {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.96px;
+        color: var(--black_color);
+      }
+
+      .main-chapter-article-subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--black_color);
+      }
+
+      .main-chapter-article-body {
+        color: var(--gray_color_900);
+        line-height: 1.4;
+        letter-spacing: 0.96px;
+        padding: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-title">
+          <div class="header-left-gap header-bordered-gap"></div>
+          <div class="header-name">david</div>
+          <div class="header-right-gap header-bordered-gap"></div>
+        </div>
+        <div class="header-subtitle">
+          <div class="header-left-gap"></div>
+          <div class="header-surname">bonilla fuertes</div>
+          <div class="header-job-position">Fundador en Manfred / C-Level Executive</div>
+        </div>
+      </header>
+      <aside>
+        <div class="aside-area">
+          <div class="aside-section">
+            <span class="aside-section-name">mis enlaces</span>
+            <ul class="aside-section-list">
+              <li class="aside-section-link-list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                  <g clip-path="url(#clip0_1324_769)">
+                    <path
+                      d="M11.9274 12.4303H9.85425V9.18175C9.85425 8.40708 9.8385 7.41017 8.77392 7.41017C7.693 7.41017 7.52792 8.25308 7.52792 9.12458V12.4303H5.45475V5.75H7.44625V6.66058H7.47308C7.75133 6.13558 8.428 5.58142 9.43892 5.58142C11.5395 5.58142 11.928 6.96392 11.928 8.7635V12.4303H11.9274ZM3.11325 4.83592C2.9551 4.83599 2.79848 4.80488 2.65236 4.74436C2.50625 4.68383 2.3735 4.59509 2.26172 4.4832C2.14994 4.37132 2.06133 4.23848 2.00095 4.09231C1.94056 3.94614 1.9096 3.78949 1.90983 3.63133C1.90995 3.3932 1.98067 3.16046 2.11307 2.96253C2.24546 2.76459 2.43357 2.61036 2.65362 2.51934C2.87367 2.42832 3.11576 2.4046 3.34929 2.45117C3.58282 2.49774 3.7973 2.61251 3.9656 2.78097C4.1339 2.94944 4.24847 3.16402 4.29481 3.3976C4.34116 3.63118 4.3172 3.87325 4.22596 4.09321C4.13473 4.31316 3.98032 4.50113 3.78225 4.63333C3.58419 4.76553 3.35138 4.83603 3.11325 4.83592ZM4.15275 12.4303H2.07375V5.75H4.15275V12.4303ZM12.9646 0.5H1.03308C0.462 0.5 0 0.9515 0 1.50858V13.4914C0 14.0491 0.462 14.5 1.03308 14.5H12.9628C13.5333 14.5 14 14.0491 14 13.4914V1.50858C14 0.9515 13.5333 0.5 12.9628 0.5H12.9646Z"
+                      fill="var(--primary_color)"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1324_769">
+                      <rect width="14" height="14" fill="white" transform="translate(0 0.5)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <a href="#" target="_blank">Linkedin</a>
+              </li>
+              <li class="aside-section-link-list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                  <g clip-path="url(#clip0_1324_773)">
+                    <path
+                      d="M7 0.672852C3.1325 0.672852 0 3.8071 0 7.67285C0 10.7663 2.0055 13.3895 4.78625 14.3141C5.13625 14.38 5.26458 14.1636 5.26458 13.9775C5.26458 13.8113 5.25875 13.3709 5.25583 12.7875C3.30867 13.2099 2.898 11.8484 2.898 11.8484C2.5795 11.0404 2.11925 10.8246 2.11925 10.8246C1.48517 10.3906 2.16825 10.3994 2.16825 10.3994C2.87117 10.4484 3.24042 11.1204 3.24042 11.1204C3.86458 12.1908 4.879 11.8816 5.27917 11.7025C5.34217 11.2499 5.52242 10.9413 5.7225 10.7663C4.16792 10.5913 2.534 9.98927 2.534 7.3071C2.534 6.54294 2.80525 5.91877 3.25442 5.42877C3.17567 5.25202 2.93942 4.54035 3.31567 3.5761C3.31567 3.5761 3.90192 3.38827 5.24067 4.2936C5.80067 4.13785 6.39567 4.06085 6.99067 4.05735C7.58567 4.06085 8.18067 4.13785 8.74067 4.2936C10.0707 3.38827 10.6569 3.5761 10.6569 3.5761C11.0332 4.54035 10.7969 5.25202 10.7269 5.42877C11.1732 5.91877 11.4444 6.54294 11.4444 7.3071C11.4444 9.99627 9.80817 10.5884 8.25067 10.7604C8.49567 10.9704 8.72317 11.3998 8.72317 12.0554C8.72317 12.9923 8.71442 13.7448 8.71442 13.9723C8.71442 14.156 8.83692 14.3748 9.19567 14.3048C11.9962 13.3866 14 10.7616 14 7.67285C14 3.8071 10.8657 0.672852 7 0.672852Z"
+                      fill="var(--primary_color)"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1324_773">
+                      <rect width="14" height="14" fill="white" transform="translate(0 0.5)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <a href="#" target="_blank">Github</a>
+              </li>
+              <li class="aside-section-link-list-item">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0.701126 0.948242L6.10637 8.17556L0.666992 14.0517H1.89118L6.65334 8.90705L10.501 14.0517H14.667L8.95763 6.41784L14.0206 0.948242H12.7964L8.41065 5.68635L4.86708 0.948242H0.701126ZM2.50138 1.84998H4.41523L12.8665 13.1498H10.9526L2.50138 1.84998Z"
+                    fill="var(--primary_color)"
+                  />
+                </svg>
+                <a href="#" target="_blank">Twitter</a>
+              </li>
+              <li class="aside-section-link-list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                  <path
+                    d="M13.6104 9.80334C13.8625 9.08178 14 8.30655 14 7.50015C14 6.69365 13.8625 5.91883 13.6104 5.19727C13.6044 5.17568 13.597 5.15449 13.5882 5.13421C12.6161 2.43514 10.03 0.5 7.00005 0.5C3.97007 0.5 1.38399 2.43504 0.411926 5.13421C0.403047 5.15439 0.395481 5.17568 0.38973 5.19727C0.13761 5.91883 0 6.69365 0 7.50015C0 8.30655 0.13761 9.08178 0.38973 9.80334C0.395884 9.82493 0.403148 9.84611 0.411926 9.86639C1.38439 12.5655 3.97007 14.5006 7.00005 14.5006C10.03 14.5006 12.6161 12.5656 13.5882 9.86639C13.597 9.84611 13.6044 9.82493 13.6104 9.80334ZM6.99995 13.4971C6.7334 13.4971 6.30351 13.0145 5.94425 11.9367C5.77082 11.4166 5.6323 10.8186 5.53111 10.1683H8.46889C8.368 10.8187 8.22917 11.4164 8.05575 11.9367C7.69638 13.0145 7.2665 13.4971 6.99995 13.4971ZM5.40924 9.16471C5.36081 8.6297 5.33539 8.07148 5.33539 7.50015C5.33539 6.92882 5.36081 6.37091 5.40924 5.83589H8.59076C8.63888 6.37091 8.66431 6.92882 8.66431 7.50015C8.66431 8.07148 8.63888 8.6297 8.59076 9.16471H5.40924ZM1.00333 7.50015C1.00333 6.92297 1.08526 6.36445 1.23851 5.83589H4.40277C4.35576 6.382 4.33195 6.94153 4.33195 7.50015C4.33195 8.05907 4.35576 8.6186 4.40277 9.16471H1.23851C1.08526 8.63585 1.00333 8.07764 1.00333 7.50015ZM6.99995 1.50354C7.2665 1.50354 7.69638 1.98609 8.05565 3.06388C8.22907 3.58396 8.3679 4.18203 8.46878 4.83236H5.53101C5.6319 4.18162 5.77072 3.58386 5.94415 3.06388C6.30352 1.98599 6.7334 1.50354 6.99995 1.50354ZM9.59712 5.83589H12.7613C12.9142 6.36435 12.9966 6.92297 12.9966 7.50015C12.9966 8.07764 12.9142 8.63626 12.7613 9.16471H9.59712C9.64414 8.6186 9.66764 8.05907 9.66764 7.50015C9.66764 6.94153 9.64414 6.382 9.59712 5.83589ZM12.3694 4.83246H9.48221C9.30354 3.60162 8.99744 2.49759 8.56786 1.71197C10.2331 2.16335 11.6129 3.3161 12.3694 4.83246ZM5.43204 1.71187C5.00246 2.49749 4.69646 3.60152 4.51769 4.83236H1.63046C2.38702 3.3161 3.76677 2.16335 5.43204 1.71187ZM1.63056 10.1681H4.51779C4.69646 11.399 5.00256 12.503 5.43214 13.2886C3.76677 12.8369 2.38702 11.6845 1.63056 10.1681ZM8.56786 13.2886C8.99744 12.503 9.30344 11.399 9.48221 10.1681H12.3694C11.6129 11.6845 10.2331 12.8369 8.56786 13.2886Z"
+                    fill="var(--primary_color)"
+                  />
+                </svg>
+                <a href="#" target="_blank">Website</a>
+              </li>
+              <li class="aside-section-link-list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                  <path
+                    d="M4.75781 7.0625H1.80469C0.809566 7.0625 0 6.25293 0 5.25781V2.30469C0 1.30957 0.809566 0.5 1.80469 0.5H4.75781C5.75293 0.5 6.5625 1.30957 6.5625 2.30469V5.25781C6.5625 6.25293 5.75293 7.0625 4.75781 7.0625ZM1.80469 1.375C1.29205 1.375 0.875 1.79205 0.875 2.30469V5.25781C0.875 5.77045 1.29205 6.1875 1.80469 6.1875H4.75781C5.27045 6.1875 5.6875 5.77045 5.6875 5.25781V2.30469C5.6875 1.79205 5.27045 1.375 4.75781 1.375H1.80469Z"
+                    fill="var(--primary_color)"
+                  />
+                  <path
+                    d="M12.1953 7.0625H9.24219C8.24707 7.0625 7.4375 6.25293 7.4375 5.25781V2.30469C7.4375 1.30957 8.24707 0.5 9.24219 0.5H12.1953C13.1904 0.5 14 1.30957 14 2.30469V5.25781C14 6.25293 13.1904 7.0625 12.1953 7.0625ZM9.24219 1.375C8.72955 1.375 8.3125 1.79205 8.3125 2.30469V5.25781C8.3125 5.77045 8.72955 6.1875 9.24219 6.1875H12.1953C12.708 6.1875 13.125 5.77045 13.125 5.25781V2.30469C13.125 1.79205 12.708 1.375 12.1953 1.375H9.24219Z"
+                    fill="var(--primary_color)"
+                  />
+                  <path
+                    d="M10.7188 14.5C8.90947 14.5 7.4375 13.028 7.4375 11.2188C7.4375 9.40947 8.90947 7.9375 10.7188 7.9375C12.528 7.9375 14 9.40947 14 11.2188C14 13.028 12.528 14.5 10.7188 14.5ZM10.7188 8.8125C9.39195 8.8125 8.3125 9.89195 8.3125 11.2188C8.3125 12.5456 9.39195 13.625 10.7188 13.625C12.0456 13.625 13.125 12.5456 13.125 11.2188C13.125 9.89195 12.0456 8.8125 10.7188 8.8125Z"
+                    fill="var(--primary_color)"
+                  />
+                  <path
+                    d="M4.75781 14.5H1.80469C0.809566 14.5 0 13.6904 0 12.6953V9.74219C0 8.74707 0.809566 7.9375 1.80469 7.9375H4.75781C5.75293 7.9375 6.5625 8.74707 6.5625 9.74219V12.6953C6.5625 13.6904 5.75293 14.5 4.75781 14.5ZM1.80469 8.8125C1.29205 8.8125 0.875 9.22955 0.875 9.74219V12.6953C0.875 13.208 1.29205 13.625 1.80469 13.625H4.75781C5.27045 13.625 5.6875 13.208 5.6875 12.6953V9.74219C5.6875 9.22955 5.27045 8.8125 4.75781 8.8125H1.80469Z"
+                    fill="var(--primary_color)"
+                  />
+                </svg>
+                <a href="#" target="_blank">Otros</a>
+              </li>
+            </ul>
+          </div>
+          <div class="aside-section">
+            <span class="aside-section-name">idiomas / nivel</span>
+            <ul class="aside-section-list">
+              <li>Español (habilidad nativo o bilingüe)</li>
+              <li>Inglés (habilidad profesional completo)</li>
+              <li>Gallego (habilidad básica)</li>
+            </ul>
+          </div>
+          <div class="aside-section">
+            <span class="aside-section-name">habilidades tecnicas</span>
+            <ul class="aside-section-list">
+              <li>JIRA</li>
+              <li>JAVA</li>
+            </ul>
+          </div>
+          <div class="aside-section">
+            <span class="aside-section-name">habilidades interpersonales</span>
+            <ul class="aside-section-list">
+              <li>Liderazgo</li>
+              <li>Atraer talento y retenerlo</li>
+              <li>Orientado a resultados</li>
+              <li>Comunicación</li>
+              <li>Logística</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="main-chapter">
+          <div class="main-chapter-header">
+            <div class="main-chapter-header-title">sobre mi</div>
+            <div class="main-chapter-header-line"></div>
+          </div>
+          <div class="main-chapter-body">
+            <div class="main-chapter-article">
+              <p class="main-chapter-article-body">
+                Llevo casi dos décadas desarrollando software, ocupando puestos a lo largo de toda la cadena de valor
+                -programacion, diseño de producto, marketing, ventas y gestión de equipos, departamentos y empresas-
+                pero creo que el rol donde se cruzan mi vocación, mis habilidades y las necesidades de la mayoría de las
+                empresas es en la gestión de equipos y proyectos de construcción de activos digitales. Me apasiona
+                contribuir en todo el ciclo de vida de un producto o servicio informático, desde la definición hasta el
+                mantenimiento o soporte a clientes, y también involucrarme en la comercialización del mismo. Me gusta
+                trabajar con gente y para la gente. Como responsable de equipos, mi principal prioridad siempre es
+                eliminar cualquier problema que les impida alcanzar todo su potencial. También procuro devolver a la
+                Comunidad informática parte del valor y el conocimiento que me han aportado a lo largo de mi carrera
+                profesional, dando charlas o colaborando con grupos de usuarios y conferencias técnicas; y, a veces,
+                organizándolos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-chapter-gap"></div>
+
+        <div class="main-chapter">
+          <div class="main-chapter-header">
+            <div class="main-chapter-header-title">experiencia</div>
+            <div class="main-chapter-header-line"></div>
+          </div>
+
+          <div class="main-chapter-body">
+            <div class="main-chapter-article">
+              <div class="main-chapter-article-title">Manfred</div>
+              <div class="main-chapter-article-subtitle">Plataforma de Talento y agencia de recruiting técnico</div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Jun 2018 - Actualidad
+              </div>
+              <div class="main-chapter-article-body">
+                <p>Tipo de organización: <b>Startup</b></p>
+                <p>Roles dentro de la empresa: <b>CEO</b></p>
+                <div>
+                  Retos:
+                  <div>
+                    <ul>
+                      <li>
+                        Adaptación de la organización y procesos de la empresa para escalar las operaciones de la misma.
+                      </li>
+                      <li>
+                        Desarrollo de producto propio para escalar las operaciones de la compañía, especialmente la
+                        aportación de valor a candidatos.
+                      </li>
+                      <li>
+                        Culminación del [proceso de compraventa](https://bonillaware.com/manfred-sngular) de la compañía
+                        por parte de Sngular, manteniendo el núcleo de empleados de la compañía y sin que la
+                        productividad o las ventas se resintieran antes, durante y después del mismo.
+                      </li>
+                      <li>
+                        Creación y publicación de contratos open source (candidatos y empresas) para construir un marco
+                        legal para una empresa de recruiting.
+                      </li>
+                      <li>
+                        Definición del modelo de datos y los procesos necesarios para identificar, clasificar y
+                        gestionar perfiles de profesionales técnicos.
+                      </li>
+                      <li>Definición de formato CV extendido.</li>
+                      <li>Definición e implementación de la web de la compañía.</li>
+                      <li>Apertura de nueva filial en Bilbao.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-chapter-article">
+              <div class="main-chapter-article-title">Comalatech</div>
+              <div class="main-chapter-article-subtitle">
+                Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.
+              </div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Feb 2017 - Jun 2018
+              </div>
+              <div class="main-chapter-article-body">
+                <p>Tipo de organización: <b>Startup</b></p>
+                <p>Roles dentro de la empresa: <b>Fundador</b></p>
+                <div>
+                  Retos:
+                  <div>
+                    <ul>
+                      <li>Adaptación de todos los procesos de la compañía al nuevo RGPD</li>
+                      <li>Apertura de nueva filial en Bilbao</li>
+                      <li>Coordinación de actividades en Europa</li>
+                      <li>Estandarización de contratos</li>
+                      <li>Soporte</li>
+                      <li>Lanzamiento de Comala Agile Ranking</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-chapter-article">
+              <div class="main-chapter-article-title">Instituto de empresa</div>
+              <div class="main-chapter-article-subtitle">
+                Herramientas para facilitar el trabajo colaborativo en el ecosistema de Atlassian Confluence.
+              </div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Feb 2017 - Jun 2018
+              </div>
+              <div class="main-chapter-article-body">
+                <p>Tipo de organización: <b>Institución académica</b></p>
+                <p>Roles dentro de la empresa: <b>Profesor asociado de productividad y metodologías ágiles</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-chapter-gap"></div>
+
+        <div class="main-chapter">
+          <div class="main-chapter-header">
+            <div class="main-chapter-header-title">educación</div>
+            <div class="main-chapter-header-line"></div>
+          </div>
+
+          <div class="main-chapter-body">
+            <div class="main-chapter-article">
+              <div class="main-chapter-article-title">Ingenieria Técnica Informática</div>
+              <div class="main-chapter-article-subtitle">Computer Science Grade</div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Sep 2002 - Jun 2006
+              </div>
+              <div class="main-chapter-article-body">
+                <p>Tipo de estudios: <b>Grado oficial</b></p>
+                <p>Grado obtenido: <b>No obtenido</b></p>
+                <p>Nombre de la institución: <b>CFDTI IBM/La Caixa</b></p>
+                <p>Ubicación de la institución: <b>Cataluña, España</b></p>
+              </div>
+            </div>
+
+            <div class="main-chapter-article">
+              <div class="main-chapter-article-title">Master en Desarrollo de Aplicaciones Web</div>
+              <div class="main-chapter-article-subtitle">Computer Science Grade</div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Sep 2002 - Jun 2006
+              </div>
+              <div class="main-chapter-article-body">
+                <p>Tipo de estudios: <b>Certificación</b></p>
+                <p>Grado obtenido: <b>Obtenido</b></p>
+                <p>Nombre de la institución: <b>CFDTI IBM/La Caixa</b></p>
+                <p>Ubicación de la institución: <b>Madrid, España</b></p>
+              </div>
+            </div>
+
+            <div class="main-chapter-article">
+              <div class="main-chapter-article-title">Certified Scrum Master</div>
+              <div class="main-chapter-article-subtitle">Scrum Master certificado por la Scrum Alliance</div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Sep 2002 - Jun 2006
+              </div>
+              <div class="main-chapter-article-body">
+                <p>Tipo de estudios: <b>Certificación</b></p>
+                <p>Grado obtenido: <b>Obtenido</b></p>
+                <p>Nombre de la institución: <b>Scrum Alliance</b></p>
+                <p>Ubicación de la institución: <b>Madrid, España</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
