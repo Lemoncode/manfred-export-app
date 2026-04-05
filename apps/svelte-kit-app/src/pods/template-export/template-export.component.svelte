@@ -1,1 +1,0 @@
-<h1>Hello for TemplateExportComponent</h1>

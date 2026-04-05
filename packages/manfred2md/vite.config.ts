@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 export default ({ mode }) =>
   defineConfig({
-    plugins: [dts()],
+    plugins: [dts({ logLevel: 'silent' })],
     build: {
       lib: {
         entry: 'src/index.ts',
